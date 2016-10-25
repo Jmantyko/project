@@ -76,7 +76,7 @@ public class Logout extends HttpServlet {
         if (session != null) {
             session.invalidate();
         }
-        //*logout ends*
+        
         response.sendRedirect("etusivu.jsp");
     }
 
