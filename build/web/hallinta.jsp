@@ -40,8 +40,15 @@
             }
         %>    
         <h1>Olet kirjautunut sisään</h1>
-        <p>Sinun userEmail on <strong><%=userEmail %></strong> ja email on <strong><%=email %></strong><br><br>
-            Session ID on <strong><%=sessionID %></strong><br><br></p>
+        <p>Sinun userEmail on <strong><%=userEmail%></strong> ja email on <strong><%=email%></strong><br><br>
+            Session ID on <strong><%=sessionID%></strong><br></p>
+        <form action="CreateUser" method="POST">
+            <label for="email">Anna käyttäjän sähköpostiosoite:</label>
+            <input type="text" class="form-control" name="email" value="" placeholder="Syötä sähköpostiosoite" /><br>
+            <label for="email">Luo käyttäjälle salasana:</label>
+            <input type="password" class="form-control" name="password" value="" placeholder="Luo salasana" /><br>
+            <input type="submit" class="btn btn-success" value="Lisää käyttäjä" /> 
+        </form><br>
         <form action="Logout" method="POST">
             <input type="submit" class="btn btn-danger" value="Kirjaudu ulos" />
         </form>

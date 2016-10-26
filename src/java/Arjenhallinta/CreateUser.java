@@ -7,17 +7,15 @@ package Arjenhallinta;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Jaakko
  */
-public class Login extends HttpServlet {
+public class CreateUser extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,7 +29,6 @@ public class Login extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
     }
 
     /**
@@ -63,26 +60,15 @@ public class Login extends HttpServlet {
         
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-
-        if (Database.authenticateUser(email, password)) {
-            HttpSession session = request.getSession();
-            session.setAttribute("email", email);
-
-            //Session expires in 30mins
-            session.setMaxInactiveInterval(30 * 60);
-            Cookie userEmail = new Cookie("email", email);
-            userEmail.setMaxAge(30 * 60);
-            response.addCookie(userEmail);
-
-            response.sendRedirect(request.getContextPath() + "/hallinta.jsp");
-
-            System.out.println("ACCESS GRANTED");
-
-        } else {
-            response.sendRedirect(request.getContextPath() + "/etusivu.jsp");
-            System.out.println("ACCESS DENIED");
-
+        
+        if(Database.userExists(email)){
+            System.out.println("CREATING NEW USER FAILED - USER ALREADY EXISTS");
+        }else{
+            Database.addUser(email, password);
+            System.out.println("CREATING NEW USER SUCCEEDED");
         }
+        
+        response.sendRedirect(request.getContextPath() + "/hallinta.jsp");
     }
 
     /**

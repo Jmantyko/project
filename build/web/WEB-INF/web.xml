@@ -11,6 +11,10 @@
         <servlet-name>Logout</servlet-name>
         <servlet-class>Arjenhallinta.Logout</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CreateUser</servlet-name>
+        <servlet-class>Arjenhallinta.CreateUser</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -18,6 +22,10 @@
     <servlet-mapping>
         <servlet-name>Logout</servlet-name>
         <url-pattern>/Logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CreateUser</servlet-name>
+        <url-pattern>/CreateUser</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
