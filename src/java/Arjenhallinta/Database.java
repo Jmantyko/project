@@ -25,11 +25,9 @@ public class Database {
 
         try {
 
-            //loading drivers for mysql
             Class.forName("com.mysql.jdbc.Driver");
 
-            //creating connection with the database 
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/arjenhallinta", "root", "realforce");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/arjenhallinta", dbUsername, dbPassword);
             PreparedStatement ps = con.prepareStatement("INSERT INTO users (email, password) VALUES (?, ?)");
             ps.setString(1, email);
             ps.setString(2, password);
@@ -50,12 +48,10 @@ public class Database {
         boolean grantAccess = false;
 
         try {
-            System.out.println("DATABASE AUTH");
-            //loading drivers for mysql
+
             Class.forName("com.mysql.jdbc.Driver");
 
-            //creating connection with the database 
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/arjenhallinta", "root", "realforce");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/arjenhallinta", dbUsername, dbPassword);
             PreparedStatement ps = con.prepareStatement("SELECT * FROM users WHERE email=? and password=?");
             ps.setString(1, email);
             ps.setString(2, password);
@@ -76,11 +72,9 @@ public class Database {
         
         try {
 
-            //loading drivers for mysql
             Class.forName("com.mysql.jdbc.Driver");
 
-            //creating connection with the database 
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/arjenhallinta", "root", "realforce");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/arjenhallinta", dbUsername, dbPassword);
             PreparedStatement ps = con.prepareStatement("SELECT * FROM users WHERE email=?");
             ps.setString(1, email);
             ResultSet rs = ps.executeQuery();
