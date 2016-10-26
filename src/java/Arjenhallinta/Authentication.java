@@ -14,8 +14,8 @@ import java.sql.ResultSet;
  *
  * @author Jaakko
  */
-public class Verify {
-    public static boolean verifyUser(String email, String password) {
+public class Authentication {
+    public static boolean authenticateUser(String email, String password) {
 
         boolean grantAccess = false;
 
