@@ -18,26 +18,33 @@ public class Database {
     
     private static final String dbUsername = "root";
     private static final String dbPassword = "realforce";
+    static Connection conn = null;
+    static PreparedStatement ps = null;
+    static ResultSet rs = null;
 
     public static boolean addUser(String email, String password) {
         
         boolean addedUser = false;
 
         try {
-
             Class.forName("com.mysql.jdbc.Driver");
 
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/arjenhallinta", dbUsername, dbPassword);
-            PreparedStatement ps = con.prepareStatement("INSERT INTO users (email, password) VALUES (?, ?)");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/arjenhallinta", dbUsername, dbPassword);
+            ps = conn.prepareStatement("INSERT INTO users (email, password) VALUES (?, ?)");
             ps.setString(1, email);
             ps.setString(2, password);
             ps.execute();
             
-            con.close();
             addedUser = true;
 
         } catch (Exception e) {
             e.printStackTrace();
+            
+        } finally {
+            try { rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { conn.close(); } catch (Exception e) { /* ignoring */ }
+            
         }
 
         return addedUser;
@@ -48,18 +55,23 @@ public class Database {
         boolean grantAccess = false;
 
         try {
-
             Class.forName("com.mysql.jdbc.Driver");
 
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/arjenhallinta", dbUsername, dbPassword);
-            PreparedStatement ps = con.prepareStatement("SELECT * FROM users WHERE email=? and password=?");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/arjenhallinta", dbUsername, dbPassword);
+            ps = conn.prepareStatement("SELECT * FROM users WHERE email=? and password=?");
             ps.setString(1, email);
             ps.setString(2, password);
-            ResultSet rs = ps.executeQuery();
+            rs = ps.executeQuery();
             grantAccess = rs.next();
 
         } catch (Exception e) {
             e.printStackTrace();
+            
+        } finally {
+            try { rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { conn.close(); } catch (Exception e) { /* ignoring */ }
+            
         }
 
         return grantAccess;
@@ -74,17 +86,21 @@ public class Database {
 
             Class.forName("com.mysql.jdbc.Driver");
 
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/arjenhallinta", dbUsername, dbPassword);
-            PreparedStatement ps = con.prepareStatement("SELECT * FROM users WHERE email=?");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/arjenhallinta", dbUsername, dbPassword);
+            ps = conn.prepareStatement("SELECT * FROM users WHERE email=?");
             ps.setString(1, email);
-            ResultSet rs = ps.executeQuery();
+            rs = ps.executeQuery();
             
             userExists = rs.next();
-            
-            con.close();
 
         } catch (Exception e) {
             e.printStackTrace();
+            
+        } finally {
+            try { rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { conn.close(); } catch (Exception e) { /* ignoring */ }
+            
         }
         
         return userExists;
