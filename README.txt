@@ -14,3 +14,34 @@ tehdä seuraavan tutoriaalin ohjeiden mukaan
 (https://netbeans.org/kb/docs/ide/install-and-configure-mysql-server.html).
 Asentamisen aikana täytyy luoda MySQL servun user account.
 Anna user="root" ja password="realforce".
+
+Ohjelman käyttämän tietokannan rakenne on esitetty alla:
+
+CREATE TABLE Users (
+	UserID SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
+	UserEmail VARCHAR (70) NOT NULL UNIQUE,
+	UserPassword VARCHAR (64) NOT NULL,
+	UserPasswordSalt VARCHAR (64),
+	UserName VARCHAR (50),
+	UserSurname VARCHAR (50),
+	UserType TINYINT UNSIGNED NOT NULL,
+	PRIMARY KEY (UserID)
+);
+
+CREATE TABLE Tasks (
+	TaskID INT UNSIGNED NOT NULL AUTO_INCREMENT,
+	UserID SMALLINT UNSIGNED NOT NULL,
+	TaskContent LONGTEXT,
+	TaskDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (TaskID),
+	FOREIGN KEY (UserID) REFERENCES Users (UserID)
+);
+
+CREATE TABLE Messages (
+	MessageID INT UNSIGNED NOT NULL AUTO_INCREMENT,
+	UserID SMALLINT UNSIGNED NOT NULL,
+	MessageContent LONGTEXT,
+	MessageDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (MessageID),
+	FOREIGN KEY (UserID) REFERENCES Users (UserID)
+);

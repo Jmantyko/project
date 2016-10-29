@@ -32,7 +32,7 @@ public class Database {
             Class.forName(dbDriver);
 
             conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
-            ps = conn.prepareStatement("INSERT INTO users (email, password) VALUES (?, ?)");
+            ps = conn.prepareStatement("INSERT INTO Users (UserEmail, UserPassword, UserType) VALUES (?, ?, 1)");
             ps.setString(1, email);
             ps.setString(2, password);
             ps.execute();
@@ -58,7 +58,7 @@ public class Database {
             Class.forName(dbDriver);
 
             conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
-            ps = conn.prepareStatement("SELECT * FROM users WHERE email=? and password=?");
+            ps = conn.prepareStatement("SELECT * FROM Users WHERE UserEmail=? and UserPassword=?");
             ps.setString(1, email);
             ps.setString(2, password);
             rs = ps.executeQuery();
@@ -84,7 +84,7 @@ public class Database {
             Class.forName(dbDriver);
 
             conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
-            ps = conn.prepareStatement("SELECT * FROM users WHERE email=?");
+            ps = conn.prepareStatement("SELECT * FROM Users WHERE UserEmail=?");
             ps.setString(1, email);
             rs = ps.executeQuery();
             
