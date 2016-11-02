@@ -4,6 +4,7 @@
     Author     : Jaakko
 --%>
 
+<%@page import="Arjenhallinta.InputOutputCleaner"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -19,28 +20,37 @@
     </head>
     <body> 
         <%
-        //allow access only if session exists
-        String email = null;
-        
-        if(session.getAttribute("email") == null){
+            //allow access only if session exists
+            String email = null;
             
-            response.sendRedirect("etusivu.jsp");
-            
-        }else email = (String) session.getAttribute("email");
-            
+            //cleaner needed when outputting information
+            InputOutputCleaner cleaner = new InputOutputCleaner();
+
+            if (session.getAttribute("email") == null) {
+
+                response.sendRedirect("etusivu.jsp");
+
+            } else {
+                email = (String) session.getAttribute("email");
+            }
+
             String userEmail = null;
             String sessionID = null;
             Cookie[] cookies = request.getCookies();
-            
-            if(cookies !=null){
-                for(Cookie cookie : cookies){
-                    if(cookie.getName().equals("email")) userEmail = cookie.getValue();
-                    if(cookie.getName().equals("JSESSIONID")) sessionID = cookie.getValue();
+
+            if (cookies != null) {
+                for (Cookie cookie : cookies) {
+                    if (cookie.getName().equals("email")) {
+                        userEmail = cookie.getValue();
+                    }
+                    if (cookie.getName().equals("JSESSIONID")) {
+                        sessionID = cookie.getValue();
+                    }
                 }
             }
         %>    
         <h1>Olet kirjautunut sisään</h1>
-        <p>Sinun userEmail on <strong><%=userEmail%></strong> ja email on <strong><%=email%></strong><br><br>
+        <p>Sinun userEmail on <strong><%=cleaner.cleanInputOutput(userEmail)%></strong> ja email on <strong><%=cleaner.cleanInputOutput(email)%></strong><br><br>
             Session ID on <strong><%=sessionID%></strong><br></p>
         <form action="CreateUser" method="POST">
             <label for="email">Anna käyttäjän sähköpostiosoite:</label>
