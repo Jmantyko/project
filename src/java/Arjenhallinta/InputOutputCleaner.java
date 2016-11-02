@@ -11,17 +11,17 @@ package Arjenhallinta;
  */
 public class InputOutputCleaner {
     
-    public String cleanInputOutput(String input){
+    public static String clean(String inputOutputString){
 
         try {
-            input = input.replace('<', ' ');
-            input = input.replace('>', ' ');
+            inputOutputString = inputOutputString.replace('<', ' ');
+            inputOutputString = inputOutputString.replace('>', ' ');
             
         } catch (Exception e) {
             System.out.println("ERROR IN: InputOutputCleaner");
             
         }
         
-        return input;
+        return inputOutputString;
     }
 }

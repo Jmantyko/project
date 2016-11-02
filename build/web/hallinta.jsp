@@ -24,7 +24,7 @@
             String email = null;
             
             //cleaner needed when outputting information
-            InputOutputCleaner cleaner = new InputOutputCleaner();
+            //InputOutputCleaner cleaner = new InputOutputCleaner();
 
             if (session.getAttribute("email") == null) {
 
@@ -50,7 +50,7 @@
             }
         %>    
         <h1>Olet kirjautunut sisään</h1>
-        <p>Sinun userEmail on <strong><%=cleaner.cleanInputOutput(userEmail)%></strong> ja email on <strong><%=cleaner.cleanInputOutput(email)%></strong><br><br>
+        <p>Sinun userEmail on <strong><%=InputOutputCleaner.clean(userEmail)%></strong> ja email on <strong><%=InputOutputCleaner.clean(email)%></strong><br><br>
             Session ID on <strong><%=sessionID%></strong><br></p>
         <form action="CreateUser" method="POST">
             <label for="email">Anna käyttäjän sähköpostiosoite:</label>
