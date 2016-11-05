@@ -128,7 +128,7 @@ public class Database {
         return userType;
     }
     
-    public static String getFrontPageData(int content) {
+    public static String getFrontPageContent(int content) {
         
         String contentToBeRendered = "";
         
@@ -153,6 +153,27 @@ public class Database {
         }
         
         return contentToBeRendered;
+    }
+    
+    public static void updateFrontPageContent(String content, int id) {
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("UPDATE Frontpage SET Pagecontent=? WHERE PageID=?");
+            ps.setString(1, content);
+            ps.setInt(2, id);
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            closeDatabaseConnections();
+            
+        }
+        
     }
     
     public static void closeDatabaseConnections(){

@@ -22,8 +22,8 @@
     <body>
         <%
             //Fetching data from database
-            String content1 = Database.getFrontPageData(1);
-            String content2 = Database.getFrontPageData(2);
+            String content1 = Database.getFrontPageContent(1);
+            String content2 = Database.getFrontPageContent(2);
         %>
         <h1>Etusivu</h1>
         <div>

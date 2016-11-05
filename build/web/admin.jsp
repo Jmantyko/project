@@ -21,6 +21,10 @@
     </head>
     <body> 
         <%
+            //Fetching data from database
+            String content1 = Database.getFrontPageContent(1);
+            String content2 = Database.getFrontPageContent(2);
+
             //allow access only if session exists
             //and userType is appropriate for the page
             String email = null;
@@ -64,6 +68,18 @@
             <label for="email">Luo käyttäjälle salasana:</label>
             <input type="password" class="form-control" name="password" value="" placeholder="Luo salasana" /><br>
             <input type="submit" class="btn btn-success" value="Lisää käyttäjä" /> 
+        </form><br>
+        <form action="UpdateFrontPage" method="POST" accept-charset="utf-8">
+            <label for="comment">Content1</label>
+            <input type="text" class="form-control" name="content" value="<%=InputOutputCleaner.clean(content1)%>" /><br>
+            <input type="hidden" name="id" value="1">
+            <input type="submit" class="btn btn-warning" value="Päivitä etusivun sisältö" />
+        </form><br>
+        <form action="UpdateFrontPage" method="POST" accept-charset="utf-8">
+            <label for="comment">Content2</label>
+            <input type="text" class="form-control" name="content" value="<%=InputOutputCleaner.clean(content2)%>" /><br>
+            <input type="hidden" name="id" value="2">
+            <input type="submit" class="btn btn-warning" value="Päivitä etusivun sisältö" />
         </form><br>
         <form action="Logout" method="POST">
             <input type="submit" class="btn btn-danger" value="Kirjaudu ulos" />
