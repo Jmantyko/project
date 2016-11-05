@@ -22,9 +22,6 @@
         <%
             //allow access only if session exists
             String email = null;
-            
-            //cleaner needed when outputting information
-            //InputOutputCleaner cleaner = new InputOutputCleaner();
 
             if (session.getAttribute("email") == null) {
 
