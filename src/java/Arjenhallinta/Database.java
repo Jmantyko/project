@@ -128,6 +128,33 @@ public class Database {
         return userType;
     }
     
+    public static String getFrontPageData(int content) {
+        
+        String contentToBeRendered = "";
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("SELECT PageContent FROM Frontpage WHERE PageID=?");
+            ps.setInt(1, content);
+            rs = ps.executeQuery();
+            
+            if(rs.next()){
+                contentToBeRendered = rs.getString(1);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            closeDatabaseConnections();
+            
+        }
+        
+        return contentToBeRendered;
+    }
+    
     public static void closeDatabaseConnections(){
         try { rs.close(); } catch (Exception e) { /* ignoring */ }
         try { ps.close(); } catch (Exception e) { /* ignoring */ }

@@ -4,6 +4,8 @@
     Author     : Jaakko
 --%>
 
+<%@page import="Arjenhallinta.Database"%>
+<%@page import="Arjenhallinta.InputOutputCleaner"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,13 +20,22 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     </head>
     <body>
+        <%
+            //Fetching data from database
+            String content1 = Database.getFrontPageData(1);
+            String content2 = Database.getFrontPageData(2);
+        %>
         <h1>Etusivu</h1>
+        <div>
+            <%=InputOutputCleaner.clean(content1)%><br><br>
+        </div>
         <form action="Login" method="POST">
             <label for="email">Sähköpostiosoite:</label>
             <input type="text" class="form-control" name="email" value="" placeholder="Syötä sähköpostiosoite" /><br>
             <label for="email">Salasana:</label>
             <input type="password" class="form-control" name="password" value="" placeholder="Syötä salasana" /><br>
             <input type="submit" class="btn btn-primary" value="Kirjaudu sisään" />
-        </form>
+        </form><br><br>
+        <%=InputOutputCleaner.clean(content2)%><br><br>
     </body>
 </html>
