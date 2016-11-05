@@ -37,7 +37,7 @@ public class Database {
             ps.setString(2, password);
             ps.execute();
             
-            addedUser = true;
+            addedUser = true; //I might refactor this later...
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -99,6 +99,33 @@ public class Database {
         }
         
         return userExists;
+    }
+    
+    public static String userType(String email) {
+        
+        String userType = "";
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("SELECT UserType FROM Users WHERE UserEmail=?");
+            ps.setString(1, email);
+            rs = ps.executeQuery();
+            
+            if(rs.next()){
+                userType = rs.getString(1);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            closeDatabaseConnections();
+            
+        }
+        
+        return userType;
     }
     
     public static void closeDatabaseConnections(){

@@ -24,7 +24,7 @@ CREATE TABLE Users (
 	UserSessionID VARCHAR (64),
 	UserName VARCHAR (50),
 	UserSurname VARCHAR (50),
-	UserType TINYINT UNSIGNED NOT NULL,
+	UserType VARCHAR (25) NOT NULL,
 	PRIMARY KEY (UserID)
 );
 

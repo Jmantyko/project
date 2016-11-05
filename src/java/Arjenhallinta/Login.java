@@ -73,10 +73,20 @@ public class Login extends HttpServlet {
             Cookie userEmail = new Cookie("email", email);
             userEmail.setMaxAge(30 * 60);
             response.addCookie(userEmail);
+            
+            String userType = Database.userType(email);
 
-            response.sendRedirect(request.getContextPath() + "/hallinta.jsp");
-
-            System.out.println("ACCESS GRANTED");
+            if("admin".equals(userType)){
+                //admin sivu
+                response.sendRedirect(request.getContextPath() + "/admin.jsp");
+                
+            }else if("customer".equals(userType)){
+                //customer sivu
+                response.sendRedirect(request.getContextPath() + "/customer.jsp");
+                
+            }
+            
+            System.out.println("ACCESS GRANTED, USERTYPE IS: " + userType);
 
         } else {
             response.sendRedirect(request.getContextPath() + "/etusivu.jsp");

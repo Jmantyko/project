@@ -1,6 +1,6 @@
 <%-- 
-    Document   : hallinta
-    Created on : 25-Oct-2016, 13:14:07
+    Document   : admin
+    Created on : 05-Nov-2016, 15:53:14
     Author     : Jaakko
 --%>
 
@@ -46,8 +46,8 @@
                 }
             }
         %>    
-        <h1>Olet kirjautunut sisään</h1>
-        <p>Sinun userEmail on <strong><%=InputOutputCleaner.clean(userEmail)%></strong> ja email on <strong><%=InputOutputCleaner.clean(email)%></strong><br><br>
+        <h1>Olet kirjautunut sisään ADMIN-sivulle</h1>
+        <p>Tervetuloa <strong><%=InputOutputCleaner.clean(userEmail)%></strong><br><br>
             Session ID on <strong><%=sessionID%></strong><br></p>
         <form action="CreateUser" method="POST">
             <label for="email">Anna käyttäjän sähköpostiosoite:</label>
