@@ -1,9 +1,10 @@
 <%-- 
-    Document   : hallinta
+    Document   : customer
     Created on : 25-Oct-2016, 13:14:07
     Author     : Jaakko
 --%>
 
+<%@page import="Arjenhallinta.Database"%>
 <%@page import="Arjenhallinta.InputOutputCleaner"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -21,7 +22,10 @@
     <body> 
         <%
             //allow access only if session exists
+            //and userType is appropriate for the page
             String email = null;
+            String userEmail = null;
+            String sessionID = null;
 
             if (session.getAttribute("email") == null) {
 
@@ -29,20 +33,25 @@
 
             } else {
                 email = (String) session.getAttribute("email");
-            }
 
-            String userEmail = null;
-            String sessionID = null;
-            Cookie[] cookies = request.getCookies();
+                String userType = Database.userType(email);
+                
+                if ("customer".equals(userType)) {
 
-            if (cookies != null) {
-                for (Cookie cookie : cookies) {
-                    if (cookie.getName().equals("email")) {
-                        userEmail = cookie.getValue();
+                    Cookie[] cookies = request.getCookies();
+
+                    if (cookies != null) {
+                        for (Cookie cookie : cookies) {
+                            if (cookie.getName().equals("email")) {
+                                userEmail = cookie.getValue();
+                            }
+                            if (cookie.getName().equals("JSESSIONID")) {
+                                sessionID = cookie.getValue();
+                            }
+                        }
                     }
-                    if (cookie.getName().equals("JSESSIONID")) {
-                        sessionID = cookie.getValue();
-                    }
+                } else {
+                    response.sendRedirect("etusivu.jsp");
                 }
             }
         %>    
