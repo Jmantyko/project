@@ -58,6 +58,9 @@
         <h1>Olet kirjautunut sisään CUSTOMER-sivulle</h1>
         <p>Tervetuloa <strong><%=InputOutputCleaner.clean(userEmail)%></strong><br><br>
             Session ID on <strong><%=sessionID%></strong><br></p>
+        <form action="profile.jsp">
+            <input type="submit" class="btn btn-info btn-sm" value="Profiili asetukset">
+        </form><br>
         <form action="Logout" method="POST">
             <input type="submit" class="btn btn-danger" value="Kirjaudu ulos" />
         </form>

@@ -77,11 +77,9 @@ public class Login extends HttpServlet {
             String userType = Database.userType(email);
 
             if("admin".equals(userType)){
-                //admin sivu
                 response.sendRedirect(request.getContextPath() + "/admin.jsp");
                 
             }else if("customer".equals(userType)){
-                //customer sivu
                 response.sendRedirect(request.getContextPath() + "/customer.jsp");
                 
             }

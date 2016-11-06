@@ -101,6 +101,87 @@ public class Database {
         return userExists;
     }
     
+    public static int getUserID(String email) {
+        
+        int userID = 0;
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("SELECT UserID FROM Users WHERE UserEmail=?");
+            ps.setString(1, email);
+            rs = ps.executeQuery();
+            
+            if(rs.next()){
+                userID = rs.getInt(1);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            closeDatabaseConnections();
+            
+        }
+        
+        return userID;
+    }
+    
+    public static String getUserName(String email) {
+        
+        String userName = "";
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("SELECT UserName FROM Users WHERE UserEmail=?");
+            ps.setString(1, email);
+            rs = ps.executeQuery();
+            
+            if(rs.next()){
+                userName = rs.getString(1);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            closeDatabaseConnections();
+            
+        }
+        
+        return userName;
+    }
+    
+    public static String getUserSurname(String email) {
+        
+        String userSurname = "";
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("SELECT UserSurname FROM Users WHERE UserEmail=?");
+            ps.setString(1, email);
+            rs = ps.executeQuery();
+            
+            if(rs.next()){
+                userSurname = rs.getString(1);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            closeDatabaseConnections();
+            
+        }
+        
+        return userSurname;
+    }
+    
     public static String userType(String email) {
         
         String userType = "";
