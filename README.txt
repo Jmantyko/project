@@ -1,8 +1,20 @@
 Arjenhallinta -sovelluksen repo.
 
+Lyhyet ohjeet Gitin käyttöön:
+git status | tällä komennolla selvität local repon statuksen
+
+git pull | tällä komennolla noudat muutokset yhteisestä reposta
+omalle koneellesi (jos joku sinua ennen on tehnyt muutoksia)
+
+git add -A | ennen kuin committaat, haluat tod.näk. lisätä 
+committiin lisätyt/muutetut tiedostot mukaan
+
+git push origin master | tällä työnnät muutokset jaettuun repoon
+master branchiin
+
 Jos (ja kun) haluat kehittää sovellusta tarvitset seuraavat ohjelmat:
 
-- Git (duh) https://git-scm.com/
+- Git https://git-scm.com/
 - NetBeans 8.2 https://netbeans.org/downloads/ 
 (lataa All-paketti about 220mb)
 - MySQL http://dev.mysql.com/downloads/installer/ 
