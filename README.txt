@@ -3,6 +3,8 @@ Arjenhallinta -sovelluksen repo.
 Lyhyet ohjeet Gitin käyttöön:
 git status | tällä komennolla selvität local repon statuksen
 
+git status -uno | oman local repon suhde remote repoon
+
 git pull | tällä komennolla noudat muutokset yhteisestä reposta
 omalle koneellesi (jos joku sinua ennen on tehnyt muutoksia)
 
