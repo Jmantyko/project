@@ -1,6 +1,9 @@
 Arjenhallinta -sovelluksen repo.
 
 Lyhyet ohjeet Gitin käyttöön:
+git remote update | päivittää remote repon viittaukset, ilmeisesti
+tämä on hyvä ajaa aina ensin
+
 git status | tällä komennolla selvität local repon statuksen
 
 git status -uno | oman local repon suhde remote repoon
