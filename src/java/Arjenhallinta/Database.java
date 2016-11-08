@@ -182,6 +182,87 @@ public class Database {
         return userSurname;
     }
     
+    public static String getUserAddress(String email) {
+        
+        String userAddress = "";
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("SELECT UserAddress FROM Users WHERE UserEmail=?");
+            ps.setString(1, email);
+            rs = ps.executeQuery();
+            
+            if(rs.next()){
+                userAddress = rs.getString(1);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            closeDatabaseConnections();
+            
+        }
+        
+        return userAddress;
+    }
+    
+    public static String getUserPostalcode(String email) {
+        
+        String userPostalcode = "";
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("SELECT UserPostalcode FROM Users WHERE UserEmail=?");
+            ps.setString(1, email);
+            rs = ps.executeQuery();
+            
+            if(rs.next()){
+                userPostalcode = rs.getString(1);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            closeDatabaseConnections();
+            
+        }
+        
+        return userPostalcode;
+    }
+    
+    public static String getUserPostoffice(String email) {
+        
+        String userPostoffice = "";
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("SELECT UserPostoffice FROM Users WHERE UserEmail=?");
+            ps.setString(1, email);
+            rs = ps.executeQuery();
+            
+            if(rs.next()){
+                userPostoffice = rs.getString(1);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            closeDatabaseConnections();
+            
+        }
+        
+        return userPostoffice;
+    }
+    
     public static String userType(String email) {
         
         String userType = "";

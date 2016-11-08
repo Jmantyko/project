@@ -58,14 +58,21 @@
             int userID = Database.getUserID(email);
             String userName = Database.getUserName(email);
             String userSurname = Database.getUserSurname(email);
+            String userAddress = Database.getUserAddress(email);
+            String userPostalcode = Database.getUserPostalcode(email);
+            String userPostoffice = Database.getUserPostoffice(email);
+            // use =sessionID to get session id
 
         %>    
         <h1>Profiilisi</h1>
-        <p>Muokkaa tietojasi <strong><%=InputOutputCleaner.clean(userEmail)%></strong><br><br>
-            Session ID on <strong><%=sessionID%></strong><br></p>
+        <p>Muokkaa tietojasi <strong><%=userName%></strong></p>
         <p>Alla olevat tiedot on noudettu tietokannasta</p>
-        <p>User ID: <strong><%=userID%></strong></p>
-        <p>Nimi: <strong><%=userName%></strong></p>
+        <p>Asiakasnro: <strong><%=userID%></strong></p>
+        <p>Etunimi: <strong><%=userName%></strong></p>
         <p>Sukunimi: <strong><%=userSurname%></strong></p>
+        <p>Sähköposti: <strong><%=userEmail%></strong></p>
+        <p>Osoite: <strong><%=userAddress%></strong></p>
+        <p>Postinro: <strong><%=userPostalcode%></strong></p>
+        <p>Postitoimipaikka: <strong><%=userPostoffice%></strong></p>
     </body>
 </html>
