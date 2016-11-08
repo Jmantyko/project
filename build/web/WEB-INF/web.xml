@@ -15,6 +15,10 @@
         <servlet-name>CreateUser</servlet-name>
         <servlet-class>Arjenhallinta.CreateUser</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UpdateUserDetails</servlet-name>
+        <servlet-class>Arjenhallinta.UpdateUserDetails</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -26,6 +30,10 @@
     <servlet-mapping>
         <servlet-name>CreateUser</servlet-name>
         <url-pattern>/CreateUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateUserDetails</servlet-name>
+        <url-pattern>/UpdateUserDetails</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

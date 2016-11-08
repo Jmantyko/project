@@ -289,6 +289,34 @@ public class Database {
         
         return userType;
     }
+                    
+    public static void updateUserDetails(String userName, String userSurname,
+            String userAddress, String userPostalcode, String userPostoffice, String userEmail) {
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("UPDATE Users SET UserName=?, UserSurname=?,"
+                    + " UserAddress=?, UserPostalcode=?, UserPostoffice=? WHERE UserEmail=?");
+            ps.setString(1, userName);
+            ps.setString(2, userSurname);
+            ps.setString(3, userAddress);
+            ps.setString(4, userPostalcode);
+            ps.setString(5, userPostoffice);
+            ps.setString(6, userEmail);
+            
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            closeDatabaseConnections();
+            
+        }
+        
+    }
     
     public static String getFrontPageContent(int content) {
         

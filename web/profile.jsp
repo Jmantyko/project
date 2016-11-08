@@ -64,15 +64,31 @@
             // use =sessionID to get session id
 
         %>    
-        <h1>Profiilisi</h1>
-        <p>Muokkaa tietojasi <strong><%=userName%></strong></p>
-        <p>Alla olevat tiedot on noudettu tietokannasta</p>
-        <p>Asiakasnro: <strong><%=userID%></strong></p>
-        <p>Etunimi: <strong><%=userName%></strong></p>
-        <p>Sukunimi: <strong><%=userSurname%></strong></p>
-        <p>Sähköposti: <strong><%=userEmail%></strong></p>
-        <p>Osoite: <strong><%=userAddress%></strong></p>
-        <p>Postinro: <strong><%=userPostalcode%></strong></p>
-        <p>Postitoimipaikka: <strong><%=userPostoffice%></strong></p>
+        <h1>Tilitiedot</h1>
+        <form action="UpdateUserDetails" method="POST" accept-charset="utf-8">
+            <p>Asiakasnro: <strong><%=userID%></strong></p>
+            <p>Sähköposti: <strong><%=userEmail%></strong></p>
+            Etunimi:
+            <input type="text" class="form-control" name="name" value="<%=userName%>" />
+            Sukunimi:
+            <input type="text" class="form-control" name="surname" value="<%=userSurname%>" />
+            Osoite:
+            <input type="text" class="form-control" name="address" value="<%=userAddress%>" />
+            Postinro:
+            <input type="text" class="form-control" name="postalcode" value="<%=userPostalcode%>" />
+            Postitoimipaikka:
+            <input type="text" class="form-control" name="postoffice" value="<%=userPostoffice%>" /><br>
+            <input type="hidden" name="email" value="<%=userEmail%>">
+            <input type="submit" class="btn btn-warning" value="Tallenna" />
+        </form><br>
+            <form action="UpdateUserPassword" method="POST" accept-charset="utf-8">
+                Vanha salasana:
+                <input type="password" class="form-control" name="oldpass" value="" />
+                Uusi salasana:
+                <input type="password" class="form-control" name="newpass" value="" />
+                Uusi salasana uudelleen:
+                <input type="password" class="form-control" name="newpassagain" value="" /><br>
+                <input type="submit" class="btn btn-danger" value="Vaihda salasana" />
+            </form>
     </body>
 </html>
