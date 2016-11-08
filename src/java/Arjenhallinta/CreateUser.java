@@ -57,6 +57,7 @@ public class CreateUser extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
         
         String email = request.getParameter("email");
         String password = request.getParameter("password");
@@ -68,7 +69,7 @@ public class CreateUser extends HttpServlet {
             System.out.println("CREATING NEW USER SUCCEEDED");
         }
         
-        response.sendRedirect(request.getContextPath() + "/hallinta.jsp");
+        response.sendRedirect(request.getContextPath() + "/admin.jsp");
     }
 
     /**

@@ -32,9 +32,17 @@ public class Database {
             Class.forName(dbDriver);
 
             conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
-            ps = conn.prepareStatement("INSERT INTO Users (UserEmail, UserPassword, UserType) VALUES (?, ?, 1)");
+            ps = conn.prepareStatement("INSERT INTO Users (UserEmail, UserPassword, UserType,"
+                    + " UserName, UserSurname, UserAddress, UserPostalcode, UserPostoffice)"
+                    + " VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
             ps.setString(1, email);
             ps.setString(2, password);
+            ps.setString(3, "customer");
+            ps.setString(4, "");
+            ps.setString(5, "");
+            ps.setString(6, "");
+            ps.setString(7, "");
+            ps.setString(8, "");
             ps.execute();
             
             addedUser = true; //I might refactor this later...
