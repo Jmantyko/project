@@ -68,10 +68,10 @@ public class Login extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("email", email);
 
-            //Session expires in 30mins
-            session.setMaxInactiveInterval(30 * 60);
+            //Session expires in 60mins
+            session.setMaxInactiveInterval(60 * 60);
             Cookie userEmail = new Cookie("email", email);
-            userEmail.setMaxAge(30 * 60);
+            userEmail.setMaxAge(60 * 60);
             response.addCookie(userEmail);
             
             String userType = Database.userType(email);
