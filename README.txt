@@ -41,6 +41,9 @@ CREATE TABLE Users (
 	UserSessionID VARCHAR (64),
 	UserName VARCHAR (50),
 	UserSurname VARCHAR (50),
+	UserAddress VARCHAR (100),
+	UserPostalcode VARCHAR (50),
+	UserPostoffice VARCHAR (100),
 	UserType VARCHAR (25) NOT NULL,
 	PRIMARY KEY (UserID)
 );
