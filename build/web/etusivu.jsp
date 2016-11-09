@@ -567,8 +567,6 @@ Psykoterapiatyöskentely internetin avulla on mahdollista asiakkaan asuinpaikast
   <p>Tämän jälkeen lähetän sinulle ensimmäisen käyttäytymisen monitorointiharjoituksen ehdotuksen sen mukaan miten olen sinun 
   tilanteesi nähnyt taustatiedoistasi. Muita tietoja minulla ei sinusta ole, en siis tee yhteistyötä kenenkään muun ammattilaisen 
   tai sinut tuntevan henkilön kanssa, jos sellaista yhteistyötä ehdottaisin pyytäisin sinulta siihen kirjallisen luvan.</p>
-  
-  <h3>taustatiedot lomakkeelle</h3>
 	
     <div class="container-bottom">
 			<div class="row">
@@ -598,8 +596,10 @@ Psykoterapiatyöskentely internetin avulla on mahdollista asiakkaan asuinpaikast
 	 
 	 <p>Minun puoleltani työskentelyni on joustavaa, mutta yleensä lähes poikkeuksetta annan palautetta tai ehdotan jatkototeutusta
 	 jo seuraavana päivänä lähetettyäsi harjoituksen tai sen tehtävän. </p>
+         
+         <button type="button" class="btn btn-info btn-lg btn-block" onclick="window.open('https://docs.google.com/forms/d/1OtY_WaS4OtJbdcV8xlOLyHtf4dAIknrdML82-EVaQx8/edit?usp=drive_web')">Linkki ilmaisen harjoitusohjelman taustatietojen täyttöön </button>
   
-	 <h4>taustatiedot lomakkeelle</h4>
+         <button type="button" class="btn btn-default btn-lg btn-block"><a href="https://docs.google.com/forms/d/1UqlGeUD4sdHlPWMlt_w6wJteREAttMO5I5chXV93S3c/edit"> Linkki maksullisen harjoitusohjelman taustatietojen täyttöön </a></button>
 	
     <div class="container-bottom">
 			<div class="row">
