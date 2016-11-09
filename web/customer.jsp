@@ -453,10 +453,16 @@ $(function(){
         <div class="customer-main-container">
 
             <div class="customer-actions-container">
-                <ul class="nav nav-tabs">
-                    <li role="presentation"><a href="#11">Harjoitusket</a></li>
-                    <li role="presentation"><a href="#12">VIestit</a></li>
-                </ul>
+                <ul class="nav nav-tabs nav-justified">
+                    <li class="active"><a data-toggle="tab" href="#tab11">Harjoitusket</a></li>
+                    <li><a data-toggle="tab" href="#tab12">VIestit</a></li>
+                </ul>        
+                <div id="tab11" class="tab-pane fade in active">
+                    <p>Harjoitukset tulee tähän</p>
+                </div>
+                <div id="tab12" class="tab-pane fade">
+                    <p>viestit tulee tähän</p>
+                </div>
             </div>
 
             <div class="customer-display-container">
@@ -473,7 +479,7 @@ $(function(){
     </div>
 </div>
 
-<div class="tab-pane text-style" id="tab12">
+<div class="tab-pane text-style" id="tab2">
     <div class="container">
 
     </div>
