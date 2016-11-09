@@ -416,6 +416,11 @@ $(function(){
     </ul>
     <ul class="nav navbar-nav navbar-right">
      <li class="dropdown">
+        <%
+          
+            if (session.getAttribute("email") == null){
+
+        %>
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
             <i class="glyphicon glyphicon-user"></i> Kirjaudu sisään
         </a>
@@ -435,7 +440,23 @@ $(function(){
             <div class="form-group">
                 <button type="submit" class="btn btn-success btn-block">Kirjaudu</button>
             </div>
-         </form>
+        </form>
+        <%
+            }else{
+                String userName = Database.getUserName(email);
+                String userSurname = Database.getUserSurname(email);
+        %>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+            <i class="glyphicon glyphicon-user"></i> <%=InputOutputCleaner.clean(userName)%> <%=InputOutputCleaner.clean(userSurname)%>
+        </a>
+        <form action="Logout" method="POST" class="dropdown-menu form-login stop-propagation" role="menu"> 
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-block">Kirjaudu ulos</button>
+            </div>
+        </form>
+        <%
+            }
+        %>
     </li>
     </ul>
   </div><!-- /.navbar-collapse -->
