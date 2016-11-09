@@ -478,6 +478,7 @@ $(function(){
         <div class="tab-pane text-style" id="tab3">
             <div class="container">
                 <!--placeholder Google Forms -->
+                
                 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSffIDzW9hlrsCLaeDYhBFUw9w561BXy01QjV_vupF8aNAUP_A/viewform?embedded=true" width="50%" height="500" frameborder="0" marginheight="0" marginwidth="0">Ladataan...</iframe>
             </div>
         </div>
