@@ -46,115 +46,107 @@
       
     }
         
-		.jumbotron {
-	font-color:  #76A5FF;
-	background:  #76A5FF;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    overflow: hidden;
+    .jumbotron {
+        font-color:  #76A5FF;
+        background:  #76A5FF;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        overflow: hidden;
 
-	}
+    }
 	
-	.jumbotron h2 {
-     color: white;
-	 text-shadow:
-     -1px -1px 0 #000,  
-      1px -1px 0 #000,
-     -1px 1px 0 #000,
-      1px 1px 0 #000;
-	}
-
-	.jumbotron p {
-    color: #fff;
-	text-shadow:
-	-1px -1px 0 #000,  
-     1px -1px 0 #000,
-    -1px 1px 0 #000,
-     1px 1px 0 #000;
-	}
-	
-	
-	.nav-pills > li.active > a, .nav-pills > li.active > a:focus {
+    .jumbotron h2 {
         color: white;
-        background-color: #76A5FF;
-		letter-spacing: 2px;
-		text-shadow:
-		-1px -1px 0 #000,  
-		 1px -1px 0 #000,
-		-1px 1px 0 #000,
-		 1px 1px 0 #000;
+        text-shadow:
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px 1px 0 #000,
+         1px 1px 0 #000;
     }
 
-        .nav-pills > li.active > a:hover {
-            background-color: #0073A3;
-            color:white;
-			letter-spacing: 2px;
-			text-shadow:
-			-0.5px -0.5px 0 #000,  
-			 0.5px -0.5px 0 #000,
-			-0.5px 0.5px 0 #000,
-			 0.5px 0.5px 0 #000;
-        }
+    .jumbotron p {
+        color: #fff;
+        text-shadow:
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px 1px 0 #000,
+         1px 1px 0 #000;
+    }
 	
-	a.my-tool-tip, a.my-tool-tip:hover, a.my-tool-tip:visited {
-
-    color: blue;
-	}
 	
-	 .carousel-inner > .item > img,
-     .carousel-inner > .item > a > img {
-      width: 70%;
-      margin: auto;
-	  
-	 }
-	 
-	<!-- Navbar CSS -->
-	
-	.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-	color: #000;  /*Sets the text hover color on navbar*/
-	}
-
-	.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >   
-	a:hover, .navbar-default .navbar-nav > .active > a:focus {
-	color: white; /*BACKGROUND color for active*/
-	background-color: #0073A3;
-	}
-
-	.navbar-default {
-    background-color: #76A5FF;
-    border-color: #B9B7B8;
-	}
-
-	.dropdown-menu > li > a:hover,
-	.dropdown-menu > li > a:focus {
-    color: #262626;
-	text-decoration: none;
-	background-color: #66CCFF;  /*change color of links in drop down here*/
-	}
-
-	.nav > li > a:hover,
-	.nav > li > a:focus {
-    text-decoration: none;
-    background-color: silver; /*Change rollover cell color here*/
-	}
-
-
-	.navbar-default .navbar-nav > li > a {
-	background-color: #0073A3;
+    .nav-pills > li.active > a, .nav-pills > li.active > a:focus {
         color: white;
         background-color: #76A5FF;
-		letter-spacing: 2px;
-		text-shadow:
-		-0.5px -0.5px 0 #000,  
-		 0.5px -0.5px 0 #000,
-		-0.5px 0.5px 0 #000,
-		 0.5px 0.5px 0 #000;
+        letter-spacing: 2px;
+        text-shadow:
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px 1px 0 #000,
+         1px 1px 0 #000;
+    }
+
+    .nav-pills > li.active > a:hover {
+        background-color: #0073A3;
+        color:white;
+        letter-spacing: 2px;
+        text-shadow:
+        -0.5px -0.5px 0 #000,  
+         0.5px -0.5px 0 #000,
+        -0.5px 0.5px 0 #000,
+         0.5px 0.5px 0 #000;
+    }
+	
+    a.my-tool-tip, a.my-tool-tip:hover, a.my-tool-tip:visited {
+        color: blue;
+    }
+	 
+    <!-- Navbar CSS -->
+
+    .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+        color: #000;  /*Sets the text hover color on navbar*/
+    }
+
+    .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >   
+    a:hover, .navbar-default .navbar-nav > .active > a:focus {
+        color: white; /*BACKGROUND color for active*/
+        background-color: #0073A3;
+    }
+
+    .navbar-default {
+        background-color: #76A5FF;
+        border-color: #B9B7B8;
+    }
+
+    .dropdown-menu > li > a:hover,
+    .dropdown-menu > li > a:focus {
+        color: #262626;
+	text-decoration: none;
+	background-color: #66CCFF;  /*change color of links in drop down here*/
+    }
+
+    .nav > li > a:hover,
+    .nav > li > a:focus {
+        text-decoration: none;
+        background-color: silver; /*Change rollover cell color here*/
+    }
+
+
+    .navbar-default .navbar-nav > li > a {
+        background-color: #0073A3;
+        color: white;
+        background-color: #76A5FF;
+        letter-spacing: 2px;
+        text-shadow:
+        -0.5px -0.5px 0 #000,  
+         0.5px -0.5px 0 #000,
+        -0.5px 0.5px 0 #000,
+         0.5px 0.5px 0 #000;
     }
     
     .form-login{
-     padding: 1em;
-      min-width: 280px; /* change width as per your requirement */
+        padding: 1em;
+        min-width: 280px; /* change width as per your requirement */
     }
 
 
@@ -385,15 +377,6 @@ $(function(){
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
               <li class="active"><a href="#tab1" data-toggle="tab">Etusivu</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nettiterapia <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#tab4"data-toggle="tab"><h4>Tietoa <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></h4></a></li>
-                  <li><a href="#tab5"data-toggle="tab"><h4>Liity <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></h4></a></a></li>
-                  <li><a href="#tab3"data-toggle="tab"><h4>Psykoterapiapalvelut <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></h4></a></a></li>
-                </ul>
-              </li>
-                  <li class=""><a href="#tab10" data-toggle="tab">Yhteystiedot</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
              <li class="dropdown">
@@ -435,7 +418,7 @@ $(function(){
                         <a class="btn btn-info form-control" href="profile.jsp">Asetukset</a>
                     </div>
                     <div class="form-group">
-                        <a class="btn btn-info form-control" href="#tab3">Taustatiedot</a>
+                        <a class="btn btn-info form-control" data-toggle="tab" href="#tab3">Taustatiedot</a>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-success btn-block">Kirjaudu ulos</button>
@@ -456,9 +439,7 @@ $(function(){
         <div class="tab-content">
         <div class="tab-pane active text-style" id="tab1">
             <div class="container">
-
                 <div class="customer-main-container">
-
                     <div class="customer-actions-container">
                         <ul class="nav nav-tabs nav-justified">
                             <li class="active"><a data-toggle="tab" href="#tab11">Harjoitukset</a></li>
@@ -496,32 +477,8 @@ $(function(){
 
         <div class="tab-pane text-style" id="tab3">
             <div class="container">
-
-
-            </div>
-        </div>
-
-        <div class="tab-pane text-style" id="tab4">
-          <div class="container">
-
-          </div>
-        </div>
-
-        <div class="tab-pane text-style" id="tab5">
-            <div class="container">
-
-            </div>
-        </div>
-
-        <div class="tab-pane text-style" id="tab7">
-            <div class="container">
-
-            </div>  
-        </div>
-
-        <div class="tab-pane text-style" id="tab8">
-            <div class="container">
-
+                <!--placeholder Google Forms -->
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSffIDzW9hlrsCLaeDYhBFUw9w561BXy01QjV_vupF8aNAUP_A/viewform?embedded=true" width="50%" height="500" frameborder="0" marginheight="0" marginwidth="0">Ladataan...</iframe>
             </div>
         </div>
         </div>
