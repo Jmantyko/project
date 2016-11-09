@@ -367,166 +367,175 @@ $(function(){
             }
         %>    
         
-        
-<div class="container">
-<nav class="navbar navbar-default" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="#tab1">Arjenhallinta.fi</a>
-  </div>
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#tab1" data-toggle="tab">Etusivu</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nettiterapia <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="#tab4"data-toggle="tab"><h4>Tietoa <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></h4></a></li>
-          <li><a href="#tab5"data-toggle="tab"><h4>Liity <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></h4></a></a></li>
-          <li><a href="#tab3"data-toggle="tab"><h4>Psykoterapiapalvelut <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></h4></a></a></li>
-        </ul>
-      </li>
-	  <li class=""><a href="#tab10" data-toggle="tab">Yhteystiedot</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-     <li class="dropdown">
-        <%
-          
-            if (session.getAttribute("email") == null){
+        <div class="container">
+        <nav class="navbar navbar-default" role="navigation">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#tab1">Arjenhallinta.fi</a>
+          </div>
 
-        %>
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-            <i class="glyphicon glyphicon-user"></i> Kirjaudu sisään
-        </a>
-        <form action="Login" method="POST" class="dropdown-menu form-login stop-propagation" role="menu">
-            <div class="form-group">
-                <label for="exampleInputEmail1">
-                    <i class="glyphicon glyphicon-envelope"></i> Sähköpostiosoite
-                </label> 
-                <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" />
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">
-                    <i class="glyphicon glyphicon-lock"></i> Salasana
-                </label> 
-                <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-success btn-block">Kirjaudu</button>
-            </div>
-        </form>
-        <%
-            }else{
-                String userName = Database.getUserName(email);
-                String userSurname = Database.getUserSurname(email);
-        %>
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-            <i class="glyphicon glyphicon-user"></i> <%=InputOutputCleaner.clean(userName)%> <%=InputOutputCleaner.clean(userSurname)%>
-        </a>
-        <form action="Logout" method="POST" class="dropdown-menu form-login stop-propagation" role="menu"> 
-            <div class="form-group">
-                <button type="submit" class="btn btn-success btn-block">Kirjaudu ulos</button>
-            </div>
-        </form>
-        <%
-            }
-        %>
-    </li>
-    </ul>
-  </div><!-- /.navbar-collapse -->
-</nav>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#tab1" data-toggle="tab">Etusivu</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nettiterapia <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#tab4"data-toggle="tab"><h4>Tietoa <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></h4></a></li>
+                  <li><a href="#tab5"data-toggle="tab"><h4>Liity <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></h4></a></a></li>
+                  <li><a href="#tab3"data-toggle="tab"><h4>Psykoterapiapalvelut <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></h4></a></a></li>
+                </ul>
+              </li>
+                  <li class=""><a href="#tab10" data-toggle="tab">Yhteystiedot</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+             <li class="dropdown">
+                <%
 
-</div>
+                    if (session.getAttribute("email") == null){
 
-<!-- tab content -->
-<div class="tab-content">
-<div class="tab-pane active text-style" id="tab1">
-    <div class="container">
+                %>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                    <i class="glyphicon glyphicon-user"></i> Kirjaudu sisään
+                </a>
+                <form action="Login" method="POST" class="dropdown-menu form-login stop-propagation" role="menu">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">
+                            <i class="glyphicon glyphicon-envelope"></i> Sähköpostiosoite
+                        </label> 
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" />
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">
+                            <i class="glyphicon glyphicon-lock"></i> Salasana
+                        </label> 
+                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success btn-block">Kirjaudu</button>
+                    </div>
+                </form>
+                <%
+                    }else{
+                        String userName = Database.getUserName(email);
+                        String userSurname = Database.getUserSurname(email);
+                %>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                    <i class="glyphicon glyphicon-user"></i> <%=InputOutputCleaner.clean(userName)%> <%=InputOutputCleaner.clean(userSurname)%>
+                </a>
+                <form action="Logout" method="POST" class="dropdown-menu form-login stop-propagation" role="menu"> 
+                    <div class="form-group">
+                        <a class="btn btn-info form-control" href="profile.jsp">Asetukset</a>
+                    </div>
+                    <div class="form-group">
+                        <a class="btn btn-info form-control" href="#tab3">Taustatiedot</a>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success btn-block">Kirjaudu ulos</button>
+                    </div>                
+                </form>
 
-        <div class="customer-main-container">
+                <%
+                    }
+                %>
+            </li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </nav>
 
-            <div class="customer-actions-container">
-                <ul class="nav nav-tabs nav-justified">
-                    <li class="active"><a data-toggle="tab" href="#tab11">Harjoitusket</a></li>
-                    <li><a data-toggle="tab" href="#tab12">VIestit</a></li>
-                </ul>        
-                <div id="tab11" class="tab-pane fade in active">
-                    <p>Harjoitukset tulee tähän</p>
-                </div>
-                <div id="tab12" class="tab-pane fade">
-                    <p>viestit tulee tähän</p>
-                </div>
-            </div>
+        </div>
 
-            <div class="customer-display-container">
-                <h1>Olet kirjautunut sisään CUSTOMER-sivulle</h1>
-                <p>Tervetuloa <strong><%=InputOutputCleaner.clean(userEmail)%></strong><br><br>
-                    Session ID on <strong><%=sessionID%></strong><br></p>
-                <form action="profile.jsp">
-                    <input type="submit" class="btn btn-info btn-sm" value="Profiili asetukset">
-                </form> 
-            </div>
+        <!-- tab content -->
+        <div class="tab-content">
+        <div class="tab-pane active text-style" id="tab1">
+            <div class="container">
 
-        </div>  
+                <div class="customer-main-container">
 
-    </div>
-</div>
+                    <div class="customer-actions-container">
+                        <ul class="nav nav-tabs nav-justified">
+                            <li class="active"><a data-toggle="tab" href="#tab11">Harjoitukset</a></li>
+                            <li><a data-toggle="tab" href="#tab12">Viestit</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="tab11" class="tab-pane fade in active">
+                                <p>Harjoitukset tulee tähän</p>
+                            </div>
+                            <div id="tab12" class="tab-pane fade">
+                                <p>viestit tulee tähän</p>
+                            </div>
+                        </div>
+                    </div>
 
-<div class="tab-pane text-style" id="tab2">
-    <div class="container">
+                    <div class="customer-display-container">
+                        <p>Olet kirjautunut sisään CUSTOMER-sivulle</p>
+                        <p>Tervetuloa <strong><%=InputOutputCleaner.clean(userEmail)%></strong><br><br>
+                            Session ID on <strong><%=sessionID%></strong><br></p>
+                        <form action="profile.jsp">
+                            <input type="submit" class="btn btn-info btn-sm" value="Profiili asetukset">
+                        </form> 
+                    </div>
 
-    </div>
-</div>
+                </div>  
 
-<div class="tab-pane text-style" id="tab3">
-    <div class="container">
-
-
-    </div>
-</div>
-  
-<div class="tab-pane text-style" id="tab4">
-  <div class="container">
-
-  </div>
-</div>
-
-<div class="tab-pane text-style" id="tab5">
-    <div class="container">
-
-    </div>
-</div>
-
-<div class="tab-pane text-style" id="tab7">
-    <div class="container">
-
-    </div>  
-</div>
-
-<div class="tab-pane text-style" id="tab8">
-    <div class="container">
-
-    </div>
-</div>
-</div>
-            
-<div class="container-bottom">
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="col-md-8">
-                <p class="muted pull-right">© 2016 Martti Puttonen. All rights reserved.</p>
             </div>
         </div>
-    </div>
-</div>
-<script type="text/javascript" src="addrow.js"></script>
-        
+
+        <div class="tab-pane text-style" id="tab2">
+            <div class="container">
+
+            </div>
+        </div>
+
+        <div class="tab-pane text-style" id="tab3">
+            <div class="container">
+
+
+            </div>
+        </div>
+
+        <div class="tab-pane text-style" id="tab4">
+          <div class="container">
+
+          </div>
+        </div>
+
+        <div class="tab-pane text-style" id="tab5">
+            <div class="container">
+
+            </div>
+        </div>
+
+        <div class="tab-pane text-style" id="tab7">
+            <div class="container">
+
+            </div>  
+        </div>
+
+        <div class="tab-pane text-style" id="tab8">
+            <div class="container">
+
+            </div>
+        </div>
+        </div>
+
+        <div class="container-bottom">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="col-md-7">
+                        <p class="muted pull-right">© 2016 Martti Puttonen. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="addrow.js"></script>
+
     </body>
 </html>
