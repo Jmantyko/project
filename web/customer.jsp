@@ -98,7 +98,7 @@
             </div>
         </div>      
                 
-        <footer>
+        <footer class="customer-footer">
             <p>Martti Puttonen <br> Psykoterapeutti <br> 0400 123 123 <br> Terapeutintie 3 A4, Hyvinkää</p>
         </footer>
     </body>
