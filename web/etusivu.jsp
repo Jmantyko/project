@@ -369,21 +369,23 @@ $(function(){
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
             <i class="glyphicon glyphicon-user"></i> Kirjaudu sisään
         </a>
-        <div class="dropdown-menu form-login stop-propagation" role="menu">
+        <form action="Login" method="POST" class="dropdown-menu form-login stop-propagation" role="menu">
             <div class="form-group">
                 <label for="exampleInputEmail1">
                     <i class="glyphicon glyphicon-envelope"></i> Sähköpostiosoite
                 </label> 
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" />
+                <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" />
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">
                     <i class="glyphicon glyphicon-lock"></i> Salasana
                 </label> 
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+                <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
             </div>
-            <button type="submit" class="btn btn-success btn-block">Kirjaudu</button>
-         </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-block">Kirjaudu</button>
+            </div>
+         </form>
     </li>
     </ul>
   </div><!-- /.navbar-collapse -->
