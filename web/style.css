@@ -25,7 +25,6 @@ body {
 
 .customer-actions-container {
     padding: inherit; 
-    background-color: green;
     float: left;
     width: 50%;
     height: auto;
@@ -33,20 +32,6 @@ body {
 
 .customer-display-container {
     padding: inherit;
-    background-color: orange;
     float: left;
     width: 50%;
-}
-
-.customer-footer {
-    padding: 5px;
-    bottom: 0px;
-    height: 90px;
-    width: 100%;
-    text-align: center;
-}
-
-.customer-footer p {
-    font-size: 1em;
-    color: #666;
 }
