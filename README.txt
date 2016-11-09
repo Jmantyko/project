@@ -1,7 +1,5 @@
 Arjenhallinta -sovelluksen repo.
 
-Jaakko
-
 Lyhyet ohjeet Gitin käyttöön:
 git remote update | päivittää remote repon viittaukset, ilmeisesti
 tämä on hyvä ajaa aina ensin
