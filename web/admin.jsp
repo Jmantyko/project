@@ -1040,6 +1040,7 @@ $(function(){
   
 </div>
 
+
 <div class="tab-pane text-style" id="tab10">
 <div class="container">
   <h2>Yhteystiedot</h2>
@@ -1070,6 +1071,7 @@ $(function(){
   </div>
   
 </div>
+
 <div class="tab-pane text-style" id="tab11">
 <div class="container-fluid">
   <h2>Asiakastilit</h2>
@@ -1111,8 +1113,19 @@ $(function(){
       </tr>
     </tbody>
   </table>
+      <div class="container-bottom">
+			<div class="row">
+				<hr>
+				<div class="col-lg-10">
+					<div class="col-md-8">
+						<p class="muted pull-right">© 2016 Martti Puttonen. All rights reserved.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+       <hr>
 </div>
-</div>
+</div>    
 
 <script type="text/javascript" src="addrow.js"></script>
     </body>
