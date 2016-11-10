@@ -67,7 +67,8 @@ public class UpdateUserPassword extends HttpServlet {
         String email = request.getParameter("email");
         
         if(Database.authenticateUser(email, oldPassword)){
-            if(newPassword.equals(newPasswordagain) && !"".equals(newPassword)){
+            if(newPassword.equals(newPasswordagain) && !"".equals(newPassword)
+                    && InputOutputCleaner.hasNoWhitespaces(newPassword)){
                 Database.updateUserPassword(newPassword, email);
                 
             }else{
