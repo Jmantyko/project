@@ -336,6 +336,11 @@ $(function(){
     </head>
     <body> 
         <%
+            
+            //Fetching data from database
+            String content1 = Database.getFrontPageContent(1);
+            String content2 = Database.getFrontPageContent(2);
+            
             //allow access only if session exists
             //and userType is appropriate for the page
             String email = null;
@@ -376,7 +381,10 @@ $(function(){
             String userAddress = Database.getUserAddress(email);
             String userPostalcode = Database.getUserPostalcode(email);
             String userPostoffice = Database.getUserPostoffice(email);
+            String userType = Database.userType(email);
             // use =sessionID to get session id
+            
+            
 
         %>    
         
@@ -395,18 +403,23 @@ $(function(){
 
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <%
+            if ("customer".equals(userType)){
+        %>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#tab7" data-toggle="tab">Martti Puttonen</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nettiterapia <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="#tab4"data-toggle="tab"><h4>Tietoa <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></h4></a></li>
-          <li><a href="#tab5"data-toggle="tab"><h4>Liity <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></h4></a></a></li>
-          <li><a href="#tab3"data-toggle="tab"><h4>Psykoterapiapalvelut <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></h4></a></a></li>
-        </ul>
-      </li>
-	  <li class=""><a href="#tab10" data-toggle="tab">Yhteystiedot</a></li>
+	  <li class=""><a href="/customer.jsp" data-toggle="tab">Etusivu</a></li>
     </ul>
+        <%
+            }else{
+        %>
+    <ul class="nav navbar-nav">
+      <li class=""><a href="admin.jsp" data-toggle="tab">Etusivu</a></li>
+      <li class=""><a href="#" data-toggle="tab">Asiakastilien hallinta</a></li>
+    </ul>
+        <%
+            }
+        %>
+    
     <ul class="nav navbar-nav navbar-right">
      <li class="dropdown">
         <%
@@ -445,11 +458,10 @@ $(function(){
                 <a class="btn btn-info form-control" href="profile.jsp">Asetukset</a>
             </div>
             <%
-                String userType = Database.userType(email);
                 if ("customer".equals(userType)) {
             %>
             <div class="form-group">
-                <a class="btn btn-info form-control" data-toggle="tab" href="#tab2">Taustatiedot</a>
+                <a class="btn btn-info form-control" data-toggle="tab" href="customer.jsp">Taustatiedot</a>
             </div>
             <%
                 }
@@ -471,15 +483,42 @@ $(function(){
 <!-- tab content -->
 <div class="tilitiedot">
     <%
-        String userType = Database.userType(email);
         if ("admin".equals(userType)) {
 
     %>
     
     <div class="admin-tilitiedot">
         <div class="container">
+            
             <h1>Tilitiedot admin</h1>
-
+            <h1>Olet kirjautunut sisään ADMIN-sivulle</h1>
+            <p>Tervetuloa <strong><%=InputOutputCleaner.clean(userEmail)%></strong><br><br>
+                Session ID on <strong><%=sessionID%></strong><br></p>
+            <form action="profile.jsp">
+                <input type="submit" class="btn btn-info btn-sm" value="Profiili asetukset">
+            </form><br>
+            <form action="CreateUser" method="POST">
+                <label for="email">Anna käyttäjän sähköpostiosoite:</label>
+                <input type="text" class="form-control" name="email" value="" placeholder="Syötä sähköpostiosoite" /><br>
+                <label for="email">Luo käyttäjälle salasana:</label>
+                <input type="password" class="form-control" name="password" value="" placeholder="Luo salasana" /><br>
+                <input type="submit" class="btn btn-success" value="Lisää käyttäjä" /> 
+            </form><br>
+            <form action="UpdateFrontPage" method="POST" accept-charset="utf-8">
+                <label for="comment">Content1</label>
+                <input type="text" class="form-control" name="content" value="<%=InputOutputCleaner.clean(content1)%>" /><br>
+                <input type="hidden" name="id" value="1">
+                <input type="submit" class="btn btn-warning" value="Päivitä etusivun sisältö" />
+            </form><br>
+            <form action="UpdateFrontPage" method="POST" accept-charset="utf-8">
+                <label for="comment">Content2</label>
+                <input type="text" class="form-control" name="content" value="<%=InputOutputCleaner.clean(content2)%>" /><br>
+                <input type="hidden" name="id" value="2">
+                <input type="submit" class="btn btn-warning" value="Päivitä etusivun sisältö" />
+            </form><br>
+            <form action="Logout" method="POST">
+                <input type="submit" class="btn btn-danger" value="Kirjaudu ulos" />
+            </form>
         </div>
     </div>
     
@@ -518,6 +557,11 @@ $(function(){
             </form>
         </div>
     </div>
+                                
+    <%
+        }
+    %>
+    
     <div class="container-bottom">
         <div class="row">
             <hr>
@@ -529,10 +573,7 @@ $(function(){
         </div>
         <hr>
     </div>
-                
-    <%
-        }
-    %>
+
 </div>
                 
 
