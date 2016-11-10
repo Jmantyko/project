@@ -403,18 +403,23 @@ $(function(){
 
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <%
+            if ("customer".equals(userType)){
+        %>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#tab7" data-toggle="tab">Martti Puttonen</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nettiterapia <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="#tab4"data-toggle="tab"><h4>Tietoa <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></h4></a></li>
-          <li><a href="#tab5"data-toggle="tab"><h4>Liity <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></h4></a></a></li>
-          <li><a href="#tab3"data-toggle="tab"><h4>Psykoterapiapalvelut <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></h4></a></a></li>
-        </ul>
-      </li>
-	  <li class=""><a href="#tab10" data-toggle="tab">Yhteystiedot</a></li>
+	  <li class=""><a href="/customer.jsp" data-toggle="tab">Etusivu</a></li>
     </ul>
+        <%
+            }else{
+        %>
+    <ul class="nav navbar-nav">
+      <li class=""><a href="admin.jsp" data-toggle="tab">Etusivu</a></li>
+      <li class=""><a href="#" data-toggle="tab">Asiakastilien hallinta</a></li>
+    </ul>
+        <%
+            }
+        %>
+    
     <ul class="nav navbar-nav navbar-right">
      <li class="dropdown">
         <%
@@ -456,7 +461,7 @@ $(function(){
                 if ("customer".equals(userType)) {
             %>
             <div class="form-group">
-                <a class="btn btn-info form-control" data-toggle="tab" href="#tab2">Taustatiedot</a>
+                <a class="btn btn-info form-control" data-toggle="tab" href="customer.jsp">Taustatiedot</a>
             </div>
             <%
                 }
