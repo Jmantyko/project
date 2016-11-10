@@ -468,610 +468,44 @@ $(function(){
 
 </div>
 
-	<div class="container">
-		<div class="jumbotron">
-			<h2>Psykoterapiapalvelut Martti Puttonen</h2>
-			<p>kognitiivisen käyttäytymisterapian toteutukset opetukseen ja psykoterapiapraktiikkaan</p>
-		</div>
-		
-</div>
-
 <!-- tab content -->
-<div class="tab-content">
-<div class="tab-pane active text-style" id="tab1">
-<div class="container">
-  <h3>Kuormittava minäkeskittyminen</h3>
-  
-  <h4>Tunneperäinen keskustelu ei yksin auta vaan tarvitaan todellisen toimnnan tunnistamisen monitorointimenetelmiä</h4>
-       <p>
-         Meidän on vaikea tunnistaa ja luopua minän tunteiisiin ja niissä pyörimiseen keskittyvästä tarkkailustamme jos emme tunnista miten todella toimimme ja mitä hallintakokemusta tämä keskittymisemme palveli. On siis vaikeaa lopettaa itsensä stressaamisesta,
-	     epätoivon sisältöisten tunteiden vatvomisesta, kun se stressaaminen voi myös ajoittain palvella toimintaamme tulevissa tilanteissamme.</br>
-		 </br>
-         Tässä ei oikein auta läheinen keskustelu ystävän tai terapeudin kanssa, koska itse toimintamme ysittäisissä päivämme jatkumoissa voi tulla ohitetuksi ja yleistetyksi väärin. Tarvitaan käyttäytymisen todellisen toiminnan tunnistamisen ja meta-arvioinnin monitorointimenetelmiä.
-       </p>
-      <h4>mindfulness terapia</h4>
-	  <h4>Myös nettiyhteistyö mahdollista</h4>
-	  </br>
-		<img src="http://www.marttiputtonen.profiili.fi/SIRA_Files/images/Kuvat/martti_puttonen.jpg" class="img-rounded">  
-	  <hr>
-	  <h3>Elämänhallintaa psykoterapian keinoin, myös nettiyhteistyö mahdollista</h3>
-	  
-	  <p>Päivittäinen arjen toimintojen säätelymme häiriintyy tai kokonaan estyy monin eri tavoin, kuten uniongelmina, keskittymisen vaikeuksina, ihmissuhteiden ongelmina ja yksin olon ja sen kokemusten arviointia haitallisena ja vältettävänä.
-	  </p>
-	  
-  <h3>Tutustu käyttäytymisen monitorointiharjoituksiin ja saat tietoa ongelmistasi ja niiden sisäisitä käsittelyn tavoistasi </h3>
-       <p>
-         Mikäli päivittäisen käyttäytymisen monitorointi netissä soveltuu asiakkaalle ja voimme kirjoitettujen mielipiteiden ja kommenttien vaihdon avulla toteuttaa keskustelullista psykoterapeuttista nettiyhteistyötä, pääset ja yhdessä pääsemme käyttäytymisesi lainalaisuuksien selvittämiseen ja korjaamiseen tässä osaavassa psykoterapiapraktikon yhteistyössä. Ei ole haitaksi vaan enemmän eduksi, jos käyttäytymisen monitorointi on epätarkkaa eikä anna yksinkertaista toimintaohjetta, se epäselväkin arviointisi  enemmänkin auttaa sinua tunnistamaan miten elämän luonnolliseen epävarmuuteen suhtaudut ja otatko sen vain haitaksi jolta sinun on pyrittävä suojautumaan. Huomaat, että epävarmuuksilta ja epätoivon kokemuksilta suojautumisen alitajuinen on muutettavissa ja näin arjen elämäsi mielekkyys vahvistuu.</br>
-		 </br>
-       <p>
-	   Psykoterapeuttinen keskustelu, yhteinen tutkiminen ja saamasi palaute tapaasi toimia ja sita arvioida, harjoittelu sekä erilaisten toimintataitojen ja -valmiuksien kehittäminen tuovat arkeesi varmuutta ja toimintakykyä. Internetin käyttö lisää yhteistyön toimivuutta käytettäessä metakognitiivisen terapian työskentelymenetelmiäMindfulness eli spontaanin toiminnan ja sen sisäisen säätelyn elvyttäminen on tullut keskeiseksi asiaksi ihmisen henkisessä hyvinvoinnissa ja sen ylläpitämisessä. Erityisesti metakognitiivinen käsitteenä tarkoittaa miten me ajattelemme ajatuksiamme ja niiden kohteena olevia maailmamme keskenään suhteissaan olevia voimakenttiä. Miten me itsekin olemme näiden voimakenttien kautta sisäisen olemisemme ja omat toimintavalmiutemme saaneet. 
+<div class="tilitiedot">
+    <%
+        String userType = Database.userType(email);
+        if ("admin".equals(userType)) {
 
-Metakognitiivisen terapian ajatus on elvyttää henkilön oman aidon reflektion toimintaa, jossa henkilö tunnistaa tietoisemmin mitkä maailan ongelmat ovat todellisia maailman tosiasioita ja mitkä ongelmaksi koetut ja tulkitut asiat ja niihin ongelmia kasaava reagoiminen voi olla tunnistettavissa ja poistettavissa. 
-
-Oikeastaan maailman todelliset asiat joista meidän on tarpeen olla tietoinen, eivät ole sikäli hyviä tai pahoja vaan että me ja me omissa ihmissuhteissamme pidämme näitä asioita ongelmina. Me itse kenties teemme itsellemme usein tunne-elämän ongelmia kiireisissä ja muuttuvissa elämänoloissamme. 
-, joillekin päivittäisten toimintojen selvittäminen onnistuu erityisen hyvin kirjallisten rekisteröintien avulla. Voit saada näihin rekisteröinteihisi konkreettista palautetta miten sinun on mielekästä toimia. 
-Asiakkaan moninaisten ongelmien ja ongelmavyyhtien arviointi ja hoito edellyttää psykoterapeutilta itsensä likoon laittamista yhdessä tunnistettujen tärkeiden asioiden puolesta. On oltava sitkeä ja taisteltava kunnioittavassa nöyrässä hengessä.
-Toteutan psykoterapiaa myös KELA:n tai muiden organisaatioiden tukemana.
-Psykoterapiatyöskentely internetin avulla on mahdollista asiakkaan asuinpaikasta riippumatta. Internettyöskentelyn soveltuvuus on tarpeen selvittää aluksi, tämän työskentelyn soveltuvuutta sinulle voit ilmaiseksi ja ilman jatkovelvoitteita kokeilla menemällä linkkiin www.arjenhallinta.fi 
-	   </p>
-	   
-       </p>
-		 <div class="container-bottom">
-			<div class="row">
-				<hr>
-				<div class="col-lg-12">
-					<div class="col-md-8">
-						<p class="muted pull-right">© 2016 Martti Puttonen. All rights reserved.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-       <hr>
-</div>
-</div>
-
-<div class="tab-pane text-style" id="tab2">
-<div class="container">
-  <h2>Dolor asit amet</h2>
-   <p>Dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt 
-    ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo 
-    dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore 
-    et dolore magna aliquyam erat, sed diam voluptua.</p>
-	
-	<h2>16:9 Responsive Aspect Ratio</h2>
-	<div class="embed-responsive embed-responsive-16by9">
-				<iframe class="embed-responsive-item" style="max-width:660px; max-height:415px;"
-				src="https://www.youtube.com/embed/FTQbiNvZqaY">
-				</iframe>
-				</div>
-	</br>
-	<h2>16:9 Responsive Aspect Ratio</h2>
-	<div class="embed-responsive embed-responsive-16by9">
-				<iframe class="embed-responsive-item" style="max-width:660px; max-height:415px;"
-				src="https://www.youtube.com/embed/bch1_Ep5M1s">
-				</iframe>
-				</div>
-	</br>
-	<h2>16:9 Responsive Aspect Ratio</h2>
-	<div class="embed-responsive embed-responsive-16by9">
-				<iframe class="embed-responsive-item" style="max-width:660px; max-height:415px;"
-				src="https://www.youtube.com/embed/N-aK6JnyFmk">
-				</iframe>
-				</div>
-	</br>
-	
-     <div class="container-bottom">
-			<div class="row">
-				<hr>
-				<div class="col-lg-12">
-					<div class="col-md-8">
-						<p class="muted pull-right">© 2016 Martti Puttonen. All rights reserved.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<hr>
-</div>
-</div>
-
-<div class="tab-pane text-style" id="tab3">
-<div class="container">
-  <h2>Tilanteesi arviointi ja toteutus</h2>
-  <p>Psykoterapia internettiä käyttäen, kirjaudu ensin palveluun 
-	Vapaasti ja yksityissuojasi säilyttäen voit tutustua 
-	tämän linkin kautta Tässä yhteistyössä aluksi selvitämme 
-	soveltuuko sinulle jopa paremmin internetissä toteutettu psykoterapiapalvelu 
-	kuin kalliimpi ja aikaa vievä istuntopainotteinen psykoterapia. 
-	Toteutan molempia tarpeesi mukaan ja sen mukaan miten itse toivot. 
-	Voit siirtyä joko suoraan maksulliseen arjen hallinnan ongelmien 
-	arviointiohjelmaan  tai voit tutustua arjen hallinnan harjoitusten 
-	soveltuvuuteen sinulle tässä elämäntilanteessasi. Internetin kautta 
-	toteutettava psykoterapia on joskus tehokkaampaa jos se vain soveltuu 
-	asiakkaalle ja asiakas oppii oivaltamaan luonnollista ja tarpeellista 
-	päivittäistä epävarmuutta eikä odota niin voimakkaasti tunne-elämyskekustelua. 
-	Käyttäytymisen rekisteröintien ja nettiyhteistyön palautteen avulla voit 
-	työskennellä netissä omilla yhteyksilläsi, silloin yhteistyö on 
-	täysin yksityisyyssuojattua, muut eivät pääse seuraamaan toteutettua 
-	nettiyhteistyötä.Tutustuaksesi nopeasti tähän internetpsykoterapian toteutukseen, 
-	sinun on tarpeen hankkia yksityisen tietosuojasi turvaavat käyttötunnus ja salasana 
-	ensin e-mailin tai puhelin soiton avulla allekirjoittaneelta. Myös maksulliseen 
-	nettiyhteistyön ohjelmaan osallistuaksesi omassa tahdissasi sinun on tarpeen 
-	maksaa alkuvaiheen osallistumismaksu, joka oikeuttaa sinuta toteuttamaan 
-	sumuiseen ja monitasoiseen henkiseen päivittäiseen toimintaan suuntautuvia 
-	monitorointiharjoituksia. Myös ilmaiseen kokeiluohjelmaan päivittäisten 
-	toimintojen harjoituksiin pyydän sinua antamaan henkilötietosi jotta voin 
-	seurata monitorointiharjoiitteluasi. Voit luottaa siihen että antamasi tiedot 
-	ovat luottamuksellisia, eivätkä tule muiden tätä palvelualustaa käyttävien tietoon. 
-	Psykoterapeuttista toimintaa säätelevät yksityissuojan säädökset ja lait. </p>
-	
-    <div class="container-bottom">
-			<div class="row">
-				<hr>
-				<div class="col-lg-12">
-					<div class="col-md-8">
-						<p class="muted pull-right">© 2016 Martti Puttonen. All rights reserved.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-       <hr>
-  
-  </div>
-  </div>
-  
-  <div class="tab-pane text-style" id="tab4">
-  <div class="container">
-  <h2>Toteutustapa</h2>
-  <h3>Selvitä käyttäytymisen voimavarasi ja mahdollisten toimintaongelmien taso ja luonne samalla kertaa</h3>
- 
-  <p>Käytettäessä arjen toimintojen rekisteröintimenetelmiä arjen hallintasi ongelmien ja voimavarojen selvittämisessä 
-  yhteistyössä ei ajauduta kapeaan ongelmien tarkasteluun tai pinnalliseen elämän pohdintaan ja erittelyyn. Eikä rajata 
-  yhteistyötä ennakkoon esim. terapiaistunnoiksi tai yleiseksi nettiterapiaksi, sen sijaan yhteistyössämme toimitaan 
-  tilanteen mukaan todellista arkesi toimintaa yhdessä selvittäen arjen hallinnan rekistereiden kautta saadun lisätiedon 
-  avulla. Sinä asiakkaana sekä minä laillistettuna psykoterapeuttina toimimme luottamussuhdetta, keskinäisen luottamuksen 
-  ja ymmärryksen tasolla. Ja jos antamasi taustatiedot ja lähettämäsi arjen hallinnan harjoitukset olet toteuttanut 
-  yhteistyöhömme edes hieman luottaen, etkä ole asioitasi tarkoituksellisesti vääristänyt, etkä siten psykoterapeuttiasi 
-  tässä harhaannuttanut, yhteistyömme on sinulle hedelmällistä.</p>
-  
-  <p>Tätä ensimmäisen vaiheen yhteistyön harjoitusten ja keskustelumme toteutusta toteutamma noin kolme viikkoa tai vähintään noin yhden viikon ajan.</p>
-  
-  <p>Työskentelymme nopeus tai tahti riippuu enemmän luullakseni sinusta kuin minusta, silllä sinulla menee jonkin aikaa harjoitusten tekemiseen tutustuaksesi 
-  lähettämistäni ohjeista. Minä puolestani vastaan sinulle harjoituksen tai kysymyksen tai kommentin sinulta saatuani viimeistään seuraavana päivänä. </p>
-  
-  <p>Ensimmäisen harjoitusvaiheen aloitus on tarpeen aloittaa lähtötietojesi lomakkeen täyttämällä, mene seuraavaan alalinkkiin.</p>
-  
-  <p>Tämän jälkeen lähetän sinulle ensimmäisen käyttäytymisen monitorointiharjoituksen ehdotuksen sen mukaan miten olen sinun 
-  tilanteesi nähnyt taustatiedoistasi. Muita tietoja minulla ei sinusta ole, en siis tee yhteistyötä kenenkään muun ammattilaisen 
-  tai sinut tuntevan henkilön kanssa, jos sellaista yhteistyötä ehdottaisin pyytäisin sinulta siihen kirjallisen luvan.</p>
-  
-  <h3>taustatiedot lomakkeelle</h3>
-	
-    <div class="container-bottom">
-			<div class="row">
-				<hr>
-				<div class="col-lg-12">
-					<div class="col-md-8">
-						<p class="muted pull-right">© 2016 Martti Puttonen. All rights reserved.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-       <hr>
-  </div>
-  
-</div>
-
-<div class="tab-pane text-style" id="tab5">
-<div class="container">
-  <h2>Taustatiedot</h2>
-  
-  <h4>Selvitä käyttäytymisen voimavarasi ja mahdollisten toimintaongelmien taso ja luonne samalla kertaa</h4>
- 
-	 <p>Olet aloittanut ensimmäisen yhteistyövaiheen toteutuksen, jota toteutamme noin kolmen harjoituksen ja 
-	 niissä toteuttamiemme keskustelujen avulla. Eli tämä yhteistyövaihe kestää enintään parisen viikkoa, mutta riippuu 
-	 lähinnä sinun työskentelystäsi eli kuinka usein ja nopeasti reagoit tehtävät saatuasi, ja miten onnistut keskusteluamme 
-	 hyödyntämään.</p>
-	 
-	 <p>Minun puoleltani työskentelyni on joustavaa, mutta yleensä lähes poikkeuksetta annan palautetta tai ehdotan jatkototeutusta
-	 jo seuraavana päivänä lähetettyäsi harjoituksen tai sen tehtävän. </p>
-  
-	 <h4>taustatiedot lomakkeelle</h4>
-	
-    <div class="container-bottom">
-			<div class="row">
-				<hr>
-				<div class="col-lg-10">
-					<div class="col-md-8">
-						<p class="muted pull-right">© 2016 Martti Puttonen. All rights reserved.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-       <hr>
-  </div>
-  
-</div>
-
-<div class="tab-pane text-style" id="tab6">
-<div class="container"></div>
-<h2 class="text-center">Monitorointiharjoitus 1</h2>
-<div class="container">
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Ajankohta <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></th>
-      <th>Tekeminen <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></th>
-      <th>Suojatoiminta % <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></th>
-      <th>Tehtävään s. toiminta % <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></th>
-    </tr>
-  </thead>
-  <tbody>
-     <tr bgcolor="#FFFFA0">
-      <th>Aamu</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-    <tr>
-      <th scope="row"><div class="input-group clockpicker">
-			<input type="text" class="form-control" value="09:30">
-				<span class="input-group-addon">
-				<span class="glyphicon glyphicon-time"></span>
-				</span>
-			</div>
-			<script type="text/javascript">
-			$('.clockpicker').clockpicker();
-			</script>
-		</th>
-      <td><input type="text" class="form-control"></td>
-      <td><input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
-      <td><input id="ex2" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
-    </tr>
-  </tbody>
-</table>
-<a id="add_row" class="btn btn-default pull-left">Lisää rivi</a><a id='delete_row' class="pull-right btn btn-default">Poista rivi</a>
-
-</br>
-</br>
-</br>
-
-<table class="table">
-<tbody>
-     <tr bgcolor="#FFFFA0">
-      <th>Päivä</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-    <tr>
-      <th scope="row"><div class="input-group clockpicker">
-			<input type="text" class="form-control" value="09:30">
-				<span class="input-group-addon">
-				<span class="glyphicon glyphicon-time"></span>
-				</span>
-			</div>
-			<script type="text/javascript">
-			$('.clockpicker').clockpicker();
-			</script>
-		</th>
-      <td><input type="text" class="form-control"></td>
-      <td><input id="ex5" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
-      <td><input id="ex6" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
-    </tr>
-  </tbody>
-</table>
-<a id="add_row" class="btn btn-default pull-left">Lisää rivi</a><a id='delete_row' class="pull-right btn btn-default">Poista rivi</a>
-
-</br>
-</br>
-</br>
-
-<table class="table">
-<tbody>
-     <tr bgcolor="#FFFFA0">
-      <th>Ilta</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-    <tr>
-      <th scope="row"><div class="input-group clockpicker">
-			<input type="text" class="form-control" value="09:30">
-				<span class="input-group-addon">
-				<span class="glyphicon glyphicon-time"></span>
-				</span>
-			</div>
-			<script type="text/javascript">
-			$('.clockpicker').clockpicker();
-			</script>
-		</th>
-      <td><input type="text" class="form-control"></td>
-      <td><input id="ex7" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
-      <td><input id="ex8" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
-    </tr>
-  </tbody>
-</table>
-
-<a id="add_row" class="btn btn-default pull-left">Lisää rivi</a><a id='delete_row' class="pull-right btn btn-default">Poista rivi</a>
-
-</br>
-</br>
-</br>
-
-<table class="table">
-<tbody>
-     <tr bgcolor="#FFFFA0">
-      <th>Yö</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-    <tr>
-      <th scope="row"><div class="input-group clockpicker">
-			<input type="text" class="form-control" value="09:30">
-				<span class="input-group-addon">
-				<span class="glyphicon glyphicon-time"></span>
-				</span>
-			</div>
-			<script type="text/javascript">
-			$('.clockpicker').clockpicker();
-			</script>
-		</th>
-      <td><input type="text" class="form-control"></td>
-      <td><input id="ex9" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
-      <td><input id="ex10" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
-    </tr>
-  </tbody>
-</table>
-
-
-<a id="add_row" class="btn btn-default pull-left">Lisää rivi</a><a id='delete_row' class="pull-right btn btn-default">Poista rivi</a>
-
-</br>
-</br>
-
-<table class="table-bottom">
-<tbody>
-</br>
-<tr>
-<th><button type="button" class="btn btn-primary btn-lg pull-left">Tallenna <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span></button></th>
-
-<th><button type="button" class="btn btn-secondary btn-lg pull-right">Lähetä <span class="glyphicon glyphicon-send" aria-hidden="true"></span></button></th>
-</tr>
-</tbody>
-</table>
-
-</div>
-
-
- <div class="container-bottom">
-			<div class="row">
-				<hr>
-				<div class="col-lg-12">
-					<div class="col-md-8">
-						<p class="muted pull-right">© 2016 Martti Puttonen. All rights reserved.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-       <hr>
-</div>
-
-<div class="tab-pane text-style" id="tab7">
-<div class="container">
-  <h2>Martti Puttonen</h2>
-	<p>Olen toteuttanut jo kymmenen vuoden ajan kognitiiivisen käyttäytymisterapian työskentelyä kansainvälisen
-		viimeaikaisen tutkimuksen sekä asiakaspraktiikkani toimivuuden tutkivan kehittämisen avulla.</p>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-	</br>
-    <div class="container-bottom">
-			<div class="row">
-				<hr>
-				<div class="col-lg-10">
-					<div class="col-md-8">
-						<p class="muted pull-right">© 2016 Martti Puttonen. All rights reserved.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-       <hr>
-  </div>
-  
-</div>
-
-<div class="tab-pane text-style" id="tab8">
-  <div class="container">
-  <h2>Kuvia</h2>
-  
-<div class="container-fluid">
-  <br>
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-      <li data-target="#myCarousel" data-slide-to="3"></li>
-	  <li data-target="#myCarousel" data-slide-to="4"></li>
-      <li data-target="#myCarousel" data-slide-to="5"></li>
-      <li data-target="#myCarousel" data-slide-to="6"></li>
-	  <li data-target="#myCarousel" data-slide-to="7"></li>
-      <li data-target="#myCarousel" data-slide-to="8"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-
-      <div class="item active">
-        <img src="martti1.jpg" alt="Chania" width="460" height="345">
-        <div class="carousel-caption">
-          <h3>Chania</h3>
-          <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
-        </div>
-      </div>
-
-      <div class="item">
-        <img src="martti2.jpg" alt="Chania" width="460" height="345">
-        <div class="carousel-caption">
-          <h3>Chania</h3>
-          <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
-        </div>
-      </div>
+    %>
     
-      <div class="item">
-        <img src="martti3.jpg" alt="Flower" width="460" height="345">
-        <div class="carousel-caption">
-          <h3>Flowers</h3>
-          <p>Beatiful flowers in Kolymbari, Crete.</p>
-        </div>
-      </div>
+    <div class="admin-tilitiedot">
+        <div class="container">
+            <h1>Tilitiedot admin</h1>
 
-      <div class="item">
-        <img src="martti4.jpg" alt="Flower" width="460" height="345">
-        <div class="carousel-caption">
-          <h3>Flowers</h3>
-          <p>Beatiful flowers in Kolymbari, Crete.</p>
         </div>
-      </div>
-	  
-	  <div class="item">
-        <img src="martti5.jpg" alt="Flower" width="460" height="345">
-        <div class="carousel-caption">
-          <h3>Flowers</h3>
-          <p>Beatiful flowers in Kolymbari, Crete.</p>
-        </div>
-      </div>
-	  
-	  <div class="item">
-        <img src="martti6.jpg" alt="Flower" width="460" height="345">
-        <div class="carousel-caption">
-          <h3>Flowers</h3>
-          <p>Beatiful flowers in Kolymbari, Crete.</p>
-        </div>
-      </div>
-	  
-	  <div class="item">
-        <img src="martti7.jpg" alt="Flower" width="460" height="345">
-        <div class="carousel-caption">
-          <h3>Flowers</h3>
-          <p>Beatiful flowers in Kolymbari, Crete.</p>
-        </div>
-      </div>
-	  
-	  <div class="item">
-        <img src="martti8.jpg" alt="Flower" width="460" height="345">
-        <div class="carousel-caption">
-          <h3>Flowers</h3>
-          <p>Beatiful flowers in Kolymbari, Crete.</p>
-        </div>
-      </div>
-  
     </div>
+    
+    <%
+        }else{
+    %>
 
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-</div>
-	
-    <div class="container-bottom">
-			<div class="row">
-				<hr>
-				<div class="col-lg-12">
-					<div class="col-md-8">
-						<p class="muted pull-right">© 2016 Martti Puttonen. All rights reserved.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-       <hr>
-  </div>
-  
-</div>
-
-<div class="tab-pane text-style" id="tab9">
-<div class="container">
-  <h2>Taustatiedot</h2>
-  
-  <h4>Selvitä käyttäytymisen voimavarasi ja mahdollisten toimintaongelmien taso ja luonne samalla kertaa</h4>
- 
-	 <p>Olet aloittanut ensimmäisen yhteistyövaiheen toteutuksen, jota toteutamme noin kolmen harjoituksen ja 
-	 niissä toteuttamiemme keskustelujen avulla. Eli tämä yhteistyövaihe kestää enintään parisen viikkoa, mutta riippuu 
-	 lähinnä sinun työskentelystäsi eli kuinka usein ja nopeasti reagoit tehtävät saatuasi, ja miten onnistut keskusteluamme 
-	 hyödyntämään.</p>
-	 
-	 <p>Minun puoleltani työskentelyni on joustavaa, mutta yleensä lähes poikkeuksetta annan palautetta tai ehdotan jatkototeutusta
-	 jo seuraavana päivänä lähetettyäsi harjoituksen tai sen tehtävän. </p>
-  
-	 <h4>taustatiedot lomakkeelle</h4>
-	
-    <div class="container-bottom">
-			<div class="row">
-				<hr>
-				<div class="col-lg-10">
-					<div class="col-md-8">
-						<p class="muted pull-right">© 2016 Martti Puttonen. All rights reserved.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-       <hr>
-  </div>
-  
-</div>
-
-<div class="tab-pane text-style" id="tab10">
-<div class="container">
-  <h2>Yhteystiedot</h2>
- 
-	 <p>Martti Puttonen
-		psykologian tohtori
-		psykoterapeutti,
-		kognitiivinen käyttäytymisterapia
-		VET, laillistettu</p>
-	 
-	 <p>Puhelin: 050 533 5698 tai 0447103413 
-		e-mail: maputto(at)saunalahti.fi
-		Vastaanotto: Satakunnankatu 13 as 25 Pori (tai kotikäynti)  </p>
-  
-	 <h4>taustatiedot lomakkeelle</h4>
-         
-         <h1>Tilitiedot</h1>
-        <form action="UpdateUserDetails" method="POST" accept-charset="utf-8">
-            <p>Asiakasnro: <strong><%=userID%></strong></p>
-            <p>Sähköposti: <strong><%=userEmail%></strong></p>
-            Etunimi:
-            <input type="text" class="form-control" name="name" value="<%=userName%>" />
-            Sukunimi:
-            <input type="text" class="form-control" name="surname" value="<%=userSurname%>" />
-            Osoite:
-            <input type="text" class="form-control" name="address" value="<%=userAddress%>" />
-            Postinro:
-            <input type="text" class="form-control" name="postalcode" value="<%=userPostalcode%>" />
-            Postitoimipaikka:
-            <input type="text" class="form-control" name="postoffice" value="<%=userPostoffice%>" /><br>
-            <input type="hidden" name="email" value="<%=userEmail%>">
-            <input type="submit" class="btn btn-warning" value="Tallenna" />
-        </form><br>
+    <div class="customer-tilitiedot">
+        <div class="container">
+            <h1>Tilitiedot customer</h1>
+            <form action="UpdateUserDetails" method="POST" accept-charset="utf-8">
+                <p>Asiakasnro: <strong><%=userID%></strong></p>
+                <p>Sähköposti: <strong><%=userEmail%></strong></p>
+                Etunimi:
+                <input type="text" class="form-control" name="name" value="<%=userName%>" />
+                Sukunimi:
+                <input type="text" class="form-control" name="surname" value="<%=userSurname%>" />
+                Osoite:
+                <input type="text" class="form-control" name="address" value="<%=userAddress%>" />
+                Postinro:
+                <input type="text" class="form-control" name="postalcode" value="<%=userPostalcode%>" />
+                Postitoimipaikka:
+                <input type="text" class="form-control" name="postoffice" value="<%=userPostoffice%>" /><br>
+                <input type="hidden" name="email" value="<%=userEmail%>">
+                <input type="submit" class="btn btn-warning" value="Tallenna" />
+            </form><br>
             <form action="UpdateUserPassword" method="POST" accept-charset="utf-8">
                 Vanha salasana:
                 <input type="password" class="form-control" name="oldpassword" value="" />
@@ -1082,21 +516,25 @@ Psykoterapiatyöskentely internetin avulla on mahdollista asiakkaan asuinpaikast
                 <input type="hidden" name="email" value="<%=userEmail%>">
                 <input type="submit" class="btn btn-danger" value="Vaihda salasana" />
             </form>
-	
+        </div>
+    </div>
     <div class="container-bottom">
-			<div class="row">
-				<hr>
-				<div class="col-lg-10">
-					<div class="col-md-8">
-						<p class="muted pull-right">© 2016 Martti Puttonen. All rights reserved.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-       <hr>
-  </div>
-  
+        <div class="row">
+            <hr>
+            <div class="col-lg-10">
+                <div class="col-md-8">
+                    <p class="muted pull-right">© 2016 Martti Puttonen. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+                
+    <%
+        }
+    %>
 </div>
+                
 
 <script type="text/javascript" src="addrow.js"></script>
 
