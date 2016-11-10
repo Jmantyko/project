@@ -326,6 +326,28 @@ public class Database {
         
     }
     
+    public static void updateUserPassword(String newPassword, String email) {
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("UPDATE Users SET UserPassword=? WHERE UserEmail=?");
+            ps.setString(1, newPassword);
+            ps.setString(2, email);
+            
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            closeDatabaseConnections();
+            
+        }
+        
+    }
+    
     public static String getFrontPageContent(int content) {
         
         String contentToBeRendered = "";

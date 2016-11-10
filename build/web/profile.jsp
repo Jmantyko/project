@@ -1074,11 +1074,12 @@ Psykoterapiatyöskentely internetin avulla on mahdollista asiakkaan asuinpaikast
         </form><br>
             <form action="UpdateUserPassword" method="POST" accept-charset="utf-8">
                 Vanha salasana:
-                <input type="password" class="form-control" name="oldpass" value="" />
+                <input type="password" class="form-control" name="oldpassword" value="" />
                 Uusi salasana:
-                <input type="password" class="form-control" name="newpass" value="" />
+                <input type="password" class="form-control" name="newpassword" value="" />
                 Uusi salasana uudelleen:
-                <input type="password" class="form-control" name="newpassagain" value="" /><br>
+                <input type="password" class="form-control" name="newpasswordagain" value="" /><br>
+                <input type="hidden" name="email" value="<%=userEmail%>">
                 <input type="submit" class="btn btn-danger" value="Vaihda salasana" />
             </form>
 	
