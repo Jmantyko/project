@@ -370,14 +370,14 @@ $(function(){
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#tab1">Arjenhallinta.fi</a>
+            <a class="navbar-brand" href="#tab1" data-toggle="tab">Arjenhallinta.fi</a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
               <li class="active"><a href="#tab1" data-toggle="tab">Etusivu</a></li>
-            </ul>
+            </ul>       
             <ul class="nav navbar-nav navbar-right">
              <li class="dropdown">
                 <%
@@ -418,7 +418,7 @@ $(function(){
                         <a class="btn btn-info form-control" href="profile.jsp">Asetukset</a>
                     </div>
                     <div class="form-group">
-                        <a class="btn btn-info form-control" data-toggle="tab" href="#tab3">Taustatiedot</a>
+                        <a class="btn btn-info form-control" data-toggle="tab" href="#tab2">Taustatiedot</a>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-success btn-block">Kirjaudu ulos</button>
@@ -442,26 +442,30 @@ $(function(){
                 <div class="customer-main-container">
                     <div class="customer-actions-container">
                         <ul class="nav nav-tabs nav-justified">
-                            <li class="active"><a data-toggle="tab" href="#tab11">Harjoitukset</a></li>
-                            <li><a data-toggle="tab" href="#tab12">Viestit</a></li>
+                            <li class="active"><a data-toggle="tab" href="#tab-content-1">Harjoitukset</a></li>
+                            <li><a data-toggle="tab" href="#tab-content-2">Viestit</a></li>
                         </ul>
                         <div class="tab-content">
-                            <div id="tab11" class="tab-pane fade in active">
-                                <p>Harjoitukset tulee tähän</p>
+                            <div id="tab-content-1" class="tab-pane fade in active">
+                                <ul>
+                                    <li><a href="#tab-display-harjoitus" data-toggle="tab">Harjoitus 1</a></li>
+                                </ul>
                             </div>
-                            <div id="tab12" class="tab-pane fade">
+                            <div id="tab-content-2" class="tab-pane fade">
                                 <p>viestit tulee tähän</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="customer-display-container">
-                        <p>Olet kirjautunut sisään CUSTOMER-sivulle</p>
-                        <p>Tervetuloa <strong><%=InputOutputCleaner.clean(userEmail)%></strong><br><br>
-                            Session ID on <strong><%=sessionID%></strong><br></p>
-                        <form action="profile.jsp">
-                            <input type="submit" class="btn btn-info btn-sm" value="Profiili asetukset">
-                        </form> 
+                        <div class="tab-pane fade in active" id="tab-display-welcome">
+                            <p>Olet kirjautunut sisään CUSTOMER-sivulle</p>
+                            <p>Tervetuloa <strong><%=InputOutputCleaner.clean(userEmail)%></strong><br><br>
+                                Session ID on <strong><%=sessionID%></strong><br></p>
+                        </div>
+                        <div class="tab-pane fade" id="tab-display-harjoitus">
+                            <p>Tässä ois nyt harjoitus 1</p>
+                        </div>
                     </div>
 
                 </div>  
@@ -471,15 +475,9 @@ $(function(){
 
         <div class="tab-pane text-style" id="tab2">
             <div class="container">
-
-            </div>
-        </div>
-
-        <div class="tab-pane text-style" id="tab3">
-            <div class="container">
-                <!--placeholder Google Forms -->
+                <p>placeholder Google Forms</p>
                 
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSffIDzW9hlrsCLaeDYhBFUw9w561BXy01QjV_vupF8aNAUP_A/viewform?embedded=true" width="50%" height="500" frameborder="0" marginheight="0" marginwidth="0">Ladataan...</iframe>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScbo0S4YBRk9CYxDuZyL_uo5V1wOUQSaZxZ8RAGM5eH-YlXGg/viewform?embedded=true" width="50%" height="500" frameborder="0" marginheight="0" marginwidth="0">Ladataan...</iframe>
             </div>
         </div>
         </div>
