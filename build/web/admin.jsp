@@ -1115,36 +1115,5 @@ $(function(){
 </div>
 
 <script type="text/javascript" src="addrow.js"></script>
-
-
-        
-        <h1>Olet kirjautunut sisään ADMIN-sivulle</h1>
-        <p>Tervetuloa <strong><%=InputOutputCleaner.clean(userEmail)%></strong><br><br>
-            Session ID on <strong><%=sessionID%></strong><br></p>
-        <form action="profile.jsp">
-            <input type="submit" class="btn btn-info btn-sm" value="Profiili asetukset">
-        </form><br>
-        <form action="CreateUser" method="POST">
-            <label for="email">Anna käyttäjän sähköpostiosoite:</label>
-            <input type="text" class="form-control" name="email" value="" placeholder="Syötä sähköpostiosoite" /><br>
-            <label for="email">Luo käyttäjälle salasana:</label>
-            <input type="password" class="form-control" name="password" value="" placeholder="Luo salasana" /><br>
-            <input type="submit" class="btn btn-success" value="Lisää käyttäjä" /> 
-        </form><br>
-        <form action="UpdateFrontPage" method="POST" accept-charset="utf-8">
-            <label for="comment">Content1</label>
-            <input type="text" class="form-control" name="content" value="<%=InputOutputCleaner.clean(content1)%>" /><br>
-            <input type="hidden" name="id" value="1">
-            <input type="submit" class="btn btn-warning" value="Päivitä etusivun sisältö" />
-        </form><br>
-        <form action="UpdateFrontPage" method="POST" accept-charset="utf-8">
-            <label for="comment">Content2</label>
-            <input type="text" class="form-control" name="content" value="<%=InputOutputCleaner.clean(content2)%>" /><br>
-            <input type="hidden" name="id" value="2">
-            <input type="submit" class="btn btn-warning" value="Päivitä etusivun sisältö" />
-        </form><br>
-        <form action="Logout" method="POST">
-            <input type="submit" class="btn btn-danger" value="Kirjaudu ulos" />
-        </form>
     </body>
 </html>
