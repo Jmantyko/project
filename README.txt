@@ -71,3 +71,11 @@ CREATE TABLE Frontpage (
 	PageContent LONGTEXT,
 	PRIMARY KEY (PageID)
 );
+
+INSERT INTO Users (UserEmail, UserPassword, UserName, UserSurname, UserAddress, UserPostalcode, UserPostoffice, UserType)
+	VALUES 	('admin@admin.fi', '123', 'Aku', 'Ankka', 'Paratiisitie 13', '10101', 'Ankkalinna', 'admin'),
+			('customer@customer.fi', '123', 'Roope', 'Ankka', 'Rahakuja', '77777', 'Ankkalinna', 'customer');
+			
+INSERT INTO Frontpage (PageContent)
+	VALUES	('TÄMÄ TEKSTI ON TIETOKANNASTA. TÄMÄ TEKSTI ON TIETOKANNASTA. TÄMÄ TEKSTI ON TIETOKANNASTA.'),
+			('TÄMÄ TEKSTI ON MYÖS TIETOKANNASTA. TÄMÄ TEKSTI ON MYÖS TIETOKANNASTA. TÄMÄ TEKSTI ON MYÖS TIETOKANNASTA.');
