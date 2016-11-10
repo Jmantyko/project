@@ -442,8 +442,21 @@ $(function(){
         </a>
         <form action="Logout" method="POST" class="dropdown-menu form-login stop-propagation" role="menu"> 
             <div class="form-group">
-                <button type="submit" class="btn btn-success btn-block">Kirjaudu ulos</button>
+                <a class="btn btn-info form-control" href="profile.jsp">Asetukset</a>
             </div>
+            <%
+                String userType = Database.userType(email);
+                if ("customer".equals(userType)) {
+            %>
+            <div class="form-group">
+                <a class="btn btn-info form-control" data-toggle="tab" href="#tab2">Taustatiedot</a>
+            </div>
+            <%
+                }
+            %>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-block">Kirjaudu ulos</button>
+            </div>                
         </form>
         <%
             }

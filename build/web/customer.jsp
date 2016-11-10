@@ -417,14 +417,20 @@ $(function(){
                     <div class="form-group">
                         <a class="btn btn-info form-control" href="profile.jsp">Asetukset</a>
                     </div>
+                    <%
+                        String userType = Database.userType(email);
+                        if ("customer".equals(userType)) {
+                    %>
                     <div class="form-group">
                         <a class="btn btn-info form-control" data-toggle="tab" href="#tab2">Taustatiedot</a>
                     </div>
+                    <%
+                        }
+                    %>
                     <div class="form-group">
                         <button type="submit" class="btn btn-success btn-block">Kirjaudu ulos</button>
                     </div>                
                 </form>
-
                 <%
                     }
                 %>
@@ -459,9 +465,7 @@ $(function(){
 
                     <div class="customer-display-container">
                         <div class="tab-pane fade in active" id="tab-display-welcome">
-                            <p>Olet kirjautunut sisään CUSTOMER-sivulle</p>
-                            <p>Tervetuloa <strong><%=InputOutputCleaner.clean(userEmail)%></strong><br><br>
-                                Session ID on <strong><%=sessionID%></strong><br></p>
+                        <!-- -->
                         </div>
                         <div class="tab-pane fade" id="tab-display-harjoitus">
                             <p>Tässä ois nyt harjoitus 1</p>
