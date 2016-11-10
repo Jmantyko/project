@@ -39,3 +39,14 @@ body {
 .tab-content {
     padding: 10px;
 }
+
+.container-bottom {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+#tab-display-harjoitus, #tab-display-viestit, #tab-display-welcome {
+    position: absolute;
+}

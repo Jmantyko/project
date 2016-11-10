@@ -458,17 +458,25 @@ $(function(){
                                 </ul>
                             </div>
                             <div id="tab-content-2" class="tab-pane fade">
-                                <p>viestit tulee tähän</p>
+                                <ul>
+                                    <li><a href="#tab-display-viestit" data-toggle="tab">Joku viesti</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
 
                     <div class="customer-display-container">
-                        <div class="tab-pane fade in active" id="tab-display-welcome">
-                        <!-- -->
+                        <div class="tab-pane fade in active text-style" id="tab-display-welcome">
+                            <h2>Tervetuloa!</h2>
+                            <p>tähän vähän esittelytekstiä ja Martin broadcastaukset</p>
                         </div>
-                        <div class="tab-pane fade" id="tab-display-harjoitus">
-                            <p>Tässä ois nyt harjoitus 1</p>
+                        <div class="tab-pane fade text-style" id="tab-display-harjoitus">
+                            <h2>Harjoitus 1</h2>
+                            <p>teeppä tästä ensimmäinen harjoitus</p>
+                        </div>
+                        <div class="tab-pane fade text-style" id="tab-display-viestit">
+                            <h2>Harjoitus 1</h2>
+                            <p>tämä harjoitus meni tosi hyvin</p>
                         </div>
                     </div>
 
@@ -487,13 +495,9 @@ $(function(){
         </div>
 
         <div class="container-bottom">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="col-md-7">
-                        <p class="muted pull-right">© 2016 Martti Puttonen. All rights reserved.</p>
-                    </div>
-                </div>
-            </div>
+            <hr>
+            <p class="muted">© 2016 Martti Puttonen. All rights reserved.</p>
+            <hr>
         </div>
         <script type="text/javascript" src="addrow.js"></script>
 
