@@ -1073,7 +1073,7 @@ $(function(){
 </div>
 
 <div class="tab-pane text-style" id="tab11">
-<div class="container-fluid">
+<div class="container">
   <h2>Asiakastilit</h2>
   <table class="table">
     <thead>
