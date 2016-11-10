@@ -24,4 +24,16 @@ public class InputOutputCleaner {
         
         return inputOutputString;
     }
+    
+    public static boolean hasNoWhitespaces(String stringToCheck){
+        
+        boolean hasNoWhitespace = true;
+        
+        if(stringToCheck.contains(" ")){
+            System.out.println("STRING HAS WHITESPACE");
+            hasNoWhitespace = false;
+        }
+        
+        return hasNoWhitespace;
+    }
 }
