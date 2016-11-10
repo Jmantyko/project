@@ -1070,6 +1070,49 @@ $(function(){
   </div>
   
 </div>
+<div class="tab-pane text-style" id="tab11">
+<div class="container-fluid">
+  <h2>Asiakastilit</h2>
+  <table class="table">
+    <thead>
+      <tr>
+		<th>#</th>
+        <th>Etunimi</th>
+        <th>Sukunimi</th>
+        <th>Tunnus</th>
+		<th>Atiivisuus</th>
+		<th><a>valitse kaikki</a></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+		<td>1</td>
+        <td>Erkki</td>
+        <td>Esimerkki</td>
+        <td>e.esimerkki@email.com</td>
+		<td><label><input type="checkbox" value=""></label></td>
+		<td><label><input type="checkbox" value=""></label></td>
+      </tr>
+      <tr>
+		<td>2</td>
+        <td>Anssi</td>
+        <td>Asiakas</td>
+        <td>suternööri@gmail.com</td>
+		<td><label><input type="checkbox" value=""></label></td>
+		<td><label><input type="checkbox" value=""></label></td>
+      </tr>
+      <tr>
+		<td>3</td>
+        <td>Lizard</td>
+        <td>Squad</td>
+        <td>anonymous@missingno.com</td>
+		<td><label><input type="checkbox" value=""></label></td>
+		<td><label><input type="checkbox" value=""></label></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
 
 <script type="text/javascript" src="addrow.js"></script>
 
