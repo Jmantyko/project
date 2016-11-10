@@ -634,9 +634,9 @@ Psykoterapiatyöskentely internetin avulla on mahdollista asiakkaan asuinpaikast
 	 <p>Minun puoleltani työskentelyni on joustavaa, mutta yleensä lähes poikkeuksetta annan palautetta tai ehdotan jatkototeutusta
 	 jo seuraavana päivänä lähetettyäsi harjoituksen tai sen tehtävän. </p>
          
-         <button type="button" class="btn btn-info btn-lg btn-block" onclick="window.open('https://docs.google.com/forms/d/1OtY_WaS4OtJbdcV8xlOLyHtf4dAIknrdML82-EVaQx8/edit?usp=drive_web')">Linkki ilmaisen harjoitusohjelman taustatietojen täyttöön </button>
+         <button type="button" class="btn btn-default btn-lg btn-block" onclick="window.open('https://docs.google.com/forms/d/1OtY_WaS4OtJbdcV8xlOLyHtf4dAIknrdML82-EVaQx8/edit?usp=drive_web')">Linkki ilmaisen harjoitusohjelman taustatietojen täyttöön </button>
   
-         <button type="button" class="btn btn-default btn-lg btn-block"><a href="https://docs.google.com/forms/d/1UqlGeUD4sdHlPWMlt_w6wJteREAttMO5I5chXV93S3c/edit"> Linkki maksullisen harjoitusohjelman taustatietojen täyttöön </a></button>
+         <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.open('https://docs.google.com/forms/d/1UqlGeUD4sdHlPWMlt_w6wJteREAttMO5I5chXV93S3c/edit')"> Linkki maksullisen harjoitusohjelman taustatietojen täyttöön </button>
 	
     <div class="container-bottom">
 			<div class="row">

@@ -211,7 +211,6 @@
       min-width: 280px; /* change width as per your requirement */
     }
 
-
 	
     </style>
 	
@@ -403,16 +402,8 @@ $(function(){
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#tab7" data-toggle="tab">Martti Puttonen</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nettiterapia <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="#tab4"data-toggle="tab"><h4>Tietoa <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></h4></a></li>
-          <li><a href="#tab5"data-toggle="tab"><h4>Liity <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></h4></a></a></li>
-          <li><a href="#tab3"data-toggle="tab"><h4>Psykoterapiapalvelut <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></h4></a></a></li>
-        </ul>
-      </li>
-	  <li class=""><a href="#tab10" data-toggle="tab">Yhteystiedot</a></li>
+      <li class="active"><a href="#tab7" data-toggle="tab">Etusivu</a></li>
+       <li class=""><a href="#tab5" data-toggle="tab">Asiakastilien hallinta</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
      <li class="dropdown">
@@ -477,54 +468,55 @@ $(function(){
 
 </div>
 
-	<div class="container">
-		<div class="jumbotron">
-			<h2>Psykoterapiapalvelut Martti Puttonen</h2>
-			<p>kognitiivisen käyttäytymisterapian toteutukset opetukseen ja psykoterapiapraktiikkaan</p>
-		</div>
-		
-</div>
-
 <!-- tab content -->
 <div class="tab-content">
 <div class="tab-pane active text-style" id="tab1">
 <div class="container">
-  <h3>Kuormittava minäkeskittyminen</h3>
+  <h3>Etusivu</h3>
   
-  <h4>Tunneperäinen keskustelu ei yksin auta vaan tarvitaan todellisen toimnnan tunnistamisen monitorointimenetelmiä</h4>
-       <p>
-         Meidän on vaikea tunnistaa ja luopua minän tunteiisiin ja niissä pyörimiseen keskittyvästä tarkkailustamme jos emme tunnista miten todella toimimme ja mitä hallintakokemusta tämä keskittymisemme palveli. On siis vaikeaa lopettaa itsensä stressaamisesta,
-	     epätoivon sisältöisten tunteiden vatvomisesta, kun se stressaaminen voi myös ajoittain palvella toimintaamme tulevissa tilanteissamme.</br>
-		 </br>
-         Tässä ei oikein auta läheinen keskustelu ystävän tai terapeudin kanssa, koska itse toimintamme ysittäisissä päivämme jatkumoissa voi tulla ohitetuksi ja yleistetyksi väärin. Tarvitaan käyttäytymisen todellisen toiminnan tunnistamisen ja meta-arvioinnin monitorointimenetelmiä.
-       </p>
-      <h4>mindfulness terapia</h4>
-	  <h4>Myös nettiyhteistyö mahdollista</h4>
-	  </br>
-		<img src="http://www.marttiputtonen.profiili.fi/SIRA_Files/images/Kuvat/martti_puttonen.jpg" class="img-rounded">  
-	  <hr>
-	  <h3>Elämänhallintaa psykoterapian keinoin, myös nettiyhteistyö mahdollista</h3>
-	  
-	  <p>Päivittäinen arjen toimintojen säätelymme häiriintyy tai kokonaan estyy monin eri tavoin, kuten uniongelmina, keskittymisen vaikeuksina, ihmissuhteiden ongelmina ja yksin olon ja sen kokemusten arviointia haitallisena ja vältettävänä.
-	  </p>
-	  
-  <h3>Tutustu käyttäytymisen monitorointiharjoituksiin ja saat tietoa ongelmistasi ja niiden sisäisitä käsittelyn tavoistasi </h3>
-       <p>
-         Mikäli päivittäisen käyttäytymisen monitorointi netissä soveltuu asiakkaalle ja voimme kirjoitettujen mielipiteiden ja kommenttien vaihdon avulla toteuttaa keskustelullista psykoterapeuttista nettiyhteistyötä, pääset ja yhdessä pääsemme käyttäytymisesi lainalaisuuksien selvittämiseen ja korjaamiseen tässä osaavassa psykoterapiapraktikon yhteistyössä. Ei ole haitaksi vaan enemmän eduksi, jos käyttäytymisen monitorointi on epätarkkaa eikä anna yksinkertaista toimintaohjetta, se epäselväkin arviointisi  enemmänkin auttaa sinua tunnistamaan miten elämän luonnolliseen epävarmuuteen suhtaudut ja otatko sen vain haitaksi jolta sinun on pyrittävä suojautumaan. Huomaat, että epävarmuuksilta ja epätoivon kokemuksilta suojautumisen alitajuinen on muutettavissa ja näin arjen elämäsi mielekkyys vahvistuu.</br>
-		 </br>
-       <p>
-	   Psykoterapeuttinen keskustelu, yhteinen tutkiminen ja saamasi palaute tapaasi toimia ja sita arvioida, harjoittelu sekä erilaisten toimintataitojen ja -valmiuksien kehittäminen tuovat arkeesi varmuutta ja toimintakykyä. Internetin käyttö lisää yhteistyön toimivuutta käytettäessä metakognitiivisen terapian työskentelymenetelmiäMindfulness eli spontaanin toiminnan ja sen sisäisen säätelyn elvyttäminen on tullut keskeiseksi asiaksi ihmisen henkisessä hyvinvoinnissa ja sen ylläpitämisessä. Erityisesti metakognitiivinen käsitteenä tarkoittaa miten me ajattelemme ajatuksiamme ja niiden kohteena olevia maailmamme keskenään suhteissaan olevia voimakenttiä. Miten me itsekin olemme näiden voimakenttien kautta sisäisen olemisemme ja omat toimintavalmiutemme saaneet. 
-
-Metakognitiivisen terapian ajatus on elvyttää henkilön oman aidon reflektion toimintaa, jossa henkilö tunnistaa tietoisemmin mitkä maailan ongelmat ovat todellisia maailman tosiasioita ja mitkä ongelmaksi koetut ja tulkitut asiat ja niihin ongelmia kasaava reagoiminen voi olla tunnistettavissa ja poistettavissa. 
-
-Oikeastaan maailman todelliset asiat joista meidän on tarpeen olla tietoinen, eivät ole sikäli hyviä tai pahoja vaan että me ja me omissa ihmissuhteissamme pidämme näitä asioita ongelmina. Me itse kenties teemme itsellemme usein tunne-elämän ongelmia kiireisissä ja muuttuvissa elämänoloissamme. 
-, joillekin päivittäisten toimintojen selvittäminen onnistuu erityisen hyvin kirjallisten rekisteröintien avulla. Voit saada näihin rekisteröinteihisi konkreettista palautetta miten sinun on mielekästä toimia. 
-Asiakkaan moninaisten ongelmien ja ongelmavyyhtien arviointi ja hoito edellyttää psykoterapeutilta itsensä likoon laittamista yhdessä tunnistettujen tärkeiden asioiden puolesta. On oltava sitkeä ja taisteltava kunnioittavassa nöyrässä hengessä.
-Toteutan psykoterapiaa myös KELA:n tai muiden organisaatioiden tukemana.
-Psykoterapiatyöskentely internetin avulla on mahdollista asiakkaan asuinpaikasta riippumatta. Internettyöskentelyn soveltuvuus on tarpeen selvittää aluksi, tämän työskentelyn soveltuvuutta sinulle voit ilmaiseksi ja ilman jatkovelvoitteita kokeilla menemällä linkkiin www.arjenhallinta.fi 
-	   </p>
-	   
-       </p>
+  </br>
+  
+<div class="row">
+        <div class="col-md-6">
+  
+            <table class="table table-bordered">
+  <thead>
+    <tr class="bg-primary">
+      <th>Ilmoitukset</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td style="float: left">
+            <p>Timo Tikkanen</p>
+            <p>Harjoitus 1</p>
+        </td>
+        <td style="float: right">
+            <p>12.9.2016</p>
+            <p>klo 13:00</p>
+        </td>
+    </tr>
+    <tr>
+      <td>Mark</td>
+    </tr>
+    <tr>
+      <td>Thornton</td>
+    </tr>
+    <tr>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+                  
+    </div>
+  <div class="col-md-6">
+  
+  
+  
+  </div>
+</div>
+  
+  
 		 <div class="container-bottom">
 			<div class="row">
 				<hr>
