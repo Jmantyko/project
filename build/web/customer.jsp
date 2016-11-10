@@ -453,30 +453,24 @@ $(function(){
                         </ul>
                         <div class="tab-content">
                             <div id="tab-content-1" class="tab-pane fade in active">
-                                <ul>
-                                    <li><a href="#tab-display-harjoitus" data-toggle="tab">Harjoitus 1</a></li>
-                                </ul>
+                                <a href="#tab-display-harjoitus" data-toggle="tab">Harjoitus 1</a>
                             </div>
                             <div id="tab-content-2" class="tab-pane fade">
-                                <ul>
-                                    <li><a href="#tab-display-viestit" data-toggle="tab">Joku viesti</a></li>
-                                </ul>
+                                <a href="#tab-display-viestit" data-toggle="tab">Joku viesti</a>
                             </div>
                         </div>
                     </div>
 
                     <div class="customer-display-container">
-                        <div class="tab-pane fade in active text-style" id="tab-display-welcome">
+                        <div class="tab-pane fade in active" id="tab-display-welcome">
                             <h2>Tervetuloa!</h2>
                             <p>tähän vähän esittelytekstiä ja Martin broadcastaukset</p>
                         </div>
-                        <div class="tab-pane fade text-style" id="tab-display-harjoitus">
-                            <h2>Harjoitus 1</h2>
+                        <div class="tab-pane fade" id="tab-display-harjoitus">
                             <p>teeppä tästä ensimmäinen harjoitus</p>
                         </div>
-                        <div class="tab-pane fade text-style" id="tab-display-viestit">
-                            <h2>Harjoitus 1</h2>
-                            <p>tämä harjoitus meni tosi hyvin</p>
+                        <div class="tab-pane fade" id="tab-display-viestit">
+                            <p>tässä sulle viesti</p>
                         </div>
                     </div>
 
