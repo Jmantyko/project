@@ -5,7 +5,7 @@
 --%>
 
 <%@page import="Arjenhallinta.Database"%>
-<%@page import="Arjenhallinta.InputOutputCleaner"%>
+<%@page import="Arjenhallinta.InputOutput"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -19,6 +19,7 @@
   
     <title>Psykoterapiapalvelut Martti Puttonen</title>
 	
+        <link rel="stylesheet" href="style.css" type="text/css">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	
@@ -332,7 +333,7 @@ $(function(){
          });
          
          </script>
-	
+         
     </head>
     <body> 
         <%
@@ -398,7 +399,7 @@ $(function(){
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="#tab1" data-toggle="tab">Arjenhallinta.fi</a>
+    <a class="navbar-brand" href="etusivu.jsp">Arjenhallinta.fi</a>
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
@@ -407,14 +408,14 @@ $(function(){
             if ("customer".equals(userType)){
         %>
     <ul class="nav navbar-nav">
-	  <li class=""><a href="/customer.jsp" data-toggle="tab">Etusivu</a></li>
+	  <li><a href="customer.jsp">Etusivu</a></li>
     </ul>
         <%
             }else{
         %>
     <ul class="nav navbar-nav">
-      <li class=""><a href="admin.jsp" data-toggle="tab">Etusivu</a></li>
-      <li class=""><a href="#" data-toggle="tab">Asiakastilien hallinta</a></li>
+      <li><a href="admin.jsp">Etusivu</a></li>
+      <li><a href="admin.jsp?activeTab=tab11">Asiakastilien hallinta</a></li>
     </ul>
         <%
             }
@@ -451,7 +452,7 @@ $(function(){
             }else{
         %>
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-            <i class="glyphicon glyphicon-user"></i> <%=InputOutputCleaner.clean(userName)%> <%=InputOutputCleaner.clean(userSurname)%>
+            <i class="glyphicon glyphicon-user"></i> <%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%>
         </a>
         <form action="Logout" method="POST" class="dropdown-menu form-login stop-propagation" role="menu"> 
             <div class="form-group">
@@ -461,7 +462,7 @@ $(function(){
                 if ("customer".equals(userType)) {
             %>
             <div class="form-group">
-                <a class="btn btn-info form-control" data-toggle="tab" href="customer.jsp">Taustatiedot</a>
+                <a class="btn btn-info form-control" href="http://localhost:8080/arjenhallinta/customer.jsp">Taustatiedot</a>
             </div>
             <%
                 }
@@ -492,7 +493,7 @@ $(function(){
             
             <h1>Tilitiedot admin</h1>
             <h1>Olet kirjautunut sisään ADMIN-sivulle</h1>
-            <p>Tervetuloa <strong><%=InputOutputCleaner.clean(userEmail)%></strong><br><br>
+            <p>Tervetuloa <strong><%=InputOutput.clean(userEmail)%></strong><br><br>
                 Session ID on <strong><%=sessionID%></strong><br></p>
             <form action="profile.jsp">
                 <input type="submit" class="btn btn-info btn-sm" value="Profiili asetukset">
@@ -506,13 +507,13 @@ $(function(){
             </form><br>
             <form action="UpdateFrontPage" method="POST" accept-charset="utf-8">
                 <label for="comment">Content1</label>
-                <input type="text" class="form-control" name="content" value="<%=InputOutputCleaner.clean(content1)%>" /><br>
+                <input type="text" class="form-control" name="content" value="<%=InputOutput.clean(content1)%>" /><br>
                 <input type="hidden" name="id" value="1">
                 <input type="submit" class="btn btn-warning" value="Päivitä etusivun sisältö" />
             </form><br>
             <form action="UpdateFrontPage" method="POST" accept-charset="utf-8">
                 <label for="comment">Content2</label>
-                <input type="text" class="form-control" name="content" value="<%=InputOutputCleaner.clean(content2)%>" /><br>
+                <input type="text" class="form-control" name="content" value="<%=InputOutput.clean(content2)%>" /><br>
                 <input type="hidden" name="id" value="2">
                 <input type="submit" class="btn btn-warning" value="Päivitä etusivun sisältö" />
             </form><br>
@@ -531,18 +532,18 @@ $(function(){
             <h1>Tilitiedot customer</h1>
             <form action="UpdateUserDetails" method="POST" accept-charset="utf-8">
                 <p>Asiakasnro: <strong><%=userID%></strong></p>
-                <p>Sähköposti: <strong><%=userEmail%></strong></p>
+                <p>Sähköposti: <strong><%=InputOutput.clean(userEmail)%></strong></p>
                 Etunimi:
-                <input type="text" class="form-control" name="name" value="<%=userName%>" />
+                <input type="text" class="form-control" name="name" value="<%=InputOutput.clean(userName)%>" />
                 Sukunimi:
-                <input type="text" class="form-control" name="surname" value="<%=userSurname%>" />
+                <input type="text" class="form-control" name="surname" value="<%=InputOutput.clean(userSurname)%>" />
                 Osoite:
-                <input type="text" class="form-control" name="address" value="<%=userAddress%>" />
+                <input type="text" class="form-control" name="address" value="<%=InputOutput.clean(userAddress)%>" />
                 Postinro:
-                <input type="text" class="form-control" name="postalcode" value="<%=userPostalcode%>" />
+                <input type="text" class="form-control" name="postalcode" value="<%=InputOutput.clean(userPostalcode)%>" />
                 Postitoimipaikka:
-                <input type="text" class="form-control" name="postoffice" value="<%=userPostoffice%>" /><br>
-                <input type="hidden" name="email" value="<%=userEmail%>">
+                <input type="text" class="form-control" name="postoffice" value="<%=InputOutput.clean(userPostoffice)%>" /><br>
+                <input type="hidden" name="email" value="<%=InputOutput.clean(userEmail)%>">
                 <input type="submit" class="btn btn-warning" value="Tallenna" />
             </form><br>
             <form action="UpdateUserPassword" method="POST" accept-charset="utf-8">
@@ -552,7 +553,7 @@ $(function(){
                 <input type="password" class="form-control" name="newpassword" value="" />
                 Uusi salasana uudelleen:
                 <input type="password" class="form-control" name="newpasswordagain" value="" /><br>
-                <input type="hidden" name="email" value="<%=userEmail%>">
+                <input type="hidden" name="email" value="<%=InputOutput.clean(userEmail)%>">
                 <input type="submit" class="btn btn-danger" value="Vaihda salasana" />
             </form>
         </div>
@@ -562,17 +563,11 @@ $(function(){
         }
     %>
     
-    <div class="container-bottom">
-        <div class="row">
+        <div class="container-bottom">
             <hr>
-            <div class="col-lg-10">
-                <div class="col-md-8">
-                    <p class="muted pull-right">© 2016 Martti Puttonen. All rights reserved.</p>
-                </div>
-            </div>
+            <p class="muted">© 2016 Martti Puttonen. All rights reserved.</p>
+            <hr>
         </div>
-        <hr>
-    </div>
 
 </div>
                 

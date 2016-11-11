@@ -5,7 +5,7 @@
 --%>
 
 <%@page import="Arjenhallinta.Database"%>
-<%@page import="Arjenhallinta.InputOutputCleaner"%>
+<%@page import="Arjenhallinta.InputOutput"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -270,8 +270,7 @@
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
     background-color: #555;
 }
-
-
+    .topBuffer {margin-top: 20px;}
 	
     </style>
 	
@@ -457,13 +456,13 @@ $(function(){
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="#tab1" data-toggle="tab">Arjenhallinta.fi</a>
+    <a class="navbar-brand" href="etusivu.jsp">Arjenhallinta.fi</a>
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#tab7" data-toggle="tab">Etusivu</a></li>
+      <li class="active"><a href="#tab1" data-toggle="tab">Etusivu</a></li>
        <li class=""><a href="#tab11" data-toggle="tab">Asiakastilien hallinta</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
@@ -499,7 +498,7 @@ $(function(){
                 String userSurname = Database.getUserSurname(email);
         %>
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-            <i class="glyphicon glyphicon-user"></i> <%=InputOutputCleaner.clean(userName)%> <%=InputOutputCleaner.clean(userSurname)%>
+            <i class="glyphicon glyphicon-user"></i> <%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%>
         </a>
         <form action="Logout" method="POST" class="dropdown-menu form-login stop-propagation" role="menu"> 
             <div class="form-group">
@@ -1474,15 +1473,19 @@ $(function(){
 <div class="tab-pane text-style" id="tab11">
 <div class="container">
   <h2>Asiakastilit</h2>
-  <table class="table">
+  <div class=".col-xs-6 .col-md-4">
+  <button type="button" class="btn btn-success">Lisää uusi asiakastili</button>
+  <button type="button" class="btn btn-danger">Poista valittu asiakastili</button>
+  </div>
+  <div class=".col-xs-12 .col-md-8"></div>
+  <table class="table topBuffer">
     <thead>
       <tr>
 		<th>#</th>
         <th>Etunimi</th>
         <th>Sukunimi</th>
         <th>Tunnus</th>
-		<th>Atiivisuus</th>
-		<th><a>valitse kaikki</a></th>
+		<th>Valinta</th>
       </tr>
     </thead>
     <tbody>
@@ -1491,23 +1494,6 @@ $(function(){
         <td>Erkki</td>
         <td>Esimerkki</td>
         <td>e.esimerkki@email.com</td>
-		<td><label><input type="checkbox" value=""></label></td>
-		<td><label><input type="checkbox" value=""></label></td>
-      </tr>
-      <tr>
-		<td>2</td>
-        <td>Anssi</td>
-        <td>Asiakas</td>
-        <td>suternööri@gmail.com</td>
-		<td><label><input type="checkbox" value=""></label></td>
-		<td><label><input type="checkbox" value=""></label></td>
-      </tr>
-      <tr>
-		<td>3</td>
-        <td>Lizard</td>
-        <td>Squad</td>
-        <td>anonymous@missingno.com</td>
-		<td><label><input type="checkbox" value=""></label></td>
 		<td><label><input type="checkbox" value=""></label></td>
       </tr>
     </tbody>
