@@ -9,7 +9,7 @@ package Arjenhallinta;
  *
  * @author Jaakko
  */
-public class InputOutputCleaner {
+public class InputOutput {
     
     public static String clean(String inputOutputString){
 
