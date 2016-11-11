@@ -210,6 +210,67 @@
      padding: 1em;
       min-width: 280px; /* change width as per your requirement */
     }
+    
+    .chat
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.chat li
+{
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #B3A9A9;
+}
+
+.chat li.left .chat-body
+{
+    margin-left: 60px;
+}
+
+.chat li.right .chat-body
+{
+    margin-right: 60px;
+}
+
+
+.chat li .chat-body p
+{
+    margin: 0;
+    color: #777777;
+}
+
+.panel .slidedown .glyphicon, .chat .glyphicon
+{
+    margin-right: 5px;
+}
+
+.panel-body
+{
+    overflow-y: scroll;
+    height: 250px;
+}
+
+::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #555;
+}
+
 
 	
     </style>
@@ -489,8 +550,8 @@ $(function(){
     <tr>
         <td>
             <div style="float:left;">
-                <div>Timo Tikkanen</div>
-                <div>Harjoitus 1</div>
+                <div>Timo Tikkanen</a></div>
+                <div><a href="#tab2" data-toggle="tab">Harjoitus 1</a></div>
             </div>
             
             <div style="float:right;">
@@ -570,37 +631,25 @@ $(function(){
             </span>
     </div>
    </div>
-         <div class="col-xs-4 col-md-4">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Näytä...">
-            <div class="input-group-btn">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
-              <ul class="dropdown-menu dropdown-menu-right">
-                <li><a href="#">Kaikki asiakkaat</a></li>
-                <li><a href="#">Aktiiviset asiakkaat</a></li>
-                <li><a href="#">Inaktiiviset asiakkaat</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
-      </div><!-- /btn-group -->
-    </div><!-- /input-group -->
-   </div>
-             <div class="col-xs-4 col-md-4">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Järjestä...">
-            <div class="input-group-btn">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
-              <ul class="dropdown-menu dropdown-menu-right">
-                <li><a href="#">Nimen mukaan (Ö-A)</a></li>
-                <li><a href="#">Viimeisen toiminnan mukaan</a></li>
-                <li><a href="#">Asiakasnumeron mukaan</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
-      </div><!-- /btn-group -->
-    </div><!-- /input-group -->
-   </div>
-        
+         
+          <div class="col-xs- col-md-4">
+              <h4 style="float:right;">Järjestä:</h4>
+          </div>
+         
+         
+          <div class="col-xs-4 col-md-4">
+              
+         <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Tähän tulee teksti
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#">Viimeisen viikon ajalta</a></li>
+      <li><a href="#">Kahden viikon ajalta</a></li>
+      <li><a href="#">Kuukauden ajalta</a></li>
+    </ul>
+  </div>
+  </div>            
+    
          </br>
          </br>
 
@@ -625,33 +674,7 @@ $(function(){
 		<td>13.09.2016 klo 18:30</td>
       </tr>
       <tr>
-		<td>2</td>
-        <td>Anssi</td>
-        <td>Asiakas</td>
-        <td>suternööri@gmail.com</td>
-		<td>25.08.2016 klo 08:16</td>
-      </tr>
-      <tr>
-		<td>3</td>
-        <td>Lizard</td>
-        <td>Squad</td>
-        <td>anonymous@missingno.com</td>
-		<td>23.08.2016 klo 10.31</td>
-      </tr>
-      <tr>
-		<td>3</td>
-        <td>Pentti</td>
-        <td>Arajärvinen</td>
-        <td>penttia@mail.com</td>
-		<td>22.08.2016 klo 11.35</td>
-      </tr>
-      <tr>
-		<td>3</td>
-        <td>Mauri</td>
-        <td>Esterinen</td>
-        <td>sahkoposti@404.com</td>
-		<td>19.08.2016 klo 15.04</td>
-      </tr>
+		
     </tbody>
   </table>
 </div>
@@ -679,46 +702,276 @@ $(function(){
 
 <div class="tab-pane text-style" id="tab2">
 <div class="container">
-  <h2>Dolor asit amet</h2>
-   <p>Dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt 
-    ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo 
-    dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore 
-    et dolore magna aliquyam erat, sed diam voluptua.</p>
-	
-	<h2>16:9 Responsive Aspect Ratio</h2>
-	<div class="embed-responsive embed-responsive-16by9">
-				<iframe class="embed-responsive-item" style="max-width:660px; max-height:415px;"
-				src="https://www.youtube.com/embed/FTQbiNvZqaY">
-				</iframe>
-				</div>
-	</br>
-	<h2>16:9 Responsive Aspect Ratio</h2>
-	<div class="embed-responsive embed-responsive-16by9">
-				<iframe class="embed-responsive-item" style="max-width:660px; max-height:415px;"
-				src="https://www.youtube.com/embed/bch1_Ep5M1s">
-				</iframe>
-				</div>
-	</br>
-	<h2>16:9 Responsive Aspect Ratio</h2>
-	<div class="embed-responsive embed-responsive-16by9">
-				<iframe class="embed-responsive-item" style="max-width:660px; max-height:415px;"
-				src="https://www.youtube.com/embed/N-aK6JnyFmk">
-				</iframe>
-				</div>
-	</br>
-	
-     <div class="container-bottom">
-			<div class="row">
-				<hr>
-				<div class="col-lg-12">
-					<div class="col-md-8">
-						<p class="muted pull-right">© 2016 Martti Puttonen. All rights reserved.</p>
-					</div>
-				</div>
+  
+    <div class="row">
+            <div class="col-xs-12 col-md-8">
+                <div class="tab-pane text-style" id="tab6">
+<h2 class="text-center">Timo Tikkanen</h2>
+<h2 class="text-center">Monitorointiharjoitus 1</h2>
+
+</br>
+
+<div class="container-fluid">
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Ajankohta <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></th>
+      <th>Tekeminen <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></th>
+      <th>Suojatoiminta % <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></th>
+      <th>Tehtävään s. toiminta % <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></th>
+    </tr>
+  </thead>
+  <tbody>
+     <tr bgcolor="#FFFFA0">
+      <th>Aamu</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th scope="row"><div class="input-group clockpicker">
+			<input type="text" class="form-control" value="09:30">
+				<span class="input-group-addon">
+				<span class="glyphicon glyphicon-time"></span>
+				</span>
 			</div>
-		</div>
-		<hr>
+			<script type="text/javascript">
+			$('.clockpicker').clockpicker();
+			</script>
+		</th>
+      <td><input type="text" class="form-control"></td>
+      <td><input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
+      <td><input id="ex2" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
+    </tr>
+  </tbody>
+</table>
+<a id="add_row" class="btn btn-default pull-left">Lisää rivi</a><a id='delete_row' class="pull-right btn btn-default">Poista rivi</a>
+
+</br>
+</br>
+</br>
+
+<table class="table">
+<tbody>
+     <tr bgcolor="#FFFFA0">
+      <th>Päivä</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th scope="row"><div class="input-group clockpicker">
+			<input type="text" class="form-control" value="09:30">
+				<span class="input-group-addon">
+				<span class="glyphicon glyphicon-time"></span>
+				</span>
+			</div>
+			<script type="text/javascript">
+			$('.clockpicker').clockpicker();
+			</script>
+		</th>
+      <td><input type="text" class="form-control"></td>
+      <td><input id="ex5" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
+      <td><input id="ex6" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
+    </tr>
+  </tbody>
+</table>
+<a id="add_row" class="btn btn-default pull-left">Lisää rivi</a><a id='delete_row' class="pull-right btn btn-default">Poista rivi</a>
+
+</br>
+</br>
+</br>
+
+<table class="table">
+<tbody>
+     <tr bgcolor="#FFFFA0">
+      <th>Ilta</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th scope="row"><div class="input-group clockpicker">
+			<input type="text" class="form-control" value="09:30">
+				<span class="input-group-addon">
+				<span class="glyphicon glyphicon-time"></span>
+				</span>
+			</div>
+			<script type="text/javascript">
+			$('.clockpicker').clockpicker();
+			</script>
+		</th>
+      <td><input type="text" class="form-control"></td>
+      <td><input id="ex7" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
+      <td><input id="ex8" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
+    </tr>
+  </tbody>
+</table>
+
+<a id="add_row" class="btn btn-default pull-left">Lisää rivi</a><a id='delete_row' class="pull-right btn btn-default">Poista rivi</a>
+
+</br>
+</br>
+</br>
+
+<table class="table">
+<tbody>
+     <tr bgcolor="#FFFFA0">
+      <th>Yö</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <th scope="row"><div class="input-group clockpicker">
+			<input type="text" class="form-control" value="09:30">
+				<span class="input-group-addon">
+				<span class="glyphicon glyphicon-time"></span>
+				</span>
+			</div>
+			<script type="text/javascript">
+			$('.clockpicker').clockpicker();
+			</script>
+		</th>
+      <td><input type="text" class="form-control"></td>
+      <td><input id="ex9" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
+      <td><input id="ex10" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<a id="add_row" class="btn btn-default pull-left">Lisää rivi</a><a id='delete_row' class="pull-right btn btn-default">Poista rivi</a>
+
+</br>
+</br>
+
+<table class="table-bottom">
+<tbody>
+</br>
+<tr>
+<th><button type="button" class="btn btn-primary btn-lg pull-left">Tallenna <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span></button></th>
+
+<th><button type="button" class="btn btn-secondary btn-lg pull-right">Lähetä <span class="glyphicon glyphicon-send" aria-hidden="true"></span></button></th>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+</br>
+
+<div class="row">
+            <div class="col-xs-12 col-md-12">
+                        <div class="row">
+        <div class="col-md-5">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-comment"></span> Chat
+                    <div class="btn-group pull-right">
+                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-chevron-down"></span>
+                        </button>
+                        <ul class="dropdown-menu slidedown">
+                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-refresh">
+                            </span>Refresh</a></li>
+                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-ok-sign">
+                            </span>Available</a></li>
+                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-remove">
+                            </span>Busy</a></li>
+                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-time"></span>
+                                Away</a></li>
+                            <li class="divider"></li>
+                            <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-off"></span>
+                                Sign Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <ul class="chat">
+                        <li class="left clearfix"><span class="chat-img pull-left">
+                            <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
+                        </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <strong class="primary-font">Jack Sparrow</strong> <small class="pull-right text-muted">
+                                        <span class="glyphicon glyphicon-time"></span>12 mins ago</small>
+                                </div>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+                                    dolor, quis ullamcorper ligula sodales.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="right clearfix"><span class="chat-img pull-right">
+                            <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" class="img-circle" />
+                        </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>13 mins ago</small>
+                                    <strong class="pull-right primary-font">Bhaumik Patel</strong>
+                                </div>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+                                    dolor, quis ullamcorper ligula sodales.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="left clearfix"><span class="chat-img pull-left">
+                            <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
+                        </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <strong class="primary-font">Jack Sparrow</strong> <small class="pull-right text-muted">
+                                        <span class="glyphicon glyphicon-time"></span>14 mins ago</small>
+                                </div>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+                                    dolor, quis ullamcorper ligula sodales.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="right clearfix"><span class="chat-img pull-right">
+                            <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" class="img-circle" />
+                        </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>15 mins ago</small>
+                                    <strong class="pull-right primary-font">Bhaumik Patel</strong>
+                                </div>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+                                    dolor, quis ullamcorper ligula sodales.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="panel-footer">
+                    <div class="input-group">
+                        <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
+                        <span class="input-group-btn">
+                            <button class="btn btn-warning btn-sm" id="btn-chat">
+                                Send</button>
+                        </span>
+                    </div>
+                </div>
+        </div>
+    </div>
+                </div> 
+            
+            </div>
+    </div>
+
+       <hr>
+</div>
+
+            </div>
+        
+        
+    </div>
+    
 </div>
 </div>
 
