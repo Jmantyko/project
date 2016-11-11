@@ -5,7 +5,7 @@
 --%>
 
 <%@page import="Arjenhallinta.Database"%>
-<%@page import="Arjenhallinta.InputOutputCleaner"%>
+<%@page import="Arjenhallinta.InputOutput"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -452,7 +452,7 @@ $(function(){
             }else{
         %>
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-            <i class="glyphicon glyphicon-user"></i> <%=InputOutputCleaner.clean(userName)%> <%=InputOutputCleaner.clean(userSurname)%>
+            <i class="glyphicon glyphicon-user"></i> <%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%>
         </a>
         <form action="Logout" method="POST" class="dropdown-menu form-login stop-propagation" role="menu"> 
             <div class="form-group">
@@ -493,7 +493,7 @@ $(function(){
             
             <h1>Tilitiedot admin</h1>
             <h1>Olet kirjautunut sisään ADMIN-sivulle</h1>
-            <p>Tervetuloa <strong><%=InputOutputCleaner.clean(userEmail)%></strong><br><br>
+            <p>Tervetuloa <strong><%=InputOutput.clean(userEmail)%></strong><br><br>
                 Session ID on <strong><%=sessionID%></strong><br></p>
             <form action="profile.jsp">
                 <input type="submit" class="btn btn-info btn-sm" value="Profiili asetukset">
@@ -507,13 +507,13 @@ $(function(){
             </form><br>
             <form action="UpdateFrontPage" method="POST" accept-charset="utf-8">
                 <label for="comment">Content1</label>
-                <input type="text" class="form-control" name="content" value="<%=InputOutputCleaner.clean(content1)%>" /><br>
+                <input type="text" class="form-control" name="content" value="<%=InputOutput.clean(content1)%>" /><br>
                 <input type="hidden" name="id" value="1">
                 <input type="submit" class="btn btn-warning" value="Päivitä etusivun sisältö" />
             </form><br>
             <form action="UpdateFrontPage" method="POST" accept-charset="utf-8">
                 <label for="comment">Content2</label>
-                <input type="text" class="form-control" name="content" value="<%=InputOutputCleaner.clean(content2)%>" /><br>
+                <input type="text" class="form-control" name="content" value="<%=InputOutput.clean(content2)%>" /><br>
                 <input type="hidden" name="id" value="2">
                 <input type="submit" class="btn btn-warning" value="Päivitä etusivun sisältö" />
             </form><br>
@@ -532,18 +532,18 @@ $(function(){
             <h1>Tilitiedot customer</h1>
             <form action="UpdateUserDetails" method="POST" accept-charset="utf-8">
                 <p>Asiakasnro: <strong><%=userID%></strong></p>
-                <p>Sähköposti: <strong><%=userEmail%></strong></p>
+                <p>Sähköposti: <strong><%=InputOutput.clean(userEmail)%></strong></p>
                 Etunimi:
-                <input type="text" class="form-control" name="name" value="<%=userName%>" />
+                <input type="text" class="form-control" name="name" value="<%=InputOutput.clean(userName)%>" />
                 Sukunimi:
-                <input type="text" class="form-control" name="surname" value="<%=userSurname%>" />
+                <input type="text" class="form-control" name="surname" value="<%=InputOutput.clean(userSurname)%>" />
                 Osoite:
-                <input type="text" class="form-control" name="address" value="<%=userAddress%>" />
+                <input type="text" class="form-control" name="address" value="<%=InputOutput.clean(userAddress)%>" />
                 Postinro:
-                <input type="text" class="form-control" name="postalcode" value="<%=userPostalcode%>" />
+                <input type="text" class="form-control" name="postalcode" value="<%=InputOutput.clean(userPostalcode)%>" />
                 Postitoimipaikka:
-                <input type="text" class="form-control" name="postoffice" value="<%=userPostoffice%>" /><br>
-                <input type="hidden" name="email" value="<%=userEmail%>">
+                <input type="text" class="form-control" name="postoffice" value="<%=InputOutput.clean(userPostoffice)%>" /><br>
+                <input type="hidden" name="email" value="<%=InputOutput.clean(userEmail)%>">
                 <input type="submit" class="btn btn-warning" value="Tallenna" />
             </form><br>
             <form action="UpdateUserPassword" method="POST" accept-charset="utf-8">
@@ -553,7 +553,7 @@ $(function(){
                 <input type="password" class="form-control" name="newpassword" value="" />
                 Uusi salasana uudelleen:
                 <input type="password" class="form-control" name="newpasswordagain" value="" /><br>
-                <input type="hidden" name="email" value="<%=userEmail%>">
+                <input type="hidden" name="email" value="<%=InputOutput.clean(userEmail)%>">
                 <input type="submit" class="btn btn-danger" value="Vaihda salasana" />
             </form>
         </div>

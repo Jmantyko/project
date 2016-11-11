@@ -58,6 +58,40 @@ public class Database {
         return addedUser;
     }
     
+    //This feature is still in WIP
+    //Idea is that user details are rewritten with information
+    //that can not be used to identify certain user.
+    //Furthermore, UserIsDeleted is set to TRUE
+    //so that when someone is trying to login with deleted
+    //account, we can deny that access if UserIsDeleted = TRUE
+    public static void removeUser(int UserID) {
+
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("UPDATE Users SET UserEmail=UserID, UserName=?, UserSurname=?,"
+                    + " UserAddress=?, UserPostalcode=?, UserPostoffice=?, UserIsDeleted=? WHERE UserID=?");
+            ps.setString(1, "");
+            ps.setString(2, "");
+            ps.setString(3, "");
+            ps.setString(4, "");
+            ps.setString(5, "");
+            ps.setBoolean(6, true);
+            ps.setInt(7, UserID);
+            
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            closeDatabaseConnections();
+            
+        }
+
+    }
+    
     public static boolean authenticateUser(String email, String password) {
 
         boolean grantAccess = false;

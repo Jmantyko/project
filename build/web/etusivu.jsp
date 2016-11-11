@@ -5,7 +5,7 @@
 --%>
 
 <%@page import="Arjenhallinta.Database"%>
-<%@page import="Arjenhallinta.InputOutputCleaner"%>
+<%@page import="Arjenhallinta.InputOutput"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -418,7 +418,7 @@ $(function(){
                 String userSurname = Database.getUserSurname(email);
         %>
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-            <i class="glyphicon glyphicon-user"></i> <%=InputOutputCleaner.clean(userName)%> <%=InputOutputCleaner.clean(userSurname)%>
+            <i class="glyphicon glyphicon-user"></i> <%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%>
         </a>
         <form action="Logout" method="POST" class="dropdown-menu form-login stop-propagation" role="menu"> 
             <div class="form-group">
