@@ -909,7 +909,7 @@ $(function(){
                             <div class="chat-body clearfix">
                                 <div class="header">
                                     <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>13 mins ago</small>
-                                    <strong class="pull-right primary-font">Bhaumik Patel</strong>
+                                    <strong class="pull-right primary-font">Martti Puttonen</strong>
                                 </div>
                                 <p>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
