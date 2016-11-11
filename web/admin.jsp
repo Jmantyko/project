@@ -477,7 +477,7 @@ $(function(){
   </br>
   
 <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
   
             <table class="table table-bordered">
   <thead>
@@ -487,35 +487,181 @@ $(function(){
   </thead>
   <tbody>
     <tr>
-        <td style="float: left">
-            <p>Timo Tikkanen</p>
-            <p>Harjoitus 1</p>
+        <td>
+            <div style="float:left;">
+                <div>Timo Tikkanen</div>
+                <div>Harjoitus 1</div>
+            </div>
+            
+            <div style="float:right;">
+                <div>12.9.2016</div>
+                <div>klo 13:00</div>
+            </div> 
         </td>
-        <td style="float: right">
-            <p>12.9.2016</p>
-            <p>klo 13:00</p>
+        
+    </tr>
+     <tr>
+        <td>
+            <div style="float:left;">
+                <div>Martti Mielikäinen</div>
+                <div>Harjoitus 2</div>
+            </div>
+            
+            <div style="float:right;">
+                <div>25.8.2016</div>
+                <div>klo 12:35</div>
+            </div> 
         </td>
+        
     </tr>
-    <tr>
-      <td>Mark</td>
+     <tr>
+        <td>
+            <div style="float:left;">
+                <div>Anu Saukko</div>
+                <div>Harjoitus 3</div>
+            </div>
+            
+            <div style="float:right;">
+                <div>25.8.2016</div>
+                <div>klo 12:35</div>
+            </div> 
+        </td>
+        
     </tr>
-    <tr>
-      <td>Thornton</td>
+     <tr>
+        <td>
+            <div style="float:left;">
+                <div>Pelle Svensson</div>
+                <div>Taustatiedot</div>
+            </div>
+            
+            <div style="float:right;">
+                <div>23.8.2016</div>
+                <div>klo 15:25</div>
+            </div> 
+        </td>
+        
     </tr>
-    <tr>
-      <td>@twitter</td>
+     <tr>
+        <td>
+            <div style="float:left;">
+                <div>Pentti Virtanen</div>
+                <div>Harjoitus 5</div>
+            </div>
+            
+            <div style="float:right;">
+                <div>17.8.2016</div>
+                <div>klo 11:21</div>
+            </div> 
+        </td>
+        
     </tr>
   </tbody>
 </table>
                   
     </div>
-  <div class="col-md-6">
-  
-  
-  
+  <div class="col-md-8">
+     <div class="row">
+        <div class="col-xs-4 col-md-4">
+             <div class="input-group">
+              <input type="text" class="form-control" placeholder="Hae asiakkaista...">
+              <span class="input-group-btn">
+              <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+            </span>
+    </div>
+   </div>
+         <div class="col-xs-4 col-md-4">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Näytä...">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+              <ul class="dropdown-menu dropdown-menu-right">
+                <li><a href="#">Kaikki asiakkaat</a></li>
+                <li><a href="#">Aktiiviset asiakkaat</a></li>
+                <li><a href="#">Inaktiiviset asiakkaat</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+      </div><!-- /btn-group -->
+    </div><!-- /input-group -->
+   </div>
+             <div class="col-xs-4 col-md-4">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Järjestä...">
+            <div class="input-group-btn">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+              <ul class="dropdown-menu dropdown-menu-right">
+                <li><a href="#">Nimen mukaan (Ö-A)</a></li>
+                <li><a href="#">Viimeisen toiminnan mukaan</a></li>
+                <li><a href="#">Asiakasnumeron mukaan</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+      </div><!-- /btn-group -->
+    </div><!-- /input-group -->
+   </div>
+        
+         </br>
+         </br>
+
+          <div class="col-md-12">
+  <h3>Asiakastilit</h3>
+  <table class="table">
+    <thead>
+      <tr>
+		<th>#</th>
+        <th>Etunimi</th>
+        <th>Sukunimi</th>
+        <th>Tunnus</th>
+		<th>Viimeisin toiminto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+		<td>1</td>
+        <td>Erkki</td>
+        <td>Esimerkki</td>
+        <td>e.esimerkki@email.com</td>
+		<td>13.09.2016 klo 18:30</td>
+      </tr>
+      <tr>
+		<td>2</td>
+        <td>Anssi</td>
+        <td>Asiakas</td>
+        <td>suternööri@gmail.com</td>
+		<td>25.08.2016 klo 08:16</td>
+      </tr>
+      <tr>
+		<td>3</td>
+        <td>Lizard</td>
+        <td>Squad</td>
+        <td>anonymous@missingno.com</td>
+		<td>23.08.2016 klo 10.31</td>
+      </tr>
+      <tr>
+		<td>3</td>
+        <td>Pentti</td>
+        <td>Arajärvinen</td>
+        <td>penttia@mail.com</td>
+		<td>22.08.2016 klo 11.35</td>
+      </tr>
+      <tr>
+		<td>3</td>
+        <td>Mauri</td>
+        <td>Esterinen</td>
+        <td>sahkoposti@404.com</td>
+		<td>19.08.2016 klo 15.04</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+         
   </div>
 </div>
-  
+    
+</div>
+  	</br>
+
   
 		 <div class="container-bottom">
 			<div class="row">
