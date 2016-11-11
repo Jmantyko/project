@@ -19,6 +19,7 @@
   
     <title>Psykoterapiapalvelut Martti Puttonen</title>
 	
+        <link rel="stylesheet" href="style.css" type="text/css">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	
@@ -407,14 +408,14 @@ $(function(){
             if ("customer".equals(userType)){
         %>
     <ul class="nav navbar-nav">
-	  <li class=""><a href="/customer.jsp" data-toggle="tab">Etusivu</a></li>
+	  <li><a href="customer.jsp">Etusivu</a></li>
     </ul>
         <%
             }else{
         %>
     <ul class="nav navbar-nav">
-      <li class=""><a href="admin.jsp" data-toggle="tab">Etusivu</a></li>
-      <li class=""><a href="#" data-toggle="tab">Asiakastilien hallinta</a></li>
+      <li><a href="admin.jsp">Etusivu</a></li>
+      <li><a href="#">Asiakastilien hallinta</a></li>
     </ul>
         <%
             }
@@ -562,17 +563,11 @@ $(function(){
         }
     %>
     
-    <div class="container-bottom">
-        <div class="row">
+        <div class="container-bottom">
             <hr>
-            <div class="col-lg-10">
-                <div class="col-md-8">
-                    <p class="muted pull-right">© 2016 Martti Puttonen. All rights reserved.</p>
-                </div>
-            </div>
+            <p class="muted">© 2016 Martti Puttonen. All rights reserved.</p>
+            <hr>
         </div>
-        <hr>
-    </div>
 
 </div>
                 
