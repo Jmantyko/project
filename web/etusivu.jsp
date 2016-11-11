@@ -336,6 +336,10 @@ $(function(){
 	
 </head>
     <body>
+        <%
+             String email = (String) session.getAttribute("email");
+             String userType = Database.userType(email);
+        %>
 
 <div class="container">
 <nav class="navbar navbar-default" role="navigation">
@@ -352,6 +356,22 @@ $(function(){
 
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <%
+            if ("customer".equals(userType)){
+        %>
+    <ul class="nav navbar-nav">
+	  <li><a href="customer.jsp">Etusivu</a></li>
+    </ul>
+        <%
+            }else if ("admin".equals(userType)){
+        %>
+            <ul class="nav navbar-nav">
+      <li><a href="admin.jsp">Etusivu</a></li>
+      <li><a href="admin.jsp?activeTab=tab11">Asiakastilien hallinta</a></li>
+    </ul>
+        <%
+            }
+        %>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#tab7" data-toggle="tab">Martti Puttonen</a></li>
       <li class="dropdown">
@@ -393,7 +413,7 @@ $(function(){
         </form>
         <%
             }else{
-                String email = (String) session.getAttribute("email");
+               
                 String userName = Database.getUserName(email);
                 String userSurname = Database.getUserSurname(email);
         %>
@@ -405,7 +425,7 @@ $(function(){
                 <a class="btn btn-info form-control" href="profile.jsp">Asetukset</a>
             </div>
             <%
-                String userType = Database.userType(email);
+                
                 if("customer".equals(userType)){
             %>
             <div class="form-group">

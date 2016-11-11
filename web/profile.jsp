@@ -333,7 +333,7 @@ $(function(){
          });
          
          </script>
-	
+         
     </head>
     <body> 
         <%
@@ -399,7 +399,7 @@ $(function(){
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="etusivu.jsp" data-toggle="tab">Arjenhallinta.fi</a>
+    <a class="navbar-brand" href="etusivu.jsp">Arjenhallinta.fi</a>
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
@@ -415,7 +415,7 @@ $(function(){
         %>
     <ul class="nav navbar-nav">
       <li><a href="admin.jsp">Etusivu</a></li>
-      <li><a href="#">Asiakastilien hallinta</a></li>
+      <li><a href="admin.jsp?activeTab=tab11">Asiakastilien hallinta</a></li>
     </ul>
         <%
             }
@@ -462,7 +462,7 @@ $(function(){
                 if ("customer".equals(userType)) {
             %>
             <div class="form-group">
-                <a class="btn btn-info form-control" data-toggle="tab" href="customer.jsp">Taustatiedot</a>
+                <a class="btn btn-info form-control" href="http://localhost:8080/arjenhallinta/customer.jsp">Taustatiedot</a>
             </div>
             <%
                 }
