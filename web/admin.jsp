@@ -69,6 +69,8 @@
 
   
     <title>Psykoterapiapalvelut Martti Puttonen</title>
+    
+    <link rel="stylsheet" href="style.css" type="text/css" >
 	
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -1471,15 +1473,13 @@ $(function(){
 </div>
 
 <div class="tab-pane text-style" id="tab11">
-<div class="container">
-  <h2>Asiakastilit</h2>
-  <div class=".col-xs-6 .col-md-4">
-  <button type="button" class="btn btn-success">Lisää uusi asiakastili</button>
+    <div class ="container">
+	<div class="customer-main-container">
+                    <div class="customer-actions-container">
+					<button type="button" class="btn btn-success">Lisää uusi asiakastili</button>
   <button type="button" class="btn btn-danger">Poista valittu asiakastili</button>
-  </div>
-  <div class=".col-xs-12 .col-md-8"></div>
-  <table class="table topBuffer">
-    <thead>
+<table class="table topBuffer">
+<thead>
       <tr>
 		<th>#</th>
         <th>Etunimi</th>
@@ -1497,19 +1497,14 @@ $(function(){
 		<td><label><input type="checkbox" value=""></label></td>
       </tr>
     </tbody>
-  </table>
-      <div class="container-bottom">
-			<div class="row">
-				<hr>
-				<div class="col-lg-10">
-					<div class="col-md-8">
-						<p class="muted pull-right">© 2016 Martti Puttonen. All rights reserved.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-       <hr>
-</div>
+  </table>                    </div>
+
+                    <div class="customer-display-container">
+                    <p>oikee puoli</p>    
+                    </div>
+
+                </div>
+        </div>
 </div>    
 
 <script type="text/javascript" src="addrow.js"></script>
