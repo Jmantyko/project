@@ -210,7 +210,7 @@
      padding: 1em;
       min-width: 280px; /* change width as per your requirement */
     }
-
+    .topBuffer {margin-top: 20px;}
 	
     </style>
 	
@@ -1221,15 +1221,19 @@ $(function(){
 <div class="tab-pane text-style" id="tab11">
 <div class="container">
   <h2>Asiakastilit</h2>
-  <table class="table">
+  <div class=".col-xs-6 .col-md-4">
+  <button type="button" class="btn btn-success">Lisää uusi asiakastili</button>
+  <button type="button" class="btn btn-danger">Poista valittu asiakastili</button>
+  </div>
+  <div class=".col-xs-12 .col-md-8"></div>
+  <table class="table topBuffer">
     <thead>
       <tr>
 		<th>#</th>
         <th>Etunimi</th>
         <th>Sukunimi</th>
         <th>Tunnus</th>
-		<th>Atiivisuus</th>
-		<th><a>valitse kaikki</a></th>
+		<th>Valinta</th>
       </tr>
     </thead>
     <tbody>
@@ -1239,14 +1243,12 @@ $(function(){
         <td>Esimerkki</td>
         <td>e.esimerkki@email.com</td>
 		<td><label><input type="checkbox" value=""></label></td>
-		<td><label><input type="checkbox" value=""></label></td>
       </tr>
       <tr>
 		<td>2</td>
         <td>Anssi</td>
         <td>Asiakas</td>
         <td>suternööri@gmail.com</td>
-		<td><label><input type="checkbox" value=""></label></td>
 		<td><label><input type="checkbox" value=""></label></td>
       </tr>
       <tr>
@@ -1255,7 +1257,7 @@ $(function(){
         <td>Squad</td>
         <td>anonymous@missingno.com</td>
 		<td><label><input type="checkbox" value=""></label></td>
-		<td><label><input type="checkbox" value=""></label></td>
+                
       </tr>
     </tbody>
   </table>
