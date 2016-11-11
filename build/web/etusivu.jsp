@@ -20,25 +20,24 @@
   
     <title>Psykoterapiapalvelut Martti Puttonen</title>
 	
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	
-	<!-- Optional theme -->
+    <link rel="stylsheet" href="style.css" type="text/css" >
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
    
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	
-	<!-- Bootstrap slider CSS -->
-	
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.3.2/css/bootstrap-slider.css">
-	
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.3.2/css/bootstrap-slider.min.css">
-	
-	<!-- Bootstrap Clockpicker-->
-	
-	<link rel="stylesheet" type="text/css" href="dist/jquery-clockpicker.css">
+    <!-- Bootstrap slider CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.3.2/css/bootstrap-slider.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.3.2/css/bootstrap-slider.min.css">
+
+    <!-- Bootstrap Clockpicker-->
+    <link rel="stylesheet" type="text/css" href="dist/jquery-clockpicker.css">
 
         
     <!-- Custom CSS -->
@@ -351,7 +350,7 @@ $(function(){
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="#tab1" data-toggle="tab">Arjenhallinta.fi</a>
+    <a class="navbar-brand" href="etusivu.jsp">Arjenhallinta.fi</a>
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
@@ -367,13 +366,13 @@ $(function(){
         %>
             <ul class="nav navbar-nav">
       <li><a href="admin.jsp">Etusivu</a></li>
-      <li><a href="admin.jsp?activeTab=tab11">Asiakastilien hallinta</a></li>
+      <li><a href="admin.jsp?#11">Asiakastilien hallinta</a></li>
     </ul>
         <%
             }
         %>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#tab7" data-toggle="tab">Martti Puttonen</a></li>
+      <li class=""><a href="#tab7" data-toggle="tab">Martti Puttonen</a></li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nettiterapia <b class="caret"></b></a>
         <ul class="dropdown-menu">
