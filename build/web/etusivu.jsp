@@ -20,25 +20,24 @@
   
     <title>Arjenhallinta</title>
 	
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	
-	<!-- Optional theme -->
+    <link rel="stylsheet" href="style.css" type="text/css" >
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
    
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	
-	<!-- Bootstrap slider CSS -->
-	
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.3.2/css/bootstrap-slider.css">
-	
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.3.2/css/bootstrap-slider.min.css">
-	
-	<!-- Bootstrap Clockpicker-->
-	
-	<link rel="stylesheet" type="text/css" href="dist/jquery-clockpicker.css">
+    <!-- Bootstrap slider CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.3.2/css/bootstrap-slider.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.3.2/css/bootstrap-slider.min.css">
+
+    <!-- Bootstrap Clockpicker-->
+    <link rel="stylesheet" type="text/css" href="dist/jquery-clockpicker.css">
 
         
     <!-- Custom CSS -->
@@ -335,6 +334,7 @@ $(function(){
          </script>
 	
 </head>
+
 <body>
     <%
         //Fetching data from database
@@ -356,6 +356,92 @@ $(function(){
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#tab1" data-toggle="tab">Arjenhallinta.fi</a>
+
+    <body>
+
+
+<div class="container">
+<nav class="navbar navbar-default" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="etusivu.jsp">Arjenhallinta.fi</a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <%
+            if ("customer".equals(userType)){
+        %>
+    <ul class="nav navbar-nav">
+	  <li><a href="customer.jsp">Etusivu</a></li>
+    </ul>
+        <%
+            }else if ("admin".equals(userType)){
+        %>
+            <ul class="nav navbar-nav">
+      <li><a href="admin.jsp">Etusivu</a></li>
+      <li><a href="admin.jsp?#11">Asiakastilien hallinta</a></li>
+    </ul>
+        <%
+            }
+        %>
+    <ul class="nav navbar-nav">
+      <li class=""><a href="#tab7" data-toggle="tab">Martti Puttonen</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nettiterapia <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#tab4"data-toggle="tab"><h4>Tietoa <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></h4></a></li>
+          <li><a href="#tab5"data-toggle="tab"><h4>Liity <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></h4></a></a></li>
+          <li><a href="#tab3"data-toggle="tab"><h4>Psykoterapiapalvelut <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></h4></a></a></li>
+        </ul>
+      </li>
+	  <li class=""><a href="#tab10" data-toggle="tab">Yhteystiedot</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+     <li class="dropdown">
+        <%
+          
+            if (session.getAttribute("email") == null){
+
+        %>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+            <i class="glyphicon glyphicon-user"></i> Kirjaudu sisään
+        </a>
+        <form action="Login" method="POST" class="dropdown-menu form-login stop-propagation" role="menu">
+            <div class="form-group">
+                <label for="exampleInputEmail1">
+                    <i class="glyphicon glyphicon-envelope"></i> Sähköpostiosoite
+                </label> 
+                <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" />
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">
+                    <i class="glyphicon glyphicon-lock"></i> Salasana
+                </label> 
+                <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-block">Kirjaudu</button>
+            </div>
+        </form>
+        <%
+            }else{
+               
+                String userName = Database.getUserName(email);
+                String userSurname = Database.getUserSurname(email);
+        %>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+            <i class="glyphicon glyphicon-user"></i> <%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%>
+        </a>
+        <form action="Logout" method="POST" class="dropdown-menu form-login stop-propagation" role="menu"> 
+            <div class="form-group">
+                <a class="btn btn-info form-control" href="profile.jsp">Asetukset</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -414,10 +500,8 @@ $(function(){
                                 <button type="submit" class="btn btn-success btn-block">Kirjaudu</button>
                             </div>
                         </form>
-                        <%        } else {
-
-                            String userName = Database.getUserName(email);
-                            String userSurname = Database.getUserSurname(email);
+                        <%        
+                            } else {
                         %>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             <i class="glyphicon glyphicon-user"></i> <%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%>
