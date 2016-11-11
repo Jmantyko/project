@@ -621,7 +621,7 @@ $(function(){
   </tbody>
 </table>
                   
-    </div>
+</div>   
   <div class="col-md-8">
      <div class="row">
         <div class="col-xs-4 col-md-4">
@@ -630,7 +630,7 @@ $(function(){
               <span class="input-group-btn">
               <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
             </span>
-    </div>
+   </div>           
    </div>
          
           <div class="col-xs- col-md-4">
@@ -685,18 +685,6 @@ $(function(){
     
 </div>
   	</br>
-
-  
-		 <div class="container-bottom">
-			<div class="row">
-				<hr>
-				<div class="col-lg-12">
-					<div class="col-md-8">
-						<p class="muted pull-right">© 2016 Martti Puttonen. All rights reserved.</p>
-					</div>
-				</div>
-			</div>
-		</div>
        <hr>
 </div>
 </div>
@@ -1006,16 +994,6 @@ $(function(){
 	ovat luottamuksellisia, eivätkä tule muiden tätä palvelualustaa käyttävien tietoon. 
 	Psykoterapeuttista toimintaa säätelevät yksityissuojan säädökset ja lait. </p>
 	
-    <div class="container-bottom">
-			<div class="row">
-				<hr>
-				<div class="col-lg-12">
-					<div class="col-md-8">
-						<p class="muted pull-right">© 2016 Martti Puttonen. All rights reserved.</p>
-					</div>
-				</div>
-			</div>
-		</div>
        <hr>
   
   </div>
@@ -1048,16 +1026,6 @@ $(function(){
   
   <h3>taustatiedot lomakkeelle</h3>
 	
-    <div class="container-bottom">
-			<div class="row">
-				<hr>
-				<div class="col-lg-12">
-					<div class="col-md-8">
-						<p class="muted pull-right">© 2016 Martti Puttonen. All rights reserved.</p>
-					</div>
-				</div>
-			</div>
-		</div>
        <hr>
   </div>
   
@@ -1079,16 +1047,6 @@ $(function(){
   
 	 <h4>taustatiedot lomakkeelle</h4>
 	
-    <div class="container-bottom">
-			<div class="row">
-				<hr>
-				<div class="col-lg-10">
-					<div class="col-md-8">
-						<p class="muted pull-right">© 2016 Martti Puttonen. All rights reserved.</p>
-					</div>
-				</div>
-			</div>
-		</div>
        <hr>
   </div>
   
@@ -1247,16 +1205,6 @@ $(function(){
 </div>
 
 
- <div class="container-bottom">
-			<div class="row">
-				<hr>
-				<div class="col-lg-12">
-					<div class="col-md-8">
-						<p class="muted pull-right">© 2016 Martti Puttonen. All rights reserved.</p>
-					</div>
-				</div>
-			</div>
-		</div>
        <hr>
 </div>
 
@@ -1278,16 +1226,6 @@ $(function(){
 	</br>
 	</br>
 	</br>
-    <div class="container-bottom">
-			<div class="row">
-				<hr>
-				<div class="col-lg-10">
-					<div class="col-md-8">
-						<p class="muted pull-right">© 2016 Martti Puttonen. All rights reserved.</p>
-					</div>
-				</div>
-			</div>
-		</div>
        <hr>
   </div>
   
@@ -1394,16 +1332,6 @@ $(function(){
   </div>
 </div>
 	
-    <div class="container-bottom">
-			<div class="row">
-				<hr>
-				<div class="col-lg-12">
-					<div class="col-md-8">
-						<p class="muted pull-right">© 2016 Martti Puttonen. All rights reserved.</p>
-					</div>
-				</div>
-			</div>
-		</div>
        <hr>
   </div>
   
@@ -1425,16 +1353,6 @@ $(function(){
   
 	 <h4>taustatiedot lomakkeelle</h4>
 	
-    <div class="container-bottom">
-			<div class="row">
-				<hr>
-				<div class="col-lg-10">
-					<div class="col-md-8">
-						<p class="muted pull-right">© 2016 Martti Puttonen. All rights reserved.</p>
-					</div>
-				</div>
-			</div>
-		</div>
        <hr>
   </div>
   
@@ -1457,19 +1375,8 @@ $(function(){
   
 	 <h4>taustatiedot lomakkeelle</h4>
 	
-    <div class="container-bottom">
-			<div class="row">
-				<hr>
-				<div class="col-lg-10">
-					<div class="col-md-8">
-						<p class="muted pull-right">© 2016 Martti Puttonen. All rights reserved.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-       <hr>
-  </div>
   
+</div>
 </div>
 
 <div class="tab-pane text-style" id="tab11">
@@ -1505,7 +1412,13 @@ $(function(){
 
                 </div>
         </div>
-</div>    
+</div>
+
+<div class="container-bottom">
+            <hr>
+            <p class="muted">© 2016 Martti Puttonen. All rights reserved.</p>
+            <hr>
+        </div>    
 
 <script type="text/javascript" src="addrow.js"></script>
     </body>
