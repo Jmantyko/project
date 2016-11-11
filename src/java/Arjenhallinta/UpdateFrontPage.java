@@ -68,7 +68,7 @@ public class UpdateFrontPage extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         
         Database.updateFrontPageContent(content, id);
-        response.sendRedirect(request.getContextPath() + "/admin.jsp");
+        response.sendRedirect(request.getContextPath() + "/profile.jsp");
         
     }
 
