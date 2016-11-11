@@ -1244,21 +1244,6 @@ $(function(){
         <td>e.esimerkki@email.com</td>
 		<td><label><input type="checkbox" value=""></label></td>
       </tr>
-      <tr>
-		<td>2</td>
-        <td>Anssi</td>
-        <td>Asiakas</td>
-        <td>suternööri@gmail.com</td>
-		<td><label><input type="checkbox" value=""></label></td>
-      </tr>
-      <tr>
-		<td>3</td>
-        <td>Lizard</td>
-        <td>Squad</td>
-        <td>anonymous@missingno.com</td>
-		<td><label><input type="checkbox" value=""></label></td>
-                
-      </tr>
     </tbody>
   </table>
       <div class="container-bottom">
