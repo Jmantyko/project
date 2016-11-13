@@ -23,15 +23,10 @@
 
         <link rel="stylsheet" href="style.css" type="text/css" >
 
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
         <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-
-        <!-- Bootstrap Core CSS -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Bootstrap slider CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.3.2/css/bootstrap-slider.css">
@@ -50,9 +45,9 @@
       
         }
         
-                    .jumbotron {
-            font-color:  #76A5FF;
-            background:  #76A5FF;
+        .jumbotron {
+        font-color:  #76A5FF;
+        background:  #76A5FF;
         width: 100%;
         height: 100%;
         background-size: cover;
@@ -60,105 +55,68 @@
 
             }
 	
-            .jumbotron h2 {
+        .jumbotron h2 {
          color: white;
-             text-shadow:
+        text-shadow:
          -1px -1px 0 #000,  
           1px -1px 0 #000,
          -1px 1px 0 #000,
           1px 1px 0 #000;
-            }
+        }
 
-            .jumbotron p {
+        .jumbotron p {
         color: #fff;
-            text-shadow:
-            -1px -1px 0 #000,  
+        text-shadow:
+        -1px -1px 0 #000,  
          1px -1px 0 #000,
         -1px 1px 0 #000,
          1px 1px 0 #000;
-            }
-	
-	
-            .nav-pills > li.active > a, .nav-pills > li.active > a:focus {
-            color: white;
-            background-color: #76A5FF;
-                    letter-spacing: 2px;
-                    text-shadow:
-                    -1px -1px 0 #000,  
-                     1px -1px 0 #000,
-                    -1px 1px 0 #000,
-                     1px 1px 0 #000;
         }
 
-            .nav-pills > li.active > a:hover {
-                background-color: #0073A3;
-                color:white;
-                            letter-spacing: 2px;
-                            text-shadow:
-                            -0.5px -0.5px 0 #000,  
-                             0.5px -0.5px 0 #000,
-                            -0.5px 0.5px 0 #000,
-                             0.5px 0.5px 0 #000;
-            }
-	
-            a.my-tool-tip, a.my-tool-tip:hover, a.my-tool-tip:visited {
+        .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+        color: #000;  /*Sets the text hover color on navbar*/
+        }
 
-        color: blue;
-            }
-	
-             .carousel-inner > .item > img,
-         .carousel-inner > .item > a > img {
-          width: 70%;
-          margin: auto;
-	  
-             }
-	 
-            <!-- Navbar CSS -->
-	
-            .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-            color: #000;  /*Sets the text hover color on navbar*/
-            }
+        .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >   
+        a:hover, .navbar-default .navbar-nav > .active > a:focus {
+        color: white; /*BACKGROUND color for active*/
+        background-color: #0073A3;
+        }
 
-            .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >   
-            a:hover, .navbar-default .navbar-nav > .active > a:focus {
-            color: white; /*BACKGROUND color for active*/
-            background-color: #0073A3;
-            }
-
-            .navbar-default {
+        .navbar-default {
         background-color: #76A5FF;
         border-color: #B9B7B8;
-            }
+        }
 
-            .dropdown-menu > li > a:hover,
-            .dropdown-menu > li > a:focus {
+        .dropdown-menu > li > a:hover,
+        .dropdown-menu > li > a:focus {
         color: #262626;
-            text-decoration: none;
-            background-color: #66CCFF;  /*change color of links in drop down here*/
-            }
+        text-decoration: none;
+        background-color: #66CCFF;  /*change color of links in drop down here*/
+        }
 
-            .nav > li > a:hover,
-            .nav > li > a:focus {
+        .nav > li > a:hover,
+        .nav > li > a:focus {
         text-decoration: none;
         background-color: silver; /*Change rollover cell color here*/
-            }
+        }
 
 
-            .navbar-default .navbar-nav > li > a {
-            background-color: #0073A3;
-            color: white;
-            background-color: #76A5FF;
-                    letter-spacing: 2px;
-                    text-shadow:
-                    -0.5px -0.5px 0 #000,  
-                     0.5px -0.5px 0 #000,
-                    -0.5px 0.5px 0 #000,
-                     0.5px 0.5px 0 #000;
+        .navbar-default .navbar-nav > li > a {
+        background-color: #0073A3;
+        color: white;
+        background-color: #76A5FF;
+        letter-spacing: 2px;
+        text-shadow:
+        -0.5px -0.5px 0 #000,  
+         0.5px -0.5px 0 #000,
+        -0.5px 0.5px 0 #000,
+         0.5px 0.5px 0 #000;
         }
     
         .form-login{
-         padding: 1em;
-          min-width: 280px; /* change width as per your requirement */
+        padding: 1em;
+        min-width: 280px; /* change width as per your requirement */
         }
 
 
@@ -434,7 +392,7 @@ $(function(){
                 if("customer".equals(userType)){
             %>
             <div class="form-group">
-                <a class="btn btn-info form-control" data-toggle="tab" href="#tab2">Taustatiedot</a>
+                <a class="btn btn-info form-control" href="customer.jsp">Taustatiedot</a>
             </div>
             <%
                 }

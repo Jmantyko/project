@@ -50,3 +50,36 @@ body {
 #tab-display-harjoitus, #tab-display-viestit, #tab-display-welcome {
     position: absolute;
 }
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus {
+    color: white;
+    background-color: #76A5FF;
+    letter-spacing: 2px;
+    text-shadow:
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+}
+
+.nav-pills > li.active > a:hover {
+    background-color: #0073A3;
+    color:white;
+    letter-spacing: 2px;
+    text-shadow:
+    -0.5px -0.5px 0 #000,  
+     0.5px -0.5px 0 #000,
+    -0.5px 0.5px 0 #000,
+     0.5px 0.5px 0 #000;
+}
+	
+a.my-tool-tip, a.my-tool-tip:hover, a.my-tool-tip:visited {
+    color: blue;
+}
+
+	
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+}

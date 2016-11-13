@@ -71,26 +71,26 @@
     <title>Psykoterapiapalvelut Martti Puttonen</title>
     
     <link rel="stylsheet" href="style.css" type="text/css" >
-	
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	
-	<!-- Optional theme -->
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
    
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	
-	<!-- Bootstrap slider CSS -->
-	
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.3.2/css/bootstrap-slider.css">
-	
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.3.2/css/bootstrap-slider.min.css">
-	
-	<!-- Bootstrap Clockpicker-->
-	
-	<link rel="stylesheet" type="text/css" href="dist/jquery-clockpicker.css">
+    <!-- Bootstrap slider CSS -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.3.2/css/bootstrap-slider.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.3.2/css/bootstrap-slider.min.css">
+
+    <!-- Bootstrap Clockpicker-->
+
+    <link rel="stylesheet" type="text/css" href="dist/jquery-clockpicker.css">
 
         
     <!-- Custom CSS -->
@@ -99,213 +99,167 @@
     body {
         padding-top: 45px;
         /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */	
-      
     }
         
-		.jumbotron {
-	font-color:  #76A5FF;
-	background:  #76A5FF;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    overflow: hidden;
+    .jumbotron {
+        font-color:  #76A5FF;
+        background:  #76A5FF;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        overflow: hidden;
 
-	}
-	
-	.jumbotron h2 {
-     color: white;
-	 text-shadow:
-     -1px -1px 0 #000,  
-      1px -1px 0 #000,
-     -1px 1px 0 #000,
-      1px 1px 0 #000;
-	}
+    }
 
-	.jumbotron p {
-    color: #fff;
-	text-shadow:
-	-1px -1px 0 #000,  
-     1px -1px 0 #000,
-    -1px 1px 0 #000,
-     1px 1px 0 #000;
-	}
-	
-	
-	.nav-pills > li.active > a, .nav-pills > li.active > a:focus {
+    .jumbotron h2 {
+        color: white;
+        text-shadow:
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px 1px 0 #000,
+         1px 1px 0 #000;
+     }
+
+    .jumbotron p {
+        color: #fff;
+        text-shadow:
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px 1px 0 #000,
+         1px 1px 0 #000;
+    }
+
+    .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+        color: #000;  /*Sets the text hover color on navbar*/
+    }
+
+    .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >   
+    a:hover, .navbar-default .navbar-nav > .active > a:focus {
+        color: white; /*BACKGROUND color for active*/
+        background-color: #0073A3;
+    }
+
+    .navbar-default {
+        background-color: #76A5FF;
+        border-color: #B9B7B8;
+    }
+
+    .dropdown-menu > li > a:hover,
+    .dropdown-menu > li > a:focus {
+        color: #262626;
+       text-decoration: none;
+       background-color: #66CCFF;  /*change color of links in drop down here*/
+    }
+
+    .nav > li > a:hover,
+    .nav > li > a:focus {
+        text-decoration: none;
+        background-color: silver; /*Change rollover cell color here*/
+    }
+
+
+    .navbar-default .navbar-nav > li > a {
+        background-color: #0073A3;
         color: white;
         background-color: #76A5FF;
-		letter-spacing: 2px;
-		text-shadow:
-		-1px -1px 0 #000,  
-		 1px -1px 0 #000,
-		-1px 1px 0 #000,
-		 1px 1px 0 #000;
-    }
-
-        .nav-pills > li.active > a:hover {
-            background-color: #0073A3;
-            color:white;
-			letter-spacing: 2px;
-			text-shadow:
-			-0.5px -0.5px 0 #000,  
-			 0.5px -0.5px 0 #000,
-			-0.5px 0.5px 0 #000,
-			 0.5px 0.5px 0 #000;
-        }
-	
-	a.my-tool-tip, a.my-tool-tip:hover, a.my-tool-tip:visited {
-
-    color: blue;
-	}
-	
-	 .carousel-inner > .item > img,
-     .carousel-inner > .item > a > img {
-      width: 70%;
-      margin: auto;
-	  
-	 }
-	 
-	<!-- Navbar CSS -->
-	
-	.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-	color: #000;  /*Sets the text hover color on navbar*/
-	}
-
-	.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >   
-	a:hover, .navbar-default .navbar-nav > .active > a:focus {
-	color: white; /*BACKGROUND color for active*/
-	background-color: #0073A3;
-	}
-
-	.navbar-default {
-    background-color: #76A5FF;
-    border-color: #B9B7B8;
-	}
-
-	.dropdown-menu > li > a:hover,
-	.dropdown-menu > li > a:focus {
-    color: #262626;
-	text-decoration: none;
-	background-color: #66CCFF;  /*change color of links in drop down here*/
-	}
-
-	.nav > li > a:hover,
-	.nav > li > a:focus {
-    text-decoration: none;
-    background-color: silver; /*Change rollover cell color here*/
-	}
-
-
-	.navbar-default .navbar-nav > li > a {
-	background-color: #0073A3;
-        color: white;
-        background-color: #76A5FF;
-		letter-spacing: 2px;
-		text-shadow:
-		-0.5px -0.5px 0 #000,  
-		 0.5px -0.5px 0 #000,
-		-0.5px 0.5px 0 #000,
-		 0.5px 0.5px 0 #000;
+        letter-spacing: 2px;
+        text-shadow:
+        -0.5px -0.5px 0 #000,  
+         0.5px -0.5px 0 #000,
+        -0.5px 0.5px 0 #000,
+         0.5px 0.5px 0 #000;
     }
     
-    .form-login{
-     padding: 1em;
-      min-width: 280px; /* change width as per your requirement */
+    .form-login {
+        padding: 1em;
+        min-width: 280px; /* change width as per your requirement */
     }
     
-    .chat
-{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
+    .chat {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
 
-.chat li
-{
-    margin-bottom: 10px;
-    padding-bottom: 5px;
-    border-bottom: 1px dotted #B3A9A9;
-}
+    .chat li {
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        border-bottom: 1px dotted #B3A9A9;
+    }
 
-.chat li.left .chat-body
-{
-    margin-left: 60px;
-}
+    .chat li.left .chat-body {
+        margin-left: 60px;
+    }
 
-.chat li.right .chat-body
-{
-    margin-right: 60px;
-}
+    .chat li.right .chat-body {
+        margin-right: 60px;
+    }
 
 
-.chat li .chat-body p
-{
-    margin: 0;
-    color: #777777;
-}
+    .chat li .chat-body p {
+        margin: 0;
+        color: #777777;
+    }
 
-.panel .slidedown .glyphicon, .chat .glyphicon
-{
-    margin-right: 5px;
-}
+    .panel .slidedown .glyphicon, .chat .glyphicon {
+        margin-right: 5px;
+    }
 
-.panel-body
-{
-    overflow-y: scroll;
-    height: 250px;
-}
+    .panel-body {
+        overflow-y: scroll;
+        height: 250px;
+    }
 
-::-webkit-scrollbar-track
-{
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    background-color: #F5F5F5;
-}
+    ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        background-color: #F5F5F5;
+    }
 
-::-webkit-scrollbar
-{
-    width: 12px;
-    background-color: #F5F5F5;
-}
+    ::-webkit-scrollbar {
+        width: 12px;
+        background-color: #F5F5F5;
+    }
 
-::-webkit-scrollbar-thumb
-{
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-    background-color: #555;
-}
-    .topBuffer {margin-top: 20px;}
+    ::-webkit-scrollbar-thumb {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        background-color: #555;
+    }
+    .topBuffer {
+        margin-top: 20px;
+    }
 	
     </style>
 	
-	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	
-	<!-- jQuery Version 1.11.1 -->
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- jQuery Version 1.11.1 -->
     <script src="js/jquery.js"></script>
 	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.3.2/bootstrap-slider.js"></script>
-	<script type="text/javascript" https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.3.2/bootstrap-slider.min.js</script>
-	
-	<!-- Clockpicker Javascript -->
-	
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-	<script type="text/javascript" src="dist/bootstrap-clockpicker.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.3.2/bootstrap-slider.js"></script>
+    <script type="text/javascript" https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.3.2/bootstrap-slider.min.js</script>
+
+    <!-- Clockpicker Javascript -->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="dist/bootstrap-clockpicker.min.js"></script>
         
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 	
-	<!-- Bootstrap Slider Javascript -->
+    <!-- Bootstrap Slider Javascript -->
 
-	      <script>
+    <script>
 $(function(){
    $('#ex1').slider({
 	formater: function(value) {
