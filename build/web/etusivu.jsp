@@ -317,7 +317,7 @@ $(function(){
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="#tab1" data-toggle="tab">Arjenhallinta.fi</a>
+    <a class="navbar-brand" href="etusivu.jsp">Arjenhallinta.fi</a>
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
@@ -339,7 +339,7 @@ $(function(){
             }
         %>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#tab7" data-toggle="tab">Martti Puttonen</a></li>
+      <li class="s"><a href="#tab7" data-toggle="tab">Martti Puttonen</a></li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nettiterapia <b class="caret"></b></a>
         <ul class="dropdown-menu">
