@@ -19,7 +19,7 @@
   
     <title>Arjenhallinta</title>
 	
-    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="style.css" type="text/css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	
@@ -36,7 +36,7 @@
     <!-- Bootstrap Clockpicker-->
     <link rel="stylesheet" type="text/css" href="dist/jquery-clockpicker.css">
     
-        
+    
     <!-- Custom CSS -->
     <style>
 	
@@ -160,10 +160,10 @@
                 hash && $('ul.nav a[href="' + hash + '"]').tab('show');
 
                 $('.nav-tabs a').click(function (e) {
-                  $(this).tab('show');
-                  var scrollmem = $('body').scrollTop();
-                  window.location.hash = this.hash;
-                  $('html,body').scrollTop(scrollmem);
+                    $(this).tab('show');
+                    var scrollmem = $('body').scrollTop();
+                    window.location.hash = this.hash;
+                    $('html,body').scrollTop(scrollmem);
                 });
             });
         </script>
@@ -438,9 +438,15 @@ $(function(){
                             <li><a data-toggle="tab" href="#tab-content-2">Viestit</a></li>
                         </ul>
                         <div class="tab-content">
+                            
                             <div id="tab-content-1" class="tab-pane fade in active">
-                                <a href="#tab-display-harjoitus" data-toggle="tab">Harjoitus 1</a>
+                                <button type="button" class="btn btn-group btn-group-justified btn-info" data-toggle="collapse" data-target="#demo">Harjoitus 1</button>
+                                <div id="demo" class="collapse">
+                                <a class="btn btn-success pull-left" href="#tab-display-harjoitus" data-toggle="tab">Lisää uusi merkintä</a>
+                                <a class="btn btn-primary pull-right" href="#tab-display-harjoitus" data-toggle="tab">Yhteenveto</a>
+                                </div>
                             </div>
+                            
                             <div id="tab-content-2" class="tab-pane fade">
                                 <a href="#tab-display-viestit" data-toggle="tab">Joku viesti</a>
                             </div>
@@ -467,7 +473,6 @@ $(function(){
 
         <div class="tab-pane text-style" id="tab2">
             <div class="container">
-                <p>placeholder Google Forms</p>
                 
                 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScbo0S4YBRk9CYxDuZyL_uo5V1wOUQSaZxZ8RAGM5eH-YlXGg/viewform?embedded=true" width="50%" height="500" frameborder="0" marginheight="0" marginwidth="0">Ladataan...</iframe>
             </div>

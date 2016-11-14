@@ -24,7 +24,7 @@ body {
 }
 
 .customer-actions-container {
-    padding: inherit; 
+    padding: inherit;
     float: left;
     width: 50%;
     height: auto;
@@ -40,6 +40,9 @@ body {
     padding: 10px;
 }
 
+.collapse {
+}
+
 .container-bottom {
     width: 100%;
     margin-right: auto;
@@ -49,6 +52,9 @@ body {
 
 #tab-display-harjoitus, #tab-display-viestit, #tab-display-welcome {
     position: absolute;
+}
+#demo {
+    padding: 10px;
 }
 
 .nav-pills > li.active > a, .nav-pills > li.active > a:focus {
