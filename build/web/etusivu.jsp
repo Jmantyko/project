@@ -446,6 +446,8 @@ $(function(){
             <h2>Tab 5</h2>
 
             <p><%=InputOutput.clean(content1)%></p>
+            
+            <button type="button" class="btn btn-success btn-lg btn-block" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdNWMO6EXGu_CKk-DT7dWOXNPfjUB4jy7bbhK-zHfiKw7Zo4g/viewform')"> Linkki nettiterapian asennemittari-lomakkeen täyttöön </button>
 
             <button type="button" class="btn btn-default btn-lg btn-block" onclick="window.open('https://docs.google.com/forms/d/1OtY_WaS4OtJbdcV8xlOLyHtf4dAIknrdML82-EVaQx8/edit?usp=drive_web')">Linkki ilmaisen harjoitusohjelman taustatietojen täyttöön </button>
 
