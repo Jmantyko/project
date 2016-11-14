@@ -425,7 +425,7 @@ $(function(){
                 if ("customer".equals(userType)) {
             %>
             <div class="form-group">
-                <a class="btn btn-info form-control" href="customer.jsp">Taustatiedot</a>
+                <a class="btn btn-info form-control" href="customer.jsp#tab2">Taustatiedot</a>
             </div>
             <%
                 }

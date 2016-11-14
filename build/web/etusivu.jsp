@@ -151,6 +151,18 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+   
+    <script>
+        $(function(){
+            var hash = window.location.hash;
+            hash && $('li.nav a[href="' + hash + '"]').tab('show');
+            
+            $('.nav-bar a').click(function (e) {
+                $(this).tab('show');
+                window.location.hash = this.hash;
+            });
+        });
+    </script>
 	
 	<!-- Bootstrap Slider Javascript -->
 
@@ -392,7 +404,7 @@ $(function(){
                 if("customer".equals(userType)){
             %>
             <div class="form-group">
-                <a class="btn btn-info form-control" href="customer.jsp">Taustatiedot</a>
+                <a class="btn btn-info form-control" href="customer.jsp#tab2">Taustatiedot</a>
             </div>
             <%
                 }
