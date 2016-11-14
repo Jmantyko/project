@@ -22,8 +22,8 @@
     <body> 
         <%
             //Fetching data from database
-            String content1 = Database.getFrontPageContent(1);
-            String content2 = Database.getFrontPageContent(2);
+            //String content1 = Database.getFrontPageContent(1);
+            //String content2 = Database.getFrontPageContent(2);
 
             //allow access only if session exists
             //and userType is appropriate for the page
