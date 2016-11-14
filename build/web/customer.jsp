@@ -440,15 +440,15 @@ $(function(){
                         <div class="tab-content">
                             
                             <div id="tab-content-1" class="tab-pane fade in active">
-                                <button type="button" class="btn btn-group btn-group-justified btn-info" data-toggle="collapse" data-target="#demo">Harjoitus 1</button>
-                                <div id="demo" class="collapse">
+                                <button type="button" class="btn btn-group btn-group-justified btn-info" data-toggle="collapse" data-target="#harjoitukset">Harjoitus 1</button>
+                                <div id="harjoitukset" class="collapse">
                                 <a class="btn btn-success pull-left" href="#tab-display-harjoitus" data-toggle="tab">Lisää uusi merkintä</a>
                                 <a class="btn btn-primary pull-right" href="#tab-display-harjoitus" data-toggle="tab">Yhteenveto</a>
                                 </div>
                             </div>
                             
                             <div id="tab-content-2" class="tab-pane fade">
-                                <a href="#tab-display-viestit" data-toggle="tab">Joku viesti</a>
+                                <button href="#tab-display-viestit" type="button" class="btn btn-group btn-group-justified btn-info" data-toggle="tab">Martti Puttonen - Harjoitus 1 <br> 19.11.2016 klo 15:14</button>
                             </div>
                         </div>
                     </div>
