@@ -68,7 +68,7 @@
     <meta name="author" content="">
 
   
-    <title>Psykoterapiapalvelut Martti Puttonen</title>
+    <title>Arjenhallinta</title>
     
     <link rel="stylsheet" href="style.css" type="text/css" >
 
