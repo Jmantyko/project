@@ -74,7 +74,9 @@ CREATE TABLE Frontpage (
 
 INSERT INTO Users (UserEmail, UserPassword, UserName, UserSurname, UserAddress, UserPostalcode, UserPostoffice, UserType)
 	VALUES 	('admin@admin.fi', '123', 'Teppo', 'Terapeutti', 'Kauppakatu 5', '10101', 'Oulu', 'admin'),
-		('customer@customer.fi', '123', 'Aki', 'Asiakas', 'Torikatu 3', '12300', 'Oulu', 'customer');
+		('customer@customer.fi', '123', 'Aki', 'Asiakas', 'Torikatu 3', '12300', 'Oulu', 'customer'),
+		('erkkiesimerkki@esimerkki.fi', '123', 'Erkki', 'Esimerkki', 'Talokatu 7', '88888', 'Helsinki', 'customer'),
+		('mattimeikalainen@meikalainen.fi', '123', 'Matti', 'Meikäläinen', 'Kerroskuja 5', '82828', 'Tampere', 'customer');
 			
 INSERT INTO Frontpage (PageContent)
 	VALUES	('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tincidunt erat eu convallis vulputate. Cras pellentesque, urna vitae finibus imperdiet, eros massa auctor diam, eu tristique purus lacus vitae dui. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas viverra mauris sed sapien pharetra lobortis. Proin ut ipsum non risus pulvinar mattis. Pellentesque pellentesque felis eu eros vehicula, sed gravida arcu sodales. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin tincidunt sollicitudin tortor sit amet scelerisque. Aenean quis lacinia turpis.'),

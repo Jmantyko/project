@@ -1100,21 +1100,35 @@ $(function(){
 <table class="table topBuffer">
 <thead>
       <tr>
-		<th>#</th>
+        <th>#</th>
         <th>Etunimi</th>
         <th>Sukunimi</th>
-        <th>Tunnus</th>
-		<th>Valinta</th>
+        <th>Sähköposti</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-		<td>1</td>
-        <td>Erkki</td>
-        <td>Esimerkki</td>
-        <td>e.esimerkki@email.com</td>
-		<td><label><input type="checkbox" value=""></label></td>
-      </tr>
+        <% 
+            //In this for loop we will print each customer
+            //for a separate table row
+            int userID = 0;
+            int largestID = Database.getLargestID();
+            for(userID=1; userID<=largestID;userID++){
+                String tableUserType = Database.getUserTypeUsingID(userID);
+                if("customer".equals(tableUserType)){
+                    String tableEmail = Database.getUserEmail(userID);
+                    String tableUsername = Database.getUserNameUsingID(userID);
+                    String tableSurname = Database.getUserSurnameUsingID(userID);
+        %>
+        <tr>
+            <td><%=userID%></td>
+            <td><%=tableUsername%></td>
+            <td><%=tableSurname%></td>
+            <td><%=tableEmail%></td>
+        </tr>
+        <%
+                }
+            }
+        %>
     </tbody>
   </table>                    </div>
 

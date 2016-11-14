@@ -143,6 +143,32 @@ public class Database {
         return userExists;
     }
     
+    public static int getLargestID() {
+        
+        int userID = 0;
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("SELECT MAX(UserID) FROM Users");
+            rs = ps.executeQuery();
+            
+            if(rs.next()){
+                userID = rs.getInt(1);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            closeDatabaseConnections();
+            
+        }
+        
+        return userID;
+    }
+    
     public static int getUserID(String email) {
         
         int userID = 0;
@@ -168,6 +194,33 @@ public class Database {
         }
         
         return userID;
+    }
+    
+    public static String getUserEmail(int userID) {
+        
+        String userEmail = "";
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("SELECT UserEmail FROM Users WHERE UserID=?");
+            ps.setInt(1, userID);
+            rs = ps.executeQuery();
+            
+            if(rs.next()){
+                userEmail = rs.getString(1);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            closeDatabaseConnections();
+            
+        }
+        
+        return userEmail;
     }
     
     public static String getUserName(String email) {
@@ -330,6 +383,87 @@ public class Database {
         }
         
         return userType;
+    }
+    
+    public static String getUserTypeUsingID(int userID) {
+        
+        String userType = "";
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("SELECT UserType FROM Users WHERE UserID=?");
+            ps.setInt(1, userID);
+            rs = ps.executeQuery();
+            
+            if(rs.next()){
+                userType = rs.getString(1);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            closeDatabaseConnections();
+            
+        }
+        
+        return userType;
+    }
+    
+    public static String getUserNameUsingID(int userID) {
+        
+        String userName = "";
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("SELECT UserName FROM Users WHERE UserID=?");
+            ps.setInt(1, userID);
+            rs = ps.executeQuery();
+            
+            if(rs.next()){
+                userName = rs.getString(1);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            closeDatabaseConnections();
+            
+        }
+        
+        return userName;
+    }
+    
+    public static String getUserSurnameUsingID(int userID) {
+        
+        String userSurname = "";
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("SELECT UserSurname FROM Users WHERE UserID=?");
+            ps.setInt(1, userID);
+            rs = ps.executeQuery();
+            
+            if(rs.next()){
+                userSurname = rs.getString(1);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            closeDatabaseConnections();
+            
+        }
+        
+        return userSurname;
     }
                     
     public static void updateUserDetails(String userName, String userSurname,
