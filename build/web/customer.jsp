@@ -150,8 +150,23 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
 	
 	<!-- Bootstrap Slider Javascript -->
+        
+        <script>
+            $(function(){
+                var hash = window.location.hash;
+                hash && $('ul.nav a[href="' + hash + '"]').tab('show');
+
+                $('.nav-tabs a').click(function (e) {
+                  $(this).tab('show');
+                  var scrollmem = $('body').scrollTop();
+                  window.location.hash = this.hash;
+                  $('html,body').scrollTop(scrollmem);
+                });
+            });
+        </script>
 
 	      <script>
 $(function(){

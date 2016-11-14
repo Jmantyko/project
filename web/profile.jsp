@@ -378,7 +378,7 @@ $(function(){
         %>
     <ul class="nav navbar-nav">
       <li><a href="admin.jsp">Etusivu</a></li>
-      <li><a href="admin.jsp?#11">Asiakastilien hallinta</a></li>
+      <li><a href="admin.jsp?#tab11">Asiakastilien hallinta</a></li>
     </ul>
         <%
             }
