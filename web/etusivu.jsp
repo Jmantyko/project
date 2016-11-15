@@ -301,7 +301,11 @@ $(function(){
         <%
             //Fetching data from database
             String content1 = Database.getFrontPageContent(1);
-            String content2 = Database.getFrontPageContent(2); 
+            String content2 = Database.getFrontPageContent(2);
+            String content3 = Database.getFrontPageContent(3);
+            String content4 = Database.getFrontPageContent(4);
+            String content5 = Database.getFrontPageContent(5);
+            String content6 = Database.getFrontPageContent(6);
             
             String email = (String) session.getAttribute("email");
             String userType = Database.userType(email);
@@ -341,16 +345,16 @@ $(function(){
             }
         %>
     <ul class="nav navbar-nav">
-      <li class="s"><a href="#tab7" data-toggle="tab">Martti Puttonen</a></li>
+      <li class="s"><a href="#martti" data-toggle="tab">Martti Puttonen</a></li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nettiterapia <b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <li><a href="#tab4"data-toggle="tab"><h4>Tietoa <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></h4></a></li>
-          <li><a href="#tab5"data-toggle="tab"><h4>Liity <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></h4></a></a></li>
-          <li><a href="#tab3"data-toggle="tab"><h4>Psykoterapiapalvelut <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></h4></a></a></li>
+          <li><a href="#tietoa"data-toggle="tab"><h4>Tietoa <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></h4></a></li>
+          <li><a href="#liity"data-toggle="tab"><h4>Liity <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></h4></a></a></li>
+          <li><a href="#psykoterapiapalvelut"data-toggle="tab"><h4>Psykoterapiapalvelut <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></h4></a></a></li>
         </ul>
       </li>
-	  <li class=""><a href="#tab10" data-toggle="tab">Yhteystiedot</a></li>
+	  <li class=""><a href="#yhteystiedot" data-toggle="tab">Yhteystiedot</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
      <li class="dropdown">
@@ -429,25 +433,27 @@ $(function(){
             <p><%=InputOutput.clean(content1)%></p>
         </div>
     </div>
-
-    <div class="tab-pane text-style" id="tab3">
+        
+        
+    <div class="tab-pane text-style" id="martti">
         <div class="container">
-            <h2>Tab 3</h2>
-            <p><%=InputOutput.clean(content1)%></p>
-        </div>
-    </div>
-    <div class="tab-pane text-style" id="tab4">
-        <div class="container">
-            <h2>Tab 4</h2>
-            <p><%=InputOutput.clean(content1)%></p>
+            <h2>Tab martti</h2>
+            <p><%=InputOutput.clean(content2)%></p>
         </div>
     </div>
 
-    <div class="tab-pane text-style" id="tab5">
+    <div class="tab-pane text-style" id="tietoa">
         <div class="container">
-            <h2>Tab 5</h2>
+            <h2>Tab tietoa</h2>
+            <p><%=InputOutput.clean(content3)%></p>
+        </div>
+    </div>
 
-            <p><%=InputOutput.clean(content1)%></p>
+    <div class="tab-pane text-style" id="liity">
+        <div class="container">
+            <h2>Tab liity</h2>
+
+            <p><%=InputOutput.clean(content4)%></p>
 
             <button type="button" class="btn btn-default btn-lg btn-block" onclick="window.open('https://docs.google.com/forms/d/1OtY_WaS4OtJbdcV8xlOLyHtf4dAIknrdML82-EVaQx8/edit?usp=drive_web')">Linkki ilmaisen harjoitusohjelman taustatietojen täyttöön </button>
 
@@ -455,30 +461,19 @@ $(function(){
         </div>
     </div>
 
-    <div class="tab-pane text-style" id="tab7">
+    <div class="tab-pane text-style" id="psykoterapiapalvelut">
         <div class="container">
-            <h2>Tab 7</h2>
-            <p><%=InputOutput.clean(content1)%></p>
-        </div>
-
-    </div>
-    <div class="tab-pane text-style" id="tab9">
-        <div class="container">
-            <h2>Tab 9</h2>
-            <p><%=InputOutput.clean(content1)%></p>
+            <h2>Tab psykoterapiapalvelut</h2>
+            <p><%=InputOutput.clean(content5)%></p>
         </div>
     </div>
 
-    <div class="tab-pane text-style" id="tab10">
+    <div class="tab-pane text-style" id="yhteystiedot">
         <div class="container">
-            <h2>Tab 10</h2>
-            <p><%=InputOutput.clean(content1)%></p>
+            <h2>Tab yhteystiedot</h2>
+            <p><%=InputOutput.clean(content6)%></p>
         </div>
     </div>
-        
-    
-        
-        
         
     </div>
 

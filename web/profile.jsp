@@ -304,6 +304,10 @@ $(function(){
             //Fetching data from database
             String content1 = Database.getFrontPageContent(1);
             String content2 = Database.getFrontPageContent(2);
+            String content3 = Database.getFrontPageContent(3);
+            String content4 = Database.getFrontPageContent(4);
+            String content5 = Database.getFrontPageContent(5);
+            String content6 = Database.getFrontPageContent(6);
             
             //allow access only if session exists
             //and userType is appropriate for the page
@@ -469,16 +473,40 @@ $(function(){
                 <input type="submit" class="btn btn-success" value="Lisää käyttäjä" /> 
             </form><br>
             <form action="UpdateFrontPage" method="POST" accept-charset="utf-8">
-                <label for="comment">Content1</label>
+                <label for="comment">Arjenhallinta.fi</label>
                 <input type="text" class="form-control" name="content" value="<%=InputOutput.clean(content1)%>" /><br>
                 <input type="hidden" name="id" value="1">
-                <input type="submit" class="btn btn-warning" value="Päivitä etusivun sisältö" />
-            </form><br>
+                <input type="submit" class="btn btn-warning" value="Päivitä" />
+            </form>
             <form action="UpdateFrontPage" method="POST" accept-charset="utf-8">
-                <label for="comment">Content2</label>
+                <label for="comment">Martti Puttonen</label>
                 <input type="text" class="form-control" name="content" value="<%=InputOutput.clean(content2)%>" /><br>
                 <input type="hidden" name="id" value="2">
-                <input type="submit" class="btn btn-warning" value="Päivitä etusivun sisältö" />
+                <input type="submit" class="btn btn-warning" value="Päivitä" />
+            </form>
+            <form action="UpdateFrontPage" method="POST" accept-charset="utf-8">
+                <label for="comment">Liity</label>
+                <input type="text" class="form-control" name="content" value="<%=InputOutput.clean(content3)%>" /><br>
+                <input type="hidden" name="id" value="3">
+                <input type="submit" class="btn btn-warning" value="Päivitä" />
+            </form><br>
+            <form action="UpdateFrontPage" method="POST" accept-charset="utf-8">
+                <label for="comment">Tietoa</label>
+                <input type="text" class="form-control" name="content" value="<%=InputOutput.clean(content4)%>" /><br>
+                <input type="hidden" name="id" value="4">
+                <input type="submit" class="btn btn-warning" value="Päivitä" />
+            </form><br>
+                        <form action="UpdateFrontPage" method="POST" accept-charset="utf-8">
+                <label for="comment">Psykoterapiapalvelut</label>
+                <input type="text" class="form-control" name="content" value="<%=InputOutput.clean(content5)%>" /><br>
+                <input type="hidden" name="id" value="5">
+                <input type="submit" class="btn btn-warning" value="Päivitä" />
+            </form><br>
+                        <form action="UpdateFrontPage" method="POST" accept-charset="utf-8">
+                <label for="comment">Yhteystiedot</label>
+                <input type="text" class="form-control" name="content" value="<%=InputOutput.clean(content6)%>" /><br>
+                <input type="hidden" name="id" value="6">
+                <input type="submit" class="btn btn-warning" value="Päivitä" />
             </form><br>
             <form action="Logout" method="POST">
                 <input type="submit" class="btn btn-danger" value="Kirjaudu ulos" />
