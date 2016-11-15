@@ -120,6 +120,21 @@
         padding: 1em;
         min-width: 280px; /* change width as per your requirement */
         }
+        
+        /* Image gallery */
+        
+        .gallery{
+        margin-top: 25px;
+        }
+        .gallery-item{
+	margin-bottom: 30px;
+        }
+        .modal-footer{
+                text-align: center;
+        }
+        .pagination{
+                margin: 0;
+        }
 
 
 	
@@ -295,6 +310,89 @@ $(function(){
          });
          
          </script>
+         
+         <script>
+         
+         $(document).ready(function(){
+    $('.link-gallery').click(function(){
+		var galleryId = $(this).attr('data-target');
+		var currentLinkIndex = $(this).index('a[data-target="'+ galleryId +'"]');
+
+		createGallery(galleryId, currentLinkIndex);
+		createPagination(galleryId, currentLinkIndex);
+
+		$(galleryId).on('hidden.bs.modal', function (){
+			destroyGallry(galleryId);
+			destroyPagination(galleryId);
+		});
+
+		$(galleryId +' .carousel').on('slid.bs.carousel', function (){
+			var currentSlide = $(galleryId +' .carousel .item.active');
+			var currentSlideIndex = currentSlide.index(galleryId +' .carousel .item');
+
+			setTitle(galleryId, currentSlideIndex);
+			setPagination(++currentSlideIndex, true);
+		})
+	});
+
+	function createGallery(galleryId, currentSlideIndex){
+		var galleryBox = $(galleryId + ' .carousel-inner');
+
+		$('a[data-target="'+ galleryId +'"]').each(function(){
+			var img = $(this).html();
+			var galleryItem = $('<div class="item">'+ img +'</div>');
+
+			galleryItem.appendTo(galleryBox);
+		});
+
+		galleryBox.children('.item').eq(currentSlideIndex).addClass('active');
+		setTitle(galleryId, currentSlideIndex);
+	}
+
+	function destroyGallry(galleryId){
+		$(galleryId + ' .carousel-inner').html("");
+	}
+
+	function createPagination(galleryId, currentSlideIndex){
+		var pagination = $(galleryId + ' .pagination');
+		var carouselId = $(galleryId).find('.carousel').attr('id');
+		var prevLink = $('<li><a href="#'+ carouselId +'" data-slide="prev">«</a></li>');
+		var nextLink = $('<li><a href="#'+ carouselId +'" data-slide="next">»</a></li>');
+
+		prevLink.appendTo(pagination);
+		nextLink.appendTo(pagination);
+
+		$('a[data-target="'+ galleryId +'"]').each(function(){
+			var linkIndex = $(this).index('a[data-target="'+ galleryId +'"]');
+			var paginationLink = $('<li><a data-target="#carouselGallery" data-slide-to="'+ linkIndex +'">'+ (linkIndex+1) +'</a></li>');
+
+			paginationLink.insertBefore('.pagination li:last-child');
+		});
+
+		setPagination(++currentSlideIndex);
+	}
+
+	function setPagination(currentSlideIndex, reset = false){
+		if (reset){
+			$('.pagination li').removeClass('active');
+		}
+
+		$('.pagination li').eq(currentSlideIndex).addClass('active');
+	}
+
+	function destroyPagination(galleryId){
+		$(galleryId + ' .pagination').html("");
+	}
+
+	function setTitle(galleryId, currentSlideIndex){
+		var imgAlt = $(galleryId + ' .item').eq(currentSlideIndex).find('img').attr('alt');
+
+		$('.modal-title').text(imgAlt);
+	}
+});
+         
+         </script>
+
 	
 </head>
     <body>
@@ -436,10 +534,69 @@ $(function(){
         
         
     <div class="tab-pane text-style" id="martti">
-        <div class="container">
-            <h2>Tab martti</h2>
-            <p><%=InputOutput.clean(content2)%></p>
-        </div>
+
+          
+            
+                <div class="container">
+                    
+                    <h2>Tab martti</h2>
+
+                    <div class="gallery">
+                        <div class="container">
+                                <div class="row">
+                        <div class="col-xs-3 gallery-item">
+                            <a href="#galleryImg1" class="link-gallery" data-toggle="modal" data-target="#modalGallery">
+                                <img src="Images/kuva1.jpg" class="img-responsive img-gallery" alt="First image">
+                            </a>
+                        </div> <!-- /.col -->
+
+                        <div class="col-xs-3 gallery-item">
+                            <a href="#galleryImg1" class="link-gallery" data-toggle="modal" data-target="#modalGallery">
+                                <img src="Images/kuva2.jpg" class="img-responsive img-gallery" alt="Second image">
+                            </a>
+                        </div> <!-- /.col -->
+
+                        <div class="col-xs-3 gallery-item">
+                            <a href="#galleryImg1" class="link-gallery" data-toggle="modal" data-target="#modalGallery">
+                                <img src="Images/kuva3.jpg" class="img-responsive img-gallery" alt="Third image">
+                            </a>
+                        </div> <!-- /.col -->
+
+                        <div class="col-xs-3 gallery-item">
+                            <a href="#galleryImg1" class="link-gallery" data-toggle="modal" data-target="#modalGallery">
+                                <img src="Images/kuva4.jpg" class="img-responsive img-gallery" alt="Fourth image">
+                            </a>
+                        </div> <!-- /.col -->
+                    </div> <!--/.row  -->
+                        </div> <!-- /.container -->
+                </div> <!-- /.gallery -->
+
+                <div class="modal fade" id="modalGallery" tabindex="-1" role="dialog" aria-labelledby="modalGalleryLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                                <div class="modal-content">
+                                        <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                <h4 class="modal-title" id="modalGalleryLabel">Gallery</h4>
+                                        </div> <!-- /.modal-header -->
+
+                                        <div class="modal-body">
+                                                <div id="carouselGallery" class="carousel slide" data-ride="carousel" data-interval="false">
+                                                        <div class="carousel-inner">
+                                                        </div> <!-- /.carousel-inner -->
+                                                </div> <!-- /.carousel -->
+                                        </div> <!-- /.modal-body -->
+
+                                        <div class="modal-footer">
+                                                <ul class="pagination">
+                                                </ul>
+                                        </div> <!-- /.modal-footer -->
+                                </div> <!-- /.modal-content -->
+                        </div> <!-- /.modal-dialog -->
+                </div> <!-- /.modal -->
+
+                <p><%=InputOutput.clean(content1)%></p>
+            </div>
+            
     </div>
 
     <div class="tab-pane text-style" id="tietoa">
@@ -455,13 +612,20 @@ $(function(){
 
             <p><%=InputOutput.clean(content4)%></p>
 
-            <button type="button" class="btn btn-default btn-lg btn-block" onclick="window.open('https://docs.google.com/forms/d/1OtY_WaS4OtJbdcV8xlOLyHtf4dAIknrdML82-EVaQx8/edit?usp=drive_web')">Linkki ilmaisen harjoitusohjelman taustatietojen täyttöön </button>
+                <button type="button" class="btn btn-default btn-lg btn-block" onclick="window.open('https://docs.google.com/forms/d/1OtY_WaS4OtJbdcV8xlOLyHtf4dAIknrdML82-EVaQx8/edit?usp=drive_web')">Linkki ilmaisen harjoitusohjelman taustatietojen täyttöön </button>
 
-            <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.open('https://docs.google.com/forms/d/1UqlGeUD4sdHlPWMlt_w6wJteREAttMO5I5chXV93S3c/edit')"> Linkki maksullisen harjoitusohjelman taustatietojen täyttöön </button>
+                <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.open('https://docs.google.com/forms/d/1UqlGeUD4sdHlPWMlt_w6wJteREAttMO5I5chXV93S3c/edit')"> Linkki maksullisen harjoitusohjelman taustatietojen täyttöön </button>
+            </div>
         </div>
+
+
+        <div class="tab-pane text-style" id="tab7">
+     
+
     </div>
 
     <div class="tab-pane text-style" id="psykoterapiapalvelut">
+
         <div class="container">
             <h2>Tab psykoterapiapalvelut</h2>
             <p><%=InputOutput.clean(content5)%></p>
