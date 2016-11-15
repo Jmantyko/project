@@ -568,7 +568,7 @@ $(function(){
 
                     <div class="col-xs-3 gallery-item">
                         <a href="#galleryImg1" class="link-gallery" data-toggle="modal" data-target="#modalGallery">
-                            <img src="http://www.marttiputtonen.profiili.fi/show.php?id=1594057204&size=normal=Second image" class="img-responsive img-gallery" alt="Second image">
+                            <img src="NetBeansProjects\Arjenhallinta\arjenhallinta\web\Images\kuva2.jpg=Second image" class="img-responsive img-gallery" alt="Second image">
                         </a>
                     </div> <!-- /.col -->
 
