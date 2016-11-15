@@ -534,10 +534,69 @@ $(function(){
         
         
     <div class="tab-pane text-style" id="martti">
-        <div class="container">
-            <h2>Tab martti</h2>
-            <p><%=InputOutput.clean(content2)%></p>
-        </div>
+
+          
+            
+                <div class="container">
+                    
+                    <h2>Tab martti</h2>
+
+                    <div class="gallery">
+                        <div class="container">
+                                <div class="row">
+                        <div class="col-xs-3 gallery-item">
+                            <a href="#galleryImg1" class="link-gallery" data-toggle="modal" data-target="#modalGallery">
+                                <img src="Images/kuva1.jpg" class="img-responsive img-gallery" alt="First image">
+                            </a>
+                        </div> <!-- /.col -->
+
+                        <div class="col-xs-3 gallery-item">
+                            <a href="#galleryImg1" class="link-gallery" data-toggle="modal" data-target="#modalGallery">
+                                <img src="Images/kuva2.jpg" class="img-responsive img-gallery" alt="Second image">
+                            </a>
+                        </div> <!-- /.col -->
+
+                        <div class="col-xs-3 gallery-item">
+                            <a href="#galleryImg1" class="link-gallery" data-toggle="modal" data-target="#modalGallery">
+                                <img src="Images/kuva3.jpg" class="img-responsive img-gallery" alt="Third image">
+                            </a>
+                        </div> <!-- /.col -->
+
+                        <div class="col-xs-3 gallery-item">
+                            <a href="#galleryImg1" class="link-gallery" data-toggle="modal" data-target="#modalGallery">
+                                <img src="Images/kuva4.jpg" class="img-responsive img-gallery" alt="Fourth image">
+                            </a>
+                        </div> <!-- /.col -->
+                    </div> <!--/.row  -->
+                        </div> <!-- /.container -->
+                </div> <!-- /.gallery -->
+
+                <div class="modal fade" id="modalGallery" tabindex="-1" role="dialog" aria-labelledby="modalGalleryLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                                <div class="modal-content">
+                                        <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                <h4 class="modal-title" id="modalGalleryLabel">Gallery</h4>
+                                        </div> <!-- /.modal-header -->
+
+                                        <div class="modal-body">
+                                                <div id="carouselGallery" class="carousel slide" data-ride="carousel" data-interval="false">
+                                                        <div class="carousel-inner">
+                                                        </div> <!-- /.carousel-inner -->
+                                                </div> <!-- /.carousel -->
+                                        </div> <!-- /.modal-body -->
+
+                                        <div class="modal-footer">
+                                                <ul class="pagination">
+                                                </ul>
+                                        </div> <!-- /.modal-footer -->
+                                </div> <!-- /.modal-content -->
+                        </div> <!-- /.modal-dialog -->
+                </div> <!-- /.modal -->
+
+                <p><%=InputOutput.clean(content1)%></p>
+            </div>
+            
     </div>
 
     <div class="tab-pane text-style" id="tietoa">
@@ -561,64 +620,7 @@ $(function(){
 
 
         <div class="tab-pane text-style" id="tab7">
-            <div class="container">
-                <h2>Tab 7</h2>
-
-                <div class="gallery">
-                    <div class="container">
-                            <div class="row">
-                    <div class="col-xs-3 gallery-item">
-                        <a href="#galleryImg1" class="link-gallery" data-toggle="modal" data-target="#modalGallery">
-                            <img src="https://3.bp.blogspot.com/-W__wiaHUjwI/Vt3Grd8df0I/AAAAAAAAA78/7xqUNj8ujtY/s1600/image02.png=First image" class="img-responsive img-gallery" alt="First image">
-                        </a>
-                    </div> <!-- /.col -->
-
-                    <div class="col-xs-3 gallery-item">
-                        <a href="#galleryImg1" class="link-gallery" data-toggle="modal" data-target="#modalGallery">
-                            <img src="NetBeansProjects\Arjenhallinta\arjenhallinta\web\Images\kuva2.jpg=Second image" class="img-responsive img-gallery" alt="Second image">
-                        </a>
-                    </div> <!-- /.col -->
-
-                    <div class="col-xs-3 gallery-item">
-                        <a href="#galleryImg1" class="link-gallery" data-toggle="modal" data-target="#modalGallery">
-                            <img src="http://placehold.it/558x286&text=Third image" class="img-responsive img-gallery" alt="Third image">
-                        </a>
-                    </div> <!-- /.col -->
-
-                    <div class="col-xs-3 gallery-item">
-                        <a href="#galleryImg1" class="link-gallery" data-toggle="modal" data-target="#modalGallery">
-                            <img src="http://placehold.it/558x286&text=Fourth image" class="img-responsive img-gallery" alt="Fourth image">
-                        </a>
-                    </div> <!-- /.col -->
-                </div> <!--/.row  -->
-                    </div> <!-- /.container -->
-            </div> <!-- /.gallery -->
-
-            <div class="modal fade" id="modalGallery" tabindex="-1" role="dialog" aria-labelledby="modalGalleryLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                            <div class="modal-content">
-                                    <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                            <h4 class="modal-title" id="modalGalleryLabel">Gallery</h4>
-                                    </div> <!-- /.modal-header -->
-
-                                    <div class="modal-body">
-                                            <div id="carouselGallery" class="carousel slide" data-ride="carousel" data-interval="false">
-                                                    <div class="carousel-inner">
-                                                    </div> <!-- /.carousel-inner -->
-                                            </div> <!-- /.carousel -->
-                                    </div> <!-- /.modal-body -->
-
-                                    <div class="modal-footer">
-                                            <ul class="pagination">
-                                            </ul>
-                                    </div> <!-- /.modal-footer -->
-                            </div> <!-- /.modal-content -->
-                    </div> <!-- /.modal-dialog -->
-            </div> <!-- /.modal -->
-            
-            <p><%=InputOutput.clean(content1)%></p>
-        </div>
+     
 
     </div>
 
