@@ -4,6 +4,8 @@
     Author     : Jaakko
 --%>
 
+<%@page import="Arjenhallinta.Customer"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="Arjenhallinta.Database"%>
 <%@page import="Arjenhallinta.InputOutput"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -1108,25 +1110,28 @@ $(function(){
     </thead>
     <tbody>
         <% 
-            //In this for loop we will print each customer
-            //for a separate table row
-            int userID = 0;
-            int largestID = Database.getLargestID();
-            for(userID=1; userID<=largestID;userID++){
-                String tableUserType = Database.getUserTypeUsingID(userID);
-                if("customer".equals(tableUserType)){
-                    String tableEmail = Database.getUserEmail(userID);
-                    String tableUsername = Database.getUserNameUsingID(userID);
-                    String tableSurname = Database.getUserSurnameUsingID(userID);
+            ArrayList<Customer> customers = new ArrayList<Customer>();
+            customers = Database.getCustomers();
+            int customerID;
+            String customerEmail;
+            String customerName;
+            String customerSurname;
+            
+            for(int i=0; i<customers.size();i++){
+                
+                customerID = ((Customer)customers.get(i)).getID();
+                customerEmail = ((Customer)customers.get(i)).getEmail();
+                customerName = ((Customer)customers.get(i)).getName();
+                customerSurname = ((Customer)customers.get(i)).getSurname();
+                
         %>
         <tr>
-            <td><%=userID%></td>
-            <td><%=tableUsername%></td>
-            <td><%=tableSurname%></td>
-            <td><%=tableEmail%></td>
+            <td><%=customerID%></td>
+            <td><%=customerName%></td>
+            <td><%=customerSurname%></td>
+            <td><%=customerEmail%></td>
         </tr>
         <%
-                }
             }
         %>
     </tbody>

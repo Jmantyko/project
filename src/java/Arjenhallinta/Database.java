@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 /**
  *
@@ -464,6 +465,40 @@ public class Database {
         }
         
         return userSurname;
+    }
+    
+    //This method is WIP
+    public static ArrayList<Customer> getCustomers() {
+        
+        ArrayList customers = new ArrayList();
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("SELECT UserID, UserEmail, UserName, UserSurname FROM Users WHERE UserType='customer'");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                
+                customers.add(new Customer(rs.getInt("UserID"), rs.getString("UserEmail"),
+                        rs.getString("UserName"), rs.getString("UserSurname")));
+
+                //customers.add(rs.getInt("UserID"));
+                //customers.add(rs.getString("UserEmail"));
+                //customers.add(rs.getString("UserName"));
+                //customers.add(rs.getString("UserSurname"));
+            }
+
+        } catch (Exception e) {
+            //e.printStackTrace();
+            
+        } finally {
+            closeDatabaseConnections();
+            
+        }
+        
+        return customers;
     }
                     
     public static void updateUserDetails(String userName, String userSurname,
