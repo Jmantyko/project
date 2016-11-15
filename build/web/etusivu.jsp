@@ -21,13 +21,16 @@
 
         <title>Arjenhallinta</title>
 
-        <link rel="stylsheet" href="style.css" type="text/css" >
-
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
         <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-
+        <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+	
         <!-- Bootstrap slider CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.3.2/css/bootstrap-slider.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.3.2/css/bootstrap-slider.min.css">
@@ -481,12 +484,12 @@ $(function(){
         
         
     </div>
-        
-        <div class="container-bottom">
-            <hr>
-            <p class="muted">© 2016 Martti Puttonen. All rights reserved.</p>
-            <hr>
-        </div>
+
+    <div class="container-bottom">
+        <hr>
+        <p class="muted">© 2016 Martti Puttonen. All rights reserved.</p>
+        <hr>
+    </div>
         
     <script type="text/javascript" src="addrow.js"></script>
 
