@@ -467,7 +467,6 @@ public class Database {
         return userSurname;
     }
     
-    //This method is WIP
     public static ArrayList<Customer> getCustomers() {
         
         ArrayList customers = new ArrayList();
@@ -480,18 +479,13 @@ public class Database {
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                
                 customers.add(new Customer(rs.getInt("UserID"), rs.getString("UserEmail"),
                         rs.getString("UserName"), rs.getString("UserSurname")));
 
-                //customers.add(rs.getInt("UserID"));
-                //customers.add(rs.getString("UserEmail"));
-                //customers.add(rs.getString("UserName"));
-                //customers.add(rs.getString("UserSurname"));
             }
 
         } catch (Exception e) {
-            //e.printStackTrace();
+            e.printStackTrace();
             
         } finally {
             closeDatabaseConnections();
