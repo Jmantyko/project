@@ -1129,9 +1129,9 @@ $(function(){
         %>
         <tr>
             <td><%=customerID%></td>
-            <td><%=customerName%></td>
-            <td><%=customerSurname%></td>
-            <td><%=customerEmail%></td>
+            <td><%=InputOutput.clean(customerName)%></td>
+            <td><%=InputOutput.clean(customerSurname)%></td>
+            <td><%=InputOutput.clean(customerEmail)%></td>
         </tr>
         <%
             }
