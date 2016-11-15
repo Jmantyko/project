@@ -653,7 +653,7 @@ $(function(){
     
 </div>
   	</br>
-       <hr>
+
 </div>
 </div>
 
@@ -1085,7 +1085,7 @@ $(function(){
 </div>
 
 
-       <hr>
+       
 </div>
 
 
