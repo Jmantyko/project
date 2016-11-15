@@ -1117,6 +1117,8 @@ $(function(){
             String customerName;
             String customerSurname;
             
+            //In this for loop we will print each customer
+            //for a separate table row
             for(int i=0; i<customers.size();i++){
                 
                 customerID = ((Customer)customers.get(i)).getID();
@@ -1146,11 +1148,11 @@ $(function(){
         </div>
 </div>
 
-<div class="container-bottom">
-            <hr>
-            <p class="muted">© 2016 Martti Puttonen. All rights reserved.</p>
-            <hr>
-        </div>    
+    <div class="container-bottom">
+        <hr>
+        <p class="muted">© 2016 Martti Puttonen. All rights reserved.</p>
+        <hr>
+    </div>    
 
 <script type="text/javascript" src="addrow.js"></script>
     </body>
