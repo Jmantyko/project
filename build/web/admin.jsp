@@ -1102,9 +1102,9 @@ $(function(){
 <div class="tab-pane text-style" id="tab11">
     <div class ="container">
 	<div class="customer-main-container">
-                    <div class="customer-actions-container">
-					<button type="button" class="btn btn-success">Lisää uusi asiakastili</button>
-  <button type="button" class="btn btn-danger">Poista valittu asiakastili</button>
+            <div class="customer-actions-container">
+                <button type="button" class="btn btn-success">Lisää uusi asiakastili</button>
+                <button type="button" class="btn btn-danger">Poista valittu asiakastili</button>
 <table class="table topBuffer">
 <thead>
       <tr>
@@ -1132,7 +1132,7 @@ $(function(){
                 customerName = ((Customer)customers.get(i)).getName();
                 customerSurname = ((Customer)customers.get(i)).getSurname();
         %>
-        <tr class='clickable-row' href='#customer-tab<%=customerID%>' data-toggle="tab">
+        <tr class='clickable-row' href='#tab-content<%=customerID%>' data-toggle="tab">
             <td><%=customerID%></td>
             <td><%=InputOutput.clean(customerName)%></td>
             <td><%=InputOutput.clean(customerSurname)%></td>
@@ -1142,25 +1142,32 @@ $(function(){
             }
         %>
     </tbody>
-  </table>                    </div>
+  </table>                    
+            </div>
 
 <div class="customer-display-container">
-    <%
-        for(int i=0; i<customers.size();i++){
-                
-                customerID = ((Customer)customers.get(i)).getID();
-                customerEmail = ((Customer)customers.get(i)).getEmail();
-                customerName = ((Customer)customers.get(i)).getName();
-                customerSurname = ((Customer)customers.get(i)).getSurname();
-    %>
-    <div class="tab-pane fade" id="customer-tab<%=customerID%>">
-        <p>Nimi <%=customerName%></p>
-        <p>Sukunimi <%=customerSurname%></p>
-        <p>Sähköposti <%=customerEmail%></p>
-    </div> 
-    <%
-        }
-    %>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tab-content">
+            <%
+                for(int i=0; i<customers.size();i++){
+                    customerID = ((Customer)customers.get(i)).getID();
+                    customerEmail = ((Customer)customers.get(i)).getEmail();
+                    customerName = ((Customer)customers.get(i)).getName();
+                    customerSurname = ((Customer)customers.get(i)).getSurname();
+            %>
+                <div class="tab-pane fade" id="tab-content<%=customerID%>">
+                    <p><strong>Asiakasnumero:</strong> <%=customerID%></p>
+                    <p><strong>Sähköposti:</strong> <%=InputOutput.clean(customerEmail)%></p>
+                    <p><strong>Nimi:</strong> <%=InputOutput.clean(customerName)%></p>
+                    <p><strong>Sukunimi:</strong> <%=InputOutput.clean(customerSurname)%></p>
+                </div> 
+            <%
+                }
+            %>
+            </div>
+        </div>
+    </div>
 </div>
 
                 </div>
