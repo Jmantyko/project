@@ -48,6 +48,10 @@
         <servlet-name>UpdateUserPassword</servlet-name>
         <servlet-class>Arjenhallinta.UpdateUserPassword</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteUser</servlet-name>
+        <servlet-class>Arjenhallinta.DeleteUser</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -67,6 +71,10 @@
     <servlet-mapping>
         <servlet-name>UpdateUserPassword</servlet-name>
         <url-pattern>/UpdateUserPassword</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteUser</servlet-name>
+        <url-pattern>/DeleteUser</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

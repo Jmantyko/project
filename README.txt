@@ -45,6 +45,7 @@ CREATE TABLE Users (
 	UserAddress VARCHAR (100),
 	UserPostalcode VARCHAR (50),
 	UserPostoffice VARCHAR (100),
+	UserIsDeleted BOOLEAN NOT NULL DEFAULT 0,
 	UserType VARCHAR (25) NOT NULL,
 	PRIMARY KEY (UserID)
 );

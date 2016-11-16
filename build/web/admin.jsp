@@ -1105,7 +1105,6 @@ $(function(){
 	<div class="customer-main-container">
             <div class="customer-actions-container">
                 <button type="button" class="btn btn-success" href='#tab-content0' data-toggle="tab">Lisää uusi asiakastili</button>
-                <button type="button" class="btn btn-danger">Poista valittu asiakastili</button>
 <table class="table topBuffer">
 <thead>
       <tr>
@@ -1199,6 +1198,10 @@ $(function(){
                     <p><strong>Osoite:</strong> <%=InputOutput.clean(customerAddress)%></p>
                     <p><strong>Postinumero:</strong> <%=InputOutput.clean(customerPostalcode)%></p>
                     <p><strong>Postitoimipaikka:</strong> <%=InputOutput.clean(customerPostoffice)%></p>
+                    <form action="DeleteUser" method="POST">
+                        <input type="hidden" name="customerid" value="<%=customerID%>">
+                        <input type="submit" class="btn btn-danger" value="Poista asiakastili" /> 
+                    </form>
                 </div> 
             <%
                 }
