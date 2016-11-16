@@ -1101,9 +1101,10 @@ $(function(){
 
 <div class="tab-pane text-style" id="tab11">
     <div class ="container">
+        <h3>Asiakastilien hallinta</h3>
 	<div class="customer-main-container">
             <div class="customer-actions-container">
-                <button type="button" class="btn btn-success">Lisää uusi asiakastili</button>
+                <button type="button" class="btn btn-success" href='#tab-content0' data-toggle="tab">Lisää uusi asiakastili</button>
                 <button type="button" class="btn btn-danger">Poista valittu asiakastili</button>
 <table class="table topBuffer">
 <thead>
@@ -1152,11 +1153,32 @@ $(function(){
     </tbody>
   </table>                    
             </div>
-
+    
 <div class="customer-display-container">
     <div class="row">
         <div class="col-md-12">
             <div class="tab-content">
+                <div class="tab-pane fade" id="tab-content0">
+                    <form action="CreateUser" method="POST">
+                    <label for="email">Anna käyttäjän sähköpostiosoite:</label>
+                    <input type="email" class="form-control" name="email" value="" placeholder="Syötä sähköpostiosoite" /><br>
+                    <label for="password">Luo käyttäjälle salasana:</label>
+                    <input type="password" class="form-control" name="password" value="" placeholder="Luo salasana" /><br>
+                    <label for="name">Anna käyttäjän etunimi:</label>
+                    <input type="text" class="form-control" name="name" value="" placeholder="Syötä sähköpostiosoite" /><br>
+                    <label for="name">Anna käyttäjän sukunimi:</label>
+                    <input type="text" class="form-control" name="surname" value="" placeholder="Syötä sähköpostiosoite" /><br>
+                    <label for="phonenumber">Anna käyttäjän puhelinnumero:</label>
+                    <input type="text" class="form-control" name="phonenumber" value="" placeholder="Syötä sähköpostiosoite" /><br>
+                    <label for="address">Anna käyttäjän osoite:</label>
+                    <input type="text" class="form-control" name="address" value="" placeholder="Syötä sähköpostiosoite" /><br>
+                    <label for="postalcode">Anna käyttäjän postinumero:</label>
+                    <input type="text" class="form-control" name="postalcode" value="" placeholder="Syötä sähköpostiosoite" /><br>
+                    <label for="postoffice">Anna käyttäjän postitoimipaikka:</label>
+                    <input type="text" class="form-control" name="postoffice" value="" placeholder="Syötä sähköpostiosoite" /><br>
+                    <input type="submit" class="btn btn-success" value="Lisää asiakastili" /> 
+                    </form>
+                </div> 
             <%
                 for(int i=0; i<customers.size();i++){
                     customerID = ((Customer)customers.get(i)).getID();
