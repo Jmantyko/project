@@ -415,11 +415,11 @@ $(function(){
          
          </script>
 <script>
-        jQuery(document).ready(function($) {
-            $(".clickable-row").click(function() {
-                window.document.location = $(this).data("href");
-            });
-        });
+        //jQuery(document).ready(function($) {
+        //    $(".clickable-row").click(function() {
+        //        window.document.location = $(this).data("href");
+        //    });
+       // });
 </script>
 
  
@@ -1131,9 +1131,8 @@ $(function(){
                 customerEmail = ((Customer)customers.get(i)).getEmail();
                 customerName = ((Customer)customers.get(i)).getName();
                 customerSurname = ((Customer)customers.get(i)).getSurname();
-                
         %>
-        <tr class='clickable-row' data-href='/Arjenhallinta/profile.jsp'>
+        <tr class='clickable-row' href='#customer-tab<%=customerID%>' data-toggle="tab">
             <td><%=customerID%></td>
             <td><%=InputOutput.clean(customerName)%></td>
             <td><%=InputOutput.clean(customerSurname)%></td>
@@ -1145,14 +1144,30 @@ $(function(){
     </tbody>
   </table>                    </div>
 
-                    <div class="customer-display-container">
-                    <p>oikee puoli</p>    
-                    </div>
+<div class="customer-display-container">
+    <%
+        for(int i=0; i<customers.size();i++){
+                
+                customerID = ((Customer)customers.get(i)).getID();
+                customerEmail = ((Customer)customers.get(i)).getEmail();
+                customerName = ((Customer)customers.get(i)).getName();
+                customerSurname = ((Customer)customers.get(i)).getSurname();
+    %>
+    <div class="tab-pane fade" id="customer-tab<%=customerID%>">
+        <p>Nimi <%=customerName%></p>
+        <p>Sukunimi <%=customerSurname%></p>
+        <p>Sähköposti <%=customerEmail%></p>
+    </div> 
+    <%
+        }
+    %>
+</div>
 
                 </div>
         
         </div>
 </div>
+    </div>
 
     <div class="container-bottom">
         <hr>
