@@ -1119,9 +1119,13 @@ $(function(){
             ArrayList<Customer> customers = new ArrayList<Customer>();
             customers = Database.getCustomers();
             int customerID;
-            String customerEmail;
-            String customerName;
-            String customerSurname;
+            String customerEmail = "";
+            String customerName = "";
+            String customerSurname = "";
+            String customerPhonenumber = "";
+            String customerAddress = "";
+            String customerPostalcode = "";
+            String customerPostoffice = "";
             
             //In this for loop we will print each customer
             //for a separate table row
@@ -1131,6 +1135,10 @@ $(function(){
                 customerEmail = ((Customer)customers.get(i)).getEmail();
                 customerName = ((Customer)customers.get(i)).getName();
                 customerSurname = ((Customer)customers.get(i)).getSurname();
+                customerPhonenumber = ((Customer)customers.get(i)).getPhonenumber();
+                customerAddress = ((Customer)customers.get(i)).getAddress();
+                customerPostalcode = ((Customer)customers.get(i)).getPostalcode();
+                customerPostoffice = ((Customer)customers.get(i)).getPostoffice();
         %>
         <tr class='clickable-row' href='#tab-content<%=customerID%>' data-toggle="tab">
             <td><%=customerID%></td>
@@ -1155,12 +1163,20 @@ $(function(){
                     customerEmail = ((Customer)customers.get(i)).getEmail();
                     customerName = ((Customer)customers.get(i)).getName();
                     customerSurname = ((Customer)customers.get(i)).getSurname();
+                    customerPhonenumber = ((Customer)customers.get(i)).getPhonenumber();
+                    customerAddress = ((Customer)customers.get(i)).getAddress();
+                    customerPostalcode = ((Customer)customers.get(i)).getPostalcode();
+                    customerPostoffice = ((Customer)customers.get(i)).getPostoffice();
             %>
                 <div class="tab-pane fade" id="tab-content<%=customerID%>">
                     <p><strong>Asiakasnumero:</strong> <%=customerID%></p>
-                    <p><strong>Sähköposti:</strong> <%=InputOutput.clean(customerEmail)%></p>
                     <p><strong>Nimi:</strong> <%=InputOutput.clean(customerName)%></p>
                     <p><strong>Sukunimi:</strong> <%=InputOutput.clean(customerSurname)%></p>
+                    <p><strong>Sähköposti:</strong> <%=InputOutput.clean(customerEmail)%></p>
+                    <p><strong>Puhelin:</strong> <%=InputOutput.clean(customerPhonenumber)%></p>
+                    <p><strong>Osoite:</strong> <%=InputOutput.clean(customerAddress)%></p>
+                    <p><strong>Postinumero:</strong> <%=InputOutput.clean(customerPostalcode)%></p>
+                    <p><strong>Postitoimipaikka:</strong> <%=InputOutput.clean(customerPostoffice)%></p>
                 </div> 
             <%
                 }

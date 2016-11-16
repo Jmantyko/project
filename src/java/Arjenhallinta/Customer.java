@@ -15,12 +15,21 @@ public class Customer {
     private String email;
     private String name;
     private String surname;
+    private String phonenumber;
+    private String address;
+    private String postalcode;
+    private String postoffice;
     
-    public Customer(int userID, String userEmail, String userName, String userSurname) {
+    public Customer(int userID, String userEmail, String userName, String userSurname, 
+            String userPhonenumber, String userAddress, String userPostalcode, String userPostoffice) {
         id = userID;
         email = userEmail;
         name = userName;
         surname = userSurname;
+        phonenumber = userPhonenumber;
+        address = userAddress;
+        postalcode = userPostalcode;
+        postoffice = userPostoffice;
     }
     
     public int getID(){
@@ -37,6 +46,22 @@ public class Customer {
     
     public String getSurname(){
         return surname;
+    }
+    
+    public String getPhonenumber(){
+        return phonenumber;
+    }
+    
+    public String getAddress(){
+        return address;
+    }
+    
+    public String getPostalcode(){
+        return postalcode;
+    }
+    
+    public String getPostoffice(){
+        return postoffice;
     }
     
     @Override

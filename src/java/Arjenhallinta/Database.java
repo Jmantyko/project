@@ -475,13 +475,14 @@ public class Database {
             Class.forName(dbDriver);
 
             conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
-            ps = conn.prepareStatement("SELECT UserID, UserEmail, UserName, UserSurname FROM Users WHERE UserType='customer'");
+            ps = conn.prepareStatement("SELECT UserID, UserEmail, UserName, UserSurname, "
+                    + "UserPhonenumber, UserAddress, UserPostalcode, UserPostoffice FROM Users WHERE UserType='customer'");
             rs = ps.executeQuery();
 
             while (rs.next()) {
                 customers.add(new Customer(rs.getInt("UserID"), rs.getString("UserEmail"),
-                        rs.getString("UserName"), rs.getString("UserSurname")));
-
+                        rs.getString("UserName"), rs.getString("UserSurname"), rs.getString("UserPhonenumber"),
+                rs.getString("UserAddress"), rs.getString("UserPostalcode"), rs.getString("UserPostoffice")));
             }
 
         } catch (Exception e) {
