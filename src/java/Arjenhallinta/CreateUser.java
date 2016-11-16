@@ -33,14 +33,21 @@ public class CreateUser extends HttpServlet {
         
         String email = request.getParameter("email");
         String password = request.getParameter("password");
+        String name = request.getParameter("name");
+        String surname = request.getParameter("surname");
+        String phonenumber = request.getParameter("phonenumber");
+        String address = request.getParameter("address");
+        String postalcode = request.getParameter("postalcode");
+        String postoffice = request.getParameter("postoffice");
         
         if(Database.userExists(email)){
             System.out.println("CREATING NEW USER FAILED - USER ALREADY EXISTS");
         }else{
-            Database.addUser(email, password);
+            Database.addUser(email, password, name, surname, phonenumber,
+                    address, postalcode, postoffice);
             System.out.println("CREATING NEW USER SUCCEEDED");
         }
         
-        response.sendRedirect(request.getContextPath() + "/admin.jsp");
+        response.sendRedirect(request.getContextPath() + "/admin.jsp#tab11");
     }
 }

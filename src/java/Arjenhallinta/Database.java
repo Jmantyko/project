@@ -25,7 +25,8 @@ public class Database {
     static PreparedStatement ps = null;
     static ResultSet rs = null;
 
-    public static boolean addUser(String email, String password) {
+    public static boolean addUser(String email, String password, String name, String surname, String phonenumber,
+            String address, String postalcode, String postoffice) {
         
         boolean addedUser = false;
 
@@ -34,16 +35,18 @@ public class Database {
 
             conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
             ps = conn.prepareStatement("INSERT INTO Users (UserEmail, UserPassword, UserType,"
-                    + " UserName, UserSurname, UserAddress, UserPostalcode, UserPostoffice)"
-                    + " VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+                    + " UserName, UserSurname, UserPhonenumber,"
+                    + " UserAddress, UserPostalcode, UserPostoffice)"
+                    + " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
             ps.setString(1, email);
             ps.setString(2, password);
             ps.setString(3, "customer");
-            ps.setString(4, "");
-            ps.setString(5, "");
-            ps.setString(6, "");
-            ps.setString(7, "");
-            ps.setString(8, "");
+            ps.setString(4, name);
+            ps.setString(5, surname);
+            ps.setString(6, phonenumber);
+            ps.setString(7, address);
+            ps.setString(8, postalcode);
+            ps.setString(9, postoffice);
             ps.execute();
             
             addedUser = true; //I might refactor this later...
