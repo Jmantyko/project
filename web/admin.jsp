@@ -414,7 +414,13 @@ $(function(){
          });
          
          </script>
-	
+<script>
+        jQuery(document).ready(function($) {
+            $(".clickable-row").click(function() {
+                window.document.location = $(this).data("href");
+            });
+        });
+</script>
 
  
 
@@ -1127,7 +1133,7 @@ $(function(){
                 customerSurname = ((Customer)customers.get(i)).getSurname();
                 
         %>
-        <tr>
+        <tr class='clickable-row' data-href='/Arjenhallinta/profile.jsp'>
             <td><%=customerID%></td>
             <td><%=InputOutput.clean(customerName)%></td>
             <td><%=InputOutput.clean(customerSurname)%></td>
