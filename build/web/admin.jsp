@@ -1161,21 +1161,21 @@ $(function(){
                 <div class="tab-pane fade" id="tab-content0">
                     <form action="CreateUser" method="POST">
                     <label for="email">Anna käyttäjän sähköpostiosoite:</label>
-                    <input type="email" class="form-control" name="email" value="" placeholder="Syötä sähköpostiosoite" /><br>
+                    <input type="email" class="form-control" name="email" value="" placeholder="esim. esimerkki@esimerkki.fi" /><br>
                     <label for="password">Luo käyttäjälle salasana:</label>
-                    <input type="password" class="form-control" name="password" value="" placeholder="Luo salasana" /><br>
+                    <input type="password" class="form-control" name="password" value="" placeholder="esim. w895aRQ3gByx" /><br>
                     <label for="name">Anna käyttäjän etunimi:</label>
-                    <input type="text" class="form-control" name="name" value="" placeholder="Syötä sähköpostiosoite" /><br>
+                    <input type="text" class="form-control" name="name" value="" placeholder="esim. Pekka" /><br>
                     <label for="name">Anna käyttäjän sukunimi:</label>
-                    <input type="text" class="form-control" name="surname" value="" placeholder="Syötä sähköpostiosoite" /><br>
+                    <input type="text" class="form-control" name="surname" value="" placeholder="esim. Meikäläinen" /><br>
                     <label for="phonenumber">Anna käyttäjän puhelinnumero:</label>
-                    <input type="text" class="form-control" name="phonenumber" value="" placeholder="Syötä sähköpostiosoite" /><br>
+                    <input type="text" class="form-control" name="phonenumber" value="" placeholder="esim. 04012345678" /><br>
                     <label for="address">Anna käyttäjän osoite:</label>
-                    <input type="text" class="form-control" name="address" value="" placeholder="Syötä sähköpostiosoite" /><br>
+                    <input type="text" class="form-control" name="address" value="" placeholder="esim. Torikatu 7" /><br>
                     <label for="postalcode">Anna käyttäjän postinumero:</label>
-                    <input type="text" class="form-control" name="postalcode" value="" placeholder="Syötä sähköpostiosoite" /><br>
+                    <input type="text" class="form-control" name="postalcode" value="" placeholder="esim. 10101" /><br>
                     <label for="postoffice">Anna käyttäjän postitoimipaikka:</label>
-                    <input type="text" class="form-control" name="postoffice" value="" placeholder="Syötä sähköpostiosoite" /><br>
+                    <input type="text" class="form-control" name="postoffice" value="" placeholder="esim. Oulu" /><br>
                     <input type="submit" class="btn btn-success" value="Lisää asiakastili" /> 
                     </form>
                 </div> 
