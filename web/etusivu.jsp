@@ -135,6 +135,9 @@
         .pagination{
                 margin: 0;
         }
+        a.hidden{
+            display:none;}
+        
 
 
 	
@@ -551,22 +554,56 @@ $(function(){
                         </div> <!-- /.col -->
 
                         <div class="col-xs-3 gallery-item">
-                            <a href="#galleryImg1" class="link-gallery" data-toggle="modal" data-target="#modalGallery">
+                            <a class="hidden" href="#galleryImg1" class="link-gallery" data-toggle="modal" data-target="#modalGallery">
                                 <img src="Images/kuva2.jpg" class="img-responsive img-gallery" alt="Second image">
                             </a>
                         </div> <!-- /.col -->
 
                         <div class="col-xs-3 gallery-item">
-                            <a href="#galleryImg1" class="link-gallery" data-toggle="modal" data-target="#modalGallery">
+                            <a class="hidden" href="#galleryImg1" class="link-gallery" data-toggle="modal" data-target="#modalGallery">
                                 <img src="Images/kuva3.jpg" class="img-responsive img-gallery" alt="Third image">
                             </a>
                         </div> <!-- /.col -->
 
                         <div class="col-xs-3 gallery-item">
-                            <a href="#galleryImg1" class="link-gallery" data-toggle="modal" data-target="#modalGallery">
+                            <a class="hidden"  href="#galleryImg1" class="link-gallery" data-toggle="modal" data-target="#modalGallery">
                                 <img src="Images/kuva4.jpg" class="img-responsive img-gallery" alt="Fourth image">
                             </a>
                         </div> <!-- /.col -->
+                        
+                        <div class="col-xs-3 gallery-item">
+                            <a class="hidden"  href="#galleryImg1" class="link-gallery" data-toggle="modal" data-target="#modalGallery">
+                                <img src="Images/kuva5.jpg" class="img-responsive img-gallery" alt="Fifth image">
+                            </a>
+                        </div> <!-- /.col -->
+                        
+                        <div class="col-xs-3 gallery-item">
+                            <a class="hidden"  href="#galleryImg1" class="link-gallery" data-toggle="modal" data-target="#modalGallery">
+                                <img src="Images/kuva6.jpg" class="img-responsive img-gallery" alt="Sixth image">
+                            </a>
+                        </div> <!-- /.col -->
+                        
+                        <div class="col-xs-3 gallery-item">
+                            <a class="hidden"  href="#galleryImg1" class="link-gallery" data-toggle="modal" data-target="#modalGallery">
+                                <img src="Images/kuva7.jpg" class="img-responsive img-gallery" alt="Seventh image">
+                            </a>
+                        </div> <!-- /.col -->
+                        
+                         <div class="col-xs-3 gallery-item">
+                            <a class="hidden"  href="#galleryImg1" class="link-gallery" data-toggle="modal" data-target="#modalGallery">
+                                <img src="Images/kuva8.JPG" class="img-responsive img-gallery" alt="Eighth image">
+                            </a>
+                        </div> <!-- /.col -->
+                        
+                        <div class="tab-pane text-style" id="tietoa">
+                            <div class="col-sm-9">
+                               <h2>Tab tietoa</h2>
+                               <p><%=InputOutput.clean(content1)%></p>
+                            </div>
+                        </div>
+                            
+                            
+                        
                     </div> <!--/.row  -->
                         </div> <!-- /.container -->
                 </div> <!-- /.gallery -->
@@ -594,7 +631,6 @@ $(function(){
                         </div> <!-- /.modal-dialog -->
                 </div> <!-- /.modal -->
 
-                <p><%=InputOutput.clean(content1)%></p>
             </div>
             
     </div>
