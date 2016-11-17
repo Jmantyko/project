@@ -515,9 +515,9 @@ $(function(){
   </br>
   
 <div class="row">
-        <div class="col-md-4">
+        
   
-            <table class="table table-bordered">
+          <!--  <table class="table table-bordered">
   <thead>
     <tr class="bg-primary">
       <th>Ilmoitukset</th>
@@ -595,63 +595,68 @@ $(function(){
         
     </tr>
   </tbody>
-</table>
+</table>--> 
                   
-</div>   
-  <div class="col-md-8">
+ 
+  <div class="col-md-12">
      <div class="row">
-        <div class="col-xs-4 col-md-4">
-             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Hae asiakkaista...">
-              <span class="input-group-btn">
-              <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-            </span>
-   </div>           
-   </div>
-         
-          <div class="col-xs- col-md-4">
-              <h4 style="float:right;">Järjestä:</h4>
-          </div>
-         
-         
-          <div class="col-xs-4 col-md-4">
-              
-         <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Tähän tulee teksti
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li><a href="#">Viimeisen viikon ajalta</a></li>
-      <li><a href="#">Kahden viikon ajalta</a></li>
-      <li><a href="#">Kuukauden ajalta</a></li>
-    </ul>
-  </div>
-  </div>            
-    
-         </br>
-         </br>
+        
 
-          <div class="col-md-12">
-  <h3>Asiakastilit</h3>
+<div class="col-md-12">
+  <h3>Asiakkaiden terapiatiedot</h3>
   <table class="table">
     <thead>
       <tr>
-		<th>#</th>
-        <th>Etunimi</th>
-        <th>Sukunimi</th>
-        <th>Tunnus</th>
-		<th>Viimeisin toiminto</th>
+	<th>#</th>
+        <th>Asiakas</th>
+	<th>Viimeisin harjoitus</th>
       </tr>
     </thead>
     <tbody>
+        <% 
+            ArrayList<Customer> customers = new ArrayList<Customer>();
+            customers = Database.getCustomers();
+            int customerID;
+            String customerEmail = "";
+            String customerName = "";
+            String customerSurname = "";
+            String customerPhonenumber = "";
+            String customerAddress = "";
+            String customerPostalcode = "";
+            String customerPostoffice = "";
+            
+            //In this for loop we will print each customer
+            //for a separate table row
+            for(int i=0; i<customers.size();i++){
+                
+                customerID = ((Customer)customers.get(i)).getID();
+                customerEmail = ((Customer)customers.get(i)).getEmail();
+                customerName = ((Customer)customers.get(i)).getName();
+                customerSurname = ((Customer)customers.get(i)).getSurname();
+                customerPhonenumber = ((Customer)customers.get(i)).getPhonenumber();
+                customerAddress = ((Customer)customers.get(i)).getAddress();
+                customerPostalcode = ((Customer)customers.get(i)).getPostalcode();
+                customerPostoffice = ((Customer)customers.get(i)).getPostoffice();
+        %>
       <tr>
-		<td>1</td>
-        <td>Erkki</td>
-        <td>Esimerkki</td>
-        <td>e.esimerkki@email.com</td>
-		<td>13.09.2016 klo 18:30</td>
+	<td><%=customerID%></td>
+        <td>
+            <form action="admincustomerdetails.jsp" method="POST">
+                <input type="hidden" name="customerid" value="<%=customerID%>">
+                <button type="submit" class="btn btn-primary btn-block"><%=InputOutput.clean(customerName)%> <%=InputOutput.clean(customerSurname)%> (<%=InputOutput.clean(customerEmail)%>)</button>
+            </form>
+        </td>
+        <td>
+            <form action="admincustomerdetails.jsp" method="POST">
+                <input type="hidden" name="customerid" value="<%=customerID%>">
+                <button type="submit" class="btn btn-primary btn-block">13.09.2016 klo 18:30</button>
+            </form>
+        </td>
+        
       </tr>
-      <tr>
-		
+        <%
+            }
+        %>
     </tbody>
   </table>
 </div>
@@ -1116,6 +1121,7 @@ $(function(){
     </thead>
     <tbody>
         <% 
+            /* 
             ArrayList<Customer> customers = new ArrayList<Customer>();
             customers = Database.getCustomers();
             int customerID;
@@ -1126,7 +1132,7 @@ $(function(){
             String customerAddress = "";
             String customerPostalcode = "";
             String customerPostoffice = "";
-            
+            */
             //In this for loop we will print each customer
             //for a separate table row
             for(int i=0; i<customers.size();i++){
