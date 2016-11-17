@@ -506,8 +506,9 @@ $(function(){
             <h3><%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%></h3>
             <h4>Harjoitukset</h4>
             <div>
-                <a href=''>Harjoitus 1 (Tästä napista kun painaa niin oikealla ilmestyy harjoitus tarkkoine tietoineen?)</a><br>
-                <a href=''>Taustatiedot (Tästä napista kun painaa niin oikealla ilmestyy asiakkaan taustatiedot?)</a><br>
+                <a href=''>Harjoitukset (Tästä napista kun painaa niin oikealle ilmestyy harjoitukset tarkkoine tietoineen?)</a><br>
+                <a href=''>Avaa uusi harjoitus (Tästä napista kun painaa niin oikealle ilmestyy harjoituksen valinta ja Lähetä-nappi?)</a><br>
+                <a href=''>Taustatiedot (Tästä napista kun painaa niin oikealle ilmestyy asiakkaan taustatiedot?)</a><br>
             </div>
         </div>
     </div>
