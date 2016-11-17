@@ -635,6 +635,7 @@ $(function(){
             </div>
             
     </div>
+                            
 
     <div class="tab-pane text-style" id="tietoa">
         <div class="container">
@@ -645,18 +646,122 @@ $(function(){
 
     <div class="tab-pane text-style" id="liity">
         <div class="container">
-            <h2>Tab liity</h2>
+            <h2>Tab Liity</h2>
 
             <p><%=InputOutput.clean(content4)%></p>
 
-                <button type="button" class="btn btn-default btn-lg btn-block" onclick="window.open('https://docs.google.com/forms/d/1OtY_WaS4OtJbdcV8xlOLyHtf4dAIknrdML82-EVaQx8/edit?usp=drive_web')">Linkki ilmaisen harjoitusohjelman taustatietojen täyttöön </button>
+                <a class="btn btn-default btn-lg btn-block" href="#tab7" data-toggle="tab">Linkki ilmaisen harjoitusohjelman taustatietojen täyttöön </a>
 
                 <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.open('https://docs.google.com/forms/d/1UqlGeUD4sdHlPWMlt_w6wJteREAttMO5I5chXV93S3c/edit')"> Linkki maksullisen harjoitusohjelman taustatietojen täyttöön </button>
             </div>
         </div>
+            
+    <div class="tab-pane text-style" id="tab7">
+        <div class="container">
+            
+            <h2>Ilmaisen kokeiluohjelman taustatiedot</h2>
+            
+            
+            <p>VASTAA SEURAAVIIN KYSYMYKSIIN ELÄMÄNTILANTEESTASI JA YLEISESTÄ HENKISESTÄ TILANTEESTASI 
+                (ilmaisen kokeiluohjelman tiedot henkilöstäsi ja tilanteestasi ovat yleisluontoisia, anna
+                kuitenkin todelliset tiedot henkilöstäsi, kuten nimi, osoite, ikätiedot):   
+                Näitä taustatietoja päivittäisestä elämäsi laadusta tarvitsen arvioidessani
+                tässä seuraavassa tekemiäsi päivittäisten toimintojen rekistereistäsi saamiani
+                tietoja arjen henkisen toimintasi luonteesta. Myös tässä kysytyt taustatiedot
+                auttavat minua tarkentamaan palautteitani ja tarpeellisia jatkokysymyksiä
+                mahdollisiin jatkokeskusteluihimme tässä yhteistyöalustassa, joiden asioiden
+                selvittämistä on kenties tarpeellista jatkaa toisella tai kolmannella 
+                monitorointitehtävällä jotka sinulla mahdollisesti lähetän.
+                Pyri vastaamaan nykyisen tilanteesi etkä toiveittesi mukaan,
+                jotta yhteistyömme perustuu tosiasioille, jos pyrit kaunistelemaan
+                tai muutoin vääristämään taustatietoja, tiedät että psykoterapiayhteistyö
+                ei perustu vääristelyyn, toisaalta meille voi olla vaikeaa huomata tiettyjä
+                tosiasioita.  Pyydän varsinkin että keskityt antamaan iästäsi ja muista
+                perustiedoista, kuten painosta ja terveydentilastasi samoin kuin muista
+                saamistasi hoitopalveluista ja hoitokeinoista tosiasiallista tilannettasi
+                vastaavat tiedot, tiedäthän että nämä tässä antamasi tiedot ovat täysin
+                luottamuksellisia eivätkä tule kenenkään kuten muiden lähihenkilöiden
+                tai muiden ammattilaisten tai minun kanssani yhteistyötä tekevien
+                asiakkaiden tietoon.  Sitä vaitiolovelvollisuutta ja yksityisyytesi
+                suojaamisen turvaaminen myös laillistetun psykoterapeutin työskentely
+                edellyttää olipa kyse istuntopainotteisesta tai internetissä toteutetusta
+                psykoterapeuttisesta asiakasyhteistyöstä. </p>
+            
+              </br>
+              <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              </div>
+              <div class="form-group">
+                <label for="exampleSelect1">Example select</label>
+                <select class="form-control" id="exampleSelect1">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleSelect2">Example multiple select</label>
+                <select multiple class="form-control" id="exampleSelect2">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleTextarea">Example textarea</label>
+                <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputFile">File input</label>
+                <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+              </div>
+              <fieldset class="form-group">
+                <legend>Radio buttons</legend>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                    Option one is this and that&mdash;be sure to include why it's great
+                  </label>
+                </div>
+                <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+                    Option two can be something else and selecting it will deselect option one
+                  </label>
+                </div>
+                <div class="form-check disabled">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+                    Option three is disabled
+                  </label>
+                </div>
+              </fieldset>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input">
+                  Check me out
+                </label>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+        </div>
+    </div>
 
 
-        <div class="tab-pane text-style" id="tab7">
+        <div class="tab-pane text-style" id="tab8">
      
 
     </div>
