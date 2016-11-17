@@ -138,14 +138,146 @@
         a.hidden{
             display:none;}
         
-        .custom-controls-stacked {
-            
-            
+        .form-group {
+            font-size: 14px;
         }
         
-
-
-	
+        /* Form radio button and checkbox styles */
+        
+        .control-group {
+        display: inline-block;
+        vertical-align: top;
+        background: #fff;
+        text-align: left;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        padding: 30px;
+        width: 200px;
+        height: 210px;
+        margin: 10px;
+        }
+        .control {
+          display: block;
+          position: relative;
+          padding-left: 30px;
+          margin-bottom: 15px;
+          cursor: pointer;
+          font-size: 14px;
+        }
+        .control input {
+          position: absolute;
+          z-index: -1;
+          opacity: 0;
+        }
+        .control__indicator {
+          position: absolute;
+          top: 2px;
+          left: 0;
+          height: 20px;
+          width: 20px;
+          background: #e6e6e6;
+        }
+        .control--radio .control__indicator {
+          border-radius: 50%;
+        }
+        .control:hover input ~ .control__indicator,
+        .control input:focus ~ .control__indicator {
+          background: #ccc;
+        }
+        .control input:checked ~ .control__indicator {
+          background: #2aa1c0;
+        }
+        .control:hover input:not([disabled]):checked ~ .control__indicator,
+        .control input:checked:focus ~ .control__indicator {
+          background: #0e647d;
+        }
+        .control input:disabled ~ .control__indicator {
+          background: #e6e6e6;
+          opacity: 0.6;
+          pointer-events: none;
+        }
+        .control__indicator:after {
+          content: '';
+          position: absolute;
+          display: none;
+        }
+        .control input:checked ~ .control__indicator:after {
+          display: block;
+        }
+        .control--checkbox .control__indicator:after {
+          left: 8px;
+          top: 4px;
+          width: 3px;
+          height: 8px;
+          border: solid #fff;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+        }
+        .control--checkbox input:disabled ~ .control__indicator:after {
+          border-color: #7b7b7b;
+        }
+        .control--radio .control__indicator:after {
+          left: 7px;
+          top: 7px;
+          height: 6px;
+          width: 6px;
+          border-radius: 50%;
+          background: #fff;
+        }
+        .control--radio input:disabled ~ .control__indicator:after {
+          background: #7b7b7b;
+        }
+        .select {
+          position: relative;
+          display: inline-block;
+          margin-bottom: 15px;
+          width: 100%;
+        }
+        .select select {
+          display: inline-block;
+          width: 100%;
+          cursor: pointer;
+          padding: 10px 15px;
+          outline: 0;
+          border: 0;
+          border-radius: 0;
+          background: #e6e6e6;
+          color: #7b7b7b;
+          appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+        }
+        .select select::-ms-expand {
+          display: none;
+        }
+        .select select:hover,
+        .select select:focus {
+          color: #000;
+          background: #ccc;
+        }
+        .select select:disabled {
+          opacity: 0.5;
+          pointer-events: none;
+        }
+        .select__arrow {
+          position: absolute;
+          top: 16px;
+          right: 15px;
+          width: 0;
+          height: 0;
+          pointer-events: none;
+          border-style: solid;
+          border-width: 8px 5px 0 5px;
+          border-color: #7b7b7b transparent transparent transparent;
+        }
+        .select select:hover ~ .select__arrow,
+        .select select:focus ~ .select__arrow {
+          border-top-color: #000;
+        }
+        .select select:disabled ~ .select__arrow {
+          border-top-color: #ccc;
+        }
+        
+        
         </style>
 
 
@@ -662,8 +794,12 @@ $(function(){
         </div>
             
     <div class="tab-pane text-style" id="tab7">
+        
         <div class="container">
             
+            <div class="col-sm-9">
+            <div class="well">
+                
             <h2>Ilmaisen kokeiluohjelman taustatiedot</h2>
             
             
@@ -693,87 +829,70 @@ $(function(){
                 psykoterapeuttisesta asiakasyhteistyöstä. </p>
             
               <form>
+                  
               <div class="form-group">
                 <label for="exampleInputEmail1">Nimi</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
-                <small id="emailHelp" class="form-text text-muted">Syötä yllä olevaan kenttään nimesi.</small>
               </div>
               <div class="form-group">
-                <label for="exampleInputPassword1">Asuinosoite, virallinen postiosoite</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Oma vastauksesi">
+                <label for="exampleInputEmail1">Asuinosoite, virallinen postiosoite</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
               </div>
               <div class="form-group">
-                <label for="exampleInputPassword1">Puhelin</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Oma vastauksesi">
+                <label for="exampleInputEmail1">Puhelin</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
               </div>
                <div class="form-group">
-                <label for="exampleInputPassword1">Sähköpostiosoite</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Oma vastauksesi">
+                <label for="exampleInputEmail1">Sähköpostiosoite</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
               </div>
               <div class="form-group">
-                <label for="exampleInputPassword1">Ikä</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Oma vastauksesi">
+                <label for="exampleInputEmail1">Ikä</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
               </div>
               <div class="form-group">
-                <label for="exampleInputPassword1">Asuinmuoto: asun yksin / ystävän, avopuolison kanssa/ vanhempieni, ystävän taloudessa/ avioliitossa/ asuinmuotoni ja -paikkani vaihtelee jatkuvasti, ei siis ole vakituista kotina pidettävää asuinpaikkaa</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Oma vastauksesi">
-              </div>
-              <div class="custom-controls-stacked">
-                <label class="custom-control custom-radio">
-                  <input id="radioStacked1" name="radio-stacked" type="radio" class="custom-control-input">
-                  <span class="custom-control-indicator"></span>
-                  <span class="custom-control-description">Käytän suhteellisen säännöllisesti päivittäistä sosiaalista elämääni tukevia terveys- ja kuntoutuspalveluita</span>
-                </label>
-                <label class="custom-control custom-radio">
-                  <input id="radioStacked2" name="radio-stacked" type="radio" class="custom-control-input">
-                  <span class="custom-control-indicator"></span>
-                  <span class="custom-control-description">En ole varsinaisesti missään pitempikestoisessa elämääni tukevassa kuntoutus- ja palvelumuotojen piirissä</span>
-                </label>
-                <label class="custom-control custom-radio">
-                  <input id="radioStacked2" name="radio-stacked" type="radio" class="custom-control-input">
-                  <span class="custom-control-indicator"></span>
-                  <span class="custom-control-description">Saamani palvelut ovat epämääräisiä ja johonkin päivittäiseen ongelman ratkaisuun, kuten lääkitykseen, rahallisten tukien saamiseen keskittyneitä, tilanteeni yleistä seurantaa</span>
-                </label>
-          </div>
-              <div class="form-group">
-                <label for="exampleTextarea">Example textarea</label>
-                <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                <label for="exampleInputEmail1">Asuinmuoto: asun yksin / ystävän, avopuolison kanssa/ vanhempieni, ystävän taloudessa/ avioliitossa/ asuinmuotoni ja -paikkani vaihtelee jatkuvasti, ei siis ole vakituista kotina pidettävää asuinpaikkaa</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
               </div>
               <div class="form-group">
-                <label for="exampleInputFile">File input</label>
-                <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-                <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+                <label for="exampleInputEmail1">Nykyinen viikoittainen tai muutoin säännöllinen elämäntapasi: työtön, eläkkeellä, sairausturva/ elän epäsäännöllisten ja tilapäisten tukien ja tulojen avulla/ opiskelen pääasiallisesti/ työssä, työkokeilussa, ammatillisessa työsuhteessa/ ei säännönmukaista elämäntapaa</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
               </div>
-              <fieldset class="form-group">
-                <legend>Radio buttons</legend>
-                <div class="form-check">
-                  <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                    Option one is this and that&mdash;be sure to include why it's great
-                  </label>
+        
+                  <br>
+                  
+                  
+                 
+              <label class="control control--radio">Käytän suhteellisen säännöllisesti päivittäistä sosiaalista elämääni tukevia terveys- ja kuntoutuspalveluita
+                <input type="radio" name="radio" checked="checked"/>
+                <div class="control__indicator"></div>
+              </label>
+              <label class="control control--radio">En ole varsinaisesti missään pitempikestoisessa elämääni tukevassa kuntoutus- ja palvelumuotojen piirissä
+                <input type="radio" name="radio"/>
+                <div class="control__indicator"></div>
+              </label>
+              <label class="control control--radio">Saamani palvelut ovat epämääräisiä ja johonkin päivittäiseen ongelman ratkaisuun, kuten lääkitykseen, rahallisten tukien saamiseen keskittyneitä, tilanteeni yleistä seurantaa
+                <input type="radio" name="radio"/>
+                <div class="control__indicator"></div>
+              </label>
+                  
+                   <br>
+              
+                <div class="form-group">
+                <label for="exampleInputEmail1">Nimeä ja luetteloi lyhyesti ongelmia, sekä elämistäsi vaikeuttavia asioita kuten mielenterveydellisiä vaikeuksiasi omin sanoin</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
                 </div>
-                <div class="form-check">
-                <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
-                    Option two can be something else and selecting it will deselect option one
-                  </label>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Nimeä ja luetteloi lyhyesti ongelmia, sekä elämistäsi vaikeuttavia asioita kuten mielenterveydellisiä vaikeuksiasi omin sanoin</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
                 </div>
-                <div class="form-check disabled">
-                <label class="form-check-label">
-                    <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
-                    Option three is disabled
-                  </label>
-                </div>
-              </fieldset>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <input type="checkbox" class="form-check-input">
-                  Check me out
-                </label>
-              </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
 
+                   
+              <button type="submit" class="btn btn-primary">Lähetä</button>
+            </form>
+            
+        </div>
+        </div>        
         </div>
     </div>
 
