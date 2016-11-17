@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 /**
  *
@@ -24,7 +25,8 @@ public class Database {
     static PreparedStatement ps = null;
     static ResultSet rs = null;
 
-    public static boolean addUser(String email, String password) {
+    public static boolean addUser(String email, String password, String name, String surname, String phonenumber,
+            String address, String postalcode, String postoffice) {
         
         boolean addedUser = false;
 
@@ -33,16 +35,18 @@ public class Database {
 
             conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
             ps = conn.prepareStatement("INSERT INTO Users (UserEmail, UserPassword, UserType,"
-                    + " UserName, UserSurname, UserAddress, UserPostalcode, UserPostoffice)"
-                    + " VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+                    + " UserName, UserSurname, UserPhonenumber,"
+                    + " UserAddress, UserPostalcode, UserPostoffice)"
+                    + " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
             ps.setString(1, email);
             ps.setString(2, password);
             ps.setString(3, "customer");
-            ps.setString(4, "");
-            ps.setString(5, "");
-            ps.setString(6, "");
-            ps.setString(7, "");
-            ps.setString(8, "");
+            ps.setString(4, name);
+            ps.setString(5, surname);
+            ps.setString(6, phonenumber);
+            ps.setString(7, address);
+            ps.setString(8, postalcode);
+            ps.setString(9, postoffice);
             ps.execute();
             
             addedUser = true; //I might refactor this later...
@@ -58,27 +62,32 @@ public class Database {
         return addedUser;
     }
     
-    //This feature is still in WIP
-    //Idea is that user details are rewritten with information
+    //Idea is that user details are rewritten with empty information
     //that can not be used to identify certain user.
     //Furthermore, UserIsDeleted is set to TRUE
     //so that when someone is trying to login with deleted
     //account, we can deny that access if UserIsDeleted = TRUE
-    public static void removeUser(int UserID) {
-
+    public static void deleteUser(int UserID) {
+        
+        String stringUserID = Integer.toString(UserID);
+        
         try {
             Class.forName(dbDriver);
 
             conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
-            ps = conn.prepareStatement("UPDATE Users SET UserEmail=UserID, UserName=?, UserSurname=?,"
-                    + " UserAddress=?, UserPostalcode=?, UserPostoffice=?, UserIsDeleted=? WHERE UserID=?");
-            ps.setString(1, "");
-            ps.setString(2, "");
-            ps.setString(3, "");
-            ps.setString(4, "");
-            ps.setString(5, "");
-            ps.setBoolean(6, true);
-            ps.setInt(7, UserID);
+            ps = conn.prepareStatement("UPDATE Users SET UserEmail=?, UserPassword=?, UserName=?, UserSurname=?,"
+                    + " UserPhonenumber=?, UserAddress=?, UserPostalcode=?, UserPostoffice=?,"
+                    + " UserIsDeleted=? WHERE UserID=?");
+            ps.setString(1, stringUserID); //email
+            ps.setString(2, ""); //password
+            ps.setString(3, ""); //name
+            ps.setString(4, ""); //surname
+            ps.setString(5, ""); //phonenumber
+            ps.setString(6, ""); //address
+            ps.setString(7, ""); //postalcode
+            ps.setString(8, ""); //postoffice
+            ps.setBoolean(9, true);
+            ps.setInt(10, UserID);
             
             ps.executeUpdate();
 
@@ -100,7 +109,8 @@ public class Database {
             Class.forName(dbDriver);
 
             conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
-            ps = conn.prepareStatement("SELECT * FROM Users WHERE UserEmail=? and UserPassword=?");
+            ps = conn.prepareStatement("SELECT * FROM Users WHERE UserEmail=? AND"
+                    + " UserPassword=? AND UserIsDeleted=FALSE");
             ps.setString(1, email);
             ps.setString(2, password);
             rs = ps.executeQuery();
@@ -464,6 +474,36 @@ public class Database {
         }
         
         return userSurname;
+    }
+    
+    public static ArrayList<Customer> getCustomers() {
+        
+        ArrayList customers = new ArrayList();
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("SELECT UserID, UserEmail, UserName, UserSurname, "
+                    + "UserPhonenumber, UserAddress, UserPostalcode, UserPostoffice FROM Users WHERE"
+                    + "(UserType='customer' AND UserIsDeleted=FALSE)");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                customers.add(new Customer(rs.getInt("UserID"), rs.getString("UserEmail"),
+                        rs.getString("UserName"), rs.getString("UserSurname"), rs.getString("UserPhonenumber"),
+                rs.getString("UserAddress"), rs.getString("UserPostalcode"), rs.getString("UserPostoffice")));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            closeDatabaseConnections();
+            
+        }
+        
+        return customers;
     }
                     
     public static void updateUserDetails(String userName, String userSurname,

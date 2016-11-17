@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Jaakko
  */
-public class CreateUser extends HttpServlet {
+public class DeleteUser extends HttpServlet {
 
     /**
      * Handles the HTTP <code>POST</code> method.
@@ -29,24 +29,11 @@ public class CreateUser extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        request.setCharacterEncoding("UTF-8");
         
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
-        String name = request.getParameter("name");
-        String surname = request.getParameter("surname");
-        String phonenumber = request.getParameter("phonenumber");
-        String address = request.getParameter("address");
-        String postalcode = request.getParameter("postalcode");
-        String postoffice = request.getParameter("postoffice");
+        String stringCustomerID = request.getParameter("customerid");
+        int intCustomerID = Integer.parseInt(stringCustomerID);
         
-        if(Database.userExists(email)){
-            System.out.println("CREATING NEW USER FAILED - USER ALREADY EXISTS");
-        }else{
-            Database.addUser(email, password, name, surname, phonenumber,
-                    address, postalcode, postoffice);
-            System.out.println("CREATING NEW USER SUCCEEDED");
-        }
+        Database.deleteUser(intCustomerID); //and good riddance!
         
         response.sendRedirect(request.getContextPath() + "/admin.jsp#tab11");
     }

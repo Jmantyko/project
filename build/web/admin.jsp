@@ -4,6 +4,8 @@
     Author     : Jaakko
 --%>
 
+<%@page import="Arjenhallinta.Customer"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="Arjenhallinta.Database"%>
 <%@page import="Arjenhallinta.InputOutput"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -412,7 +414,13 @@ $(function(){
          });
          
          </script>
-	
+<script>
+        //jQuery(document).ready(function($) {
+        //    $(".clickable-row").click(function() {
+        //        window.document.location = $(this).data("href");
+        //    });
+       // });
+</script>
 
  
 
@@ -1093,10 +1101,10 @@ $(function(){
 
 <div class="tab-pane text-style" id="tab11">
     <div class ="container">
+        <h3>Asiakastilien hallinta</h3>
 	<div class="customer-main-container">
-                    <div class="customer-actions-container">
-					<button type="button" class="btn btn-success">Lisää uusi asiakastili</button>
-  <button type="button" class="btn btn-danger">Poista valittu asiakastili</button>
+            <div class="customer-actions-container">
+                <button type="button" class="btn btn-success" href='#tab-content0' data-toggle="tab">Lisää uusi asiakastili</button>
 <table class="table topBuffer">
 <thead>
       <tr>
@@ -1108,44 +1116,113 @@ $(function(){
     </thead>
     <tbody>
         <% 
+            ArrayList<Customer> customers = new ArrayList<Customer>();
+            customers = Database.getCustomers();
+            int customerID;
+            String customerEmail = "";
+            String customerName = "";
+            String customerSurname = "";
+            String customerPhonenumber = "";
+            String customerAddress = "";
+            String customerPostalcode = "";
+            String customerPostoffice = "";
+            
             //In this for loop we will print each customer
             //for a separate table row
-            int userID = 0;
-            int largestID = Database.getLargestID();
-            for(userID=1; userID<=largestID;userID++){
-                String tableUserType = Database.getUserTypeUsingID(userID);
-                if("customer".equals(tableUserType)){
-                    String tableEmail = Database.getUserEmail(userID);
-                    String tableUsername = Database.getUserNameUsingID(userID);
-                    String tableSurname = Database.getUserSurnameUsingID(userID);
+            for(int i=0; i<customers.size();i++){
+                
+                customerID = ((Customer)customers.get(i)).getID();
+                customerEmail = ((Customer)customers.get(i)).getEmail();
+                customerName = ((Customer)customers.get(i)).getName();
+                customerSurname = ((Customer)customers.get(i)).getSurname();
+                customerPhonenumber = ((Customer)customers.get(i)).getPhonenumber();
+                customerAddress = ((Customer)customers.get(i)).getAddress();
+                customerPostalcode = ((Customer)customers.get(i)).getPostalcode();
+                customerPostoffice = ((Customer)customers.get(i)).getPostoffice();
         %>
-        <tr>
-            <td><%=userID%></td>
-            <td><%=tableUsername%></td>
-            <td><%=tableSurname%></td>
-            <td><%=tableEmail%></td>
+        <tr class='clickable-row' href='#tab-content<%=customerID%>' data-toggle="tab">
+            <td><%=customerID%></td>
+            <td><%=InputOutput.clean(customerName)%></td>
+            <td><%=InputOutput.clean(customerSurname)%></td>
+            <td><%=InputOutput.clean(customerEmail)%></td>
         </tr>
         <%
-                }
             }
         %>
     </tbody>
-  </table>                    </div>
-
-                    <div class="customer-display-container">
-                    <p>oikee puoli</p>    
-                    </div>
+  </table>                    
+            </div>
+    
+<div class="customer-display-container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tab-content">
+                <div class="tab-pane fade" id="tab-content0">
+                    <h3>Uuden asiakkastilin luonti</h3>
+                    <form action="CreateUser" method="POST">
+                    <label for="email">Anna käyttäjän sähköpostiosoite:</label>
+                    <input type="email" class="form-control" name="email" value="" placeholder="esim. esimerkki@esimerkki.fi" /><br>
+                    <label for="password">Luo käyttäjälle salasana:</label>
+                    <input type="password" class="form-control" name="password" value="" placeholder="esim. w895aRQ3gByx" /><br>
+                    <label for="name">Anna käyttäjän etunimi:</label>
+                    <input type="text" class="form-control" name="name" value="" placeholder="esim. Pekka" /><br>
+                    <label for="name">Anna käyttäjän sukunimi:</label>
+                    <input type="text" class="form-control" name="surname" value="" placeholder="esim. Meikäläinen" /><br>
+                    <label for="phonenumber">Anna käyttäjän puhelinnumero:</label>
+                    <input type="text" class="form-control" name="phonenumber" value="" placeholder="esim. 04012345678" /><br>
+                    <label for="address">Anna käyttäjän osoite:</label>
+                    <input type="text" class="form-control" name="address" value="" placeholder="esim. Torikatu 7" /><br>
+                    <label for="postalcode">Anna käyttäjän postinumero:</label>
+                    <input type="text" class="form-control" name="postalcode" value="" placeholder="esim. 10101" /><br>
+                    <label for="postoffice">Anna käyttäjän postitoimipaikka:</label>
+                    <input type="text" class="form-control" name="postoffice" value="" placeholder="esim. Oulu" /><br>
+                    <input type="submit" class="btn btn-success" value="Lisää asiakastili" /> 
+                    </form>
+                </div> 
+            <%
+                for(int i=0; i<customers.size();i++){
+                    customerID = ((Customer)customers.get(i)).getID();
+                    customerEmail = ((Customer)customers.get(i)).getEmail();
+                    customerName = ((Customer)customers.get(i)).getName();
+                    customerSurname = ((Customer)customers.get(i)).getSurname();
+                    customerPhonenumber = ((Customer)customers.get(i)).getPhonenumber();
+                    customerAddress = ((Customer)customers.get(i)).getAddress();
+                    customerPostalcode = ((Customer)customers.get(i)).getPostalcode();
+                    customerPostoffice = ((Customer)customers.get(i)).getPostoffice();
+            %>
+                <div class="tab-pane fade" id="tab-content<%=customerID%>">
+                    <p><strong>Asiakasnumero:</strong> <%=customerID%></p>
+                    <p><strong>Nimi:</strong> <%=InputOutput.clean(customerName)%></p>
+                    <p><strong>Sukunimi:</strong> <%=InputOutput.clean(customerSurname)%></p>
+                    <p><strong>Sähköposti:</strong> <%=InputOutput.clean(customerEmail)%></p>
+                    <p><strong>Puhelin:</strong> <%=InputOutput.clean(customerPhonenumber)%></p>
+                    <p><strong>Osoite:</strong> <%=InputOutput.clean(customerAddress)%></p>
+                    <p><strong>Postinumero:</strong> <%=InputOutput.clean(customerPostalcode)%></p>
+                    <p><strong>Postitoimipaikka:</strong> <%=InputOutput.clean(customerPostoffice)%></p>
+                    <form action="DeleteUser" method="POST">
+                        <input type="hidden" name="customerid" value="<%=customerID%>">
+                        <input type="submit" class="btn btn-danger" value="Poista asiakastili" /> 
+                    </form>
+                </div> 
+            <%
+                }
+            %>
+            </div>
+        </div>
+    </div>
+</div>
 
                 </div>
         
         </div>
 </div>
+    </div>
 
-<div class="container-bottom">
-            <hr>
-            <p class="muted">© 2016 Martti Puttonen. All rights reserved.</p>
-            <hr>
-        </div>    
+    <div class="container-bottom">
+        <hr>
+        <p class="muted">© 2016 Martti Puttonen. All rights reserved.</p>
+        <hr>
+    </div>    
 
 <script type="text/javascript" src="addrow.js"></script>
     </body>
