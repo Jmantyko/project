@@ -475,27 +475,27 @@ $(function(){
             
             <form action="UpdateFrontPage" method="POST" accept-charset="utf-8" id="FrontPageText">
                 <label for="comment">Arjenhallinta.fi</label><br>
-                <textarea type="text" class="form-control" name="content" form="FronPageText" ><%=InputOutput.clean(content1)%></textarea><br>
+                <textarea type="text" class="form-control" name="content" form="FrontPageText" ><%=InputOutput.clean(content1)%></textarea><br>
                 <input type="hidden" name="id" value="1">
 
                 <label for="comment">Martti Puttonen</label><br>
-                <textarea type="text" class="form-control" name="content" form="FronPageText"><%=InputOutput.clean(content2)%></textarea><br>
+                <textarea type="text" class="form-control" name="content" form="FrontPageText"><%=InputOutput.clean(content2)%></textarea><br>
                 <input type="hidden" name="id" value="2">
 
                 <label for="comment">Liity</label><br>
-                <textarea type="text" class="form-control" name="content" form="FronPageText"><%=InputOutput.clean(content3)%></textarea><br>
+                <textarea type="text" class="form-control" name="content" form="FrontPageText"><%=InputOutput.clean(content3)%></textarea><br>
                 <input type="hidden" name="id" value="3">
 
                 <label for="comment">Tietoa</label><br>
-                <textarea type="text" class="form-control" name="content" form="FronPageText"><%=InputOutput.clean(content4)%></textarea><br>
+                <textarea type="text" class="form-control" name="content" form="FrontPageText"><%=InputOutput.clean(content4)%></textarea><br>
                 <input type="hidden" name="id" value="4">
 
                 <label for="comment">Psykoterapiapalvelut</label><br>
-                <textarea type="text" class="form-control" name="content" form="FronPageText"><%=InputOutput.clean(content5)%></textarea><br>
+                <textarea type="text" class="form-control" name="content" form="FrontPageText"><%=InputOutput.clean(content5)%></textarea><br>
                 <input type="hidden" name="id" value="5">
 
                 <label for="comment">Yhteystiedot</label><br>
-                <textarea type="text" class="form-control" name="content" form="FronPageText"><%=InputOutput.clean(content6)%></textarea><br>
+                <textarea type="text" class="form-control" name="content" form="FrontPageText"><%=InputOutput.clean(content6)%></textarea><br>
                 <input type="hidden" name="id" value="6">
                 <input type="submit" class="btn btn-warning" value="Päivitä" />
             </form><br>
