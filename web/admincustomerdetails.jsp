@@ -57,8 +57,6 @@
                 }
             }
         %>    
-        
-        <head>
     <meta http-equiv="content-type" content="text/html;charset=ISO-8859-1"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -427,8 +425,8 @@ $(function(){
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li class=""><a href="#tab1" data-toggle="tab">Etusivu</a></li>
-       <li class=""><a href="#tab11" data-toggle="tab">Asiakastilien hallinta</a></li>
+      <li class=""><a href="admin.jsp">Etusivu</a></li>
+       <li class=""><a href="admin.jsp#tab11">Asiakastilien hallinta</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
      <li class="dropdown">
@@ -495,7 +493,24 @@ $(function(){
 
 <!-- tab content -->
 <div class="tab-content">
-all the stuff comes here
+    <div class="tab-pane active text-style" id="tab1">
+        <div class="container">
+<%
+    
+    String stringUserID = request.getParameter("customerid");
+    int userid = Integer.parseInt(stringUserID);
+
+    String userName = Database.getUserNameUsingID(userid);
+    String userSurname = Database.getUserSurnameUsingID(userid);
+%>
+            <h3><%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%></h3>
+            <h4>Harjoitukset</h4>
+            <div>
+                <a href=''>Harjoitus 1 (Tästä napista kun painaa niin oikealla ilmestyy harjoitus tarkkoine tietoineen?)</a><br>
+                <a href=''>Taustatiedot (Tästä napista kun painaa niin oikealla ilmestyy asiakkaan taustatiedot?)</a><br>
+            </div>
+        </div>
+    </div>
 </div>    
 <div class="container-bottom">
         <hr>

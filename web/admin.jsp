@@ -61,8 +61,6 @@
                 }
             }
         %>    
-        
-        <head>
     <meta http-equiv="content-type" content="text/html;charset=ISO-8859-1"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -641,13 +639,13 @@ $(function(){
       <tr>
 	<td><%=customerID%></td>
         <td>
-            <form action="admincustomerdetails.jsp" method="POST">
+            <form action="admincustomerdetails.jsp" method="GET">
                 <input type="hidden" name="customerid" value="<%=customerID%>">
                 <button type="submit" class="btn btn-primary btn-block"><%=InputOutput.clean(customerName)%> <%=InputOutput.clean(customerSurname)%> (<%=InputOutput.clean(customerEmail)%>)</button>
             </form>
         </td>
         <td>
-            <form action="admincustomerdetails.jsp" method="POST">
+            <form action="admincustomerdetails.jsp" method="GET">
                 <input type="hidden" name="customerid" value="<%=customerID%>">
                 <button type="submit" class="btn btn-primary btn-block">13.09.2016 klo 18:30</button>
             </form>
