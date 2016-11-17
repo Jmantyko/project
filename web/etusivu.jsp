@@ -138,6 +138,11 @@
         a.hidden{
             display:none;}
         
+        .custom-controls-stacked {
+            
+            
+        }
+        
 
 
 	
@@ -687,37 +692,49 @@ $(function(){
                 edellyttää olipa kyse istuntopainotteisesta tai internetissä toteutetusta
                 psykoterapeuttisesta asiakasyhteistyöstä. </p>
             
-              </br>
               <form>
               <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <label for="exampleInputEmail1">Nimi</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+                <small id="emailHelp" class="form-text text-muted">Syötä yllä olevaan kenttään nimesi.</small>
               </div>
               <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <label for="exampleInputPassword1">Asuinosoite, virallinen postiosoite</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Oma vastauksesi">
               </div>
               <div class="form-group">
-                <label for="exampleSelect1">Example select</label>
-                <select class="form-control" id="exampleSelect1">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>
+                <label for="exampleInputPassword1">Puhelin</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Oma vastauksesi">
+              </div>
+               <div class="form-group">
+                <label for="exampleInputPassword1">Sähköpostiosoite</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Oma vastauksesi">
               </div>
               <div class="form-group">
-                <label for="exampleSelect2">Example multiple select</label>
-                <select multiple class="form-control" id="exampleSelect2">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
-                </select>
+                <label for="exampleInputPassword1">Ikä</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Oma vastauksesi">
               </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Asuinmuoto: asun yksin / ystävän, avopuolison kanssa/ vanhempieni, ystävän taloudessa/ avioliitossa/ asuinmuotoni ja -paikkani vaihtelee jatkuvasti, ei siis ole vakituista kotina pidettävää asuinpaikkaa</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Oma vastauksesi">
+              </div>
+              <div class="custom-controls-stacked">
+                <label class="custom-control custom-radio">
+                  <input id="radioStacked1" name="radio-stacked" type="radio" class="custom-control-input">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">Käytän suhteellisen säännöllisesti päivittäistä sosiaalista elämääni tukevia terveys- ja kuntoutuspalveluita</span>
+                </label>
+                <label class="custom-control custom-radio">
+                  <input id="radioStacked2" name="radio-stacked" type="radio" class="custom-control-input">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">En ole varsinaisesti missään pitempikestoisessa elämääni tukevassa kuntoutus- ja palvelumuotojen piirissä</span>
+                </label>
+                <label class="custom-control custom-radio">
+                  <input id="radioStacked2" name="radio-stacked" type="radio" class="custom-control-input">
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description">Saamani palvelut ovat epämääräisiä ja johonkin päivittäiseen ongelman ratkaisuun, kuten lääkitykseen, rahallisten tukien saamiseen keskittyneitä, tilanteeni yleistä seurantaa</span>
+                </label>
+          </div>
               <div class="form-group">
                 <label for="exampleTextarea">Example textarea</label>
                 <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
