@@ -81,5 +81,9 @@ INSERT INTO Users (UserEmail, UserPassword, UserName, UserSurname, UserPhonenumb
 		('mattimeikalainen@meikalainen.fi', '123', 'Matti', 'Meikäläinen', '1234567890', 'Kerroskuja 5', '82828', 'Tampere', 'customer');
 			
 INSERT INTO Frontpage (PageContent)
-	VALUES	('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tincidunt erat eu convallis vulputate. Cras pellentesque, urna vitae finibus imperdiet, eros massa auctor diam, eu tristique purus lacus vitae dui. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas viverra mauris sed sapien pharetra lobortis. Proin ut ipsum non risus pulvinar mattis. Pellentesque pellentesque felis eu eros vehicula, sed gravida arcu sodales. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin tincidunt sollicitudin tortor sit amet scelerisque. Aenean quis lacinia turpis.'),
-		('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tincidunt erat eu convallis vulputate. Cras pellentesque, urna vitae finibus imperdiet, eros massa auctor diam, eu tristique purus lacus vitae dui. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas viverra mauris sed sapien pharetra lobortis. Proin ut ipsum non risus pulvinar mattis. Pellentesque pellentesque felis eu eros vehicula, sed gravida arcu sodales. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin tincidunt sollicitudin tortor sit amet scelerisque. Aenean quis lacinia turpis.');
+	VALUES	('Tämä teksti on yleistä arjenhallinta.fi mainostekstiä.'),
+			('Martti Puttosen esittely teksti tähän.'),
+			('Liity teksti tähän.'),
+			('Tietoa teksti tähän.'),
+			('Psykoterapiapalvelut teksti tähän.'),
+			('Yhteystiedot teksti tähän.');
