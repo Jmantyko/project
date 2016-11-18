@@ -4,6 +4,8 @@
     Author     : Jaakko
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="Arjenhallinta.Content"%>
 <%@page import="Arjenhallinta.Database"%>
 <%@page import="Arjenhallinta.InputOutput"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -419,13 +421,16 @@ $(function(){
     <body>
         <%
             //Fetching data from database
-            String content1 = Database.getFrontPageContent(1);
-            String content2 = Database.getFrontPageContent(2);
-            String content3 = Database.getFrontPageContent(3);
-            String content4 = Database.getFrontPageContent(4);
-            String content5 = Database.getFrontPageContent(5);
-            String content6 = Database.getFrontPageContent(6);
+            ArrayList<Content> content = new ArrayList<Content>();
+            content = Database.getAllFrontPageContent();
             
+            String contentMainos = ((Content)content.get(0)).getContent();
+            String contentMartti = ((Content)content.get(1)).getContent();
+            String contentLiity = ((Content)content.get(2)).getContent();
+            String contentTietoa = ((Content)content.get(3)).getContent();
+            String contentPsykoterapiapalvelut = ((Content)content.get(4)).getContent();
+            String contentYhteystiedot = ((Content)content.get(5)).getContent(); 
+                    
             String email = (String) session.getAttribute("email");
             String userType = Database.userType(email);
             String userName = Database.getUserName(email);
@@ -549,7 +554,7 @@ $(function(){
     <div class="tab-pane active text-style" id="tab1">
         <div class="container">
             <h3>Tab 1</h3>
-            <p><%=InputOutput.clean(content1)%></p>
+            <p><%=InputOutput.clean(contentMainos)%></p>
         </div>
     </div>
         
@@ -559,6 +564,7 @@ $(function(){
                 <div class="container">
                     
                     <h2>Tab martti</h2>
+                    <p><%=InputOutput.clean(contentMartti)%></p>
 
                     <div class="gallery">
                         <div class="container">
@@ -647,7 +653,7 @@ $(function(){
     <div class="tab-pane text-style" id="tietoa">
         <div class="container">
             <h2>Tab tietoa</h2>
-            <p><%=InputOutput.clean(content3)%></p>
+            <p><%=InputOutput.clean(contentTietoa)%></p>
         </div>
     </div>
 
@@ -655,7 +661,7 @@ $(function(){
         <div class="container">
             <h2>Tab Liity</h2>
 
-            <p><%=InputOutput.clean(content4)%></p>
+            <p><%=InputOutput.clean(contentLiity)%></p>
             <a class="btn btn-default btn-lg btn-block" href="#" data-toggle="tab">Linkki nettiterapian ja istuntopainotteisen terapian asennemittariin </a>
             <a class="btn btn-default btn-lg btn-block" href="#tab7" data-toggle="tab">Linkki ilmaisen harjoitusohjelman taustatietojen täyttöön </a>
 
@@ -776,14 +782,14 @@ $(function(){
 
         <div class="container">
             <h2>Tab psykoterapiapalvelut</h2>
-            <p><%=InputOutput.clean(content5)%></p>
+            <p><%=InputOutput.clean(contentPsykoterapiapalvelut)%></p>
         </div>
     </div>
 
     <div class="tab-pane text-style" id="yhteystiedot">
         <div class="container">
             <h2>Tab yhteystiedot</h2>
-            <p><%=InputOutput.clean(content6)%></p>
+            <p><%=InputOutput.clean(contentYhteystiedot)%></p>
         </div>
     </div>
         
