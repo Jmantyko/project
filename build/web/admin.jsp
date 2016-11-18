@@ -1163,7 +1163,7 @@ $(function(){
             <div class="tab-content">
                 <div class="tab-pane fade" id="tab-content0">
                     <h3>Uuden asiakkastilin luonti</h3>
-                    <form action="CreateUser" method="POST">
+                    <form action="CreateUser" method="POST" class="topBuffer">
                     <label for="email">Anna käyttäjän sähköpostiosoite:</label>
                     <input type="email" class="form-control" name="email" value="" placeholder="esim. esimerkki@esimerkki.fi" /><br>
                     <label for="password">Luo käyttäjälle salasana:</label>

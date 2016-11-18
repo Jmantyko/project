@@ -786,7 +786,7 @@ $(function(){
             <h2>Tab Liity</h2>
 
             <p><%=InputOutput.clean(content4)%></p>
-
+                 <a class="btn btn-default btn-lg btn-block" href="#tab7" data-toggle="tab">Linkki nettiterapian ja istuntopainotteisen terapian asennemittariin </a>
                 <a class="btn btn-default btn-lg btn-block" href="#tab7" data-toggle="tab">Linkki ilmaisen harjoitusohjelman taustatietojen täyttöön </a>
 
                 <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.open('https://docs.google.com/forms/d/1UqlGeUD4sdHlPWMlt_w6wJteREAttMO5I5chXV93S3c/edit')"> Linkki maksullisen harjoitusohjelman taustatietojen täyttöön </button>
