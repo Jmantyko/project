@@ -559,7 +559,7 @@ $(function(){
 <div class="tab-content">
     <div class="tab-pane active text-style" id="tab1">
         <div class="container">
-            <h3>Tab 1</h3>
+            <h2>Tab 1</h2>
             <p><%=InputOutput.clean(contentMainos)%></p>
         </div>
     </div>

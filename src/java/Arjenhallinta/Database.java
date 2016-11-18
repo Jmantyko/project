@@ -85,14 +85,14 @@ public class Database {
             ps = conn.prepareStatement("UPDATE Users SET UserEmail=?, UserPassword=?, UserName=?, UserSurname=?,"
                     + " UserPhonenumber=?, UserAddress=?, UserPostalcode=?, UserPostoffice=?,"
                     + " UserIsDeleted=? WHERE UserID=?");
-            ps.setString(1, stringUserID); //email
-            ps.setString(2, ""); //password
-            ps.setString(3, ""); //name
-            ps.setString(4, ""); //surname
-            ps.setString(5, ""); //phonenumber
-            ps.setString(6, ""); //address
-            ps.setString(7, ""); //postalcode
-            ps.setString(8, ""); //postoffice
+            ps.setString(1, stringUserID);
+            ps.setString(2, "");
+            ps.setString(3, "");
+            ps.setString(4, "");
+            ps.setString(5, "");
+            ps.setString(6, "");
+            ps.setString(7, "");
+            ps.setString(8, "");
             ps.setBoolean(9, true);
             ps.setInt(10, UserID);
             
