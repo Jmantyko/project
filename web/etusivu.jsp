@@ -466,7 +466,7 @@ $(function(){
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nettiterapia <b class="caret"></b></a>
             <ul class="dropdown-menu">
-                <li><a href="#tab4" data-toggle="tab"><h4>Tietoa <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></h4></a></li>
+                <li><a href="#tietoa" data-toggle="tab"><h4>Tietoa <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></h4></a></li>
                 <li><a href="#liity" data-toggle="tab"><h4>Liity <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></h4></a></a></li>
                 <li><a href="#psykoterapiapalvelut" data-toggle="tab"><h4>Psykoterapiapalvelut <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></h4></a></a></li>
             </ul>
@@ -554,9 +554,6 @@ $(function(){
         
     <div class="tab-pane text-style" id="martti">
 
-          
-        
-            
                 <div class="container">
                     
                     <h2>Tab martti</h2>
@@ -611,15 +608,7 @@ $(function(){
                                 <img src="Images/kuva8.JPG" class="img-responsive img-gallery" alt="Eighth image">
                             </a>
                         </div> <!-- /.col -->
-                        
-                        <div class="tab-pane text-style" id="tietoa">
-                            <div class="col-sm-9">
-                               <h2>Tab tietoa</h2>
-                               <p><%=InputOutput.clean(content1)%></p>
-                            </div>
-                        </div>
-                            
-                            
+    
                         
                     </div> <!--/.row  -->
                         </div> <!-- /.container -->
@@ -653,7 +642,7 @@ $(function(){
     </div>
                             
 
-    <div class="tab-pane text-style" id="tab4">
+    <div class="tab-pane text-style" id="tietoa">
         <div class="container">
             <h2>Tab tietoa</h2>
             <p><%=InputOutput.clean(content3)%></p>
@@ -665,7 +654,7 @@ $(function(){
             <h2>Tab Liity</h2>
 
             <p><%=InputOutput.clean(content4)%></p>
-            <a class="btn btn-default btn-lg btn-block" href="#tab7" data-toggle="tab">Linkki nettiterapian ja istuntopainotteisen terapian asennemittariin </a>
+            <a class="btn btn-default btn-lg btn-block" href="#" data-toggle="tab">Linkki nettiterapian ja istuntopainotteisen terapian asennemittariin </a>
             <a class="btn btn-default btn-lg btn-block" href="#tab7" data-toggle="tab">Linkki ilmaisen harjoitusohjelman taustatietojen täyttöön </a>
 
             <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.open('https://docs.google.com/forms/d/1UqlGeUD4sdHlPWMlt_w6wJteREAttMO5I5chXV93S3c/edit')"> Linkki maksullisen harjoitusohjelman taustatietojen täyttöön </button>
@@ -675,9 +664,9 @@ $(function(){
     <div class="tab-pane text-style" id="tab7">
         
         <div class="container">
-            
             <div class="col-sm-9">
-            <div class="well">
+            <button class="btn btn-default" href="#liity" data-toggle="tab">Takaisin</button><br>
+            <div class="well">    
                 
             <h2>Ilmaisen kokeiluohjelman taustatiedot</h2>
             
