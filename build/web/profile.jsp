@@ -302,17 +302,6 @@ $(function(){
     </head>
     <body> 
         <%  
-            //Fetching data from database
-            ArrayList<Content> content = new ArrayList<Content>();
-            content = Database.getAllFrontPageContent();
-            
-            String contentMainos = ((Content)content.get(0)).getContent();
-            String contentMartti = ((Content)content.get(1)).getContent();
-            String contentLiity = ((Content)content.get(2)).getContent();
-            String contentTietoa = ((Content)content.get(3)).getContent();
-            String contentPsykoterapiapalvelut = ((Content)content.get(4)).getContent();
-            String contentYhteystiedot = ((Content)content.get(5)).getContent();
-            
             //allow access only if session exists
             //and userType is appropriate for the page
             String email = null;
@@ -354,10 +343,6 @@ $(function(){
             String userPostalcode = Database.getUserPostalcode(email);
             String userPostoffice = Database.getUserPostoffice(email);
             String userType = Database.userType(email);
-            // use =sessionID to get session id
-            
-            
-
         %>    
         
         <div class="container">
@@ -467,6 +452,16 @@ $(function(){
 <div class="tilitiedot">
     <%
         if ("admin".equals(userType)) {
+            //Fetching data from database
+            ArrayList<Content> content = new ArrayList<Content>();
+            content = Database.getAllFrontPageContent();
+            
+            String contentMainos = ((Content)content.get(0)).getContent();
+            String contentMartti = ((Content)content.get(1)).getContent();
+            String contentLiity = ((Content)content.get(2)).getContent();
+            String contentTietoa = ((Content)content.get(3)).getContent();
+            String contentPsykoterapiapalvelut = ((Content)content.get(4)).getContent();
+            String contentYhteystiedot = ((Content)content.get(5)).getContent();
 
     %>
     
@@ -488,7 +483,19 @@ $(function(){
                 <textarea type="text" class="form-control" name="contentpsykoterapiapalvelut" form="FrontPageText"><%=InputOutput.clean(contentPsykoterapiapalvelut)%></textarea><br>
                 <label for="comment">Yhteystiedot</label><br>
                 <textarea type="text" class="form-control" name="contentyhteystiedot" form="FrontPageText"><%=InputOutput.clean(contentYhteystiedot)%></textarea><br>
-                <input type="submit" class="btn btn-warning" value="Päivitä" />
+                <input type="submit" class="btn btn-warning" value="Päivitä muutokset" />
+            </form><br>
+            <hr>
+            <h3>Vaihda salasana</h3>
+            <form action="UpdateUserPassword" method="POST" accept-charset="utf-8">
+                Vanha salasana:
+                <input type="password" class="form-control" name="oldpassword" value="" />
+                Uusi salasana:
+                <input type="password" class="form-control" name="newpassword" value="" />
+                Anna salasana uudelleen:
+                <input type="password" class="form-control" name="newpasswordagain" value="" /><br>
+                <input type="hidden" name="email" value="<%=InputOutput.clean(userEmail)%>">
+                <input type="submit" class="btn btn-warning" value="Vaihda salasana" />
             </form>
         </div>
     </div>
@@ -500,6 +507,7 @@ $(function(){
     <div class="customer-tilitiedot">
         <div class="container">
             <h3>Tilitiedot</h3>
+            <hr>
             <form action="UpdateUserDetails" method="POST" accept-charset="utf-8">
                 <p>Asiakasnro: <strong><%=userID%></strong></p>
                 <p>Sähköposti: <strong><%=InputOutput.clean(userEmail)%></strong></p>
@@ -516,15 +524,17 @@ $(function(){
                 <input type="hidden" name="email" value="<%=InputOutput.clean(userEmail)%>">
                 <input type="submit" class="btn btn-warning" value="Tallenna" />
             </form><br>
+            <hr>
+            <h3>Vaihda salasana</h3>
             <form action="UpdateUserPassword" method="POST" accept-charset="utf-8">
                 Vanha salasana:
                 <input type="password" class="form-control" name="oldpassword" value="" />
                 Uusi salasana:
                 <input type="password" class="form-control" name="newpassword" value="" />
-                Uusi salasana uudelleen:
+                Anna salasana uudelleen:
                 <input type="password" class="form-control" name="newpasswordagain" value="" /><br>
                 <input type="hidden" name="email" value="<%=InputOutput.clean(userEmail)%>">
-                <input type="submit" class="btn btn-danger" value="Vaihda salasana" />
+                <input type="submit" class="btn btn-warning" value="Vaihda salasana" />
             </form>
         </div>
     </div>
