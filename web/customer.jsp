@@ -362,8 +362,23 @@ $(function(){
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="customer.jsp">Etusivu</a></li>
-            </ul>       
+            <li class="active"><a href="customer.jsp">Etusivu</a></li>
+            <li class="s"><a href="etusivu.jsp#martti">Martti Puttonen</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nettiterapia <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="etusivu.jsp#tietoa"><h4>Tietoa <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></h4></a></li>
+                    <li><a href="etusivu.jsp#liity"><h4>Liity <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></h4></a></a></li>
+                    <li><a href="etusivu.jsp#psykoterapiapalvelut"><h4>Psykoterapiapalvelut <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></h4></a></a></li>
+                </ul>
+            </li>
+            <li class=""><a href="etusivu.jsp#yhteystiedot">Yhteystiedot</a></li>
+            </ul>
+              
+
+
+              
+              
             <ul class="nav navbar-nav navbar-right">
              <li class="dropdown">
                 <%
@@ -442,8 +457,8 @@ $(function(){
                             <div id="tab-content-1" class="tab-pane fade in active">
                                 <button type="button" class="btn btn-group btn-group-justified btn-info" data-toggle="collapse" data-target="#harjoitukset">Harjoitus 1</button>
                                 <div id="harjoitukset" class="collapse">
-                                <a class="btn btn-success pull-left" href="#tab-display-harjoitus" data-toggle="tab">Lisää uusi merkintä</a>
-                                <a class="btn btn-primary pull-right" href="#tab-display-harjoitus" data-toggle="tab">Yhteenveto</a>
+                                    <a class="btn btn-success pull-left" href="#tab-display-harjoitus" data-toggle="tab">Lisää uusi merkintä</a>
+                                    <a class="btn btn-primary pull-right" href="#tab-display-harjoitus" data-toggle="tab">Yhteenveto</a>
                                 </div>
                             </div>
                             
@@ -473,9 +488,81 @@ $(function(){
 
         <div class="tab-pane text-style" id="tab2">
             <div class="container">
+                <div class="customer-main-container">
+                <div class="customer-actions-container">
+                    <div class="well">
+                    <h2>Ilmaisen kokeiluohjelman taustatiedot</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Nimi</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Asuinosoite, virallinen postiosoite</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Puhelin</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Sähköpostiosoite</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Ikä</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Asuinmuoto: asun yksin / ystävän, avopuolison kanssa/ vanhempieni, ystävän taloudessa/ avioliitossa/ asuinmuotoni ja -paikkani vaihtelee jatkuvasti, ei siis ole vakituista kotina pidettävää asuinpaikkaa</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Nykyinen viikoittainen tai muutoin säännöllinen elämäntapasi: työtön, eläkkeellä, sairausturva/ elän epäsäännöllisten ja tilapäisten tukien ja tulojen avulla/ opiskelen pääasiallisesti/ työssä, työkokeilussa, ammatillisessa työsuhteessa/ ei säännönmukaista elämäntapaa</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+                        </div>
+
+                        <br>
+
+
+
+                        <label class="control control--radio">Käytän suhteellisen säännöllisesti päivittäistä sosiaalista elämääni tukevia terveys- ja kuntoutuspalveluita
+                            <input type="radio" name="radio" checked="checked"/>
+                            <div class="control__indicator"></div>
+                        </label>
+                        <label class="control control--radio">En ole varsinaisesti missään pitempikestoisessa elämääni tukevassa kuntoutus- ja palvelumuotojen piirissä
+                            <input type="radio" name="radio"/>
+                            <div class="control__indicator"></div>
+                        </label>
+                        <label class="control control--radio">Saamani palvelut ovat epämääräisiä ja johonkin päivittäiseen ongelman ratkaisuun, kuten lääkitykseen, rahallisten tukien saamiseen keskittyneitä, tilanteeni yleistä seurantaa
+                            <input type="radio" name="radio"/>
+                            <div class="control__indicator"></div>
+                        </label>
+
+                        <br>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Nimeä ja luetteloi lyhyesti ongelmia, sekä elämistäsi vaikeuttavia asioita kuten mielenterveydellisiä vaikeuksiasi omin sanoin</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Nimeä ja luetteloi lyhyesti ongelmia, sekä elämistäsi vaikeuttavia asioita kuten mielenterveydellisiä vaikeuksiasi omin sanoin</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+                        </div>
+
+
+                        <button type="submit" class="btn btn-primary">Lähetä</button>
+                    </form>
+                    </div>
+
+                </div>
                 
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScbo0S4YBRk9CYxDuZyL_uo5V1wOUQSaZxZ8RAGM5eH-YlXGg/viewform?embedded=true" width="50%" height="500" frameborder="0" marginheight="0" marginwidth="0">Ladataan...</iframe>
-            </div>
+                <div class="customer-display-container">
+                    <p>Tähän terapeutin palaute</p>
+                </div>
+            
+            </div>    
+        </div>
         </div>
         </div>
 

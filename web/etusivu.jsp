@@ -144,140 +144,6 @@
             font-size: 14px;
         }
         
-        /* Form radio button and checkbox styles */
-        
-        .control-group {
-        display: inline-block;
-        vertical-align: top;
-        background: #fff;
-        text-align: left;
-        box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-        padding: 30px;
-        width: 200px;
-        height: 210px;
-        margin: 10px;
-        }
-        .control {
-          display: block;
-          position: relative;
-          padding-left: 30px;
-          margin-bottom: 15px;
-          cursor: pointer;
-          font-size: 14px;
-        }
-        .control input {
-          position: absolute;
-          z-index: -1;
-          opacity: 0;
-        }
-        .control__indicator {
-          position: absolute;
-          top: 2px;
-          left: 0;
-          height: 20px;
-          width: 20px;
-          background: #e6e6e6;
-        }
-        .control--radio .control__indicator {
-          border-radius: 50%;
-        }
-        .control:hover input ~ .control__indicator,
-        .control input:focus ~ .control__indicator {
-          background: #ccc;
-        }
-        .control input:checked ~ .control__indicator {
-          background: #2aa1c0;
-        }
-        .control:hover input:not([disabled]):checked ~ .control__indicator,
-        .control input:checked:focus ~ .control__indicator {
-          background: #0e647d;
-        }
-        .control input:disabled ~ .control__indicator {
-          background: #e6e6e6;
-          opacity: 0.6;
-          pointer-events: none;
-        }
-        .control__indicator:after {
-          content: '';
-          position: absolute;
-          display: none;
-        }
-        .control input:checked ~ .control__indicator:after {
-          display: block;
-        }
-        .control--checkbox .control__indicator:after {
-          left: 8px;
-          top: 4px;
-          width: 3px;
-          height: 8px;
-          border: solid #fff;
-          border-width: 0 2px 2px 0;
-          transform: rotate(45deg);
-        }
-        .control--checkbox input:disabled ~ .control__indicator:after {
-          border-color: #7b7b7b;
-        }
-        .control--radio .control__indicator:after {
-          left: 7px;
-          top: 7px;
-          height: 6px;
-          width: 6px;
-          border-radius: 50%;
-          background: #fff;
-        }
-        .control--radio input:disabled ~ .control__indicator:after {
-          background: #7b7b7b;
-        }
-        .select {
-          position: relative;
-          display: inline-block;
-          margin-bottom: 15px;
-          width: 100%;
-        }
-        .select select {
-          display: inline-block;
-          width: 100%;
-          cursor: pointer;
-          padding: 10px 15px;
-          outline: 0;
-          border: 0;
-          border-radius: 0;
-          background: #e6e6e6;
-          color: #7b7b7b;
-          appearance: none;
-          -webkit-appearance: none;
-          -moz-appearance: none;
-        }
-        .select select::-ms-expand {
-          display: none;
-        }
-        .select select:hover,
-        .select select:focus {
-          color: #000;
-          background: #ccc;
-        }
-        .select select:disabled {
-          opacity: 0.5;
-          pointer-events: none;
-        }
-        .select__arrow {
-          position: absolute;
-          top: 16px;
-          right: 15px;
-          width: 0;
-          height: 0;
-          pointer-events: none;
-          border-style: solid;
-          border-width: 8px 5px 0 5px;
-          border-color: #7b7b7b transparent transparent transparent;
-        }
-        .select select:hover ~ .select__arrow,
-        .select select:focus ~ .select__arrow {
-          border-top-color: #000;
-        }
-        .select select:disabled ~ .select__arrow {
-          border-top-color: #ccc;
-        }
         
         
         </style>
@@ -426,14 +292,14 @@ $(function(){
 	 <!-- Bootstrap row adding js --> 
      <script src="addrow.js"></script>
 	 
-	 <script>   $(document).ready(function(){
-      var i=1;
-     $("#add_row").click(function(){
-      $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input name='name"+i+"' type='text' placeholder='Name' class='form-control input-md'  /> </td><td><input  name='mail"+i+"' type='text' placeholder='Mail'  class='form-control input-md'></td><td><input  name='mobile"+i+"' type='text' placeholder='Mobile'  class='form-control input-md'></td>");
-
-      $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
-      i++; 
-  });
+	 <script>   
+            $(document).ready(function(){
+            var i=1;
+            $("#add_row").click(function(){
+                $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input name='name"+i+"' type='text' placeholder='Name' class='form-control input-md'  /> </td><td><input  name='mail"+i+"' type='text' placeholder='Mail'  class='form-control input-md'></td><td><input  name='mobile"+i+"' type='text' placeholder='Mobile'  class='form-control input-md'></td>");
+                $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
+                i++; 
+            });
      $("#delete_row").click(function(){
     	 if(i>1){
 		 $("#addr"+(i-1)).html('');
@@ -534,6 +400,19 @@ $(function(){
 });
          
          </script>
+        <script>
+            $(function(){
+                var hash = window.location.hash;
+                hash && $('ul.nav a[href="' + hash + '"]').tab('show');
+
+                $('.nav-tabs a').click(function (e) {
+                    $(this).tab('show');
+                    var scrollmem = $('body').scrollTop();
+                    window.location.hash = this.hash;
+                    $('html,body').scrollTop(scrollmem);
+                });
+            });
+        </script>
 
 	
 </head>
@@ -568,33 +447,33 @@ $(function(){
 
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <%
+        <%
             if ("customer".equals(userType)){
         %>
-    <ul class="nav navbar-nav">
-	  <li><a href="customer.jsp">Etusivu</a></li>
-    </ul>
+        <ul class="nav navbar-nav">
+              <li><a href="customer.jsp">Etusivu</a></li>
+        </ul>
         <%
             }else if ("admin".equals(userType)){
         %>
-            <ul class="nav navbar-nav">
-      <li><a href="admin.jsp">Etusivu</a></li>
-      <li><a href="admin.jsp#tab11">Asiakastilien hallinta</a></li>
-    </ul>
+        <ul class="nav navbar-nav">
+            <li><a href="admin.jsp">Etusivu</a></li>
+            <li><a href="admin.jsp#tab11">Asiakastilien hallinta</a></li>
+        </ul>
         <%
             }
         %>
     <ul class="nav navbar-nav">
-      <li class="s"><a href="#martti" data-toggle="tab">Martti Puttonen</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nettiterapia <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="#tietoa"data-toggle="tab"><h4>Tietoa <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></h4></a></li>
-          <li><a href="#liity"data-toggle="tab"><h4>Liity <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></h4></a></a></li>
-          <li><a href="#psykoterapiapalvelut"data-toggle="tab"><h4>Psykoterapiapalvelut <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></h4></a></a></li>
-        </ul>
-      </li>
-	  <li class=""><a href="#yhteystiedot" data-toggle="tab">Yhteystiedot</a></li>
+        <li class="s"><a href="#martti" data-toggle="tab">Martti Puttonen</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nettiterapia <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#tietoa" data-toggle="tab"><h4>Tietoa <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></h4></a></li>
+                <li><a href="#liity" data-toggle="tab"><h4>Liity <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></h4></a></a></li>
+                <li><a href="#psykoterapiapalvelut" data-toggle="tab"><h4>Psykoterapiapalvelut <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></h4></a></a></li>
+            </ul>
+        </li>
+        <li class=""><a href="#yhteystiedot" data-toggle="tab">Yhteystiedot</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
      <li class="dropdown">
@@ -677,9 +556,6 @@ $(function(){
         
     <div class="tab-pane text-style" id="martti">
 
-          
-        
-            
                 <div class="container">
                     
                     <h2>Tab martti</h2>
@@ -734,15 +610,7 @@ $(function(){
                                 <img src="Images/kuva8.JPG" class="img-responsive img-gallery" alt="Eighth image">
                             </a>
                         </div> <!-- /.col -->
-                        
-                        <div class="tab-pane text-style" id="tietoa">
-                            <div class="col-sm-9">
-                               <h2>Tab tietoa</h2>
-                               <p><%=InputOutput.clean(content1)%></p>
-                            </div>
-                        </div>
-                            
-                            
+    
                         
                     </div> <!--/.row  -->
                         </div> <!-- /.container -->
@@ -788,19 +656,19 @@ $(function(){
             <h2>Tab Liity</h2>
 
             <p><%=InputOutput.clean(content4)%></p>
+            <a class="btn btn-default btn-lg btn-block" href="#" data-toggle="tab">Linkki nettiterapian ja istuntopainotteisen terapian asennemittariin </a>
+            <a class="btn btn-default btn-lg btn-block" href="#tab7" data-toggle="tab">Linkki ilmaisen harjoitusohjelman taustatietojen täyttöön </a>
 
-                <a class="btn btn-default btn-lg btn-block" href="#tab7" data-toggle="tab">Linkki ilmaisen harjoitusohjelman taustatietojen täyttöön </a>
-
-                <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.open('https://docs.google.com/forms/d/1UqlGeUD4sdHlPWMlt_w6wJteREAttMO5I5chXV93S3c/edit')"> Linkki maksullisen harjoitusohjelman taustatietojen täyttöön </button>
-            </div>
+            <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.open('https://docs.google.com/forms/d/1UqlGeUD4sdHlPWMlt_w6wJteREAttMO5I5chXV93S3c/edit')"> Linkki maksullisen harjoitusohjelman taustatietojen täyttöön </button>
         </div>
+    </div>
             
     <div class="tab-pane text-style" id="tab7">
         
         <div class="container">
-            
             <div class="col-sm-9">
-            <div class="well">
+            <button class="btn btn-default" href="#liity" data-toggle="tab">Takaisin</button><br>
+            <div class="well">    
                 
             <h2>Ilmaisen kokeiluohjelman taustatiedot</h2>
             
