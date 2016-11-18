@@ -608,6 +608,40 @@ public class Database {
         
         return contentToBeRendered;
     }
+
+    public static void updateAllFrontPageContent(ArrayList<Content> content) {
+        
+        String contentAd = ((Content)content.get(0)).getContent();
+        String contentTherapist = ((Content)content.get(1)).getContent();
+        String contentJoin = ((Content)content.get(2)).getContent();
+        String contentInfo = ((Content)content.get(3)).getContent();
+        String contentServices = ((Content)content.get(4)).getContent();
+        String contentContact = ((Content)content.get(5)).getContent();
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("INSERT INTO Frontpage (PageID, PageContent) VALUES (1, ?),"
+                    + "(2, ?),(3, ?),(4, ?),(5, ?),(6, ?) ON DUPLICATE KEY UPDATE"
+                    + " PageContent=VALUES(PageContent)");
+            ps.setString(1, contentAd);
+            ps.setString(2, contentTherapist);
+            ps.setString(3, contentJoin);
+            ps.setString(4, contentInfo);
+            ps.setString(5, contentServices);
+            ps.setString(6, contentContact);
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            closeDatabaseConnections();
+            
+        }
+        
+    }
     
     public static void updateFrontPageContent(String content, int id) {
         
