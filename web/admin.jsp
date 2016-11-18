@@ -21,7 +21,7 @@
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     </head>
-    <body> 
+    <body>
         <%
             //Fetching data from database
             //String content1 = Database.getFrontPageContent(1);
@@ -501,7 +501,7 @@ $(function(){
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
-
+    
 </div>
 
 <!-- tab content -->
@@ -1103,21 +1103,21 @@ $(function(){
 
 
 <div class="tab-pane text-style" id="tab11">
-    <div class ="container">
-        <h3>Asiakastilien hallinta</h3>
+    <div class ="container">       
 	<div class="customer-main-container">
             <div class="customer-actions-container">
+                <h3>Asiakastilien hallinta</h3>
                 <button type="button" class="btn btn-success" href='#tab-content0' data-toggle="tab">Lisää uusi asiakastili</button>
-<table class="table topBuffer">
-<thead>
-      <tr>
-        <th>#</th>
-        <th>Etunimi</th>
-        <th>Sukunimi</th>
-        <th>Sähköposti</th>
-      </tr>
-    </thead>
-    <tbody>
+                <table class="table topBuffer">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Etunimi</th>
+                        <th>Sukunimi</th>
+                        <th>Sähköposti</th>
+                    </tr>
+                </thead>
+     <tbody>
         <% 
             /* 
             ArrayList<Customer> customers = new ArrayList<Customer>();
@@ -1158,7 +1158,7 @@ $(function(){
             </div>
     
 <div class="customer-display-container">
-    <div class="row">
+    <div class="container-fluid">
         <div class="col-md-12">
             <div class="tab-content">
                 <div class="tab-pane fade" id="tab-content0">
