@@ -21,14 +21,15 @@ public class Database {
     private static final String dbAddress = "jdbc:mysql://localhost:3306/arjenhallinta";
     private static final String dbUsername = "root";
     private static final String dbPassword = "realforce";
-    static Connection conn = null;
-    static PreparedStatement ps = null;
-    static ResultSet rs = null;
 
     public static boolean addUser(String email, String password, String name, String surname, String phonenumber,
             String address, String postalcode, String postoffice) {
         
         boolean addedUser = false;
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
 
         try {
             Class.forName(dbDriver);
@@ -55,7 +56,9 @@ public class Database {
             e.printStackTrace();
             
         } finally {
-            closeDatabaseConnections();
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
             
         }
 
@@ -70,6 +73,10 @@ public class Database {
     public static void deleteUser(int UserID) {
         
         String stringUserID = Integer.toString(UserID);
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
         
         try {
             Class.forName(dbDriver);
@@ -95,7 +102,9 @@ public class Database {
             e.printStackTrace();
             
         } finally {
-            closeDatabaseConnections();
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
             
         }
 
@@ -104,6 +113,10 @@ public class Database {
     public static boolean authenticateUser(String email, String password) {
 
         boolean grantAccess = false;
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
 
         try {
             Class.forName(dbDriver);
@@ -120,7 +133,9 @@ public class Database {
             e.printStackTrace();
             
         } finally {
-            closeDatabaseConnections();
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
             
         }
 
@@ -131,6 +146,10 @@ public class Database {
     public static boolean userExists(String email) {
         
         boolean userExists = false;
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
         
         try {
             Class.forName(dbDriver);
@@ -146,7 +165,9 @@ public class Database {
             e.printStackTrace();
             
         } finally {
-            closeDatabaseConnections();
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
             
         }
         
@@ -156,6 +177,10 @@ public class Database {
     public static int getLargestID() {
         
         int userID = 0;
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
         
         try {
             Class.forName(dbDriver);
@@ -172,7 +197,9 @@ public class Database {
             e.printStackTrace();
             
         } finally {
-            closeDatabaseConnections();
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
             
         }
         
@@ -182,6 +209,10 @@ public class Database {
     public static int getUserID(String email) {
         
         int userID = 0;
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
         
         try {
             Class.forName(dbDriver);
@@ -199,7 +230,9 @@ public class Database {
             e.printStackTrace();
             
         } finally {
-            closeDatabaseConnections();
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
             
         }
         
@@ -209,6 +242,10 @@ public class Database {
     public static String getUserEmail(int userID) {
         
         String userEmail = "";
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
         
         try {
             Class.forName(dbDriver);
@@ -226,7 +263,9 @@ public class Database {
             e.printStackTrace();
             
         } finally {
-            closeDatabaseConnections();
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
             
         }
         
@@ -236,6 +275,10 @@ public class Database {
     public static String getUserName(String email) {
         
         String userName = "";
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
         
         try {
             Class.forName(dbDriver);
@@ -253,7 +296,9 @@ public class Database {
             e.printStackTrace();
             
         } finally {
-            closeDatabaseConnections();
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
             
         }
         
@@ -263,6 +308,10 @@ public class Database {
     public static String getUserSurname(String email) {
         
         String userSurname = "";
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
         
         try {
             Class.forName(dbDriver);
@@ -280,7 +329,9 @@ public class Database {
             e.printStackTrace();
             
         } finally {
-            closeDatabaseConnections();
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
             
         }
         
@@ -290,6 +341,10 @@ public class Database {
     public static String getUserAddress(String email) {
         
         String userAddress = "";
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
         
         try {
             Class.forName(dbDriver);
@@ -307,7 +362,9 @@ public class Database {
             e.printStackTrace();
             
         } finally {
-            closeDatabaseConnections();
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
             
         }
         
@@ -317,6 +374,10 @@ public class Database {
     public static String getUserPostalcode(String email) {
         
         String userPostalcode = "";
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
         
         try {
             Class.forName(dbDriver);
@@ -334,7 +395,9 @@ public class Database {
             e.printStackTrace();
             
         } finally {
-            closeDatabaseConnections();
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
             
         }
         
@@ -344,6 +407,10 @@ public class Database {
     public static String getUserPostoffice(String email) {
         
         String userPostoffice = "";
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
         
         try {
             Class.forName(dbDriver);
@@ -361,7 +428,9 @@ public class Database {
             e.printStackTrace();
             
         } finally {
-            closeDatabaseConnections();
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
             
         }
         
@@ -371,6 +440,10 @@ public class Database {
     public static String userType(String email) {
         
         String userType = "";
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
         
         try {
             Class.forName(dbDriver);
@@ -388,7 +461,9 @@ public class Database {
             e.printStackTrace();
             
         } finally {
-            closeDatabaseConnections();
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
             
         }
         
@@ -398,6 +473,10 @@ public class Database {
     public static String getUserTypeUsingID(int userID) {
         
         String userType = "";
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
         
         try {
             Class.forName(dbDriver);
@@ -415,7 +494,9 @@ public class Database {
             e.printStackTrace();
             
         } finally {
-            closeDatabaseConnections();
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
             
         }
         
@@ -425,6 +506,10 @@ public class Database {
     public static String getUserNameUsingID(int userID) {
         
         String userName = "";
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
         
         try {
             Class.forName(dbDriver);
@@ -442,7 +527,9 @@ public class Database {
             e.printStackTrace();
             
         } finally {
-            closeDatabaseConnections();
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
             
         }
         
@@ -452,6 +539,10 @@ public class Database {
     public static String getUserSurnameUsingID(int userID) {
         
         String userSurname = "";
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
         
         try {
             Class.forName(dbDriver);
@@ -469,7 +560,9 @@ public class Database {
             e.printStackTrace();
             
         } finally {
-            closeDatabaseConnections();
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
             
         }
         
@@ -479,6 +572,10 @@ public class Database {
     public static ArrayList<Customer> getCustomers() {
         
         ArrayList customers = new ArrayList();
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
         
         try {
             Class.forName(dbDriver);
@@ -499,7 +596,9 @@ public class Database {
             e.printStackTrace();
             
         } finally {
-            closeDatabaseConnections();
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
             
         }
         
@@ -508,6 +607,10 @@ public class Database {
                     
     public static void updateUserDetails(String userName, String userSurname,
             String userAddress, String userPostalcode, String userPostoffice, String userEmail) {
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
         
         try {
             Class.forName(dbDriver);
@@ -528,13 +631,19 @@ public class Database {
             e.printStackTrace();
             
         } finally {
-            closeDatabaseConnections();
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
             
         }
         
     }
     
     public static void updateUserPassword(String newPassword, String email) {
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
         
         try {
             Class.forName(dbDriver);
@@ -550,7 +659,9 @@ public class Database {
             e.printStackTrace();
             
         } finally {
-            closeDatabaseConnections();
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
             
         }
         
@@ -559,6 +670,10 @@ public class Database {
     public static ArrayList<Content> getAllFrontPageContent() {
         
         ArrayList allContent = new ArrayList();
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
         
         try {
             Class.forName(dbDriver);
@@ -575,7 +690,9 @@ public class Database {
             e.printStackTrace();
             
         } finally {
-            closeDatabaseConnections();
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
             
         }
         
@@ -585,6 +702,10 @@ public class Database {
     public static String getFrontPageContent(int content) {
         
         String contentToBeRendered = "";
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
         
         try {
             Class.forName(dbDriver);
@@ -602,7 +723,9 @@ public class Database {
             e.printStackTrace();
             
         } finally {
-            closeDatabaseConnections();
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
             
         }
         
@@ -617,6 +740,10 @@ public class Database {
         String contentInfo = ((Content)content.get(3)).getContent();
         String contentServices = ((Content)content.get(4)).getContent();
         String contentContact = ((Content)content.get(5)).getContent();
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
         
         try {
             Class.forName(dbDriver);
@@ -637,13 +764,19 @@ public class Database {
             e.printStackTrace();
             
         } finally {
-            closeDatabaseConnections();
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
             
         }
         
     }
     
     public static void updateFrontPageContent(String content, int id) {
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
         
         try {
             Class.forName(dbDriver);
@@ -658,17 +791,11 @@ public class Database {
             e.printStackTrace();
             
         } finally {
-            closeDatabaseConnections();
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
             
         }
         
     }
-    
-    public static void closeDatabaseConnections(){
-        try { rs.close(); } catch (Exception e) { /* ignoring */ }
-        try { ps.close(); } catch (Exception e) { /* ignoring */ }
-        try { conn.close(); } catch (Exception e) { /* ignoring */ }
-        
-    }
-    
 }

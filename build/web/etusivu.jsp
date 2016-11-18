@@ -429,12 +429,18 @@ $(function(){
             String contentLiity = ((Content)content.get(2)).getContent();
             String contentTietoa = ((Content)content.get(3)).getContent();
             String contentPsykoterapiapalvelut = ((Content)content.get(4)).getContent();
-            String contentYhteystiedot = ((Content)content.get(5)).getContent(); 
-                    
+            String contentYhteystiedot = ((Content)content.get(5)).getContent();
+
             String email = (String) session.getAttribute("email");
-            String userType = Database.userType(email);
-            String userName = Database.getUserName(email);
-            String userSurname = Database.getUserSurname(email);
+            String userType = "";
+            String userName = "";
+            String userSurname = "";
+                    
+            if(email != null){
+                userType = Database.userType(email);
+                userName = Database.getUserName(email);
+                userSurname = Database.getUserSurname(email);
+            }
         %>
 
 <div class="container">
