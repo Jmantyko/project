@@ -126,9 +126,11 @@
         .gallery{
         margin-top: 25px;
         }
+        
         .gallery-item{
 	margin-bottom: 30px;
         }
+        
         .modal-footer{
                 text-align: center;
         }
@@ -887,7 +889,7 @@ $(function(){
                   <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
                 </div>
 
-                   
+        
               <button type="submit" class="btn btn-primary">Lähetä</button>
             </form>
             

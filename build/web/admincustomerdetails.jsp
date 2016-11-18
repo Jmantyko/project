@@ -220,6 +220,145 @@
         -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
         background-color: #555;
     }
+    
+    /* Form radio button and checkbox styles */
+        
+    .control-group {
+    display: inline-block;
+    vertical-align: top;
+    background: #fff;
+    text-align: left;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    width: 450px;
+    height: 360px;
+    margin: 0px;
+    }
+    .control {
+      display: block;
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 15px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .control input {
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+    }
+    .control__indicator {
+      position: absolute;
+      top: 2px;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      background: #e6e6e6;
+    }
+    .control--radio .control__indicator {
+      border-radius: 50%;
+    }
+    .control:hover input ~ .control__indicator,
+    .control input:focus ~ .control__indicator {
+      background: #ccc;
+    }
+    .control input:checked ~ .control__indicator {
+      background: #2aa1c0;
+    }
+    .control:hover input:not([disabled]):checked ~ .control__indicator,
+    .control input:checked:focus ~ .control__indicator {
+      background: #0e647d;
+    }
+    .control input:disabled ~ .control__indicator {
+      background: #e6e6e6;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    .control__indicator:after {
+      content: '';
+      position: absolute;
+      display: none;
+    }
+    .control input:checked ~ .control__indicator:after {
+      display: block;
+    }
+    .control--checkbox .control__indicator:after {
+      left: 8px;
+      top: 4px;
+      width: 3px;
+      height: 8px;
+      border: solid #fff;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+    .control--checkbox input:disabled ~ .control__indicator:after {
+      border-color: #7b7b7b;
+    }
+    .control--radio .control__indicator:after {
+      left: 7px;
+      top: 7px;
+      height: 6px;
+      width: 6px;
+      border-radius: 50%;
+      background: #fff;
+    }
+    .control--radio input:disabled ~ .control__indicator:after {
+      background: #7b7b7b;
+    }
+    .select {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 15px;
+      width: 100%;
+    }
+    .select select {
+      display: inline-block;
+      width: 100%;
+      cursor: pointer;
+      padding: 10px 15px;
+      outline: 0;
+      border: 0;
+      border-radius: 0;
+      background: #e6e6e6;
+      color: #7b7b7b;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+    .select select::-ms-expand {
+      display: none;
+    }
+    .select select:hover,
+    .select select:focus {
+      color: #000;
+      background: #ccc;
+    }
+    .select select:disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .select__arrow {
+      position: absolute;
+      top: 16px;
+      right: 15px;
+      width: 0;
+      height: 0;
+      pointer-events: none;
+      border-style: solid;
+      border-width: 8px 5px 0 5px;
+      border-color: #7b7b7b transparent transparent transparent;
+    }
+    .select select:hover ~ .select__arrow,
+    .select select:focus ~ .select__arrow {
+      border-top-color: #000;
+    }
+    .select select:disabled ~ .select__arrow {
+      border-top-color: #ccc;
+    }
+    
     .topBuffer {
         margin-top: 20px;
     }
@@ -500,7 +639,8 @@ $(function(){
     String userName = Database.getUserNameUsingID(userid);
     String userSurname = Database.getUserSurnameUsingID(userid);
     %>
-    <h3><%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%></h3>
+    
+    <h2><%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%></h2>
     <div class="row">
         <div class="col-sm-3">
             <button type="button" class="btn btn-default btn-block" href='#tab-content0' data-toggle="tab">Harjoitukset</button><br>
@@ -538,9 +678,29 @@ $(function(){
                 </div>
                 <div class="tab-pane fade" id="tab-content1">
                     <div>
-                        <p>Checkboxeja joilla voi valita uuden harjoituksen asiakkaalle.</p>
+                        <div class="control-group">
+                            <h4>Checkboxeja, joilla voi valita uuden harjoituksen asiakkaalle.</h4>
+                            <br>
+                            <label class="control control--checkbox">Monitorointiharjoitus 1
+                              <input type="checkbox"/>
+                              <div class="control__indicator"></div>
+                            </label>
+                            <label class="control control--checkbox">Monitorointiharjoitus 2
+                              <input type="checkbox"/>
+                              <div class="control__indicator"></div>
+                            </label>
+                            <label class="control control--checkbox">Monitorointiharjoitus 3
+                              <input type="checkbox" />
+                              <div class="control__indicator"></div>
+                            </label>
+                            <br>
+                        <button type="submit" class="btn btn-info">Lähetä
+                            <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+                        </button>
                     </div>
                 </div>
+                </div>
+                  
                 <div class="tab-pane fade" id="tab-content2">
                     <div>
                         <p>Yhteenveto taustatiedoista, ei muokkaus mahdollisuutta terapeutilla.</p>
