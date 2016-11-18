@@ -564,11 +564,11 @@ public class Database {
             Class.forName(dbDriver);
 
             conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
-            ps = conn.prepareStatement("SELECT PageID, PageContent FROM Frontpage");
+            ps = conn.prepareStatement("SELECT PageContent FROM Frontpage");
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                allContent.add(new Content(rs.getInt("PageID"), rs.getString("PageContent")));
+                allContent.add(new Content(rs.getString("PageContent")));
             }
 
         } catch (Exception e) {

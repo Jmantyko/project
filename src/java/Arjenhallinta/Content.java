@@ -10,17 +10,11 @@ package Arjenhallinta;
  * @author Jaakko
  */
 public class Content {
-    
-    private int id;
+
     private String content;
     
-    public Content(int contentID, String contentContent) {
-        id = contentID;
+    public Content(String contentContent) {
         content = contentContent;
-    }
-    
-    public int getID(){
-        return id;
     }
     
     public String getContent(){

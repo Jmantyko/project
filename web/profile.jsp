@@ -473,49 +473,22 @@ $(function(){
     <div class="admin-tilitiedot">
         <div class="container">
             
-            <h1>Tilitiedot admin</h1>
-            <h1>Olet kirjautunut sisään ADMIN-sivulle</h1>
-            <p>Tervetuloa <strong><%=InputOutput.clean(userEmail)%></strong><br><br>
-                Session ID on <strong><%=sessionID%></strong><br></p>
-            <form action="profile.jsp">
-                <input type="submit" class="btn btn-info btn-sm" value="Profiili asetukset">
-            </form><br>
-            <form action="CreateUser" method="POST">
-                <label for="email">Anna käyttäjän sähköpostiosoite:</label>
-                <input type="text" class="form-control" name="email" value="" placeholder="Syötä sähköpostiosoite" /><br>
-                <label for="email">Luo käyttäjälle salasana:</label>
-                <input type="password" class="form-control" name="password" value="" placeholder="Luo salasana" /><br>
-                <input type="submit" class="btn btn-success" value="Lisää käyttäjä" /> 
-            </form><br><hr>
-            
+            <h3>Etusivun tekstien muokkaaminen</h3>
+            <hr>
             <form action="UpdateFrontPage" method="POST" accept-charset="utf-8" id="FrontPageText">
                 <label for="comment">Arjenhallinta.fi</label><br>
                 <textarea type="text" class="form-control" name="contentmainos" form="FrontPageText" ><%=InputOutput.clean(contentMainos)%></textarea><br>
-                <input type="hidden" name="id1" value="1">
-
                 <label for="comment">Martti Puttonen</label><br>
                 <textarea type="text" class="form-control" name="contentmartti" form="FrontPageText"><%=InputOutput.clean(contentMartti)%></textarea><br>
-                <input type="hidden" name="id2" value="2">
-
                 <label for="comment">Liity</label><br>
                 <textarea type="text" class="form-control" name="contentliity" form="FrontPageText"><%=InputOutput.clean(contentLiity)%></textarea><br>
-                <input type="hidden" name="id3" value="3">
-
                 <label for="comment">Tietoa</label><br>
                 <textarea type="text" class="form-control" name="contenttietoa" form="FrontPageText"><%=InputOutput.clean(contentTietoa)%></textarea><br>
-                <input type="hidden" name="id4" value="4">
-
                 <label for="comment">Psykoterapiapalvelut</label><br>
                 <textarea type="text" class="form-control" name="contentpsykoterapiapalvelut" form="FrontPageText"><%=InputOutput.clean(contentPsykoterapiapalvelut)%></textarea><br>
-                <input type="hidden" name="id5" value="5">
-
                 <label for="comment">Yhteystiedot</label><br>
                 <textarea type="text" class="form-control" name="contentyhteystiedot" form="FrontPageText"><%=InputOutput.clean(contentYhteystiedot)%></textarea><br>
-                <input type="hidden" name="id6" value="6">
                 <input type="submit" class="btn btn-warning" value="Päivitä" />
-            </form><br>
-            <form action="Logout" method="POST">
-                <input type="submit" class="btn btn-danger" value="Kirjaudu ulos" />
             </form>
         </div>
     </div>
@@ -526,7 +499,7 @@ $(function(){
 
     <div class="customer-tilitiedot">
         <div class="container">
-            <h1>Tilitiedot customer</h1>
+            <h3>Tilitiedot</h3>
             <form action="UpdateUserDetails" method="POST" accept-charset="utf-8">
                 <p>Asiakasnro: <strong><%=userID%></strong></p>
                 <p>Sähköposti: <strong><%=InputOutput.clean(userEmail)%></strong></p>
