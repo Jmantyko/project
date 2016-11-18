@@ -556,6 +556,32 @@ public class Database {
         
     }
     
+    public static ArrayList<Content> getAllFrontPageContent() {
+        
+        ArrayList allContent = new ArrayList();
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("SELECT PageID, PageContent FROM Frontpage");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                allContent.add(new Content(rs.getInt("PageID"), rs.getString("PageContent")));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            closeDatabaseConnections();
+            
+        }
+        
+        return allContent;
+    }
+    
     public static String getFrontPageContent(int content) {
         
         String contentToBeRendered = "";
