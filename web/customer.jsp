@@ -362,8 +362,23 @@ $(function(){
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="customer.jsp">Etusivu</a></li>
-            </ul>       
+            <li class="active"><a href="customer.jsp">Etusivu</a></li>
+            <li class="s"><a href="etusivu.jsp#martti">Martti Puttonen</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nettiterapia <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="etusivu.jsp#tab4"><h4>Tietoa <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></h4></a></li>
+                    <li><a href="etusivu.jsp#liity"><h4>Liity <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></h4></a></a></li>
+                    <li><a href="etusivu.jsp#psykoterapiapalvelut"><h4>Psykoterapiapalvelut <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></h4></a></a></li>
+                </ul>
+            </li>
+            <li class=""><a href="etusivu.jsp#yhteystiedot">Yhteystiedot</a></li>
+            </ul>
+              
+
+
+              
+              
             <ul class="nav navbar-nav navbar-right">
              <li class="dropdown">
                 <%

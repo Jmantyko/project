@@ -424,14 +424,14 @@ $(function(){
 	 <!-- Bootstrap row adding js --> 
      <script src="addrow.js"></script>
 	 
-	 <script>   $(document).ready(function(){
-      var i=1;
-     $("#add_row").click(function(){
-      $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input name='name"+i+"' type='text' placeholder='Name' class='form-control input-md'  /> </td><td><input  name='mail"+i+"' type='text' placeholder='Mail'  class='form-control input-md'></td><td><input  name='mobile"+i+"' type='text' placeholder='Mobile'  class='form-control input-md'></td>");
-
-      $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
-      i++; 
-  });
+	 <script>   
+            $(document).ready(function(){
+            var i=1;
+            $("#add_row").click(function(){
+                $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input name='name"+i+"' type='text' placeholder='Name' class='form-control input-md'  /> </td><td><input  name='mail"+i+"' type='text' placeholder='Mail'  class='form-control input-md'></td><td><input  name='mobile"+i+"' type='text' placeholder='Mobile'  class='form-control input-md'></td>");
+                $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
+                i++; 
+            });
      $("#delete_row").click(function(){
     	 if(i>1){
 		 $("#addr"+(i-1)).html('');
@@ -532,6 +532,19 @@ $(function(){
 });
          
          </script>
+        <script>
+            $(function(){
+                var hash = window.location.hash;
+                hash && $('ul.nav a[href="' + hash + '"]').tab('show');
+
+                $('.nav-tabs a').click(function (e) {
+                    $(this).tab('show');
+                    var scrollmem = $('body').scrollTop();
+                    window.location.hash = this.hash;
+                    $('html,body').scrollTop(scrollmem);
+                });
+            });
+        </script>
 
 	
 </head>
@@ -566,33 +579,33 @@ $(function(){
 
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <%
+        <%
             if ("customer".equals(userType)){
         %>
-    <ul class="nav navbar-nav">
-	  <li><a href="customer.jsp">Etusivu</a></li>
-    </ul>
+        <ul class="nav navbar-nav">
+              <li><a href="customer.jsp">Etusivu</a></li>
+        </ul>
         <%
             }else if ("admin".equals(userType)){
         %>
-            <ul class="nav navbar-nav">
-      <li><a href="admin.jsp">Etusivu</a></li>
-      <li><a href="admin.jsp#tab11">Asiakastilien hallinta</a></li>
-    </ul>
+        <ul class="nav navbar-nav">
+            <li><a href="admin.jsp">Etusivu</a></li>
+            <li><a href="admin.jsp#tab11">Asiakastilien hallinta</a></li>
+        </ul>
         <%
             }
         %>
     <ul class="nav navbar-nav">
-      <li class="s"><a href="#martti" data-toggle="tab">Martti Puttonen</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nettiterapia <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="#tietoa"data-toggle="tab"><h4>Tietoa <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></h4></a></li>
-          <li><a href="#liity"data-toggle="tab"><h4>Liity <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></h4></a></a></li>
-          <li><a href="#psykoterapiapalvelut"data-toggle="tab"><h4>Psykoterapiapalvelut <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></h4></a></a></li>
-        </ul>
-      </li>
-	  <li class=""><a href="#yhteystiedot" data-toggle="tab">Yhteystiedot</a></li>
+        <li class="s"><a href="#martti" data-toggle="tab">Martti Puttonen</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nettiterapia <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#tab4" data-toggle="tab"><h4>Tietoa <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></h4></a></li>
+                <li><a href="#liity" data-toggle="tab"><h4>Liity <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></h4></a></a></li>
+                <li><a href="#psykoterapiapalvelut" data-toggle="tab"><h4>Psykoterapiapalvelut <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></h4></a></a></li>
+            </ul>
+        </li>
+        <li class=""><a href="#yhteystiedot" data-toggle="tab">Yhteystiedot</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
      <li class="dropdown">
@@ -774,7 +787,7 @@ $(function(){
     </div>
                             
 
-    <div class="tab-pane text-style" id="tietoa">
+    <div class="tab-pane text-style" id="tab4">
         <div class="container">
             <h2>Tab tietoa</h2>
             <p><%=InputOutput.clean(content3)%></p>
@@ -786,12 +799,12 @@ $(function(){
             <h2>Tab Liity</h2>
 
             <p><%=InputOutput.clean(content4)%></p>
-                 <a class="btn btn-default btn-lg btn-block" href="#tab7" data-toggle="tab">Linkki nettiterapian ja istuntopainotteisen terapian asennemittariin </a>
-                <a class="btn btn-default btn-lg btn-block" href="#tab7" data-toggle="tab">Linkki ilmaisen harjoitusohjelman taustatietojen täyttöön </a>
+            <a class="btn btn-default btn-lg btn-block" href="#tab7" data-toggle="tab">Linkki nettiterapian ja istuntopainotteisen terapian asennemittariin </a>
+            <a class="btn btn-default btn-lg btn-block" href="#tab7" data-toggle="tab">Linkki ilmaisen harjoitusohjelman taustatietojen täyttöön </a>
 
-                <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.open('https://docs.google.com/forms/d/1UqlGeUD4sdHlPWMlt_w6wJteREAttMO5I5chXV93S3c/edit')"> Linkki maksullisen harjoitusohjelman taustatietojen täyttöön </button>
-            </div>
+            <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.open('https://docs.google.com/forms/d/1UqlGeUD4sdHlPWMlt_w6wJteREAttMO5I5chXV93S3c/edit')"> Linkki maksullisen harjoitusohjelman taustatietojen täyttöön </button>
         </div>
+    </div>
             
     <div class="tab-pane text-style" id="tab7">
         
