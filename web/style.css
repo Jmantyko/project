@@ -7,11 +7,42 @@ and open the template in the editor.
     Created on : 25-Oct-2016, 13:14:29
     Author     : Jaakko
 */
+
+
 body {
     margin: 0x;
     width: 100%;
     height: 100%;
-    
+}
+
+@media (width: 1024px) {
+    body {
+        margin: 0 auto;
+        margin: 0 auto;
+        width: 1024px;
+    }
+}
+
+@media (width: 1280px) {
+    body {
+        margin: 0 auto;
+        width: 1280px;
+    }
+}
+
+@media (width: 1366px) {
+    body {
+        margin: 0 auto;
+        width: 1366px;
+    }
+}
+
+@media (width: 1920px) {
+    body {
+        margin-right: auto;
+        margin-left: auto;
+        width: 1920px;
+    }
 }
 
 .customer-main-container{
@@ -37,10 +68,6 @@ body {
     width: 50%;
 }
 
-.tab-content {
-    padding: 10px;
-}
-
 .container-bottom {
     width: 100%;
     margin-right: auto;
@@ -54,7 +81,6 @@ body {
 #harjoitukset {
     padding: 10px;
 }
-
 
 .nav-pills > li.active > a, .nav-pills > li.active > a:focus {
     color: white;
