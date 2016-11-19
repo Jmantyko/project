@@ -55,6 +55,7 @@ body {
     padding: 10px;
 }
 
+
 .nav-pills > li.active > a, .nav-pills > li.active > a:focus {
     color: white;
     background-color: #76A5FF;

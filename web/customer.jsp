@@ -179,105 +179,6 @@ $(function(){
  });
      </script>
 	 
-	  <script>
-$(function(){
-   $('#ex2').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	  <script>
-$(function(){
-   $('#ex3').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	  <script>
-$(function(){
-   $('#ex4').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	 <script>
-$(function(){
-   $('#ex5').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	 <script>
-$(function(){
-   $('#ex6').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	  <script>
-$(function(){
-   $('#ex7').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	  <script>
-$(function(){
-   $('#ex8').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	 <script>
-$(function(){
-   $('#ex9').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	 <script>
-$(function(){
-   $('#ex10').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
 	 <!-- Bootstrap row adding js --> 
      <script src="addrow.js"></script>
 	 
@@ -374,11 +275,7 @@ $(function(){
             </li>
             <li class=""><a href="etusivu.jsp#yhteystiedot">Yhteystiedot</a></li>
             </ul>
-              
 
-
-              
-              
             <ul class="nav navbar-nav navbar-right">
              <li class="dropdown">
                 <%
@@ -523,9 +420,6 @@ $(function(){
                         </div>
 
                         <br>
-
-
-
                         <label class="control control--radio">Käytän suhteellisen säännöllisesti päivittäistä sosiaalista elämääni tukevia terveys- ja kuntoutuspalveluita
                             <input type="radio" name="radio" checked="checked"/>
                             <div class="control__indicator"></div>
@@ -534,13 +428,12 @@ $(function(){
                             <input type="radio" name="radio"/>
                             <div class="control__indicator"></div>
                         </label>
-                        <label class="control control--radio">Saamani palvelut ovat epämääräisiä ja johonkin päivittäiseen ongelman ratkaisuun, kuten lääkitykseen, rahallisten tukien saamiseen keskittyneitä, tilanteeni yleistä seurantaa
+                        <label class="control control--radio">Saamani palvelut ovat epämääräisiä ja johonkin päivittäiseen ongelman ratkaisuun, 
+                            kuten lääkitykseen, rahallisten tukien saamiseen keskittyneitä, tilanteeni yleistä seurantaa
                             <input type="radio" name="radio"/>
                             <div class="control__indicator"></div>
                         </label>
-
                         <br>
-
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nimeä ja luetteloi lyhyesti ongelmia, sekä elämistäsi vaikeuttavia asioita kuten mielenterveydellisiä vaikeuksiasi omin sanoin</label>
                             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
@@ -549,7 +442,6 @@ $(function(){
                             <label for="exampleInputEmail1">Nimeä ja luetteloi lyhyesti ongelmia, sekä elämistäsi vaikeuttavia asioita kuten mielenterveydellisiä vaikeuksiasi omin sanoin</label>
                             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
                         </div>
-
 
                         <button type="submit" class="btn btn-primary">Lähetä</button>
                     </form>
