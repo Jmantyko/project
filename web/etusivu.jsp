@@ -424,12 +424,21 @@ $(function(){
             ArrayList<Content> content = new ArrayList<Content>();
             content = Database.getAllFrontPageContent();
             
-            String contentMainos = ((Content)content.get(0)).getContent();
-            String contentMartti = ((Content)content.get(1)).getContent();
-            String contentLiity = ((Content)content.get(2)).getContent();
-            String contentTietoa = ((Content)content.get(3)).getContent();
-            String contentPsykoterapiapalvelut = ((Content)content.get(4)).getContent();
-            String contentYhteystiedot = ((Content)content.get(5)).getContent();
+            String contentMainos = "";
+            String contentMartti = "";
+            String contentLiity = "";
+            String contentTietoa = "";
+            String contentPsykoterapiapalvelut = "";
+            String contentYhteystiedot = "";
+            
+            if(content.size() != 0){
+                contentMainos = ((Content)content.get(0)).getContent();
+                contentMartti = ((Content)content.get(1)).getContent();
+                contentLiity = ((Content)content.get(2)).getContent();
+                contentTietoa = ((Content)content.get(3)).getContent();
+                contentPsykoterapiapalvelut = ((Content)content.get(4)).getContent();
+                contentYhteystiedot = ((Content)content.get(5)).getContent();
+            }
 
             String email = (String) session.getAttribute("email");
             String userType = "";
