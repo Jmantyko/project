@@ -10,7 +10,7 @@
 <%@page import="Arjenhallinta.InputOutput"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="fi">
     <head>
         <meta http-equiv="content-type" content="text/html;charset=ISO-8859-1"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
