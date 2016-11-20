@@ -674,7 +674,7 @@ $(function(){
                                 taskID = ((Task) tasks.get(i)).getTaskID();
                                 taskTypeID = ((Task) tasks.get(i)).getTaskTypeID();
                         %>
-                        <a href='#tab-content<%=taskTypeID%>' data-toggle="tab">Monitorointiharjoitus <%=taskTypeID%>.</a><br>
+                        <a href='#tab-content<%=taskID%>' data-toggle="tab">Monitorointiharjoitus <%=taskTypeID%>.</a><br>
                         <%
                             }
                         %>
@@ -689,7 +689,7 @@ $(function(){
                                 taskTypeID = ((Task) tasks.get(i)).getTaskTypeID();
                                 taskContent = ((Task) tasks.get(i)).getTaskContent();
                             %>
-                            <div class="tab-pane fade" id="tab-content<%=taskTypeID%>">
+                            <div class="tab-pane fade" id="tab-content<%=taskID%>">
                                 <div>
                                     <p>Monitorointiharjoitus: <%=taskTypeID%>, arkistointitunnus <%=taskID%>.<br><br> Harjoituksen sisältö: <%=InputOutput.clean(taskContent)%></p>
                                 </div>
@@ -703,25 +703,21 @@ $(function(){
                 <div class="tab-pane fade" id="tab-contentB">
                     <div>
                         <div class="control-group">
-                            <h4>Checkboxeja, joilla voi valita uuden harjoituksen asiakkaalle.</h4>
-                            <br>
-                            <label class="control control--checkbox">Monitorointiharjoitus 1
-                              <input type="checkbox"/>
-                              <div class="control__indicator"></div>
-                            </label>
-                            <label class="control control--checkbox">Monitorointiharjoitus 2
-                              <input type="checkbox"/>
-                              <div class="control__indicator"></div>
-                            </label>
-                            <label class="control control--checkbox">Monitorointiharjoitus 3
-                              <input type="checkbox" />
-                              <div class="control__indicator"></div>
-                            </label>
-                            <br>
-                        <button type="submit" class="btn btn-info">Lähetä
-                            <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
-                        </button>
-                    </div>
+                            <h4>Lähetä asiakkaalle uusi monitorointiharjoitus valitsemalla harjoitus ja klikkaamalla Lähetä-painiketta.</h4>
+                            <form action="OpenNewTask" method="POST">
+                                <div class="radio">
+                                    <label><input type="radio" name="selection" value="1"><strong>Monitorointiharjoitus 1</strong></label>
+                                </div>
+                                <div class="radio">
+                                    <label><input type="radio" name="selection" value="2"><strong>Monitorointiharjoitus 2</strong></label>
+                                </div>
+                                <div class="radio">
+                                    <label><input type="radio" name="selection" value="3"><strong>Monitorointiharjoitus 3</strong></label>
+                                </div>
+                                <input type="hidden" name="userid" value="<%=userid%>">
+                                <input type="submit" class="btn btn-info" value="Lähetä">
+                            </form>
+                        </div>
                 </div>
                 </div>
                   

@@ -605,6 +605,32 @@ public class Database {
         return customers;
     }
     
+    public static void openNewTask(int taskTypeID, int userID) {
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("INSERT INTO Tasks (TaskTypeID, UserID) VALUES (?, ?)");
+            ps.setInt(1, taskTypeID);
+            ps.setInt(2, userID);
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
+            
+        }
+    }
+    
     public static ArrayList<Task> getUserTasks(int userID) {
         
         ArrayList tasks = new ArrayList();
