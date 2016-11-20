@@ -4,6 +4,8 @@
     Author     : Jaakko
 --%>
 
+<%@page import="Arjenhallinta.Task"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="Arjenhallinta.Database"%>
 <%@page import="Arjenhallinta.InputOutput"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -216,6 +218,7 @@ $(function(){
             String email = null;
             String userEmail = null;
             String sessionID = null;
+            int userID = 0;
 
             if (session.getAttribute("email") == null) {
 
@@ -244,6 +247,8 @@ $(function(){
                     response.sendRedirect("etusivu.jsp");
                 }
             }
+            
+            userID = Database.getUserID(email);
         %>    
         
 
@@ -352,11 +357,37 @@ $(function(){
                         <div class="tab-content">
                             
                             <div id="tab-content-1" class="tab-pane fade in active">
-                                <button type="button" class="btn btn-group btn-group-justified btn-info" data-toggle="collapse" data-target="#harjoitukset">Harjoitus 1</button>
-                                <div id="harjoitukset" class="collapse">
+                                <%
+                                    ArrayList<Task> tasks = new ArrayList<Task>();
+                                    tasks = Database.getUserTasks(userID);
+                                    
+                                    int taskID = 0;
+                                    int taskTypeID = 0;
+                                    String taskContent = "";
+                            
+                                    if(tasks.size() == 0){
+                                %>
+                                <p>Ei aikaisempia harjoituksia.</p>
+                                <%
+                                    }
+
+                                    //In this for loop we will print all user
+                                    //tasks and make each print to be
+                                    //a separate link which customer can press
+                                    //to get more details later below
+                                    for (int i = 0; i < tasks.size(); i++) {
+
+                                    taskID = ((Task) tasks.get(i)).getTaskID();
+                                    taskTypeID = ((Task) tasks.get(i)).getTaskTypeID();
+                                %>
+                                <button type="button" class="btn btn-group btn-group-justified btn-info" data-toggle="collapse" data-target="#harjoitukset<%=taskID%>">Harjoitus <%=taskTypeID%>.</button>
+                                <div id="harjoitukset<%=taskID%>" class="collapse">
                                     <a class="btn btn-success pull-left" href="#tab-display-harjoitus" data-toggle="tab">Lisää uusi merkintä</a>
                                     <a class="btn btn-primary pull-right" href="#tab-display-harjoitus" data-toggle="tab">Yhteenveto</a>
-                                </div>
+                                </div><br>
+                                <%
+                                    }
+                                %>
                             </div>
                             
                             <div id="tab-content-2" class="tab-pane fade">
