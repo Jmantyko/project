@@ -604,6 +604,40 @@ public class Database {
         
         return customers;
     }
+    
+    public static ArrayList<Task> getUserTasks(int userID) {
+        
+        ArrayList tasks = new ArrayList();
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("SELECT TaskID, TaskTypeID, TaskContent FROM Tasks WHERE"
+                    + " UserID=?");
+            ps.setInt(1, userID);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                tasks.add(new Task(rs.getInt("TaskID"), rs.getInt("TaskTypeID"), rs.getString("TaskContent")));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
+            
+        }
+        
+        return tasks;
+    }
                     
     public static void updateUserDetails(String userName, String userSurname,
             String userAddress, String userPostalcode, String userPostoffice, String userEmail) {

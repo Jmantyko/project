@@ -4,6 +4,7 @@
     Author     : Jaakko
 --%>
 
+<%@page import="Arjenhallinta.Task"%>
 <%@page import="Arjenhallinta.Customer"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Arjenhallinta.Database"%>
@@ -643,40 +644,63 @@ $(function(){
     <h2><%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%></h2>
     <div class="row">
         <div class="col-sm-3">
-            <button type="button" class="btn btn-default btn-block" href='#tab-content0' data-toggle="tab">Harjoitukset</button><br>
-            <button type="button" class="btn btn-default btn-block" href='#tab-content1' data-toggle="tab">Avaa uusi harjoitus</button><br>
-            <button type="button" class="btn btn-default btn-block" href='#tab-content2' data-toggle="tab">Taustatiedot</button><br>
+            <button type="button" class="btn btn-default btn-block" href='#tab-contentA' data-toggle="tab">Harjoitukset</button><br>
+            <button type="button" class="btn btn-default btn-block" href='#tab-contentB' data-toggle="tab">Avaa uusi harjoitus</button><br>
+            <button type="button" class="btn btn-default btn-block" href='#tab-contentC' data-toggle="tab">Taustatiedot</button><br>
         </div>
         <div class="col-sm-9">
             <!-- tab content -->
             <div class="tab-content">
-                <div class="tab-pane fade" id="tab-content0">
+                <div class="tab-pane fade" id="tab-contentA">
                     <div class="col-sm-3">
-                        <a href='#tab-content4' data-toggle="tab">Harjoitus 1</a><br>
-                        <a href='#tab-content5' data-toggle="tab">Harjoitus 2</a><br>
-                        <a href='#tab-content6' data-toggle="tab">Harjoitus 3</a><br>
+                        <%
+                            ArrayList<Task> tasks = new ArrayList<Task>();
+                            tasks = Database.getUserTasks(userid);
+                            int taskID = 0;
+                            int taskTypeID = 0;
+                            String taskContent = "";
+                            
+                            if(tasks.size() == 0){
+                        %>
+                        <p>Ei aikaisempia harjoituksia.</p>
+                        <%
+                            }
+                            //In this for loop we will print all user
+                            //tasks and make each print to be
+                            //a separate link which admin can press
+                            //to get more details later below
+                            for (int i = 0; i < tasks.size(); i++) {
+
+                                taskID = ((Task) tasks.get(i)).getTaskID();
+                                taskTypeID = ((Task) tasks.get(i)).getTaskTypeID();
+                        %>
+                        <a href='#tab-content<%=taskTypeID%>' data-toggle="tab">Monitorointiharjoitus <%=taskTypeID%> jonka arkistointitunnus <%=taskID%>.</a><br>
+                        <%
+                            }
+                        %>
                     </div>
                     <div class="col-sm-6">
                         <div class="tab-content">
-                            <div class="tab-pane fade" id="tab-content4">
+                            <% 
+                            //Here we print all content of each task
+                            for (int i = 0; i < tasks.size(); i++){
+                                
+                                taskID = ((Task) tasks.get(i)).getTaskID();
+                                taskTypeID = ((Task) tasks.get(i)).getTaskTypeID();
+                                taskContent = ((Task) tasks.get(i)).getTaskContent();
+                            %>
+                            <div class="tab-pane fade" id="tab-content<%=taskTypeID%>">
                                 <div>
-                                    <p>Harjoitus 1.</p>
+                                    <p>Monitorointiharjoitus: <%=taskTypeID%>, arkistointitunnus <%=taskID%>.<br> Harjoituksen sisältö: <%=InputOutput.clean(taskContent)%></p>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="tab-content5">
-                                <div>
-                                    <p>Harjoitus 2.</p>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="tab-content6">
-                                <div>
-                                    <p>Harjoitus 3.</p>
-                                </div>
-                            </div>
+                            <%
+                            }
+                            %>
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="tab-content1">
+                <div class="tab-pane fade" id="tab-contentB">
                     <div>
                         <div class="control-group">
                             <h4>Checkboxeja, joilla voi valita uuden harjoituksen asiakkaalle.</h4>
@@ -701,7 +725,7 @@ $(function(){
                 </div>
                 </div>
                   
-                <div class="tab-pane fade" id="tab-content2">
+                <div class="tab-pane fade" id="tab-contentC">
                     <div>
                         <p>Yhteenveto taustatiedoista, ei muokkaus mahdollisuutta terapeutilla.</p>
                     </div>
