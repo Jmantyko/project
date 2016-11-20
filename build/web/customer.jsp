@@ -367,7 +367,7 @@ $(function(){
                             
                                     if(tasks.size() == 0){
                                 %>
-                                <p>Ei aikaisempia harjoituksia.</p>
+                                <br><p>Sinulle ei ole vielä lähetetty monitorointiharjoituksia.</p>
                                 <%
                                     }
 
@@ -382,9 +382,9 @@ $(function(){
                                 %>
                                 <button type="button" class="btn btn-group btn-group-justified btn-info" data-toggle="collapse" data-target="#harjoitukset<%=taskID%>">Harjoitus <%=taskTypeID%>.</button>
                                 <div id="harjoitukset<%=taskID%>" class="collapse">
-                                    <a class="btn btn-success pull-left" href="#tab-display-harjoitus" data-toggle="tab">Lisää uusi merkintä</a>
-                                    <a class="btn btn-primary pull-right" href="#tab-display-harjoitus" data-toggle="tab">Yhteenveto</a>
-                                </div><br>
+                                    <a class="btn btn-success pull-left" href="#tab-display-harjoitus<%=taskID%>" data-toggle="tab">Lisää uusi merkintä</a>
+                                    <a class="btn btn-primary pull-right" href="#tab-display-harjoitus<%=taskID%>" data-toggle="tab">Yhteenveto</a>
+                                </div>
                                 <%
                                     }
                                 %>
@@ -401,12 +401,23 @@ $(function(){
                             <h2>Tervetuloa!</h2>
                             <p>tähän vähän esittelytekstiä ja Martin broadcastaukset</p>
                         </div>
-                        <div class="tab-pane fade" id="tab-display-harjoitus">
-                            <p>teeppä tästä ensimmäinen harjoitus</p>
+                        <%
+                            //Here we print all content of each task
+                            for (int i = 0; i < tasks.size(); i++){
+                                
+                                taskID = ((Task) tasks.get(i)).getTaskID();
+                                taskTypeID = ((Task) tasks.get(i)).getTaskTypeID();
+                                taskContent = ((Task) tasks.get(i)).getTaskContent();
+                        %>
+                        <div class="tab-pane fade" id="tab-display-harjoitus<%=taskID%>">
+                            <p><%=InputOutput.clean(taskContent)%></p>
                         </div>
-                        <div class="tab-pane fade" id="tab-display-viestit">
+                        <div class="tab-pane fade" id="tab-display-viestit<%=taskID%>">
                             <p>tässä sulle viesti</p>
                         </div>
+                        <%
+                            }
+                        %>
                     </div>
 
                 </div>  
