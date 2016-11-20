@@ -641,7 +641,7 @@ $(function(){
     String userSurname = Database.getUserSurnameUsingID(userid);
     %>
     
-    <h2><%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%></h2>
+    <h3><%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%></h3>
     <div class="row">
         <div class="col-sm-3">
             <button type="button" class="btn btn-default btn-block" href='#tab-contentA' data-toggle="tab">Harjoitukset</button><br>
@@ -659,12 +659,20 @@ $(function(){
                             int taskID = 0;
                             int taskTypeID = 0;
                             String taskContent = "";
+                            boolean taskIsReturned;
                             
                             if(tasks.size() == 0){
                         %>
-                        <p>Ei aikaisempia harjoituksia.</p>
+                        <p><strong>Ei aikaisempia harjoituksia.</strong></p>
                         <%
                             }
+
+                            if(tasks.size() != 0){
+                        %>
+                        <p><strong>Avoimet harjoitukset:</strong></p>
+                        <%
+                            }
+
                             //In this for loop we will print all user
                             //tasks and make each print to be
                             //a separate link which admin can press
@@ -673,9 +681,30 @@ $(function(){
 
                                 taskID = ((Task) tasks.get(i)).getTaskID();
                                 taskTypeID = ((Task) tasks.get(i)).getTaskTypeID();
+                                taskIsReturned = ((Task) tasks.get(i)).getTaskIsReturned();
+                                if(taskIsReturned == false){
                         %>
                         <a href='#tab-content<%=taskID%>' data-toggle="tab">Monitorointiharjoitus <%=taskTypeID%>.</a><br>
                         <%
+                                }
+                            }
+
+                            if(tasks.size() != 0){
+                        %>
+                        <br><p><strong>Palautetut harjoitukset:</strong></p>
+                        <%
+                            }
+
+                            for (int i = 0; i < tasks.size(); i++) {
+
+                                taskID = ((Task) tasks.get(i)).getTaskID();
+                                taskTypeID = ((Task) tasks.get(i)).getTaskTypeID();
+                                taskIsReturned = ((Task) tasks.get(i)).getTaskIsReturned();
+                                if(taskIsReturned == true){
+                        %>
+                        <a href='#tab-content<%=taskID%>' data-toggle="tab">Monitorointiharjoitus <%=taskTypeID%>.</a><br>
+                        <%
+                                }
                             }
                         %>
                     </div>

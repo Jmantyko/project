@@ -14,11 +14,13 @@ public class Task {
     private int taskid;
     private int tasktypeid;
     private String taskcontent;
+    private boolean taskisreturned;
     
-    public Task(int taskID, int taskTypeID, String taskContent) {
+    public Task(int taskID, int taskTypeID, String taskContent, boolean taskIsReturned) {
         taskid = taskID;
         tasktypeid = taskTypeID;
         taskcontent = taskContent;
+        taskisreturned = taskIsReturned;
     }
     
     public int getTaskID(){
@@ -31,5 +33,9 @@ public class Task {
     
     public String getTaskContent(){
         return taskcontent;
+    }
+    
+    public boolean getTaskIsReturned(){
+        return taskisreturned;
     }
 }
