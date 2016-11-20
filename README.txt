@@ -82,11 +82,11 @@ INSERT INTO Users (UserEmail, UserPassword, UserName, UserSurname, UserPhonenumb
 		('erkkiesimerkki@esimerkki.fi', '123', 'Erkki', 'Esimerkki', '020544579', 'Talokatu 7', '88888', 'Helsinki', 'customer'),
 		('mattimeikalainen@meikalainen.fi', '123', 'Matti', 'Meikäläinen', '1234567890', 'Kerroskuja 5', '82828', 'Tampere', 'customer');
 		
-INSERT INTO Tasks (TaskTypeID, UserID, TaskContent)
-	VALUES	(1, 2, '*Harjoitukseen liittyvää sisälötä tietokannasta, user 2 tekijänä*'),
-		(2, 2, '*Toiseen harjoitukseen liittyvää sisälötä tietokannasta, user 2 tekijänä*'),
-		(1, 4, '*Harjoitukseen liittyvää sisälötä tietokannasta, user 4 tekijänä*'),
-		(2, 4, '*Toiseen harjoitukseen liittyvää sisälötä tietokannasta, user 4 tekijänä*');
+INSERT INTO Tasks (TaskTypeID, UserID, TaskContent, TaskIsReturned)
+	VALUES	(1, 2, '*Harjoitukseen liittyvää sisälötä tietokannasta, user 2 tekijänä*', 1),
+		(2, 2, '*Toiseen harjoitukseen liittyvää sisälötä tietokannasta, user 2 tekijänä*', 0),
+		(1, 4, '*Harjoitukseen liittyvää sisälötä tietokannasta, user 4 tekijänä*', 1),
+		(2, 4, '*Toiseen harjoitukseen liittyvää sisälötä tietokannasta, user 4 tekijänä*', 1);
 			
 INSERT INTO Frontpage (PageContent)
 	VALUES	('Tämä teksti on yleistä arjenhallinta.fi mainostekstiä.'),
