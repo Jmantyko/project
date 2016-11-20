@@ -52,6 +52,7 @@ CREATE TABLE Users (
 
 CREATE TABLE Tasks (
 	TaskID INT UNSIGNED NOT NULL AUTO_INCREMENT,
+	TaskTypeID INT UNSIGNED NOT NULL,
 	UserID SMALLINT UNSIGNED NOT NULL,
 	TaskContent LONGTEXT,
 	TaskDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -79,11 +80,17 @@ INSERT INTO Users (UserEmail, UserPassword, UserName, UserSurname, UserPhonenumb
 		('customer@customer.fi', '123', 'Aki', 'Asiakas', '020202', 'Torikatu 3', '12300', 'Oulu', 'customer'),
 		('erkkiesimerkki@esimerkki.fi', '123', 'Erkki', 'Esimerkki', '020544579', 'Talokatu 7', '88888', 'Helsinki', 'customer'),
 		('mattimeikalainen@meikalainen.fi', '123', 'Matti', 'Meikäläinen', '1234567890', 'Kerroskuja 5', '82828', 'Tampere', 'customer');
+		
+INSERT INTO Tasks (TaskTypeID, UserID, TaskContent)
+	VALUES	(1, 2, '*Harjoitukseen liittyvää sisälötä tietokannasta, user 2 tekijänä*'),
+		(2, 2, '*Toiseen harjoitukseen liittyvää sisälötä tietokannasta, user 2 tekijänä*'),
+		(1, 4, '*Harjoitukseen liittyvää sisälötä tietokannasta, user 4 tekijänä*'),
+		(2, 4, '*Toiseen harjoitukseen liittyvää sisälötä tietokannasta, user 4 tekijänä*');
 			
 INSERT INTO Frontpage (PageContent)
 	VALUES	('Tämä teksti on yleistä arjenhallinta.fi mainostekstiä.'),
-			('Martti Puttosen esittely teksti tähän.'),
-			('Liity teksti tähän.'),
-			('Tietoa teksti tähän.'),
-			('Psykoterapiapalvelut teksti tähän.'),
-			('Yhteystiedot teksti tähän.');
+		('Martti Puttosen esittely teksti tähän.'),
+		('Liity teksti tähän.'),
+		('Tietoa teksti tähän.'),
+		('Psykoterapiapalvelut teksti tähän.'),
+		('Yhteystiedot teksti tähän.');
