@@ -412,7 +412,7 @@ $(function(){
                         <div class="tab-pane fade" id="tab-display-harjoitus<%=taskID%>">
                             <p><%=InputOutput.clean(taskContent)%></p>
                         </div>
-                        <div class="tab-pane fade" id="tab-display-viestit<%=taskID%>">
+                        <div class="tab-pane fade" id="tab-display-viestit">
                             <p>tässä sulle viesti</p>
                         </div>
                         <%
