@@ -702,23 +702,21 @@ $(function(){
                 </div>
                 <div class="tab-pane fade" id="tab-contentB">
                     <div>
-                        <div class="control-group">
-                            <h4>Lähetä asiakkaalle uusi monitorointiharjoitus valitsemalla harjoitus ja klikkaamalla Lähetä-painiketta.</h4>
-                            <form action="OpenNewTask" method="POST">
-                                <div class="radio">
-                                    <label><input type="radio" name="selection" value="1"><strong>Monitorointiharjoitus 1</strong></label>
-                                </div>
-                                <div class="radio">
-                                    <label><input type="radio" name="selection" value="2"><strong>Monitorointiharjoitus 2</strong></label>
-                                </div>
-                                <div class="radio">
-                                    <label><input type="radio" name="selection" value="3"><strong>Monitorointiharjoitus 3</strong></label>
-                                </div>
-                                <input type="hidden" name="userid" value="<%=userid%>">
-                                <input type="submit" class="btn btn-info" value="Lähetä">
-                            </form>
-                        </div>
-                </div>
+                        <h4>Lähetä asiakkaalle uusi monitorointiharjoitus valitsemalla harjoitus ja klikkaamalla Lähetä-painiketta.</h4>
+                        <form action="OpenNewTask" method="POST">
+                            <div class="radio">
+                                <label><input type="radio" name="selection" value="1"><strong>Monitorointiharjoitus 1</strong></label>
+                            </div>
+                            <div class="radio">
+                                <label><input type="radio" name="selection" value="2"><strong>Monitorointiharjoitus 2</strong></label>
+                            </div>
+                            <div class="radio">
+                                <label><input type="radio" name="selection" value="3"><strong>Monitorointiharjoitus 3</strong></label>
+                            </div>
+                            <input type="hidden" name="userid" value="<%=userid%>">
+                            <input type="submit" class="btn btn-info" value="Lähetä">
+                        </form>
+                    </div>
                 </div>
                   
                 <div class="tab-pane fade" id="tab-contentC">
