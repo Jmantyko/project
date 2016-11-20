@@ -674,7 +674,7 @@ $(function(){
                                 taskID = ((Task) tasks.get(i)).getTaskID();
                                 taskTypeID = ((Task) tasks.get(i)).getTaskTypeID();
                         %>
-                        <a href='#tab-content<%=taskTypeID%>' data-toggle="tab">Monitorointiharjoitus <%=taskTypeID%> jonka arkistointitunnus <%=taskID%>.</a><br>
+                        <a href='#tab-content<%=taskTypeID%>' data-toggle="tab">Monitorointiharjoitus <%=taskTypeID%>.</a><br>
                         <%
                             }
                         %>
@@ -691,7 +691,7 @@ $(function(){
                             %>
                             <div class="tab-pane fade" id="tab-content<%=taskTypeID%>">
                                 <div>
-                                    <p>Monitorointiharjoitus: <%=taskTypeID%>, arkistointitunnus <%=taskID%>.<br> Harjoituksen sisältö: <%=InputOutput.clean(taskContent)%></p>
+                                    <p>Monitorointiharjoitus: <%=taskTypeID%>, arkistointitunnus <%=taskID%>.<br><br> Harjoituksen sisältö: <%=InputOutput.clean(taskContent)%></p>
                                 </div>
                             </div>
                             <%
