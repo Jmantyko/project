@@ -412,12 +412,52 @@ $(function(){
                         <div class="tab-pane fade" id="tab-display-harjoitus<%=taskID%>">
                             <p><%=InputOutput.clean(taskContent)%></p>
                         </div>
-                        <div class="tab-pane fade" id="tab-display-viestit">
-                            <p>tässä sulle viesti</p>
-                        </div>
                         <%
                             }
                         %>
+                        <div class="tab-pane fade" id="tab-display-viestit">
+                            <div class="chat">
+                            <div class="chat-history">
+                                <ul class="chat-ul">
+                                <li>
+                                    <div class="message-data">
+                                        <span class="message-data-name"><i class="fa fa-circle you"></i> Asiakas</span>
+                                    </div>
+                                    <div class="message you-message">
+                                        <p>A new client?!?! I would love to help them, but where are we going to find the time?</p>
+                                    </div>
+                                </li>
+                                <li class="clearfix">
+                                    <div class="message-data">
+                                        <span class="message-data-name float-right">Martti</span>
+                                    </div>
+                                    <div class="message me-message"> 
+                                        <p>We should take a look at your onboarding and service delivery workflows, for most businesess there are many ways to save time and not compromise quality.</p>
+                                    </div>
+                                </li>
+                                </ul>
+                                                                <ul class="chat-ul">
+                                <li>
+                                    <div class="message-data">
+                                        <span class="message-data-name"><i class="fa fa-circle you"></i> Asiakas</span>
+                                    </div>
+                                    <div class="message you-message">
+                                        <p>A new client?!?! I would love to help them, but where are we going to find the time?</p>
+                                    </div>
+                                </li>
+                                <li class="clearfix">
+                                    <div class="message-data">
+                                        <span class="message-data-name float-right">Martti</span>
+                                    </div>
+                                    <div class="message me-message"> 
+                                        <p>We should take a look at your onboarding and service delivery workflows, for most businesess there are many ways to save time and not compromise quality.</p>
+                                    </div>
+                                </li>
+                                </ul>
+                            </div> <!-- end chat-history -->
+                            </div> <!-- end chat -->
+                        </div>
+
                     </div>
 
                 </div>  
