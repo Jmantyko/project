@@ -50,10 +50,6 @@
       
         }
         
-        .navbar-brand {
-            font-color: white;
-        }
-        
         .jumbotron {
         font-color:  #76A5FF;
         background:  #76A5FF;
@@ -83,7 +79,7 @@
         }
 
         .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-        color: #000;  /*Sets the text hover color on navbar*/
+        color: #ccccff;  /*Sets the text hover color on navbar*/
         }
 
         .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >   
@@ -151,6 +147,18 @@
             font-size: 14px;
         }
         
+        .margintop {
+            
+            margin-top: 50px;
+        }
+        
+        .carousel {
+            position:relative;
+            margin-bottom:20px;
+            line-height:1; 
+            height: 570px;
+            margin: auto;
+        }
         
         
         </style>
@@ -467,7 +475,7 @@ $(function(){
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="etusivu.jsp">Arjenhallinta.fi</a>
+    <a class="navbar-brand" style="color:#f2f2f2" href="etusivu.jsp">Arjenhallinta.fi</a>
   </div>
 
   <!-- Collect the nav links, forms, and other content for toggling -->
@@ -561,17 +569,18 @@ $(function(){
 
 </div>
 
-<div class="container">
-    <div class="jumbotron">
-        <h2>Psykoterapiapalvelut Martti Puttonen</h2>
-        <p>Kognitiivisen käyttäytymisterapian toteutukset opetukseen ja psykoterapiapraktiikkaan</p>
-    </div>
-
-</div>
-
 <!-- tab content -->
 <div class="tab-content">
     <div class="tab-pane active text-style" id="tab1">
+        
+        <div class="container">
+            <div class="jumbotron">
+                <h2>Psykoterapiapalvelut Martti Puttonen</h2>
+                <p>Kognitiivisen käyttäytymisterapian toteutukset opetukseen ja psykoterapiapraktiikkaan</p>
+            </div>
+
+        </div>
+        
         <div class="container">
             <h2>Tab 1</h2>
             <p><%=InputOutput.clean(contentMainos)%></p>
@@ -580,11 +589,13 @@ $(function(){
         
         
     <div class="tab-pane text-style" id="martti">
+        
+        <div class="margintop"></div>
 
                 <div class="container">
                     
+                    <div class="col-sm-6">
                     <h2>Tab martti</h2>
-                    <p><%=InputOutput.clean(contentMartti)%></p>
 
                     <div class="gallery">
                         <div class="container">
@@ -594,6 +605,10 @@ $(function(){
                                 <img src="Images/kuva1.jpg" class="img-responsive img-gallery" alt="First image">
                             </a>
                         </div> <!-- /.col -->
+                        
+                        <div class="col-sm-8">
+                            <p><%=InputOutput.clean(contentMartti)%></p>
+                        </div>
 
                         <div class="col-xs-3 gallery-item">
                             <a class="hidden" href="#galleryImg1" class="link-gallery" data-toggle="modal" data-target="#modalGallery">
@@ -636,7 +651,7 @@ $(function(){
                                 <img src="Images/kuva8.JPG" class="img-responsive img-gallery" alt="Eighth image">
                             </a>
                         </div> <!-- /.col -->
-    
+                                
                         
                     </div> <!--/.row  -->
                         </div> <!-- /.container -->
@@ -664,12 +679,17 @@ $(function(){
 			</div> <!-- /.modal-content -->
 		</div> <!-- /.modal-dialog -->
 	</div> <!-- /.modal -->
-        
 
             </div>
             
     </div>
-                            
+      
+        
+    </div>  
+        
+         
+     
+        
 
     <div class="tab-pane text-style" id="tietoa">
         <div class="container">

@@ -77,49 +77,49 @@
     }
     
     .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-        color: #000;  /*Sets the text hover color on navbar*/
+        color: #ccccff;  /*Sets the text hover color on navbar*/
     }
 
     .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >   
     a:hover, .navbar-default .navbar-nav > .active > a:focus {
-        color: white; /*BACKGROUND color for active*/
-        background-color: #0073A3;
+    color: white; /*BACKGROUND color for active*/
+    background-color: #76A5FF; 
     }
 
     .navbar-default {
-        background-color: #76A5FF;
-        border-color: #B9B7B8;
+    background-color: #0073A3;
+    border-color: #B9B7B8;
     }
 
     .dropdown-menu > li > a:hover,
     .dropdown-menu > li > a:focus {
-        color: #262626;
-	text-decoration: none;
-	background-color: #66CCFF;  /*change color of links in drop down here*/
+    color: #262626;
+    text-decoration: none;
+    background-color: #66CCFF;  /*change color of links in drop down here*/
     }
 
     .nav > li > a:hover,
     .nav > li > a:focus {
-        text-decoration: none;
-        background-color: silver; /*Change rollover cell color here*/
+    text-decoration: none;
+    background-color: silver; /*Change rollover cell color here*/
     }
 
 
     .navbar-default .navbar-nav > li > a {
-        background-color: #0073A3;
-        color: white;
-        background-color: #76A5FF;
-        letter-spacing: 2px;
-        text-shadow:
-        -0.5px -0.5px 0 #000,  
-         0.5px -0.5px 0 #000,
-        -0.5px 0.5px 0 #000,
-         0.5px 0.5px 0 #000;
+    background-color: #0073A3;
+    color: white;
+    background-color: #0073A3;
+    letter-spacing: 2px;
+    text-shadow:
+    -0.5px -0.5px 0 #000,  
+     0.5px -0.5px 0 #000,
+    -0.5px 0.5px 0 #000,
+     0.5px 0.5px 0 #000;
     }
-    
+
     .form-login{
-        padding: 1em;
-        min-width: 280px; /* change width as per your requirement */
+    padding: 1em;
+    min-width: 280px; /* change width as per your requirement */
     }
 
 
@@ -262,7 +262,7 @@ $(function(){
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="etusivu.jsp" >Arjenhallinta.fi</a>
+            <a class="navbar-brand" style="color:#f2f2f2" href="etusivu.jsp" >Arjenhallinta.fi</a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
