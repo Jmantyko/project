@@ -343,7 +343,6 @@ $(function(){
         </nav>
 
         </div>
-
         <!-- tab content -->
         <div class="tab-content">
         <div class="tab-pane active text-style" id="tab1">
@@ -538,8 +537,7 @@ $(function(){
             </div>    
         </div>
         </div>
-        </div>
-
+    </div>
         <div class="container-bottom">
             <hr>
             <p class="muted">© 2016 Martti Puttonen. All rights reserved.</p>
