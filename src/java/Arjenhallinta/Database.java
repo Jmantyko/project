@@ -675,14 +675,14 @@ public class Database {
             Class.forName(dbDriver);
 
             conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
-            ps = conn.prepareStatement("SELECT TaskID, TaskTypeID, TaskContent, TaskIsReturned FROM Tasks WHERE"
+            ps = conn.prepareStatement("SELECT TaskID, TaskTypeID, TaskContent, TaskIsReturned, TaskIsClosed FROM Tasks WHERE"
                     + " UserID=?");
             ps.setInt(1, userID);
             rs = ps.executeQuery();
 
             while (rs.next()) {
                 tasks.add(new Task(rs.getInt("TaskID"), rs.getInt("TaskTypeID"), rs.getString("TaskContent"),
-                        rs.getBoolean("TaskIsReturned")));
+                        rs.getBoolean("TaskIsReturned"), rs.getBoolean("TaskIsClosed")));
             }
 
         } catch (Exception e) {

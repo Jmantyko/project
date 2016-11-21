@@ -660,6 +660,7 @@ $(function(){
                             int taskTypeID = 0;
                             String taskContent = "";
                             boolean taskIsReturned;
+                            boolean taskIsClosed;
                             
                             if(tasks.size() == 0){
                         %>
@@ -682,7 +683,8 @@ $(function(){
                                 taskID = ((Task) tasks.get(i)).getTaskID();
                                 taskTypeID = ((Task) tasks.get(i)).getTaskTypeID();
                                 taskIsReturned = ((Task) tasks.get(i)).getTaskIsReturned();
-                                if(taskIsReturned == false){
+                                taskIsClosed = ((Task) tasks.get(i)).getTaskIsClosed();
+                                if(taskIsReturned == false && taskIsClosed == false){
                         %>
                         <a href='#tab-content<%=taskID%>' data-toggle="tab">Monitorointiharjoitus <%=taskTypeID%>.</a><br>
                         <%
@@ -700,7 +702,26 @@ $(function(){
                                 taskID = ((Task) tasks.get(i)).getTaskID();
                                 taskTypeID = ((Task) tasks.get(i)).getTaskTypeID();
                                 taskIsReturned = ((Task) tasks.get(i)).getTaskIsReturned();
-                                if(taskIsReturned == true){
+                                taskIsClosed = ((Task) tasks.get(i)).getTaskIsClosed();
+                                if(taskIsReturned == true && taskIsClosed == false){
+                        %>
+                        <a href='#tab-content<%=taskID%>' data-toggle="tab">Monitorointiharjoitus <%=taskTypeID%>.</a><br>
+                        <%
+                                }
+                            }
+
+                            if(tasks.size() != 0){
+                        %>
+                        <br><p><strong>Suljetut harjoitukset:</strong></p>
+                        <%
+                            }
+
+                            for (int i = 0; i < tasks.size(); i++) {
+
+                                taskID = ((Task) tasks.get(i)).getTaskID();
+                                taskTypeID = ((Task) tasks.get(i)).getTaskTypeID();
+                                taskIsClosed = ((Task) tasks.get(i)).getTaskIsClosed();
+                                if(taskIsClosed == true){
                         %>
                         <a href='#tab-content<%=taskID%>' data-toggle="tab">Monitorointiharjoitus <%=taskTypeID%>.</a><br>
                         <%

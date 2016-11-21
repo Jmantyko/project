@@ -15,12 +15,14 @@ public class Task {
     private int tasktypeid;
     private String taskcontent;
     private boolean taskisreturned;
+    private boolean taskisclosed;
     
-    public Task(int taskID, int taskTypeID, String taskContent, boolean taskIsReturned) {
+    public Task(int taskID, int taskTypeID, String taskContent, boolean taskIsReturned, boolean taskIsClosed) {
         taskid = taskID;
         tasktypeid = taskTypeID;
         taskcontent = taskContent;
         taskisreturned = taskIsReturned;
+        taskisclosed = taskIsClosed;
     }
     
     public int getTaskID(){
@@ -37,5 +39,9 @@ public class Task {
     
     public boolean getTaskIsReturned(){
         return taskisreturned;
+    }
+    
+    public boolean getTaskIsClosed(){
+        return taskisclosed;
     }
 }
