@@ -636,6 +636,9 @@ public class Database {
             
         }
         
+        //If taskID was empty we know that there were not same task as active
+        //hence we can return false. If taskID was not empty, that means it contains
+        //the id of the task that was similar and active which means we return true.
         if("".equals(taskID)){
             return false;
         }else{
