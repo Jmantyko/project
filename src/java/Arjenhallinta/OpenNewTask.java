@@ -34,18 +34,43 @@ public class OpenNewTask extends HttpServlet {
         int taskTypeID = Integer.parseInt(selection);
         String userID = request.getParameter("userid");
         int intuserID = Integer.parseInt(userID);
+        boolean taskActive = false;
         
         if(null == selection){
             System.out.println("EMPTY SELECTION ERROR");
         }else switch (selection) {
             case "1":
-                Database.openNewTask(taskTypeID, intuserID);
+                taskActive = Database.isTaskActive(taskTypeID, intuserID);
+                //Checking if custoer already has existing task active
+                //if there is no same task active, we open new one.
+                if(taskActive == false){
+                    Database.openNewTask(taskTypeID, intuserID);
+                    System.out.println("TASK WAS NOT ACTIVE, NEW TASK OPENED");
+                }else{
+                    System.out.println("TASK WAS ACTIVE, NO NEW TASK OPENED");
+                }
                 break;
             case "2":
-                Database.openNewTask(taskTypeID, intuserID);
+                taskActive = Database.isTaskActive(taskTypeID, intuserID);
+                //Checking if custoer already has existing task active
+                //if there is no same task active, we open new one.
+                if(taskActive == false){
+                    Database.openNewTask(taskTypeID, intuserID);
+                    System.out.println("TASK WAS NOT ACTIVE, NEW TASK OPENED");
+                }else{
+                    System.out.println("TASK WAS ACTIVE, NO NEW TASK OPENED");
+                }
                 break;
             case "3":
-                Database.openNewTask(taskTypeID, intuserID);
+                taskActive = Database.isTaskActive(taskTypeID, intuserID);
+                //Checking if custoer already has existing task active
+                //if there is no same task active, we open new one.
+                if(taskActive == false){
+                    Database.openNewTask(taskTypeID, intuserID);
+                    System.out.println("TASK WAS NOT ACTIVE, NEW TASK OPENED");
+                }else{
+                    System.out.println("TASK WAS ACTIVE, NO NEW TASK OPENED");
+                }
                 break;
             default:
                 System.out.println("SELECTION ERROR");

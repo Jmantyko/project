@@ -605,6 +605,38 @@ public class Database {
         return customers;
     }
     
+    public static boolean isTaskActive(int taskTypeID, int userID) {
+        
+        boolean isTaskActive = false;
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("SELECT TaskIsActive FROM Tasks WHERE TaskTypeID=? AND UserID=?");
+            ps.setInt(1, taskTypeID);
+            ps.setInt(2, userID);
+            rs = ps.executeQuery();
+            
+            isTaskActive = rs.next();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
+            
+        }
+        
+        return isTaskActive;
+    }
+    
     public static void openNewTask(int taskTypeID, int userID) {
         
         Connection conn = null;
