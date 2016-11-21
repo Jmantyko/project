@@ -9,35 +9,46 @@ and open the template in the editor.
 */
 
 
-body {
+body, html {
     margin: 0x;
     width: 100%;
     height: 100%;
 }
 
 @media (width: 1024px) {
-    body {
-        margin: 0 auto;
+    body, html {
+        margin-right: auto;
+        margin-left: auto;
         width: 1024px;
     }
 }
 
 @media (width: 1280px) {
-    body {
-        margin: 0 auto;
+    body, html {
+        margin-right: auto;
+        margin-left: auto;
         width: 1280px;
     }
 }
 
 @media (width: 1366px) {
-    body {
-        margin: 0 auto;
+    body, html {
+        margin-right: auto;
+        margin-left: auto;
         width: 1366px;
     }
 }
 
+@media (width: 1600px) {
+    body, html {
+        margin-right: auto;
+        margin-left: auto;
+        width: 1600px;
+    }
+}
+
 @media (width: 1920px) {
-    body {
+    body, html {
         margin-right: auto;
         margin-left: auto;
         width: 1920px;
@@ -77,10 +88,12 @@ body {
 #tab-display-harjoitus, #tab-display-viestit, #tab-display-welcome {
     position: absolute;
     width: inherit;
+    max-width: 500px;
 }
 #harjoitukset {
     padding: 10px;
 }
+
 
 .nav-pills > li.active > a, .nav-pills > li.active > a:focus {
     color: white;
@@ -271,7 +284,8 @@ a.my-tool-tip, a.my-tool-tip:hover, a.my-tool-tip:visited {
 }
 
 .chat .chat-history .message-data {
-  margin-bottom: 15px;
+    margin-bottom: 15px;
+    min-width: 400px;
 }
 .chat .chat-history .message-data-time {
   color: #a8aab1;
@@ -279,12 +293,13 @@ a.my-tool-tip, a.my-tool-tip:hover, a.my-tool-tip:visited {
 }
 
 .chat .chat-history .message {
-  color: white;
-  padding: 18px 20px;
-  line-height: 26px;
-  font-size: 16px;
-  border-radius: 5px;
-  position: relative;
+    color: white;
+    padding: 18px 20px;
+    line-height: 26px;
+    font-size: 16px;
+    border-radius: 5px;
+    position: relative;
+    min-width: 400px;
 }
 
 .message {
