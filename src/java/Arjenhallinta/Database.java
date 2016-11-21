@@ -605,6 +605,38 @@ public class Database {
         return customers;
     }
     
+    public static boolean isTaskActive(int taskTypeID, int userID) {
+        
+        boolean isTaskActive = false;
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("SELECT TaskIsActive FROM Tasks WHERE TaskTypeID=? AND UserID=?");
+            ps.setInt(1, taskTypeID);
+            ps.setInt(2, userID);
+            rs = ps.executeQuery();
+            
+            isTaskActive = rs.next();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
+            
+        }
+        
+        return isTaskActive;
+    }
+    
     public static void openNewTask(int taskTypeID, int userID) {
         
         Connection conn = null;
@@ -643,14 +675,14 @@ public class Database {
             Class.forName(dbDriver);
 
             conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
-            ps = conn.prepareStatement("SELECT TaskID, TaskTypeID, TaskContent, TaskIsReturned FROM Tasks WHERE"
+            ps = conn.prepareStatement("SELECT TaskID, TaskTypeID, TaskContent, TaskIsReturned, TaskIsClosed FROM Tasks WHERE"
                     + " UserID=?");
             ps.setInt(1, userID);
             rs = ps.executeQuery();
 
             while (rs.next()) {
                 tasks.add(new Task(rs.getInt("TaskID"), rs.getInt("TaskTypeID"), rs.getString("TaskContent"),
-                        rs.getBoolean("TaskIsReturned")));
+                        rs.getBoolean("TaskIsReturned"), rs.getBoolean("TaskIsClosed")));
             }
 
         } catch (Exception e) {
