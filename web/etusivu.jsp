@@ -50,9 +50,14 @@
       
         }
         
+        .navbar-brand {
+            font-color: white;
+        }
+        
         .jumbotron {
         font-color:  #76A5FF;
         background:  #76A5FF;
+        background: #000 url("Images/flower.jpg") center center;
         width: 100%;
         height: 100%;
         background-size: cover;
@@ -84,11 +89,11 @@
         .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active >   
         a:hover, .navbar-default .navbar-nav > .active > a:focus {
         color: white; /*BACKGROUND color for active*/
-        background-color: #0073A3;
+        background-color: #76A5FF; 
         }
 
         .navbar-default {
-        background-color: #76A5FF;
+        background-color: #0073A3;
         border-color: #B9B7B8;
         }
 
@@ -109,7 +114,7 @@
         .navbar-default .navbar-nav > li > a {
         background-color: #0073A3;
         color: white;
-        background-color: #76A5FF;
+        background-color: #0073A3;
         letter-spacing: 2px;
         text-shadow:
         -0.5px -0.5px 0 #000,  
@@ -813,7 +818,7 @@ $(function(){
 
     <div class="container-bottom">
         <hr>
-        <p class="muted">© 2016 Martti Puttonen. All rights reserved.</p>
+        <p class="muted">© 2016 Martti Puttonen.</p>
         <hr>
     </div>
         
