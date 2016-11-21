@@ -667,7 +667,7 @@ $(function(){
 
 </div>
 </div>
-
+<!--
 <div class="tab-pane text-style" id="tab2">
 <div class="container">
   
@@ -1098,7 +1098,7 @@ $(function(){
 
        
 </div>
-
+-->
 
 
 

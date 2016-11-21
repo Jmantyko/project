@@ -660,6 +660,7 @@ $(function(){
                             int taskTypeID = 0;
                             String taskContent = "";
                             boolean taskIsReturned;
+                            boolean taskIsClosed;
                             
                             if(tasks.size() == 0){
                         %>
@@ -682,7 +683,8 @@ $(function(){
                                 taskID = ((Task) tasks.get(i)).getTaskID();
                                 taskTypeID = ((Task) tasks.get(i)).getTaskTypeID();
                                 taskIsReturned = ((Task) tasks.get(i)).getTaskIsReturned();
-                                if(taskIsReturned == false){
+                                taskIsClosed = ((Task) tasks.get(i)).getTaskIsClosed();
+                                if(taskIsReturned == false && taskIsClosed == false){
                         %>
                         <a href='#tab-content<%=taskID%>' data-toggle="tab">Monitorointiharjoitus <%=taskTypeID%>.</a><br>
                         <%
@@ -700,7 +702,26 @@ $(function(){
                                 taskID = ((Task) tasks.get(i)).getTaskID();
                                 taskTypeID = ((Task) tasks.get(i)).getTaskTypeID();
                                 taskIsReturned = ((Task) tasks.get(i)).getTaskIsReturned();
-                                if(taskIsReturned == true){
+                                taskIsClosed = ((Task) tasks.get(i)).getTaskIsClosed();
+                                if(taskIsReturned == true && taskIsClosed == false){
+                        %>
+                        <a href='#tab-content<%=taskID%>' data-toggle="tab">Monitorointiharjoitus <%=taskTypeID%>.</a><br>
+                        <%
+                                }
+                            }
+
+                            if(tasks.size() != 0){
+                        %>
+                        <br><p><strong>Suljetut harjoitukset:</strong></p>
+                        <%
+                            }
+
+                            for (int i = 0; i < tasks.size(); i++) {
+
+                                taskID = ((Task) tasks.get(i)).getTaskID();
+                                taskTypeID = ((Task) tasks.get(i)).getTaskTypeID();
+                                taskIsClosed = ((Task) tasks.get(i)).getTaskIsClosed();
+                                if(taskIsClosed == true){
                         %>
                         <a href='#tab-content<%=taskID%>' data-toggle="tab">Monitorointiharjoitus <%=taskTypeID%>.</a><br>
                         <%
@@ -717,11 +738,25 @@ $(function(){
                                 taskID = ((Task) tasks.get(i)).getTaskID();
                                 taskTypeID = ((Task) tasks.get(i)).getTaskTypeID();
                                 taskContent = ((Task) tasks.get(i)).getTaskContent();
+                                taskIsClosed = ((Task) tasks.get(i)).getTaskIsClosed();
                             %>
                             <div class="tab-pane fade" id="tab-content<%=taskID%>">
                                 <div>
-                                    <p>Monitorointiharjoitus: <%=taskTypeID%>, arkistointitunnus <%=taskID%>.<br><br> Harjoituksen sisältö: <%=InputOutput.clean(taskContent)%></p>
+                                    <p><strong>Monitorointiharjoitus: <%=taskTypeID%>, arkistointitunnus <%=taskID%>.</strong><br><br> Harjoituksen sisältö: <%=InputOutput.clean(taskContent)%></p>
                                 </div>
+                            <%
+                                //Adding "Close task" button for tasks
+                                //which are not closed yet
+                                if(taskIsClosed == false){
+                            %>
+                                <form action="CloseTask" method="POST">
+                                    <input type="hidden" name="taskid" value="<%=taskID%>">
+                                    <input type="hidden" name="userid" value="<%=userid%>">
+                                    <input type="submit" class="btn btn-danger" value="Sulje harjoitus">
+                                </form>
+                            <%
+                                }
+                            %>
                             </div>
                             <%
                             }
@@ -732,15 +767,17 @@ $(function(){
                 <div class="tab-pane fade" id="tab-contentB">
                     <div>
                         <h4>Lähetä asiakkaalle uusi monitorointiharjoitus valitsemalla harjoitus ja klikkaamalla Lähetä-painiketta.</h4>
+                        <h6>Huom. jos asiakkaalla on jo avoinna olevissa tai palautetuissa harjoituksissa sama harjoitus, uutta harjoitusta
+                            ei avata ennen kuin edellinen on suljettu</h6>
                         <form action="OpenNewTask" method="POST">
                             <div class="radio">
-                                <label><input type="radio" name="selection" value="1"><strong>Monitorointiharjoitus 1</strong></label>
+                                <label><input type="radio" name="tasktypeid" value="1"><strong>Monitorointiharjoitus 1</strong></label>
                             </div>
                             <div class="radio">
-                                <label><input type="radio" name="selection" value="2"><strong>Monitorointiharjoitus 2</strong></label>
+                                <label><input type="radio" name="tasktypeid" value="2"><strong>Monitorointiharjoitus 2</strong></label>
                             </div>
                             <div class="radio">
-                                <label><input type="radio" name="selection" value="3"><strong>Monitorointiharjoitus 3</strong></label>
+                                <label><input type="radio" name="tasktypeid" value="3"><strong>Monitorointiharjoitus 3</strong></label>
                             </div>
                             <input type="hidden" name="userid" value="<%=userid%>">
                             <input type="submit" class="btn btn-info" value="Lähetä">

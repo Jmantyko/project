@@ -605,6 +605,47 @@ public class Database {
         return customers;
     }
     
+    public static boolean activeTaskExist(int taskTypeID, int userID) {
+        
+        String taskID = "";
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("SELECT TaskID FROM Tasks WHERE TaskTypeID=? AND UserID=? AND TaskIsActive=TRUE");
+            ps.setInt(1, taskTypeID);
+            ps.setInt(2, userID);
+            rs = ps.executeQuery();
+            
+            while (rs.next()){
+                taskID = rs.getString(1);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
+            
+        }
+        
+        //If taskID was empty we know that there were not same task as active
+        //hence we can return false. If taskID was not empty, that means it contains
+        //the id of the task that was similar and active which means we return true.
+        if("".equals(taskID)){
+            return false;
+        }else{
+            return true;
+        }
+    }
+    
     public static void openNewTask(int taskTypeID, int userID) {
         
         Connection conn = null;
@@ -631,6 +672,31 @@ public class Database {
         }
     }
     
+    public static void closeTask(int taskID) {
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("UPDATE Tasks SET TaskIsClosed=TRUE, TaskIsActive=FALSE WHERE TaskID=?");
+            ps.setInt(1, taskID);
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
+            
+        }
+    }
+    
     public static ArrayList<Task> getUserTasks(int userID) {
         
         ArrayList tasks = new ArrayList();
@@ -643,14 +709,14 @@ public class Database {
             Class.forName(dbDriver);
 
             conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
-            ps = conn.prepareStatement("SELECT TaskID, TaskTypeID, TaskContent, TaskIsReturned FROM Tasks WHERE"
+            ps = conn.prepareStatement("SELECT TaskID, TaskTypeID, TaskContent, TaskIsReturned, TaskIsClosed FROM Tasks WHERE"
                     + " UserID=?");
             ps.setInt(1, userID);
             rs = ps.executeQuery();
 
             while (rs.next()) {
                 tasks.add(new Task(rs.getInt("TaskID"), rs.getInt("TaskTypeID"), rs.getString("TaskContent"),
-                        rs.getBoolean("TaskIsReturned")));
+                        rs.getBoolean("TaskIsReturned"), rs.getBoolean("TaskIsClosed")));
             }
 
         } catch (Exception e) {

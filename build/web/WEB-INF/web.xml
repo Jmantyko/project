@@ -56,6 +56,10 @@
         <servlet-name>OpenNewTask</servlet-name>
         <servlet-class>Arjenhallinta.OpenNewTask</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CloseTask</servlet-name>
+        <servlet-class>Arjenhallinta.CloseTask</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -83,6 +87,10 @@
     <servlet-mapping>
         <servlet-name>OpenNewTask</servlet-name>
         <url-pattern>/OpenNewTask</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CloseTask</servlet-name>
+        <url-pattern>/CloseTask</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
