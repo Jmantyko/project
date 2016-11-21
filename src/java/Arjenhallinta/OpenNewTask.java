@@ -30,20 +30,21 @@ public class OpenNewTask extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        String selection = request.getParameter("selection");
-        int taskTypeID = Integer.parseInt(selection);
+        String stringTaskTypeID = request.getParameter("tasktypeid");
+        int taskTypeID = Integer.parseInt(stringTaskTypeID);
         String userID = request.getParameter("userid");
         int intuserID = Integer.parseInt(userID);
-        boolean taskActive = false;
+        boolean activeTaskExist = false;
         
-        if(null == selection){
+        //Checking first if similar active task exist in database
+        activeTaskExist = Database.activeTaskExist(taskTypeID, intuserID);
+        
+        if(null == stringTaskTypeID){
             System.out.println("EMPTY SELECTION ERROR");
-        }else switch (selection) {
+        }else switch (stringTaskTypeID) {
             case "1":
-                taskActive = Database.isTaskActive(taskTypeID, intuserID);
-                //Checking if custoer already has existing task active
-                //if there is no same task active, we open new one.
-                if(taskActive == false){
+                
+                if(activeTaskExist == false){
                     Database.openNewTask(taskTypeID, intuserID);
                     System.out.println("TASK WAS NOT ACTIVE, NEW TASK OPENED");
                 }else{
@@ -51,10 +52,8 @@ public class OpenNewTask extends HttpServlet {
                 }
                 break;
             case "2":
-                taskActive = Database.isTaskActive(taskTypeID, intuserID);
-                //Checking if custoer already has existing task active
-                //if there is no same task active, we open new one.
-                if(taskActive == false){
+                
+                if(activeTaskExist == false){
                     Database.openNewTask(taskTypeID, intuserID);
                     System.out.println("TASK WAS NOT ACTIVE, NEW TASK OPENED");
                 }else{
@@ -62,10 +61,8 @@ public class OpenNewTask extends HttpServlet {
                 }
                 break;
             case "3":
-                taskActive = Database.isTaskActive(taskTypeID, intuserID);
-                //Checking if custoer already has existing task active
-                //if there is no same task active, we open new one.
-                if(taskActive == false){
+                
+                if(activeTaskExist == false){
                     Database.openNewTask(taskTypeID, intuserID);
                     System.out.println("TASK WAS NOT ACTIVE, NEW TASK OPENED");
                 }else{

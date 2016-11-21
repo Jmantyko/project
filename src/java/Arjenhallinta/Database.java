@@ -605,9 +605,9 @@ public class Database {
         return customers;
     }
     
-    public static boolean isTaskActive(int taskTypeID, int userID) {
+    public static boolean activeTaskExist(int taskTypeID, int userID) {
         
-        boolean isTaskActive = false;
+        String taskID = "";
         
         Connection conn = null;
         PreparedStatement ps = null;
@@ -617,12 +617,14 @@ public class Database {
             Class.forName(dbDriver);
 
             conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
-            ps = conn.prepareStatement("SELECT TaskIsActive FROM Tasks WHERE TaskTypeID=? AND UserID=?");
+            ps = conn.prepareStatement("SELECT TaskID FROM Tasks WHERE TaskTypeID=? AND UserID=? AND TaskIsActive=TRUE");
             ps.setInt(1, taskTypeID);
             ps.setInt(2, userID);
             rs = ps.executeQuery();
             
-            isTaskActive = rs.next();
+            while (rs.next()){
+                taskID = rs.getString(1);
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -634,7 +636,11 @@ public class Database {
             
         }
         
-        return isTaskActive;
+        if("".equals(taskID)){
+            return false;
+        }else{
+            return true;
+        }
     }
     
     public static void openNewTask(int taskTypeID, int userID) {
@@ -650,6 +656,31 @@ public class Database {
             ps = conn.prepareStatement("INSERT INTO Tasks (TaskTypeID, UserID) VALUES (?, ?)");
             ps.setInt(1, taskTypeID);
             ps.setInt(2, userID);
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
+            
+        }
+    }
+    
+    public static void closeTask(int taskID) {
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("UPDATE Tasks SET TaskIsClosed=TRUE, TaskIsActive=FALSE WHERE TaskID=?");
+            ps.setInt(1, taskID);
             ps.executeUpdate();
 
         } catch (Exception e) {
