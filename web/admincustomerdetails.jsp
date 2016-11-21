@@ -738,16 +738,25 @@ $(function(){
                                 taskID = ((Task) tasks.get(i)).getTaskID();
                                 taskTypeID = ((Task) tasks.get(i)).getTaskTypeID();
                                 taskContent = ((Task) tasks.get(i)).getTaskContent();
+                                taskIsClosed = ((Task) tasks.get(i)).getTaskIsClosed();
                             %>
                             <div class="tab-pane fade" id="tab-content<%=taskID%>">
                                 <div>
                                     <p><strong>Monitorointiharjoitus: <%=taskTypeID%>, arkistointitunnus <%=taskID%>.</strong><br><br> Harjoituksen sisältö: <%=InputOutput.clean(taskContent)%></p>
                                 </div>
+                            <%
+                                //Adding "Close task" button for tasks
+                                //which are not closed yet
+                                if(taskIsClosed == false){
+                            %>
                                 <form action="CloseTask" method="POST">
                                     <input type="hidden" name="taskid" value="<%=taskID%>">
                                     <input type="hidden" name="userid" value="<%=userid%>">
                                     <input type="submit" class="btn btn-danger" value="Sulje harjoitus">
                                 </form>
+                            <%
+                                }
+                            %>
                             </div>
                             <%
                             }
