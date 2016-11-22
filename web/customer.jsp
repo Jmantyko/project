@@ -145,6 +145,7 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 	<script type="text/javascript" src="dist/bootstrap-clockpicker.min.js"></script>
         
+        
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -170,38 +171,40 @@
             });
         </script>
 
-	      <script>
-$(function(){
-   $('#ex1').slider({
-	formater: function(value) {
+        <script>
+        $(function(){
+            $('#ex1').slider({
+                formater: function(value) {
 		return 'Current value: ' + value;
-	}
-});
-
- });
+                }
+            });
+        });
      </script>
 	 
 	 <!-- Bootstrap row adding js --> 
-     <script src="addrow.js"></script>
+        <script src="addrow.js"></script>
 	 
-	 <script>   $(document).ready(function(){
-      var i=1;
-     $("#add_row").click(function(){
-      $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input name='name"+i+"' type='text' placeholder='Name' class='form-control input-md'  /> </td><td><input  name='mail"+i+"' type='text' placeholder='Mail'  class='form-control input-md'></td><td><input  name='mobile"+i+"' type='text' placeholder='Mobile'  class='form-control input-md'></td>");
+        <script>   
+        $(document).ready(function(){
+            
+            var i=1;
 
-      $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
-      i++; 
-  });
-     $("#delete_row").click(function(){
-    	 if(i>1){
-		 $("#addr"+(i-1)).html('');
-		 i--;
-		 }
-	 });
+            $("#add_row").click(function(){
+                $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input name='name"+i+"' type='text' placeholder='Name' class='form-control input-md'  /> </td><td><input  name='mail"+i+"' type='text' placeholder='Mail'  class='form-control input-md'></td><td><input  name='mobile"+i+"' type='text' placeholder='Mobile'  class='form-control input-md'></td>");
 
-});
-	 
-	 </script>
+                $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
+                i++; 
+                });
+
+            $("#delete_row").click(function(){
+                if(i>1){
+                $("#addr"+(i-1)).html('');
+                i--;
+                }
+             });
+
+        });
+        </script>
          
          <script>
          
@@ -410,6 +413,140 @@ $(function(){
                         %>
                         <div class="tab-pane fade" id="tab-display-harjoitus<%=taskID%>">
                             <p><%=InputOutput.clean(taskContent)%></p>
+                            <%
+                                if (taskID == 1){
+                            %>
+                            <div class="row">
+                            <div class="col-xs-12 col-md-8">
+                            <div class="tab-pane text-style" id="tab6">
+                            <h2 class="text-center">Timo Tikkanen</h2>
+                            <h2 class="text-center">Monitorointiharjoitus 1</h2>
+
+                            </br>
+
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Ajankohta <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></th>
+                                        <th>Tekeminen <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></th>
+                                        <th>Suojatoiminta % <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></th>
+                                        <th>Tehtävään s. toiminta % <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr bgcolor="#FFFFA0">
+                                        <th>Aamu</th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><div class="input-group clockpicker">
+                                                <input type="text" class="form-control" value="09:30">
+                                                <span class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-time"></span>
+                                                </span>
+                                            </div>
+                                            <script type="text/javascript">
+                                            $('.clockpicker').clockpicker();
+                                            </script>
+                                        </th>
+                                        <td><input type="text" class="form-control"></td>
+                                        <td><input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
+                                        <td><input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
+                                    </tr>
+                                </tbody>
+                                                                <tbody>
+                                    <tr bgcolor="#FFFFA0">
+                                        <th>Päivä</th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><div class="input-group clockpicker">
+                                                <input type="text" class="form-control" value="09:30">
+                                                <span class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-time"></span>
+                                                </span>
+                                            </div>
+                                            <script type="text/javascript">
+                                            $('.clockpicker').clockpicker();
+                                            </script>
+                                        </th>
+                                        <td><input type="text" class="form-control"></td>
+                                        <td><input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
+                                        <td><input id="ex2" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
+                                    </tr>
+                                </tbody>
+                                                                <tbody>
+                                    <tr bgcolor="#FFFFA0">
+                                        <th>Ilta</th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><div class="input-group clockpicker">
+                                                <input type="text" class="form-control" value="09:30">
+                                                <span class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-time"></span>
+                                                </span>
+                                            </div>
+                                            <script type="text/javascript">
+                                            $('.clockpicker').clockpicker();
+                                            </script>
+                                        </th>
+                                        <td><input type="text" class="form-control"></td>
+                                        <td><input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
+                                        <td><input id="ex2" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
+                                    </tr>
+                                </tbody>
+                                                                <tbody>
+                                    <tr bgcolor="#FFFFA0">
+                                        <th>Yö</th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><div class="input-group clockpicker">
+                                                <input type="text" class="form-control" value="09:30">
+                                                <span class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-time"></span>
+                                                </span>
+                                            </div>
+                                            <script type="text/javascript">
+                                            $('.clockpicker').clockpicker();
+                                            </script>
+                                        </th>
+                                        <td><input type="text" class="form-control"></td>
+                                        <td><input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
+                                        <td><input id="ex2" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                                <a id="add_row" class="btn btn-default pull-left">Lisää rivi</a><a id='delete_row' class="pull-right btn btn-default">Poista rivi</a>
+
+                                </br>
+                                </br>
+
+                                <table class="table-bottom">
+                                    <tbody>
+                                        </br>
+                                        <tr>
+                                            <th><button type="button" class="btn btn-primary btn-lg pull-left">Tallenna <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span></button></th>
+
+                                            <th><button type="button" class="btn btn-secondary btn-lg pull-right">Lähetä <span class="glyphicon glyphicon-send" aria-hidden="true"></span></button></th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            </div>
+                            </div>
+                            <%
+                                }
+                            %>
                         </div>
                         <%
                             }
@@ -418,24 +555,6 @@ $(function(){
                             <div class="chat">
                             <div class="chat-history">
                                 <ul class="chat-ul">
-                                <li>
-                                    <div class="message-data">
-                                        <span class="message-data-name"><i class="fa fa-circle you"></i> Asiakas</span>
-                                    </div>
-                                    <div class="message you-message">
-                                        <p>A new client?!?! I would love to help them, but where are we going to find the time?</p>
-                                    </div>
-                                </li>
-                                <li class="clearfix">
-                                    <div class="message-data">
-                                        <span class="message-data-name float-right">Martti</span>
-                                    </div>
-                                    <div class="message me-message"> 
-                                        <p>We should take a look at your onboarding and service delivery workflows, for most businesess there are many ways to save time and not compromise quality.</p>
-                                    </div>
-                                </li>
-                                </ul>
-                                                                <ul class="chat-ul">
                                 <li>
                                     <div class="message-data">
                                         <span class="message-data-name"><i class="fa fa-circle you"></i> Asiakas</span>
