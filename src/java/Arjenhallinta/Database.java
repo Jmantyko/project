@@ -65,12 +65,13 @@ public class Database {
         return addedUser;
     }
     
-    //Idea is that user details are rewritten with empty information
-    //that can not be used to identify certain user.
-    //Furthermore, UserIsDeleted is set to TRUE
-    //so that when someone is trying to login with deleted
-    //account, we can deny that access if UserIsDeleted = TRUE
     public static void deleteUser(int UserID) {
+        
+        //Idea is that user details are rewritten with empty information
+        //that can not be used to identify certain user.
+        //Furthermore, UserIsDeleted is set to TRUE
+        //so that when someone is trying to login with deleted
+        //account, we can deny that access if UserIsDeleted = TRUE
         
         String stringUserID = Integer.toString(UserID);
         

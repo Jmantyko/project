@@ -287,7 +287,9 @@
             <ul class="nav navbar-nav navbar-right">
              <li class="dropdown">
                 <%
-
+                    String userName = "";
+                    String userSurname = "";
+                    
                     if (session.getAttribute("email") == null){
 
                 %>
@@ -313,8 +315,8 @@
                 </form>
                 <%
                     }else{
-                        String userName = Database.getUserName(email);
-                        String userSurname = Database.getUserSurname(email);
+                        userName = Database.getUserName(email);
+                        userSurname = Database.getUserSurname(email);
                 %>
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                     <i class="glyphicon glyphicon-user"></i> <%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%>
@@ -365,6 +367,7 @@
                                     
                                     int taskID = 0;
                                     int taskTypeID = 0;
+                                    boolean taskClosed;
                                     String taskContent = "";
                             
                                     if(tasks.size() == 0){
@@ -379,8 +382,11 @@
                                     //to get more details later below
                                     for (int i = 0; i < tasks.size(); i++) {
 
-                                    taskID = ((Task) tasks.get(i)).getTaskID();
-                                    taskTypeID = ((Task) tasks.get(i)).getTaskTypeID();
+                                        taskID = ((Task) tasks.get(i)).getTaskID();
+                                        taskTypeID = ((Task) tasks.get(i)).getTaskTypeID();
+                                        taskClosed = ((Task) tasks.get(i)).getTaskIsClosed();
+                                        
+                                        if(taskClosed != true){
                                 %>
                                 <button type="button" class="btn btn-group btn-group-justified btn-primary" data-toggle="collapse" data-target="#harjoitukset<%=taskID%>">Harjoitus <%=taskTypeID%>.</button>
                                 <div id="harjoitukset<%=taskID%>" class="collapse">
@@ -388,6 +394,7 @@
                                     <a class="btn btn-info pull-right" href="#tab-display-harjoitus<%=taskID%>" data-toggle="tab">Yhteenveto</a>
                                 </div>
                                 <%
+                                        }
                                     }
                                 %>
                             </div>
@@ -410,17 +417,18 @@
                                 taskID = ((Task) tasks.get(i)).getTaskID();
                                 taskTypeID = ((Task) tasks.get(i)).getTaskTypeID();
                                 taskContent = ((Task) tasks.get(i)).getTaskContent();
+                                taskClosed = ((Task) tasks.get(i)).getTaskIsClosed();
                         %>
                         <div class="tab-pane fade" id="tab-display-harjoitus<%=taskID%>">
                             <p><%=InputOutput.clean(taskContent)%></p>
                             <%
-                                if (taskID == 1){
+                                if (taskClosed != true){ //Need to actually implement this...
                             %>
                             <div class="row">
                             <div class="col-xs-12 col-md-8">
                             <div class="tab-pane text-style" id="tab6">
-                            <h2 class="text-center">Timo Tikkanen</h2>
-                            <h2 class="text-center">Monitorointiharjoitus 1</h2>
+                            <h2 class="text-center"><%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%></h2>
+                            <h2 class="text-center">Monitorointiharjoitus <%=taskTypeID%></h2>
 
                             </br>
 
