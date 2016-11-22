@@ -97,6 +97,11 @@ INSERT INTO Users (UserEmail, UserPassword, UserName, UserSurname, UserPhonenumb
 		('erkkiesimerkki@esimerkki.fi', '123', 'Erkki', 'Esimerkki', '020544579', 'Talokatu 7', '88888', 'Helsinki', 'customer'),
 		('mattimeikalainen@meikalainen.fi', '123', 'Matti', 'Meikäläinen', '1234567890', 'Kerroskuja 5', '82828', 'Tampere', 'customer');
 		
+INSERT INTO Details (UserID, DetailAge, DetailResidencemodel, DetailLifestyle, DetailHealthServices, DetailProblems)
+	VALUES	(2, '27', 'Asun kimppakämpässä', 'Olen työtön', 'C', 'Paljon erilaisia ongelmia'),
+		(3, ' ', ' ', ' ', 'B', ' '),
+		(4, ' ', ' ', ' ', 'A', ' ');
+		
 INSERT INTO Tasks (TaskTypeID, UserID, TaskContent, TaskIsReturned)
 	VALUES	(1, 2, '*Harjoitukseen liittyvää sisälötä tietokannasta, user 2 tekijänä*', 1),
 		(2, 2, '*Toiseen harjoitukseen liittyvää sisälötä tietokannasta, user 2 tekijänä*', 0),
