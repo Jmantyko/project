@@ -603,13 +603,80 @@ $(function(){
                 <h2>Psykoterapiapalvelut Martti Puttonen</h2>
                 <p>Kognitiivisen käyttäytymisterapian toteutukset opetukseen ja psykoterapiapraktiikkaan</p>
             </div>
+            
+            <!-- Title -->
+        <div class="row">
+            <div class="col-lg-12">
+                 <div class="container">
+                    <h2>Tab 1</h2>
+                    <p><%=InputOutput.clean(contentMainos)%></p>
+                  </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Page Features -->
+        <div class="row text-center">
+
+            <div class="col-md-4 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <h4>Halpaa ja tehokasta internet-yhteistyötä</h4>
+                    <img src="http://placehold.it/800x500" alt="">
+                    <div class="caption">
+                        <p>Arjenhallinta-sovelluksella voidaan toteuttaa
+                            halpaa ja tehokasta internet-yhteistyötä jolla
+                            saadaan toimivia keinoja asiakkaan ongelmallisen
+                            käyttäytymisen, kuten ajattelun ja reagoinnin
+                            haitallisiin toimintatapoihin sekä tunteiden
+                            säätelyyn.</p>
+                        <p>
+                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <h4>Kohti positiivisempaa ajattelua</h4>
+                    <img src="http://placehold.it/800x500" alt="">
+                    <div class="caption">
+                        <p>Sovelluksen avulla asiakas vähitellen
+                            oivaltaa miten hän tunnistaa todellista
+                            elämistään, toimintansa tapoja ja voi
+                            palauttaa luovaa tulevaisuussuuntaista
+                            toimintaansa pois negatiivisesta ja
+                            ongelmakeskeisestä ajattelusta.</p>
+                        <p>
+                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <h4>Monitorointiharjoitukset</h4>
+                    <img src="http://placehold.it/800x500" alt="">
+                    <div class="caption">
+                        <p>Keskiössä ovat käyttäjän tekemät 
+                            monitorointiharjoitukset sekä
+                            terapeutin antama palaute näiden
+                            pohjalta sekä asiakkaan ja terapeutin
+                            keskinäinen dialogi. </p>
+                        <p>
+                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
 
         </div>
-        
-        <div class="container">
-            <h2>Tab 1</h2>
-            <p><%=InputOutput.clean(contentMainos)%></p>
+        <!-- /.row -->
+
         </div>
+          
+        
     </div>
         
         
