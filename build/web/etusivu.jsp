@@ -152,15 +152,40 @@
             margin-top: 50px;
         }
         
+        /* Carousel base class */
         .carousel {
-            position:relative;
-            margin-bottom:20px;
-            line-height:1; 
-            height: 570px;
-            margin: auto;
+          max-height: 100%;
+          max-height: 360px;
+          margin-bottom: 60px;
+          height:auto;
         }
-        
-        
+        /* Since positioning the image, we need to help out the caption */
+        .carousel-caption {
+          z-index: 10;
+          background: rgba(0, 0, 0, 0.45);
+        }
+
+        /* Declare heights because of positioning of img element */
+        .carousel .item {
+          max-height: 100%;
+          max-height: 360px;
+          background-color: whitesmoke;
+        }
+        .carousel-inner > .item > img {
+         /*  position: absolute;*/
+          top: 0;
+          left: 0;
+          min-width: 40%;
+          max-width: 100%;
+          max-height: 360px;
+          width: auto;
+          margin-right:auto;
+          margin-left:auto;
+          height:auto;
+
+        }
+
+
         </style>
 
 
@@ -428,8 +453,8 @@ $(function(){
                 });
             });
         </script>
-
 	
+        
 </head>
     <body>
         <%
