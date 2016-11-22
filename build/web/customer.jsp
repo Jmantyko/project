@@ -631,46 +631,46 @@
                 <div class="customer-actions-container">
                     <div class="well">
                     <h2>Ilmaisen kokeiluohjelman taustatiedot</h2>
-                    <form>
+                    <form action="UpdateUserDetails" method="POST">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Etunimi</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(userName)%>">
+                            <input type="text" class="form-control" id="exampleInputEmail1" name="name" aria-describedby="emailHelp" value="<%=InputOutput.clean(userName)%>">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Sukunimi</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(userSurname)%>">
+                            <input type="text" class="form-control" id="exampleInputEmail1" name="surname" aria-describedby="emailHelp" value="<%=InputOutput.clean(userSurname)%>">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Asuinosoite</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(userAddress)%>">
+                            <input type="text" class="form-control" id="exampleInputEmail1" name="address" aria-describedby="emailHelp" value="<%=InputOutput.clean(userAddress)%>">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Postinumero</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(userPostalcode)%>">
+                            <input type="text" class="form-control" id="exampleInputEmail1" name="postalcode" aria-describedby="emailHelp" value="<%=InputOutput.clean(userPostalcode)%>">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Postitoimipaikka</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(userPostoffice)%>">
+                            <input type="text" class="form-control" id="exampleInputEmail1" name="postoffice" aria-describedby="emailHelp" value="<%=InputOutput.clean(userPostoffice)%>">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Puhelin</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(userPhonenumber)%>">
+                            <input type="text" class="form-control" id="exampleInputEmail1" name="phonenumber" aria-describedby="emailHelp" value="<%=InputOutput.clean(userPhonenumber)%>">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Sähköpostiosoite</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(userEmail)%>">
+                            <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" value="<%=InputOutput.clean(userEmail)%>">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Ikä</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(detailAge)%>">
+                            <input type="text" class="form-control" id="exampleInputEmail1" name="age" aria-describedby="emailHelp" value="<%=InputOutput.clean(detailAge)%>">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Asuinmuoto: asun yksin / ystävän, avopuolison kanssa/ vanhempieni, ystävän taloudessa/ avioliitossa/ asuinmuotoni ja -paikkani vaihtelee jatkuvasti, ei siis ole vakituista kotina pidettävää asuinpaikkaa</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(detailResidencemodel)%>">
+                            <input type="text" class="form-control" id="exampleInputEmail1" name="residencemodel" aria-describedby="emailHelp" value="<%=InputOutput.clean(detailResidencemodel)%>">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nykyinen viikoittainen tai muutoin säännöllinen elämäntapasi: työtön, eläkkeellä, sairausturva/ elän epäsäännöllisten ja tilapäisten tukien ja tulojen avulla/ opiskelen pääasiallisesti/ työssä, työkokeilussa, ammatillisessa työsuhteessa/ ei säännönmukaista elämäntapaa</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(detailLifestyle)%>">
+                            <input type="text" class="form-control" id="exampleInputEmail1" name="lifestyle" aria-describedby="emailHelp" value="<%=InputOutput.clean(detailLifestyle)%>">
                         </div>
 
                         <br>
@@ -678,14 +678,14 @@
                             if("A".equals(detailHealthservices)){
                         %>
                         <label class="control control--radio">Käytän suhteellisen säännöllisesti päivittäistä sosiaalista elämääni tukevia terveys- ja kuntoutuspalveluita
-                            <input type="radio" name="radio" checked="checked"/>
+                            <input type="radio" name="healthservices" value="A" checked="checked"/>
                             <div class="control__indicator"></div>
                         </label>
                         <%
                             }else{
                         %>
                         <label class="control control--radio">Käytän suhteellisen säännöllisesti päivittäistä sosiaalista elämääni tukevia terveys- ja kuntoutuspalveluita
-                            <input type="radio" name="radio"/>
+                            <input type="radio" value="A" name="healthservices"/>
                             <div class="control__indicator"></div>
                         </label>
                         <%
@@ -693,14 +693,14 @@
                             if("B".equals(detailHealthservices)){
                         %>
                         <label class="control control--radio">En ole varsinaisesti missään pitempikestoisessa elämääni tukevassa kuntoutus- ja palvelumuotojen piirissä
-                            <input type="radio" name="radio" checked="checked"/>
+                            <input type="radio" name="healthservices" value="B" checked="checked"/>
                             <div class="control__indicator"></div>
                         </label>
                         <%
                             }else{
                         %>
                         <label class="control control--radio">En ole varsinaisesti missään pitempikestoisessa elämääni tukevassa kuntoutus- ja palvelumuotojen piirissä
-                            <input type="radio" name="radio"/>
+                            <input type="radio" name="healthservices" value="B"/>
                             <div class="control__indicator"></div>
                         </label>
                         <%
@@ -709,7 +709,7 @@
                         %>
                         <label class="control control--radio">Saamani palvelut ovat epämääräisiä ja johonkin päivittäiseen ongelman ratkaisuun, 
                             kuten lääkitykseen, rahallisten tukien saamiseen keskittyneitä, tilanteeni yleistä seurantaa
-                            <input type="radio" name="radio" checked="checked"/>
+                            <input type="radio" name="healthservices" value="C" checked="checked"/>
                             <div class="control__indicator"></div>
                         </label>
                         <%
@@ -717,7 +717,7 @@
                         %>
                         <label class="control control--radio">Saamani palvelut ovat epämääräisiä ja johonkin päivittäiseen ongelman ratkaisuun, 
                             kuten lääkitykseen, rahallisten tukien saamiseen keskittyneitä, tilanteeni yleistä seurantaa
-                            <input type="radio" name="radio"/>
+                            <input type="radio" name="healthservices" value="C"/>
                             <div class="control__indicator"></div>
                         </label>
                         <%
@@ -726,10 +726,10 @@
                         <br>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nimeä ja luetteloi lyhyesti ongelmia, sekä elämistäsi vaikeuttavia asioita kuten mielenterveydellisiä vaikeuksiasi omin sanoin</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(detailProblems)%>">
+                            <input type="text" class="form-control" id="exampleInputEmail1" name="problems" aria-describedby="emailHelp" value="<%=InputOutput.clean(detailProblems)%>">
                         </div>
-
-                        <button type="submit" class="btn btn-primary">Päivitä muutokset</button>
+                        <input type="hidden" name="userid" value="<%=userID%>">
+                        <input type="submit" class="btn btn-primary" value="Päivitä muutokset">
                     </form>
                     </div>
 

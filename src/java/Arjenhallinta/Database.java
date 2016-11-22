@@ -861,7 +861,7 @@ public class Database {
     }
          
     public static void updateUserDetails(String userName, String userSurname,
-            String userAddress, String userPostalcode, String userPostoffice, String userEmail) {
+            String userAddress, String userPostalcode, String userPostoffice, String userPhonenumber, String userEmail) {
         
         Connection conn = null;
         PreparedStatement ps = null;
@@ -872,14 +872,48 @@ public class Database {
 
             conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
             ps = conn.prepareStatement("UPDATE Users SET UserName=?, UserSurname=?,"
-                    + " UserAddress=?, UserPostalcode=?, UserPostoffice=? WHERE UserEmail=?");
+                    + " UserAddress=?, UserPostalcode=?, UserPostoffice=?, UserPhonenumber=? WHERE UserEmail=?");
             ps.setString(1, userName);
             ps.setString(2, userSurname);
             ps.setString(3, userAddress);
             ps.setString(4, userPostalcode);
             ps.setString(5, userPostoffice);
-            ps.setString(6, userEmail);
+            ps.setString(6, userPhonenumber);
+            ps.setString(7, userEmail);
             
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
+            
+        }
+        
+    }
+    
+    public static void updateUserCureDetails(String customerAge, String customerResidencemodel,
+                String customerLifestyle, String customerHealthservices, String customerProblems, int userID) {
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("UPDATE Details SET DetailAge=?, DetailResidencemodel=?,"
+                    + " DetailLifestyle=?, DetailHealthServices=?, DetailProblems=? WHERE UserID=?");
+            ps.setString(1, customerAge);
+            ps.setString(2, customerResidencemodel);
+            ps.setString(3, customerLifestyle);
+            ps.setString(4, customerHealthservices);
+            ps.setString(5, customerProblems);
+            ps.setInt(6, userID);
             ps.executeUpdate();
 
         } catch (Exception e) {

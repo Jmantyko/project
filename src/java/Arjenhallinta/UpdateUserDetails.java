@@ -36,10 +36,24 @@ public class UpdateUserDetails extends HttpServlet {
         String userAddress = request.getParameter("address");
         String userPostalcode = request.getParameter("postalcode");
         String userPostoffice = request.getParameter("postoffice");
+        String userPhonenumber = request.getParameter("phonenumber");
         String userEmail = request.getParameter("email");
         
-        Database.updateUserDetails(userName, userSurname, userAddress, userPostalcode, userPostoffice, userEmail);
-        response.sendRedirect(request.getContextPath() + "/profile.jsp");
+        Database.updateUserDetails(userName, userSurname, userAddress, userPostalcode, userPostoffice, userPhonenumber, userEmail);
+        
+        String customerAge = request.getParameter("age");
+        String customerResidencemodel = request.getParameter("residencemodel");
+        String customerLifestyle = request.getParameter("lifestyle");
+        String customerHealthservices = request.getParameter("healthservices");
+        String customerProblems = request.getParameter("problems");
+        String stringUserID = request.getParameter("userid");
+        int intUserID = Integer.parseInt(stringUserID);
+        
+        Database.updateUserCureDetails(customerAge, customerResidencemodel,
+                customerLifestyle, customerHealthservices, customerProblems, intUserID);
+        
+        
+        response.sendRedirect(request.getContextPath() + "/customer.jsp");
         
     }
 }
