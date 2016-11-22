@@ -184,22 +184,26 @@ $(function(){
 	 <!-- Bootstrap row adding js --> 
      <script src="addrow.js"></script>
 	 
-	 <script>   $(document).ready(function(){
-      var i=1;
-     $("#add_row").click(function(){
-      $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input name='name"+i+"' type='text' placeholder='Name' class='form-control input-md'  /> </td><td><input  name='mail"+i+"' type='text' placeholder='Mail'  class='form-control input-md'></td><td><input  name='mobile"+i+"' type='text' placeholder='Mobile'  class='form-control input-md'></td>");
+	 <script>   
+        $(document).ready(function(){
+            
+        var i=1;
+        
+        $("#add_row").click(function(){
+            $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input name='name"+i+"' type='text' placeholder='Name' class='form-control input-md'  /> </td><td><input  name='mail"+i+"' type='text' placeholder='Mail'  class='form-control input-md'></td><td><input  name='mobile"+i+"' type='text' placeholder='Mobile'  class='form-control input-md'></td>");
 
-      $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
-      i++; 
-  });
-     $("#delete_row").click(function(){
-    	 if(i>1){
-		 $("#addr"+(i-1)).html('');
-		 i--;
-		 }
+            $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
+            i++; 
+            });
+            
+        $("#delete_row").click(function(){
+            if(i>1){
+            $("#addr"+(i-1)).html('');
+            i--;
+            }
 	 });
 
-});
+        });
 	 
 	 </script>
          
@@ -410,6 +414,71 @@ $(function(){
                         %>
                         <div class="tab-pane fade" id="tab-display-harjoitus<%=taskID%>">
                             <p><%=InputOutput.clean(taskContent)%></p>
+                            <%
+                                if (taskID == 1){
+                            %>
+                            <div class="row">
+                            <div class="col-xs-12 col-md-8">
+                            <div class="tab-pane text-style" id="tab6">
+                            <h2 class="text-center">Timo Tikkanen</h2>
+                            <h2 class="text-center">Monitorointiharjoitus 1</h2>
+
+                            </br>
+
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Ajankohta <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></th>
+                                        <th>Tekeminen <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></th>
+                                        <th>Suojatoiminta % <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></th>
+                                        <th>Tehtävään s. toiminta % <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr bgcolor="#FFFFA0">
+                                        <th>Aamu</th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"><div class="input-group clockpicker">
+                                                <input type="text" class="form-control" value="09:30">
+                                                <span class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-time"></span>
+                                                </span>
+                                            </div>
+                                            <script type="text/javascript">
+                                            $('.clockpicker').clockpicker();
+                                            </script>
+                                        </th>
+                                        <td><input type="text" class="form-control"></td>
+                                        <td><input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
+                                        <td><input id="ex2" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                                <a id="add_row" class="btn btn-default pull-left">Lisää rivi</a><a id='delete_row' class="pull-right btn btn-default">Poista rivi</a>
+
+                                </br>
+                                </br>
+
+                                <table class="table-bottom">
+                                    <tbody>
+                                        </br>
+                                        <tr>
+                                            <th><button type="button" class="btn btn-primary btn-lg pull-left">Tallenna <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span></button></th>
+
+                                            <th><button type="button" class="btn btn-secondary btn-lg pull-right">Lähetä <span class="glyphicon glyphicon-send" aria-hidden="true"></span></button></th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            </div>
+                            </div>
+                            <%
+                                }
+                            %>
                         </div>
                         <%
                             }

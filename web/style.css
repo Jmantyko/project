@@ -68,14 +68,14 @@ body, html {
 .customer-actions-container {
     padding: inherit;
     float: left;
-    width: 50%;
+    width: 40%;
     height: auto;
 }
 
 .customer-display-container {
     padding: inherit;
     float: left;
-    width: 50%;
+    width: 60%;
 }
 
 .container-bottom {
