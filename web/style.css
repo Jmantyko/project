@@ -99,8 +99,8 @@ body, html {
 }
 
 .chat-history {
-  border-bottom: 2px solid white;
-  width: 100%;
+    border-bottom: 2px solid white;
+    width: 100%;
 }
 
 .chat .chat-history .message-data {
@@ -108,8 +108,8 @@ body, html {
     min-width: 400px;
 }
 .chat .chat-history .message-data-time {
-  color: #a8aab1;
-  padding-left: 6px;
+    color: #a8aab1;
+    padding-left: 6px;
 }
 
 .chat .chat-history .message {
@@ -142,16 +142,16 @@ body, html {
 }
 
 .chat .chat-history .you-message {
-  background: #CCDBDC;
-  color:#003366;
+    background: #CCDBDC;
+    color:#003366;
 }
 
 .chat .chat-history .me-message {
-  background: #E9724C;
+    background: #E9724C;
 }
 
 .chat .chat-history .me-message:after {
-  border-color: #E9724C transparent;
+    border-color: #E9724C transparent;
     right: 20px;
     top: -15px;
     left: auto;
@@ -163,23 +163,23 @@ body, html {
 }
 
 .float-right {
-  float: right;
+    float: right;
 }
 
 .clearfix:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: " ";
-  clear: both;
-  height: 0;
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
 }
 .you {
-  color: #CCDBDC;
+    color: #CCDBDC;
 }
 
 .me {
-  color: #E9724C;
+    color: #E9724C;
 }
 
 .nav-pills > li.active > a, .nav-pills > li.active > a:focus {
@@ -187,10 +187,10 @@ body, html {
     background-color: #76A5FF;
     letter-spacing: 2px;
     text-shadow:
-    -1px -1px 0 #000,  
-     1px -1px 0 #000,
-    -1px 1px 0 #000,
-     1px 1px 0 #000;
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
 }
 
 .nav-pills > li.active > a:hover {
@@ -198,21 +198,21 @@ body, html {
     color:white;
     letter-spacing: 2px;
     text-shadow:
-    -0.5px -0.5px 0 #000,  
-     0.5px -0.5px 0 #000,
-    -0.5px 0.5px 0 #000,
-     0.5px 0.5px 0 #000;
+        -0.5px -0.5px 0 #000,  
+        0.5px -0.5px 0 #000,
+        -0.5px 0.5px 0 #000,
+        0.5px 0.5px 0 #000;
 }
-	
+
 a.my-tool-tip, a.my-tool-tip:hover, a.my-tool-tip:visited {
     color: blue;
 }
 
-	
+
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
-      width: 70%;
-      margin: auto;
+    width: 70%;
+    margin: auto;
 }
 
 .clickable-row {
@@ -224,7 +224,7 @@ a.my-tool-tip, a.my-tool-tip:hover, a.my-tool-tip:visited {
 }
 
 /* Form radio button and checkbox styles */
-        
+
 .control-group {
     display: inline-block;
     vertical-align: top;
