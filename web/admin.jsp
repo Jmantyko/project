@@ -612,8 +612,10 @@ $(function(){
     </thead>
     <tbody>
         <% 
-            ArrayList<Customer> customers = new ArrayList<Customer>();
-            customers = Database.getCustomers();
+            //This array is for customers therapy tab ordered by
+            //by date each customer has
+            ArrayList<Customer> customersByDate = new ArrayList<Customer>();
+            customersByDate = Database.getCustomersByDate();
             int customerID;
             String customerEmail = "";
             String customerName = "";
@@ -622,19 +624,21 @@ $(function(){
             String customerAddress = "";
             String customerPostalcode = "";
             String customerPostoffice = "";
+            String customerActivityDate = "";
             
             //In this for loop we will print each customer
             //for a separate table row
-            for(int i=0; i<customers.size();i++){
+            for(int i=0; i<customersByDate.size();i++){
                 
-                customerID = ((Customer)customers.get(i)).getID();
-                customerEmail = ((Customer)customers.get(i)).getEmail();
-                customerName = ((Customer)customers.get(i)).getName();
-                customerSurname = ((Customer)customers.get(i)).getSurname();
-                customerPhonenumber = ((Customer)customers.get(i)).getPhonenumber();
-                customerAddress = ((Customer)customers.get(i)).getAddress();
-                customerPostalcode = ((Customer)customers.get(i)).getPostalcode();
-                customerPostoffice = ((Customer)customers.get(i)).getPostoffice();
+                customerID = ((Customer)customersByDate.get(i)).getID();
+                customerEmail = ((Customer)customersByDate.get(i)).getEmail();
+                customerName = ((Customer)customersByDate.get(i)).getName();
+                customerSurname = ((Customer)customersByDate.get(i)).getSurname();
+                customerPhonenumber = ((Customer)customersByDate.get(i)).getPhonenumber();
+                customerAddress = ((Customer)customersByDate.get(i)).getAddress();
+                customerPostalcode = ((Customer)customersByDate.get(i)).getPostalcode();
+                customerPostoffice = ((Customer)customersByDate.get(i)).getPostoffice();
+                customerActivityDate = ((Customer)customersByDate.get(i)).getActivityDate();
         %>
       <tr>
 	<td><%=customerID%></td>
@@ -647,7 +651,7 @@ $(function(){
         <td>
             <form action="admincustomerdetails.jsp" method="GET">
                 <input type="hidden" name="customerid" value="<%=customerID%>">
-                <button type="submit" class="btn btn-primary btn-block">13.09.2016 klo 18:30</button>
+                <button type="submit" class="btn btn-primary btn-block"><%=customerActivityDate%></button>
             </form>
         </td>
         
@@ -1119,18 +1123,11 @@ $(function(){
                 </thead>
      <tbody>
         <% 
-            /* 
+            //This array is for customers account details tab, ordered
+            //by customers ids
             ArrayList<Customer> customers = new ArrayList<Customer>();
             customers = Database.getCustomers();
-            int customerID;
-            String customerEmail = "";
-            String customerName = "";
-            String customerSurname = "";
-            String customerPhonenumber = "";
-            String customerAddress = "";
-            String customerPostalcode = "";
-            String customerPostoffice = "";
-            */
+            
             //In this for loop we will print each customer
             //for a separate table row
             for(int i=0; i<customers.size();i++){

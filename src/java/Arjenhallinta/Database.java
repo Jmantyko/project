@@ -582,14 +582,52 @@ public class Database {
 
             conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
             ps = conn.prepareStatement("SELECT UserID, UserEmail, UserName, UserSurname, "
-                    + "UserPhonenumber, UserAddress, UserPostalcode, UserPostoffice FROM Users WHERE"
+                    + "UserPhonenumber, UserAddress, UserPostalcode, UserPostoffice, UserActivityDate FROM Users WHERE"
                     + "(UserType='customer' AND UserIsDeleted=FALSE)");
             rs = ps.executeQuery();
 
             while (rs.next()) {
                 customers.add(new Customer(rs.getInt("UserID"), rs.getString("UserEmail"),
                         rs.getString("UserName"), rs.getString("UserSurname"), rs.getString("UserPhonenumber"),
-                rs.getString("UserAddress"), rs.getString("UserPostalcode"), rs.getString("UserPostoffice")));
+                rs.getString("UserAddress"), rs.getString("UserPostalcode"), rs.getString("UserPostoffice"),
+                        rs.getString("UserActivityDate")));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
+            
+        }
+        
+        return customers;
+    }
+    
+    public static ArrayList<Customer> getCustomersByDate() {
+        
+        ArrayList customers = new ArrayList();
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("SELECT UserID, UserEmail, UserName, UserSurname, "
+                    + "UserPhonenumber, UserAddress, UserPostalcode, UserPostoffice, UserActivityDate FROM Users WHERE"
+                    + "(UserType='customer' AND UserIsDeleted=FALSE) ORDER BY UserActivityDate DESC");
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                customers.add(new Customer(rs.getInt("UserID"), rs.getString("UserEmail"),
+                        rs.getString("UserName"), rs.getString("UserSurname"), rs.getString("UserPhonenumber"),
+                rs.getString("UserAddress"), rs.getString("UserPostalcode"), rs.getString("UserPostoffice"),
+                        rs.getString("UserActivityDate")));
             }
 
         } catch (Exception e) {
