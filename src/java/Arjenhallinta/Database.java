@@ -22,10 +22,8 @@ public class Database {
     private static final String dbUsername = "root";
     private static final String dbPassword = "realforce";
 
-    public static boolean addUser(String email, String password, String name, String surname, String phonenumber,
+    public static void addUser(String email, String password, String name, String surname, String phonenumber,
             String address, String postalcode, String postoffice) {
-        
-        boolean addedUser = false;
         
         Connection conn = null;
         PreparedStatement ps = null;
@@ -48,9 +46,7 @@ public class Database {
             ps.setString(7, address);
             ps.setString(8, postalcode);
             ps.setString(9, postoffice);
-            ps.execute();
-            
-            addedUser = true; //I might refactor this later...
+            ps.executeUpdate();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -61,8 +57,31 @@ public class Database {
             try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
             
         }
+    }
+    
+    public static void addUserDetails(int userID) {
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
 
-        return addedUser;
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("INSERT INTO Details (UserID) VALUES (?)");
+            ps.setInt(1, userID);
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
+            
+        }
     }
     
     public static void deleteUser(int UserID) {
@@ -337,6 +356,39 @@ public class Database {
         }
         
         return userSurname;
+    }
+    
+     public static String getUserPhonenumber(String email) {
+        
+        String userPhonenumber = "";
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("SELECT UserPhonenumber FROM Users WHERE UserEmail=?");
+            ps.setString(1, email);
+            rs = ps.executeQuery();
+            
+            if(rs.next()){
+                userPhonenumber = rs.getString(1);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
+            
+        }
+        
+        return userPhonenumber;
     }
     
     public static String getUserAddress(String email) {
@@ -770,7 +822,44 @@ public class Database {
         
         return tasks;
     }
-                    
+    
+    public static ArrayList<Detail> getUserCareDetails(int userID) {
+        
+        ArrayList details = new ArrayList();
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("SELECT DetailID, DetailAge, DetailResidencemodel,"
+                    + " DetailLifestyle, DetailHealthServices, DetailProblems FROM Details WHERE"
+                    + " UserID=?");
+            ps.setInt(1, userID);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                details.add(new Detail(rs.getInt("DetailID"), rs.getString("DetailAge"),
+                        rs.getString("DetailResidencemodel"), rs.getString("DetailLifestyle"),
+                        rs.getString("DetailHealthServices"), rs.getString("DetailProblems")));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
+            
+        }
+        
+        return details;
+    }
+         
     public static void updateUserDetails(String userName, String userSurname,
             String userAddress, String userPostalcode, String userPostoffice, String userEmail) {
         

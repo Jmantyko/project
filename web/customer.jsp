@@ -4,6 +4,7 @@
     Author     : Jaakko
 --%>
 
+<%@page import="Arjenhallinta.Detail"%>
 <%@page import="Arjenhallinta.Task"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="Arjenhallinta.Database"%>
@@ -289,6 +290,23 @@
                 <%
                     String userName = "";
                     String userSurname = "";
+                    String userPhonenumber = "";
+                    String userAddress = "";
+                    String userPostalcode = "";
+                    String userPostoffice = "";
+                    String userType = "";
+                    
+                    int taskID = 0;
+                    int taskTypeID = 0;
+                    boolean taskClosed;
+                    String taskContent = "";
+                    
+                    int detailID = 0;
+                    String detailAge = "";
+                    String detailResidencemodel = "";
+                    String detailLifestyle = "";
+                    String detailHealthservices = "";
+                    String detailProblems = "";
                     
                     if (session.getAttribute("email") == null){
 
@@ -315,8 +333,17 @@
                 </form>
                 <%
                     }else{
+                        
+                        //Instead getting each user detail one at a time
+                        //we could get them as arraylist and go them
+                        //through in for loop
                         userName = Database.getUserName(email);
                         userSurname = Database.getUserSurname(email);
+                        userPhonenumber = Database.getUserPhonenumber(email);
+                        userAddress = Database.getUserAddress(email);
+                        userPostalcode = Database.getUserPostalcode(email);
+                        userPostoffice = Database.getUserPostoffice(email);
+                        userType = Database.userType(email);
                 %>
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                     <i class="glyphicon glyphicon-user"></i> <%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%>
@@ -326,7 +353,7 @@
                         <a class="btn btn-info form-control" href="profile.jsp">Asetukset</a>
                     </div>
                     <%
-                        String userType = Database.userType(email);
+                        
                         if ("customer".equals(userType)) {
                     %>
                     <div class="form-group">
@@ -364,11 +391,6 @@
                                 <%
                                     ArrayList<Task> tasks = new ArrayList<Task>();
                                     tasks = Database.getUserTasks(userID);
-                                    
-                                    int taskID = 0;
-                                    int taskTypeID = 0;
-                                    boolean taskClosed;
-                                    String taskContent = "";
                             
                                     if(tasks.size() == 0){
                                 %>
@@ -590,7 +612,19 @@
 
             </div>
         </div>
+        <%
+            ArrayList<Detail> details = new ArrayList<Detail>();
+            details = Database.getUserCareDetails(userID);
 
+            for(int i = 0; i<details.size(); i++){
+                detailID = ((Detail) details.get(i)).getDetailID();
+                detailAge = ((Detail) details.get(i)).getDetailAge();
+                detailResidencemodel = ((Detail) details.get(i)).getDetailResidencemodel();
+                detailLifestyle = ((Detail) details.get(i)).getDetailLifestyle();
+                detailHealthservices = ((Detail) details.get(i)).getDetailHealthservices();
+                detailProblems = ((Detail) details.get(i)).getDetailProblems();
+            }
+        %>
         <div class="tab-pane text-style" id="tab2">
             <div class="container">
                 <div class="customer-main-container">
@@ -599,59 +633,103 @@
                     <h2>Ilmaisen kokeiluohjelman taustatiedot</h2>
                     <form>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Nimi</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+                            <label for="exampleInputEmail1">Etunimi</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(userName)%>">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Asuinosoite, virallinen postiosoite</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+                            <label for="exampleInputEmail1">Sukunimi</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(userSurname)%>">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Asuinosoite</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(userAddress)%>">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Postinumero</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(userPostalcode)%>">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Postitoimipaikka</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(userPostoffice)%>">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Puhelin</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(userPhonenumber)%>">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Sähköpostiosoite</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(userEmail)%>">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Ikä</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(detailAge)%>">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Asuinmuoto: asun yksin / ystävän, avopuolison kanssa/ vanhempieni, ystävän taloudessa/ avioliitossa/ asuinmuotoni ja -paikkani vaihtelee jatkuvasti, ei siis ole vakituista kotina pidettävää asuinpaikkaa</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(detailResidencemodel)%>">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nykyinen viikoittainen tai muutoin säännöllinen elämäntapasi: työtön, eläkkeellä, sairausturva/ elän epäsäännöllisten ja tilapäisten tukien ja tulojen avulla/ opiskelen pääasiallisesti/ työssä, työkokeilussa, ammatillisessa työsuhteessa/ ei säännönmukaista elämäntapaa</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(detailLifestyle)%>">
                         </div>
 
                         <br>
+                        <%
+                            if("A".equals(detailHealthservices)){
+                        %>
                         <label class="control control--radio">Käytän suhteellisen säännöllisesti päivittäistä sosiaalista elämääni tukevia terveys- ja kuntoutuspalveluita
                             <input type="radio" name="radio" checked="checked"/>
                             <div class="control__indicator"></div>
                         </label>
+                        <%
+                            }else{
+                        %>
+                        <label class="control control--radio">Käytän suhteellisen säännöllisesti päivittäistä sosiaalista elämääni tukevia terveys- ja kuntoutuspalveluita
+                            <input type="radio" name="radio"/>
+                            <div class="control__indicator"></div>
+                        </label>
+                        <%
+                            }
+                            if("B".equals(detailHealthservices)){
+                        %>
+                        <label class="control control--radio">En ole varsinaisesti missään pitempikestoisessa elämääni tukevassa kuntoutus- ja palvelumuotojen piirissä
+                            <input type="radio" name="radio" checked="checked"/>
+                            <div class="control__indicator"></div>
+                        </label>
+                        <%
+                            }else{
+                        %>
                         <label class="control control--radio">En ole varsinaisesti missään pitempikestoisessa elämääni tukevassa kuntoutus- ja palvelumuotojen piirissä
                             <input type="radio" name="radio"/>
                             <div class="control__indicator"></div>
                         </label>
+                        <%
+                            }
+                            if("C".equals(detailHealthservices)){
+                        %>
+                        <label class="control control--radio">Saamani palvelut ovat epämääräisiä ja johonkin päivittäiseen ongelman ratkaisuun, 
+                            kuten lääkitykseen, rahallisten tukien saamiseen keskittyneitä, tilanteeni yleistä seurantaa
+                            <input type="radio" name="radio" checked="checked"/>
+                            <div class="control__indicator"></div>
+                        </label>
+                        <%
+                            }else{
+                        %>
                         <label class="control control--radio">Saamani palvelut ovat epämääräisiä ja johonkin päivittäiseen ongelman ratkaisuun, 
                             kuten lääkitykseen, rahallisten tukien saamiseen keskittyneitä, tilanteeni yleistä seurantaa
                             <input type="radio" name="radio"/>
                             <div class="control__indicator"></div>
                         </label>
+                        <%
+                            }
+                        %>
                         <br>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nimeä ja luetteloi lyhyesti ongelmia, sekä elämistäsi vaikeuttavia asioita kuten mielenterveydellisiä vaikeuksiasi omin sanoin</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Nimeä ja luetteloi lyhyesti ongelmia, sekä elämistäsi vaikeuttavia asioita kuten mielenterveydellisiä vaikeuksiasi omin sanoin</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(detailProblems)%>">
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Lähetä</button>
+                        <button type="submit" class="btn btn-primary">Päivitä muutokset</button>
                     </form>
                     </div>
 

@@ -40,12 +40,19 @@ public class CreateUser extends HttpServlet {
         String postalcode = request.getParameter("postalcode");
         String postoffice = request.getParameter("postoffice");
         
+        int userID = 0;
+        
         if(Database.userExists(email)){
             System.out.println("CREATING NEW USER FAILED - USER ALREADY EXISTS");
         }else{
             Database.addUser(email, password, name, surname, phonenumber,
                     address, postalcode, postoffice);
             System.out.println("CREATING NEW USER SUCCEEDED");
+            
+            //In here we get userid based on useremail
+            userID = Database.getUserID(email);
+            //In here we make a new row for Details table for our user
+            Database.addUserDetails(userID);
         }
         
         response.sendRedirect(request.getContextPath() + "/admin.jsp#tab11");
