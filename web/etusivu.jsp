@@ -118,6 +118,18 @@
         -0.5px 0.5px 0 #000,
          0.5px 0.5px 0 #000;
         }
+        
+        .navbar-brand {
+        background-color: #0073A3;
+        color: white;
+        background-color: #0073A3;
+        letter-spacing: 2px;
+        text-shadow:
+        -0.5px -0.5px 0 #000,  
+         0.5px -0.5px 0 #000,
+        -0.5px 0.5px 0 #000,
+         0.5px 0.5px 0 #000;
+        }
     
         .form-login{
         padding: 1em;
@@ -184,7 +196,6 @@
           height:auto;
 
         }
-
 
         </style>
 
@@ -548,13 +559,13 @@ $(function(){
                 <label for="exampleInputEmail1">
                     <i class="glyphicon glyphicon-envelope"></i> Sähköpostiosoite
                 </label> 
-                <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" />
+                <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="" />
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">
                     <i class="glyphicon glyphicon-lock"></i> Salasana
                 </label> 
-                <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+                <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="" />
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-success btn-block">Kirjaudu</button>
@@ -629,8 +640,8 @@ $(function(){
                             käyttäytymisen, kuten ajattelun ja reagoinnin
                             haitallisiin toimintatapoihin sekä tunteiden
                             säätelyyn.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                        <p> 
+                            <a href="#tietoa" data-toggle="tab" class="btn btn-default">Lisätietoja &raquo;</a>
                         </p>
                     </div>
                 </div>
@@ -648,7 +659,7 @@ $(function(){
                             toimintaansa pois negatiivisesta ja
                             ongelmakeskeisestä ajattelusta.</p>
                         <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                            <a href="#tietoa" data-toggle="tab" class="btn btn-default">Lisätietoja &raquo;</a>
                         </p>
                     </div>
                 </div>
@@ -665,7 +676,7 @@ $(function(){
                             pohjalta sekä asiakkaan ja terapeutin keskinäinen dialogi. </p>
                         <p>
                             <br>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                            <a href="#tietoa" data-toggle="tab" class="btn btn-default">Lisätietoja &raquo;</a> <a href="#liity" data-toggle="tab" class="btn btn-primary">Liity tästä!<span class="glyphicon glyphicon-apple" aria-hidden="true"></span></a>
                         </p>
                     </div>
                 </div>

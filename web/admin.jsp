@@ -169,6 +169,18 @@
     -0.5px 0.5px 0 #000,
      0.5px 0.5px 0 #000;
     }
+    
+    .navbar-brand {
+    background-color: #0073A3;
+    color: white;
+    background-color: #0073A3;
+    letter-spacing: 2px;
+    text-shadow:
+    -0.5px -0.5px 0 #000,  
+     0.5px -0.5px 0 #000,
+    -0.5px 0.5px 0 #000,
+     0.5px 0.5px 0 #000;
+    }
 
     .form-login{
     padding: 1em;
@@ -1223,7 +1235,7 @@ $(function(){
 
     <div class="container-bottom">
         <hr>
-        <p class="muted">© 2016 Martti Puttonen. All rights reserved.</p>
+        <p class="muted">© 2016 Martti Puttonen.</p>
         <hr>
     </div>    
 
