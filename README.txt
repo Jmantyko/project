@@ -48,6 +48,7 @@ CREATE TABLE Users (
 	UserIsDeleted BOOLEAN NOT NULL DEFAULT 0,
 	UserType VARCHAR (25) NOT NULL,
 	UserActivityDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	UserActivityEvent VARCHAR (25) DEFAULT 'Tilin luonti',
 	PRIMARY KEY (UserID)
 );
 
