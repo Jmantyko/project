@@ -20,9 +20,11 @@ public class Customer {
     private String postalcode;
     private String postoffice;
     private String useractivitydate;
+    private String useractivityevent;
     
     public Customer(int userID, String userEmail, String userName, String userSurname, 
-            String userPhonenumber, String userAddress, String userPostalcode, String userPostoffice, String userActivityDate) {
+            String userPhonenumber, String userAddress, String userPostalcode,
+            String userPostoffice, String userActivityDate, String userActivityEvent) {
         id = userID;
         email = userEmail;
         name = userName;
@@ -32,6 +34,7 @@ public class Customer {
         postalcode = userPostalcode;
         postoffice = userPostoffice;
         useractivitydate = userActivityDate;
+        useractivityevent = userActivityEvent;
     }
     
     public int getID(){
@@ -68,6 +71,10 @@ public class Customer {
     
     public String getActivityDate(){
         return useractivitydate;
+    }
+    
+    public String getActivityEvent(){
+        return useractivityevent;
     }
     
     @Override

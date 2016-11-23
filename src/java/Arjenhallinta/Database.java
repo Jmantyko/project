@@ -635,7 +635,7 @@ public class Database {
 
             conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
             ps = conn.prepareStatement("SELECT UserID, UserEmail, UserName, UserSurname, "
-                    + "UserPhonenumber, UserAddress, UserPostalcode, UserPostoffice, UserActivityDate FROM Users WHERE"
+                    + "UserPhonenumber, UserAddress, UserPostalcode, UserPostoffice, UserActivityDate, UserActivityEvent FROM Users WHERE"
                     + "(UserType='customer' AND UserIsDeleted=FALSE)");
             rs = ps.executeQuery();
 
@@ -643,7 +643,7 @@ public class Database {
                 customers.add(new Customer(rs.getInt("UserID"), rs.getString("UserEmail"),
                         rs.getString("UserName"), rs.getString("UserSurname"), rs.getString("UserPhonenumber"),
                 rs.getString("UserAddress"), rs.getString("UserPostalcode"), rs.getString("UserPostoffice"),
-                        rs.getString("UserActivityDate")));
+                        rs.getString("UserActivityDate"), rs.getString("UserActivityEvent")));
             }
 
         } catch (Exception e) {
@@ -672,7 +672,7 @@ public class Database {
 
             conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
             ps = conn.prepareStatement("SELECT UserID, UserEmail, UserName, UserSurname, "
-                    + "UserPhonenumber, UserAddress, UserPostalcode, UserPostoffice, UserActivityDate FROM Users WHERE"
+                    + "UserPhonenumber, UserAddress, UserPostalcode, UserPostoffice, UserActivityDate, UserActivityEvent FROM Users WHERE"
                     + "(UserType='customer' AND UserIsDeleted=FALSE) ORDER BY UserActivityDate DESC");
             rs = ps.executeQuery();
 
@@ -680,7 +680,7 @@ public class Database {
                 customers.add(new Customer(rs.getInt("UserID"), rs.getString("UserEmail"),
                         rs.getString("UserName"), rs.getString("UserSurname"), rs.getString("UserPhonenumber"),
                 rs.getString("UserAddress"), rs.getString("UserPostalcode"), rs.getString("UserPostoffice"),
-                        rs.getString("UserActivityDate")));
+                        rs.getString("UserActivityDate"), rs.getString("UserActivityEvent")));
             }
 
         } catch (Exception e) {
@@ -860,7 +860,7 @@ public class Database {
         return details;
     }
     
-    public static void updateUserActivityDate(int userID) {
+    public static void updateUserActivityDate(int userID, String userActivityEvent) {
         
         Connection conn = null;
         PreparedStatement ps = null;
@@ -870,8 +870,9 @@ public class Database {
             Class.forName(dbDriver);
 
             conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
-            ps = conn.prepareStatement("UPDATE Users SET UserActivityDate=now() WHERE UserID=?");
-            ps.setInt(1, userID);
+            ps = conn.prepareStatement("UPDATE Users SET UserActivityDate=now(), UserActivityEvent=? WHERE UserID=?");
+            ps.setString(1, userActivityEvent);
+            ps.setInt(2, userID);
             ps.executeUpdate();
 
         } catch (Exception e) {

@@ -607,7 +607,7 @@ $(function(){
       <tr>
 	<th>#</th>
         <th>Asiakas</th>
-	<th>Viimeisin harjoitus</th>
+	<th>Viimeisin toiminto</th>
       </tr>
     </thead>
     <tbody>
@@ -625,6 +625,7 @@ $(function(){
             String customerPostalcode = "";
             String customerPostoffice = "";
             String customerActivityDate = "";
+            String customerActivityEvent = "";
             
             //In this for loop we will print each customer
             //for a separate table row
@@ -639,6 +640,7 @@ $(function(){
                 customerPostalcode = ((Customer)customersByDate.get(i)).getPostalcode();
                 customerPostoffice = ((Customer)customersByDate.get(i)).getPostoffice();
                 customerActivityDate = ((Customer)customersByDate.get(i)).getActivityDate();
+                customerActivityEvent = ((Customer)customersByDate.get(i)).getActivityEvent();
         %>
       <tr>
 	<td><%=customerID%></td>
@@ -651,7 +653,7 @@ $(function(){
         <td>
             <form action="admincustomerdetails.jsp" method="GET">
                 <input type="hidden" name="customerid" value="<%=customerID%>">
-                <button type="submit" class="btn btn-primary btn-block"><%=customerActivityDate%></button>
+                <button type="submit" class="btn btn-primary btn-block"><%=customerActivityDate%> | <%=customerActivityEvent%></button>
             </form>
         </td>
         
