@@ -10,7 +10,7 @@ and open the template in the editor.
 
 
 body, html {
-    margin: 0x;
+    margin: 0px;
     width: 100%;
     height: 100%;
 }
@@ -55,10 +55,14 @@ body, html {
     }
 }
 
+.container{
+    min-height: 500px;
+}
+
 .customer-main-container{
+    position: relative;
     width: 100%;
     height: 100%;
-    height: auto;
     padding-top: 20px;
     padding-left: 25px;
     padding-right: 25px;
@@ -70,6 +74,7 @@ body, html {
     padding: inherit;
     float: left;
     width: 40%;
+    height: 100%;
 }
 
 .customer-display-container {
@@ -77,13 +82,13 @@ body, html {
     padding: inherit;
     float: left;
     width: 60%;
+    height: 100%;
 }
 
 .container-bottom {
-    background-color: green;
-    position: fixed;
+    background-color: white;
+    position: static;
     display: block;
-    margin-bottom: 0;
     width: 100%;
     margin-right: auto;
     margin-left: auto;
@@ -95,6 +100,7 @@ body, html {
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
 }
 
 #harjoitukset {

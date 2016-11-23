@@ -574,7 +574,7 @@
                                         <td><input id="ex2" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
                                     </tr>
                                 </tbody>
-                                <tbody>
+                                    <tbody>
                                     <tr bgcolor="#FFFFA0">
                                         <th>Yö</th>
                                         <th></th>
