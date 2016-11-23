@@ -453,14 +453,13 @@
 
                                         taskID = ((Task) tasks.get(k)).getTaskID();
                                         taskTypeID = ((Task) tasks.get(k)).getTaskTypeID();
+                                        taskClosed = ((Task) tasks.get(k)).getTaskIsClosed();
                                         
-                                        //messageID = ((Message) messages.get(k)).getMessageID();
-                                        //messageUserType = ((Message) messages.get(k)).getMessageUserType();
-                                        //messageContent = ((Message) messages.get(k)).getMessageContent();
-                                        //messageDate = ((Message) messages.get(k)).getMessageDate();
+                                        if(taskClosed != true){
                                 %>
                                 <button type="button" class="btn btn-group btn-group-justified btn-info" data-toggle="tab" href="#tab-display-viestit<%=taskID%>">Harjoitus <%=taskTypeID%>. viestit</button>
                             <%
+                                        }
                                     }
                             %>
                             </div>
