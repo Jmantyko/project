@@ -55,10 +55,6 @@ body, html {
     }
 }
 
-.container{
-    min-height: 500px;
-}
-
 .customer-main-container{
     position: relative;
     width: 100%;
