@@ -424,13 +424,18 @@ $(function(){
          });
          
          </script>
-<script>
-        //jQuery(document).ready(function($) {
-        //    $(".clickable-row").click(function() {
-        //        window.document.location = $(this).data("href");
-        //    });
-       // });
-</script>
+        <script>
+        $(document).ready(function(){
+            $("#addUserButton").attr('disabled', true);
+            
+            $("#password").keyup(function(){
+                if($(this).val().length !=0)
+                    $("#addUserButton").attr('disabled', false);            
+                else
+                    $("#addUserButton").attr('disabled',true);
+            })
+        });
+        </script>
 
  
 
@@ -1176,9 +1181,9 @@ $(function(){
                     <h3>Uuden asiakkastilin luonti</h3>
                     <form action="CreateUser" method="POST" class="topBuffer">
                     <label for="email">Anna käyttäjän sähköpostiosoite:</label>
-                    <input type="email" class="form-control" name="email" value="" placeholder="esim. esimerkki@esimerkki.fi" /><br>
+                    <input type="email" class="form-control" name="email" id="email" value="" placeholder="esim. esimerkki@esimerkki.fi" /><br>
                     <label for="password">Luo käyttäjälle salasana:</label>
-                    <input type="password" class="form-control" name="password" value="" placeholder="esim. w895aRQ3gByx" /><br>
+                    <input type="password" class="form-control" name="password" id="password" value="" placeholder="esim. w895aRQ3gByx" /><br>
                     <label for="name">Anna käyttäjän etunimi:</label>
                     <input type="text" class="form-control" name="name" value="" placeholder="esim. Pekka" /><br>
                     <label for="name">Anna käyttäjän sukunimi:</label>
@@ -1191,7 +1196,7 @@ $(function(){
                     <input type="text" class="form-control" name="postalcode" value="" placeholder="esim. 10101" /><br>
                     <label for="postoffice">Anna käyttäjän postitoimipaikka:</label>
                     <input type="text" class="form-control" name="postoffice" value="" placeholder="esim. Oulu" /><br>
-                    <input type="submit" class="btn btn-success" value="Lisää asiakastili" /> 
+                    <input type="submit" class="btn btn-success" id="addUserButton" value="Lisää asiakastili" /> 
                     </form>
                 </div> 
             <%
