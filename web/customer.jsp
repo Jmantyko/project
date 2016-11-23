@@ -444,7 +444,7 @@
                         <div class="tab-pane fade" id="tab-display-harjoitus<%=taskID%>">
                             <p><%=InputOutput.clean(taskContent)%></p>
                             <%
-                                if (taskClosed != true && taskID == 1){ //Need to actually implement this...
+                                if (taskClosed != true && taskTypeID == 1){ //Need to actually implement this...
                             %>
                             <div class="row">
                             <div class="col-xs-12 col-md-8">
