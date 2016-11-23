@@ -411,6 +411,13 @@
                                 <%
                                     }
 
+                                    
+
+                                    int messageID = 0;
+                                    String messageUserType = "";
+                                    String messageContent = "";
+                                    String messageDate = "";
+
                                     //In this for loop we will print all user
                                     //tasks and make each print to be
                                     //a separate link which customer can press
@@ -423,7 +430,7 @@
                                         
                                         if(taskClosed != true){
                                 %>
-                                    <button type="button" class="btn btn-group btn-group-justified btn-primary" data-toggle="collapse" data-target="#harjoitukset<%=taskID%>">Harjoitus <%=taskTypeID%>.</button>
+                                <button type="button" class="btn btn-group btn-group-justified btn-primary" data-toggle="collapse" data-target="#harjoitukset<%=taskID%>">Harjoitus <%=taskTypeID%>.</button>
                                 <div id="harjoitukset<%=taskID%>" class="collapse">
                                     <a class="btn btn-success pull-left" href="#tab-display-harjoitus<%=taskID%>" data-toggle="tab">Lisää uusi merkintä</a>
                                     <a class="btn btn-info pull-right" href="#tab-display-harjoitus<%=taskID%>" data-toggle="tab">Yhteenveto</a>
@@ -433,9 +440,29 @@
                                     }
                                 %>
                             </div>
-                            
                             <div id="tab-content-2" class="tab-pane fade">
-                                <button href="#tab-display-viestit" type="button" class="btn btn-group btn-group-justified btn-info" data-toggle="tab">Martti Puttonen - Harjoitus 1 <br> 19.11.2016 klo 15:14</button>
+                            <%
+                                    //In this for loop we will print all user
+                                    //conversations and make each print to be
+                                    //a separate link which customer can press
+                                    //to get whole conversation to show below
+                                    ArrayList<Message> messages = new ArrayList<Message>();
+                                    messages = Database.getTaskMessages(taskID);
+                                    
+                                    for (int k = 0; k < tasks.size(); k++) {
+
+                                        taskID = ((Task) tasks.get(k)).getTaskID();
+                                        taskTypeID = ((Task) tasks.get(k)).getTaskTypeID();
+                                        
+                                        //messageID = ((Message) messages.get(k)).getMessageID();
+                                        //messageUserType = ((Message) messages.get(k)).getMessageUserType();
+                                        //messageContent = ((Message) messages.get(k)).getMessageContent();
+                                        //messageDate = ((Message) messages.get(k)).getMessageDate();
+                                %>
+                                <button type="button" class="btn btn-group btn-group-justified btn-info" data-toggle="tab" href="#tab-display-viestit<%=taskID%>">Harjoitus <%=taskTypeID%>. viestit</button>
+                            <%
+                                    }
+                            %>
                             </div>
                         </div>
                     </div>
@@ -447,17 +474,18 @@
                         </div>
                         <%
                             //Here we print all content of each task
-                            for (int i = 0; i < tasks.size(); i++){
+                            for (int z = 0; z < tasks.size(); z++){
                                 
-                                taskID = ((Task) tasks.get(i)).getTaskID();
-                                taskTypeID = ((Task) tasks.get(i)).getTaskTypeID();
-                                taskContent = ((Task) tasks.get(i)).getTaskContent();
-                                taskClosed = ((Task) tasks.get(i)).getTaskIsClosed();
+                                taskID = ((Task) tasks.get(z)).getTaskID();
+                                taskTypeID = ((Task) tasks.get(z)).getTaskTypeID();
+                                taskContent = ((Task) tasks.get(z)).getTaskContent();
+                                taskClosed = ((Task) tasks.get(z)).getTaskIsClosed();
                         %>
                         <div class="tab-pane fade" id="tab-display-harjoitus<%=taskID%>">
                             <p><%=InputOutput.clean(taskContent)%></p>
                             <%
-                                if (taskClosed != true && taskTypeID == 1){ //Need to actually implement this...
+                                //Printing task that has taskTypeID = 1 other tasks (2, 3 etc.) need their own if-check
+                                if (taskClosed != true && taskTypeID == 1){
                             %>
                             <div class="row">
                             <div class="col-xs-12 col-md-8">
@@ -589,35 +617,26 @@
                             </div>
                             <%
                                 }
-                                
                             %>
-                        </div>
-                        <%
-                            }
-                        %>
-                        <div class="tab-pane fade" id="tab-display-viestit">
+                        </div> <!-- printing task details ends here -->
+                        
+                        <div class="tab-pane fade" id="tab-display-viestit<%=taskID%>">
                             <div class="chat">
                             <div class="chat-history">
                                 <ul class="chat-ul">
+                                    <h4><strong>Harjoitus <%=taskTypeID%>. viestit</strong></h4>
                         <%
+                            messages = Database.getTaskMessages(taskID);
                             
                             //In here we will load and print chat
-                            //Later we need to figure out how to print chat for each task...
-                            ArrayList<Message> messages = new ArrayList<Message>();
-                            messages = Database.getTaskMessages(1); //taskID is the parameter
+                            for (int j = 0; j<messages.size();j++){
 
-                            int messageID = 0;
-                            String messageUserType = "";
-                            String messageContent = "";
-                            String messageDate = "";
-
-                            for (int i = 0; i<messages.size();i++){
-
-                                messageID = ((Message) messages.get(i)).getMessageID();
-                                messageUserType = ((Message) messages.get(i)).getMessageUserType();
-                                messageContent = ((Message) messages.get(i)).getMessageContent();
-                                messageDate = ((Message) messages.get(i)).getMessageDate();
-
+                                messageID = ((Message) messages.get(j)).getMessageID();
+                                messageUserType = ((Message) messages.get(j)).getMessageUserType();
+                                messageContent = ((Message) messages.get(j)).getMessageContent();
+                                messageDate = ((Message) messages.get(j)).getMessageDate();
+                                
+                                //these could be swapped to make chat more intuitive
                                 if("customer".equals(messageUserType)){
                         %>
                                 <li>
@@ -647,6 +666,11 @@
                             </div> <!-- end chat-history -->
                             </div> <!-- end chat -->
                         </div>
+                        
+                        <%
+                            }//ends printing all the stuff of one task
+                        %>
+                        
 
                     </div>
 
