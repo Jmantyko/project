@@ -658,7 +658,8 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Sähköpostiosoite</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" value="<%=InputOutput.clean(userEmail)%>">
+                            <input type="hidden" name="email" value="<%=InputOutput.clean(userEmail)%>">
+                            <p><%=InputOutput.clean(userEmail)%></p>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Ikä</label>

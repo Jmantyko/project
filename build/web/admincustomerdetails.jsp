@@ -834,43 +834,43 @@ $(function(){
                             <h2>Ilmaisen kokeiluohjelman taustatiedot</h2>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Etunimi</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(userName)%>">
+                                    <p><%=InputOutput.clean(userName)%></p>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Sukunimi</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(userSurname)%>">
+                                    <p><%=InputOutput.clean(userSurname)%></p>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Asuinosoite</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(userAddress)%>">
+                                    <p><%=InputOutput.clean(userAddress)%></p>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Postinumero</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(userPostalcode)%>">
+                                    <p><%=InputOutput.clean(userPostalcode)%></p>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Postitoimipaikka</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(userPostoffice)%>">
+                                    <p><%=InputOutput.clean(userPostoffice)%></p>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Puhelin</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(userPhonenumber)%>">
+                                    <p><%=InputOutput.clean(userPhonenumber)%></p>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Sähköpostiosoite</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(customerUserEmail)%>">
+                                    <p><%=InputOutput.clean(customerUserEmail)%></p>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Ikä</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(detailAge)%>">
+                                    <p><%=InputOutput.clean(detailAge)%></p>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Asuinmuoto: asun yksin / ystävän, avopuolison kanssa/ vanhempieni, ystävän taloudessa/ avioliitossa/ asuinmuotoni ja -paikkani vaihtelee jatkuvasti, ei siis ole vakituista kotina pidettävää asuinpaikkaa</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(detailResidencemodel)%>">
+                                    <p><%=InputOutput.clean(detailResidencemodel)%></p>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Nykyinen viikoittainen tai muutoin säännöllinen elämäntapasi: työtön, eläkkeellä, sairausturva/ elän epäsäännöllisten ja tilapäisten tukien ja tulojen avulla/ opiskelen pääasiallisesti/ työssä, työkokeilussa, ammatillisessa työsuhteessa/ ei säännönmukaista elämäntapaa</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(detailLifestyle)%>">
+                                    <p><%=InputOutput.clean(detailLifestyle)%></p>
                                 </div>
 
                                 <br>
@@ -926,7 +926,7 @@ $(function(){
                                 <br>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Nimeä ja luetteloi lyhyesti ongelmia, sekä elämistäsi vaikeuttavia asioita kuten mielenterveydellisiä vaikeuksiasi omin sanoin</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<%=InputOutput.clean(detailProblems)%>">
+                                    <p><%=InputOutput.clean(detailProblems)%></p>
                                 </div>
                         </div>
                         <!-- taustatiedot päättyy -->
