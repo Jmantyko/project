@@ -113,7 +113,11 @@ INSERT INTO Messages (TaskID, UserType, MessageContent)
 	VALUES	(1, 'admin', 'Tässäpä on terapeutin palaute ensimmäiseen monitorointiharjoitukseen...'),
 		(1, 'customer', 'Ok mitäpä jos blaablaablaa...'),
 		(1, 'admin', 'Lisää keskustelua...'),
-		(1, 'customer', 'joo-o...');
+		(1, 'customer', 'joo-o...'),
+		(2, 'admin', 'Tuosta toisesta monitorointiharjoituksesta...'),
+		(2, 'customer', 'Ahaa...'),
+		(2, 'admin', 'Voisit myös...'),
+		(2, 'customer', 'En jaksa...');
 			
 INSERT INTO Frontpage (PageContent)
 	VALUES	('Tämä teksti on yleistä arjenhallinta.fi mainostekstiä.'),
