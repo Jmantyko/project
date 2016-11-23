@@ -42,7 +42,7 @@ public class CreateUser extends HttpServlet {
         
         int userID = 0;
         
-        if(Database.userExists(email)){
+        if(Database.userExists(email) || email.equals("")){
             System.out.println("CREATING NEW USER FAILED - USER ALREADY EXISTS");
         }else{
             Database.addUser(email, password, name, surname, phonenumber,
