@@ -622,23 +622,22 @@
                         
                         <div class="tab-pane fade" id="tab-display-viestit<%=taskID%>">
                             <div class="chat">
-                            <div class="chat-history">
                                 <ul class="chat-ul">
-                                    <h4><strong>Harjoitus <%=taskTypeID%>. viestit</strong></h4>
-                        <%
-                            messages = Database.getTaskMessages(taskID);
-                            
-                            //In here we will load and print chat
-                            for (int j = 0; j<messages.size();j++){
+                                <h4><strong>Harjoitus <%=taskTypeID%>. viestit</strong></h4>
+                                <%
+                                    messages = Database.getTaskMessages(taskID);
 
-                                messageID = ((Message) messages.get(j)).getMessageID();
-                                messageUserType = ((Message) messages.get(j)).getMessageUserType();
-                                messageContent = ((Message) messages.get(j)).getMessageContent();
-                                messageDate = ((Message) messages.get(j)).getMessageDate();
-                                
-                                //these could be swapped to make chat more intuitive
-                                if("customer".equals(messageUserType)){
-                        %>
+                                    //In here we will load and print chat
+                                    for (int j = 0; j<messages.size();j++){
+
+                                        messageID = ((Message) messages.get(j)).getMessageID();
+                                        messageUserType = ((Message) messages.get(j)).getMessageUserType();
+                                        messageContent = ((Message) messages.get(j)).getMessageContent();
+                                        messageDate = ((Message) messages.get(j)).getMessageDate();
+
+                                        //these could be swapped to make chat more intuitive
+                                        if("customer".equals(messageUserType)){
+                                %>
                                 <li>
                                     <div class="message-data">
                                         <span class="message-data-name"><i class="fa fa-circle you"></i><%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%> <%=InputOutput.clean(messageDate)%></span>
@@ -663,7 +662,6 @@
                                 }
                                 %>
                                 </ul>
-                            </div> <!-- end chat-history -->
                             </div> <!-- end chat -->
                         </div>
                         
