@@ -79,11 +79,11 @@ CREATE TABLE Tasks (
 
 CREATE TABLE Messages (
 	MessageID INT UNSIGNED NOT NULL AUTO_INCREMENT,
-	UserID SMALLINT UNSIGNED NOT NULL,
+	TaskID SMALLINT UNSIGNED NOT NULL,
+	UserType VARCHAR (25),
 	MessageContent LONGTEXT,
 	MessageDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	PRIMARY KEY (MessageID),
-	FOREIGN KEY (UserID) REFERENCES Users (UserID)
+	PRIMARY KEY (MessageID)
 );
 
 CREATE TABLE Frontpage (
@@ -108,6 +108,12 @@ INSERT INTO Tasks (TaskTypeID, UserID, TaskContent, TaskIsReturned)
 		(2, 2, '*Toiseen harjoitukseen liittyvää sisälötä tietokannasta, user 2 tekijänä*', 0),
 		(1, 4, '*Harjoitukseen liittyvää sisälötä tietokannasta, user 4 tekijänä*', 1),
 		(2, 4, '*Toiseen harjoitukseen liittyvää sisälötä tietokannasta, user 4 tekijänä*', 1);
+		
+INSERT INTO Messages (TaskID, UserType, MessageContent)
+	VALUES	(1, 'admin', 'Tässäpä on terapeutin palaute ensimmäiseen monitorointiharjoitukseen...'),
+		(1, 'customer', 'Ok mitäpä jos blaablaablaa...'),
+		(1, 'admin', 'Lisää keskustelua...'),
+		(1, 'customer', 'joo-o...');
 			
 INSERT INTO Frontpage (PageContent)
 	VALUES	('Tämä teksti on yleistä arjenhallinta.fi mainostekstiä.'),
