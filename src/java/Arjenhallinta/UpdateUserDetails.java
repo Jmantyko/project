@@ -52,6 +52,7 @@ public class UpdateUserDetails extends HttpServlet {
         Database.updateUserCureDetails(customerAge, customerResidencemodel,
                 customerLifestyle, customerHealthservices, customerProblems, intUserID);
         
+        Database.updateUserActivityDate(intUserID);
         
         response.sendRedirect(request.getContextPath() + "/customer.jsp");
         

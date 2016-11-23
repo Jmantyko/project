@@ -859,6 +859,32 @@ public class Database {
         
         return details;
     }
+    
+    public static void updateUserActivityDate(int userID) {
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("UPDATE Users SET UserActivityDate=now() WHERE UserID=?");
+            ps.setInt(1, userID);
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
+            
+        }
+        
+    }
          
     public static void updateUserDetails(String userName, String userSurname,
             String userAddress, String userPostalcode, String userPostoffice, String userPhonenumber, String userEmail) {
