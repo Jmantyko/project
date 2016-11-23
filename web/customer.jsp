@@ -490,6 +490,7 @@
                             <div class="row">
                             <div class="col-xs-12 col-md-8">
                             <div class="tab-pane text-style" id="tab6">
+                            <div class="TaskType">
                             <h2 class="text-center"><%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%></h2>
                             <h2 class="text-center">Monitorointiharjoitus <%=taskTypeID%></h2>
 
@@ -573,7 +574,7 @@
                                         <td><input id="ex2" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
                                     </tr>
                                 </tbody>
-                                                                <tbody>
+                                <tbody>
                                     <tr bgcolor="#FFFFA0">
                                         <th>Yö</th>
                                         <th></th>
@@ -612,6 +613,7 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                                </div>
                             </div>
                             </div>
                             </div>
@@ -669,7 +671,6 @@
                             }//ends printing all the stuff of one task
                         %>
                         
-
                     </div>
 
                 </div>  

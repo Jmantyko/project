@@ -56,9 +56,9 @@ body, html {
 }
 
 .customer-main-container{
-    height: 100%;
     width: 100%;
-    min-height: 300px;
+    height: 100%;
+    height: auto;
     padding-top: 20px;
     padding-left: 25px;
     padding-right: 25px;
@@ -70,7 +70,6 @@ body, html {
     padding: inherit;
     float: left;
     width: 40%;
-    height: auto;
 }
 
 .customer-display-container {
@@ -81,14 +80,17 @@ body, html {
 }
 
 .container-bottom {
-    position: relative;
+    background-color: green;
+    position: fixed;
+    display: block;
+    margin-bottom: 0;
     width: 100%;
     margin-right: auto;
     margin-left: auto;
     text-align: center;
 }
 
-#tab-display-harjoitus, #tab-display-viestit, #tab-display-welcome, .tab6, .chat {
+#tab-display-harjoitus, #tab-display-viestit, #tab-display-welcome, .chat, .TaskType {
     position: absolute;
     top: 0;
     left: 0;
@@ -100,27 +102,41 @@ body, html {
 }
 
 @media (max-width: 1000px) {
-    
+
     .tab-content {
-        height: 80%;
+        height: 100%;
     }
+    
     .customer-main-container {
         position: relative;
+        display: block;
+    }    
+     
+    .customer-display-container, .customer-actions-container {
+        position: relative;
+        width: 100%;
+        top: 0;
+        left: 0;
+        display: block;
     }
     
-    .customer-actions-container, .customer-display-container, 
     #tab-display-harjoitus, #tab-display-viestit, #tab-display-welcome, 
-    #harjoitukset, .chat, .chat-ul ,.message-data{
+    #harjoitukset, .chat,.TaskType{
         position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
-        display: block;
     }
     
     .container-bottom {
-        background-color: green;
+        background-color: #FFF;
         position: fixed;
         display: block;
     }
+}
+
+.clear {
+    clear: both;
 }
 
 .chat {
