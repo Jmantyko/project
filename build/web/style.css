@@ -66,9 +66,10 @@ body, html {
 }
 
 .customer-actions-container {
+    position: relative;
     padding: inherit;
     float: left;
-    width: 45%;
+    width: 40%;
     height: auto;
 }
 
@@ -76,10 +77,11 @@ body, html {
     position: relative;
     padding: inherit;
     float: left;
-    width: 55%;
+    width: 60%;
 }
 
 .container-bottom {
+    position: relative;
     width: 100%;
     margin-right: auto;
     margin-left: auto;
@@ -90,11 +92,35 @@ body, html {
     position: absolute;
     top: 0;
     left: 0;
-    width: inherit;
-    max-width: 500px;
+    width: 100%;
 }
+
 #harjoitukset {
     padding: 10px;
+}
+
+@media (max-width: 1000px) {
+    
+    .tab-content {
+        height: 80%;
+    }
+    .customer-main-container {
+        position: absolute;
+    }
+    
+    .customer-actions-container, .customer-display-container, 
+    #tab-display-harjoitus, #tab-display-viestit, #tab-display-welcome, 
+    #harjoitukset, .chat, .chat-history, .chat-ul ,.message-data{
+        position: relative;
+        width: 100%;
+        display: block;
+    }
+    
+    .container-bottom {
+        background-color: green;
+        position: fixed;
+        display: block;
+    }
 }
 
 .chat {
@@ -183,6 +209,15 @@ body, html {
 
 .me {
     color: #E9724C;
+}
+
+.harjoitus1-form {
+    width: 100%;
+    min-width: 400px;
+}
+
+#ex1Slider, .slider-selection {
+    width: 100%;
 }
 
 .nav-pills > li.active > a, .nav-pills > li.active > a:focus {

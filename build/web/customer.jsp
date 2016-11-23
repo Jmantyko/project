@@ -454,7 +454,7 @@
 
                             </br>
 
-                            <table class="table">
+                            <table class="table harjoitus1-form">
                                 <thead>
                                     <tr>
                                         <th>Ajankohta <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></th>
