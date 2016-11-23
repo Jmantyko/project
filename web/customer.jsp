@@ -4,6 +4,7 @@
     Author     : Jaakko
 --%>
 
+<%@page import="Arjenhallinta.Message"%>
 <%@page import="Arjenhallinta.Detail"%>
 <%@page import="Arjenhallinta.Task"%>
 <%@page import="java.util.ArrayList"%>
@@ -588,6 +589,7 @@
                             </div>
                             <%
                                 }
+                                
                             %>
                         </div>
                         <%
@@ -597,22 +599,50 @@
                             <div class="chat">
                             <div class="chat-history">
                                 <ul class="chat-ul">
+                        <%
+                            
+                            //In here we will load and print chat
+                            //Later we need to figure out how to print chat for each task...
+                            ArrayList<Message> messages = new ArrayList<Message>();
+                            messages = Database.getTaskMessages(1); //taskID is the parameter
+
+                            int messageID = 0;
+                            String messageUserType = "";
+                            String messageContent = "";
+                            String messageDate = "";
+
+                            for (int i = 0; i<messages.size();i++){
+
+                                messageID = ((Message) messages.get(i)).getMessageID();
+                                messageUserType = ((Message) messages.get(i)).getMessageUserType();
+                                messageContent = ((Message) messages.get(i)).getMessageContent();
+                                messageDate = ((Message) messages.get(i)).getMessageDate();
+
+                                if("customer".equals(messageUserType)){
+                        %>
                                 <li>
                                     <div class="message-data">
-                                        <span class="message-data-name"><i class="fa fa-circle you"></i> Asiakas</span>
+                                        <span class="message-data-name"><i class="fa fa-circle you"></i><%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%> <%=InputOutput.clean(messageDate)%></span>
                                     </div>
                                     <div class="message you-message">
-                                        <p>A new client?!?! I would love to help them, but where are we going to find the time?</p>
+                                        <p><%=InputOutput.clean(messageContent)%></p>
                                     </div>
-                                </li>
+                                </li><br>
+                                <%
+                                    }else{
+                                %>
                                 <li class="clearfix">
                                     <div class="message-data">
-                                        <span class="message-data-name float-right">Martti</span>
+                                        <span class="message-data-name float-right">Martti Puttonen <%=InputOutput.clean(messageDate)%></span>
                                     </div>
                                     <div class="message me-message"> 
-                                        <p>We should take a look at your onboarding and service delivery workflows, for most businesess there are many ways to save time and not compromise quality.</p>
+                                        <p><%=InputOutput.clean(messageContent)%></p>
                                     </div>
-                                </li>
+                                </li><br>
+                                <%
+                                    }
+                                }
+                                %>
                                 </ul>
                             </div> <!-- end chat-history -->
                             </div> <!-- end chat -->

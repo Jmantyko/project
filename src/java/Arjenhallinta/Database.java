@@ -788,6 +788,41 @@ public class Database {
         }
     }
     
+    public static ArrayList<Message> getTaskMessages(int taskID) {
+        
+        ArrayList messages = new ArrayList();
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("SELECT MessageID, UserType, MessageContent, MessageDate"
+                    + " FROM Messages WHERE TaskID=?");
+            ps.setInt(1, taskID);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                messages.add(new Message(rs.getInt("MessageID"), rs.getString("UserType"),
+                        rs.getString("MessageContent"), rs.getString("MessageDate")));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
+            
+        }
+        
+        return messages;
+    }
+    
     public static ArrayList<Task> getUserTasks(int userID) {
         
         ArrayList tasks = new ArrayList();
