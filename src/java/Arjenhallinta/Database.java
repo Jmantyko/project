@@ -823,6 +823,33 @@ public class Database {
         return messages;
     }
     
+    public static void sendMessage(int taskID, String userType, String messageContent) {
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("INSERT INTO Messages (TaskID, UserType, MessageContent) VALUES (?, ?, ?)");
+            ps.setInt(1, taskID);
+            ps.setString(2, userType);
+            ps.setString(3, messageContent);
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
+            
+        }
+    }
+    
     public static ArrayList<Task> getUserTasks(int userID) {
         
         ArrayList tasks = new ArrayList();

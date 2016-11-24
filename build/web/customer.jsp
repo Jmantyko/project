@@ -332,13 +332,13 @@
                         <label for="exampleInputEmail1">
                             <i class="glyphicon glyphicon-envelope"></i> Sähköpostiosoite
                         </label> 
-                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" />
+                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">
                             <i class="glyphicon glyphicon-lock"></i> Salasana
                         </label> 
-                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+                        <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-success btn-block">Kirjaudu</button>
@@ -523,8 +523,8 @@
                                             </script>
                                         </th>
                                         <td><input type="text" class="form-control"></td>
-                                        <td><input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
-                                        <td><input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
+                                        <td><input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"></td>
+                                        <td><input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"></td>
                                     </tr>
                                 </tbody>
                                                                 <tbody>
@@ -662,6 +662,13 @@
                                     }
                                 }
                                 %>
+                                <form action="SendMessage" method="POST">
+                                    <input type="text" name="message" class="form-control"><br>
+                                    <input type="hidden" name="taskid" value="<%=taskID%>">
+                                    <input type="hidden" name="usertype" value="customer">
+                                    <input type="submit" class="btn btn-primary" value="Lähetä">
+                                </form>
+                                    
                                 </ul>
                             </div> <!-- end chat -->
                         </div>
