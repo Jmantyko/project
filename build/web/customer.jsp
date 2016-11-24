@@ -624,7 +624,7 @@
                         <div class="tab-pane fade" id="tab-display-viestit<%=taskID%>">
                             <div class="chat">
                                 <ul class="chat-ul">
-                                <h4><strong>Harjoitus <%=taskTypeID%>. viestit</strong></h4>
+                                <h4><strong>Monitorointiharjoitus <%=taskTypeID%>. viestit</strong></h4>
                                 <%
                                     messages = Database.getTaskMessages(taskID);
 
