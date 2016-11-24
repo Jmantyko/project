@@ -666,6 +666,7 @@
                                     <input type="text" name="message" class="form-control"><br>
                                     <input type="hidden" name="taskid" value="<%=taskID%>">
                                     <input type="hidden" name="usertype" value="customer">
+                                    <input type="hidden" name="messagetype" value="A">
                                     <input type="submit" class="btn btn-primary" value="Lähetä">
                                 </form>
                                     
@@ -808,7 +809,56 @@
                 </div>
                 
                 <div class="customer-display-container">
-                    <p>Tähän terapeutin palaute</p>
+                    <div class="chat">
+                                <ul class="chat-ul">
+                                <h3>Keskustelu taustatiedoista</h3>
+                                <%
+                                    messages = Database.getDetailMessages(detailID);
+
+                                    //In here we will load and print chat
+                                    for (int j = 0; j<messages.size();j++){
+
+                                        messageID = ((Message) messages.get(j)).getMessageID();
+                                        messageUserType = ((Message) messages.get(j)).getMessageUserType();
+                                        messageContent = ((Message) messages.get(j)).getMessageContent();
+                                        messageDate = ((Message) messages.get(j)).getMessageDate();
+
+                                        //these could be swapped to make chat more intuitive
+                                        if("customer".equals(messageUserType)){
+                                %>
+                                <li>
+                                    <div class="message-data">
+                                        <span class="message-data-name"><i class="fa fa-circle you"></i><%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%> <%=InputOutput.clean(messageDate)%></span>
+                                    </div>
+                                    <div class="message you-message">
+                                        <p><%=InputOutput.clean(messageContent)%></p>
+                                    </div>
+                                </li><br>
+                                <%
+                                    }else{
+                                %>
+                                <li class="clearfix">
+                                    <div class="message-data">
+                                        <span class="message-data-name float-right">Martti Puttonen <%=InputOutput.clean(messageDate)%></span>
+                                    </div>
+                                    <div class="message me-message"> 
+                                        <p><%=InputOutput.clean(messageContent)%></p>
+                                    </div>
+                                </li><br>
+                                <%
+                                    }
+                                }
+                                %>
+                                <form action="SendMessage" method="POST">
+                                    <input type="text" name="message" class="form-control"><br>
+                                    <input type="hidden" name="detailid" value="<%=detailID%>">
+                                    <input type="hidden" name="usertype" value="customer">
+                                    <input type="hidden" name="messagetype" value="B">
+                                    <input type="submit" class="btn btn-primary" value="Lähetä">
+                                </form>
+                                    
+                                </ul>
+                            </div> <!-- end chat -->
                 </div>
             
             </div>    

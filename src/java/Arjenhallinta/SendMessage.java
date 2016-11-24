@@ -32,14 +32,27 @@ public class SendMessage extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         
+        String messageType = request.getParameter("messagetype");
         String message = request.getParameter("message");
-        String stringTaskID = request.getParameter("taskid");
-        int intTaskID = Integer.parseInt(stringTaskID);
         String userType = request.getParameter("usertype");
         
-        Database.sendMessage(intTaskID, userType, message);
-        
-        response.sendRedirect(request.getContextPath() + "/customer.jsp");
-        
+        switch (messageType){
+            case "A":
+                String stringTaskID = request.getParameter("taskid");
+                int intTaskID = Integer.parseInt(stringTaskID);
+                Database.sendTaskMessage(intTaskID, userType, message);
+                response.sendRedirect(request.getContextPath() + "/customer.jsp");
+                break;
+                
+            case "B":
+                String stringDetailID = request.getParameter("detailid");
+                int intDetailID = Integer.parseInt(stringDetailID);
+                Database.sendDetailMessage(intDetailID, userType, message);
+                response.sendRedirect(request.getContextPath() + "/customer.jsp");
+                break;
+            default:
+                System.out.println("ERROR IN SENDING MESSAGE");
+                break;
+        }
     }
 }
