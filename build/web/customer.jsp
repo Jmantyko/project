@@ -667,6 +667,7 @@
                                     <input type="hidden" name="taskid" value="<%=taskID%>">
                                     <input type="hidden" name="usertype" value="customer">
                                     <input type="hidden" name="messagetype" value="A">
+                                    <input type="hidden" name="userid" value="<%=userID%>">
                                     <input type="submit" class="btn btn-primary" value="Lähetä">
                                 </form>
                                     
@@ -854,6 +855,7 @@
                                     <input type="hidden" name="detailid" value="<%=detailID%>">
                                     <input type="hidden" name="usertype" value="customer">
                                     <input type="hidden" name="messagetype" value="B">
+                                    <input type="hidden" name="userid" value="<%=userID%>">
                                     <input type="submit" class="btn btn-primary" value="Lähetä">
                                 </form>
                                     
