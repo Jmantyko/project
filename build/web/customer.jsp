@@ -633,12 +633,11 @@
                                         messageContent = ((Message) messages.get(j)).getMessageContent();
                                         messageDate = ((Message) messages.get(j)).getMessageDate();
 
-                                        //these could be swapped to make chat more intuitive
-                                        if("customer".equals(messageUserType)){
+                                        if("admin".equals(messageUserType)){
                                 %>
                                 <li>
                                     <div class="message-data">
-                                        <span class="message-data-name"><i class="fa fa-circle you"></i><%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%> <%=InputOutput.clean(messageDate)%></span>
+                                        <span class="message-data-name"><i class="fa fa-circle you"></i>Martti Puttonen <%=InputOutput.clean(messageDate)%></span>
                                     </div>
                                     <div class="message you-message">
                                         <p><%=InputOutput.clean(messageContent)%></p>
@@ -649,7 +648,7 @@
                                 %>
                                 <li class="clearfix">
                                     <div class="message-data">
-                                        <span class="message-data-name float-right">Martti Puttonen <%=InputOutput.clean(messageDate)%></span>
+                                        <span class="message-data-name float-right"><%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%> <%=InputOutput.clean(messageDate)%></span>
                                     </div>
                                     <div class="message me-message"> 
                                         <p><%=InputOutput.clean(messageContent)%></p>
@@ -821,12 +820,11 @@
                                         messageContent = ((Message) messages.get(j)).getMessageContent();
                                         messageDate = ((Message) messages.get(j)).getMessageDate();
 
-                                        //these could be swapped to make chat more intuitive
-                                        if("customer".equals(messageUserType)){
+                                        if("admin".equals(messageUserType)){
                                 %>
                                 <li>
                                     <div class="message-data">
-                                        <span class="message-data-name"><i class="fa fa-circle you"></i><%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%> <%=InputOutput.clean(messageDate)%></span>
+                                        <span class="message-data-name"><i class="fa fa-circle you"></i>Martti Puttonen <%=InputOutput.clean(messageDate)%></span>
                                     </div>
                                     <div class="message you-message">
                                         <p><%=InputOutput.clean(messageContent)%></p>
@@ -837,7 +835,7 @@
                                 %>
                                 <li class="clearfix">
                                     <div class="message-data">
-                                        <span class="message-data-name float-right">Martti Puttonen <%=InputOutput.clean(messageDate)%></span>
+                                        <span class="message-data-name float-right"><%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%> <%=InputOutput.clean(messageDate)%></span>
                                     </div>
                                     <div class="message me-message"> 
                                         <p><%=InputOutput.clean(messageContent)%></p>
