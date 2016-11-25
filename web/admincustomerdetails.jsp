@@ -4,6 +4,7 @@
     Author     : Jaakko
 --%>
 
+<%@page import="Arjenhallinta.Message"%>
 <%@page import="Arjenhallinta.Detail"%>
 <%@page import="Arjenhallinta.Task"%>
 <%@page import="Arjenhallinta.Customer"%>
@@ -648,10 +649,10 @@ $(function(){
 <div class="container">
     <%
     String stringUserID = request.getParameter("customerid");
-    int userid = Integer.parseInt(stringUserID);
+    int userID = Integer.parseInt(stringUserID);
 
-    String userName = Database.getUserNameUsingID(userid);
-    String userSurname = Database.getUserSurnameUsingID(userid);
+    String userName = Database.getUserNameUsingID(userID);
+    String userSurname = Database.getUserSurnameUsingID(userID);
     %>
     
     <h3><%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%></h3>
@@ -667,13 +668,22 @@ $(function(){
                 <div class="tab-pane fade" id="tab-contentA">
                     <div class="col-sm-3">
                         <%
+                            //Variables for tasks
                             ArrayList<Task> tasks = new ArrayList<Task>();
-                            tasks = Database.getUserTasks(userid);
+                            tasks = Database.getUserTasks(userID);
                             int taskID = 0;
                             int taskTypeID = 0;
                             String taskContent = "";
                             boolean taskIsReturned;
                             boolean taskIsClosed;
+                            
+                            //Variables for messages
+                            ArrayList<Message> messages = new ArrayList<Message>();
+                            messages = Database.getTaskMessages(taskID);
+                            int messageID = 0;
+                            String messageUserType = "";
+                            String messageContent = "";
+                            String messageDate = "";
                             
                             if(tasks.size() == 0){
                         %>
@@ -745,7 +755,8 @@ $(function(){
                     <div class="col-sm-6">
                         <div class="tab-content">
                             <% 
-                            //Here we print all content of each task
+                            //Here we print all content of each task in three (3) steps
+                            // (1) starting with the content
                             for (int i = 0; i < tasks.size(); i++){
                                 
                                 taskID = ((Task) tasks.get(i)).getTaskID();
@@ -753,24 +764,78 @@ $(function(){
                                 taskContent = ((Task) tasks.get(i)).getTaskContent();
                                 taskIsClosed = ((Task) tasks.get(i)).getTaskIsClosed();
                             %>
+                            <!-- printing task starts -->
                             <div class="tab-pane fade" id="tab-content<%=taskID%>">
                                 <div>
                                     <p><strong>Monitorointiharjoitus: <%=taskTypeID%>, arkistointitunnus <%=taskID%>.</strong><br><br> Harjoituksen sisältö: <%=InputOutput.clean(taskContent)%></p>
                                 </div>
                             <%
-                                //Adding "Close task" button for tasks
-                                //which are not closed yet
+                                //(2) Adding "Close task" button for tasks which are not closed yet 
                                 if(taskIsClosed == false){
                             %>
                                 <form action="CloseTask" method="POST">
                                     <input type="hidden" name="taskid" value="<%=taskID%>">
-                                    <input type="hidden" name="userid" value="<%=userid%>">
+                                    <input type="hidden" name="userid" value="<%=userID%>">
                                     <input type="submit" class="btn btn-danger" value="Sulje harjoitus">
                                 </form>
                             <%
                                 }
                             %>
-                            </div>
+                                <div class="chat"> <!-- printing chat for specific task starts -->
+                                    <ul class="chat-ul">
+                                    <h4>Tehtävän viestit</h4>
+                            <%
+                                // (3) and finally we add the chat for that specific task
+                                messages = Database.getTaskMessages(taskID);
+                                
+                                for(int j = 0; j<messages.size(); j++){
+                                    
+                                    messageID = ((Message) messages.get(j)).getMessageID();
+                                    messageUserType = ((Message) messages.get(j)).getMessageUserType();
+                                    messageContent = ((Message) messages.get(j)).getMessageContent();
+                                    messageDate = ((Message) messages.get(j)).getMessageDate();
+
+                                    if("customer".equals(messageUserType)){
+                            %>
+                                <li>
+                                    <div class="message-data">
+                                        <span class="message-data-name"><i class="fa fa-circle you"></i><%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%> <%=InputOutput.clean(messageDate)%></span>
+                                    </div>
+                                    <div class="message you-message">
+                                        <p><%=InputOutput.clean(messageContent)%></p>
+                                    </div>
+                                </li><br>
+                            <%
+                                    }else{
+                            %>
+                                <li class="clearfix">
+                                    <div class="message-data">
+                                        <span class="message-data-name float-right">Martti Puttonen <%=InputOutput.clean(messageDate)%></span>
+                                    </div>
+                                    <div class="message me-message"> 
+                                        <p><%=InputOutput.clean(messageContent)%></p>
+                                    </div>
+                                </li><br>
+                            <%
+                                    }
+                                }
+
+                                if(taskIsClosed == false){
+                            %>
+                                    <form action="SendMessage" method="POST">
+                                        <input type="text" name="message" class="form-control"><br>
+                                        <input type="hidden" name="taskid" value="<%=taskID%>">
+                                        <input type="hidden" name="usertype" value="admin">
+                                        <input type="hidden" name="messagetype" value="C">
+                                        <input type="hidden" name="userid" value="<%=userID%>">
+                                        <input type="submit" class="btn btn-primary" value="Lähetä">
+                                    </form>
+                            <%
+                                }
+                            %>
+                                    </ul>
+                                </div> <!-- end chat -->
+                            </div><!-- printing complete task with chat ends -->
                             <%
                             }
                             %>
@@ -792,7 +857,7 @@ $(function(){
                             <div class="radio">
                                 <label><input type="radio" name="tasktypeid" value="3"><strong>Monitorointiharjoitus 3</strong></label>
                             </div>
-                            <input type="hidden" name="userid" value="<%=userid%>">
+                            <input type="hidden" name="userid" value="<%=userID%>">
                             <input type="submit" class="btn btn-info" value="Lähetä">
                         </form>
                     </div>
@@ -811,7 +876,6 @@ $(function(){
                     <!-- taustatiedot alkaa -->
                     <%
                         //These can be moved up
-                        int userID = userid;
                         String customerUserEmail = "";
                         userName = "";
                         userSurname = "";
@@ -952,7 +1016,56 @@ $(function(){
                     <!-- taustatiedot päättyy -->
                 </div>
                 <div class="col-sm-6">
-                    <p>Chat tähän</p>
+                    <div class="chat">
+                        <ul class="chat-ul">
+                            <h3>Keskustelu taustatiedoista</h3>
+                                <%
+                                    messages = Database.getDetailMessages(detailID);
+
+                                    //In here we will load and print chat
+                                    for (int j = 0; j<messages.size();j++){
+
+                                        messageID = ((Message) messages.get(j)).getMessageID();
+                                        messageUserType = ((Message) messages.get(j)).getMessageUserType();
+                                        messageContent = ((Message) messages.get(j)).getMessageContent();
+                                        messageDate = ((Message) messages.get(j)).getMessageDate();
+
+                                        if("customer".equals(messageUserType)){
+                                %>
+                                <li>
+                                    <div class="message-data">
+                                        <span class="message-data-name"><i class="fa fa-circle you"></i><%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%> <%=InputOutput.clean(messageDate)%></span>
+                                    </div>
+                                    <div class="message you-message">
+                                        <p><%=InputOutput.clean(messageContent)%></p>
+                                    </div>
+                                </li><br>
+                                <%
+                                    }else{
+                                %>
+                                <li class="clearfix">
+                                    <div class="message-data">
+                                        <span class="message-data-name float-right">Martti Puttonen <%=InputOutput.clean(messageDate)%></span>
+                                    </div>
+                                    <div class="message me-message"> 
+                                        <p><%=InputOutput.clean(messageContent)%></p>
+                                    </div>
+                                </li><br>
+                                <%
+                                    }
+                                }
+                                %>
+                                <form action="SendMessage" method="POST">
+                                    <input type="text" name="message" class="form-control"><br>
+                                    <input type="hidden" name="detailid" value="<%=detailID%>">
+                                    <input type="hidden" name="usertype" value="admin">
+                                    <input type="hidden" name="messagetype" value="D">
+                                    <input type="hidden" name="userid" value="<%=userID%>">
+                                    <input type="submit" class="btn btn-primary" value="Lähetä">
+                                </form>    
+                        </ul>
+                    </div> <!-- end chat -->
+                    
                 </div>
             </div>
                 <div class="tab-pane fade" id="tab-contentD">                
@@ -960,7 +1073,7 @@ $(function(){
                     <p>Harjoitukset tähän</p>
                 </div>                
                 <div class="col-sm-6">
-                    <p>Chat tähän</p>
+                    <p>Chat tähän2</p>
                 </div>
 
                 </div>

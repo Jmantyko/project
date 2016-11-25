@@ -36,6 +36,10 @@ public class SendMessage extends HttpServlet {
         String userType = request.getParameter("usertype");
         String stringUserID = request.getParameter("userid");
         int intUserID = Integer.parseInt(stringUserID);
+        String stringTaskID;
+        int intTaskID;
+        String stringDetailID;
+        int intDetailID;
         
         //Case A is for customer who sends message related to certain task
         //Case B is for customer who sends message related to background details
@@ -43,19 +47,30 @@ public class SendMessage extends HttpServlet {
         //Case D is for admin who sends message related to background details
         switch (messageType){
             case "A":
-                String stringTaskID = request.getParameter("taskid");
-                int intTaskID = Integer.parseInt(stringTaskID);
+                stringTaskID = request.getParameter("taskid");
+                intTaskID = Integer.parseInt(stringTaskID);
                 Database.sendTaskMessage(intTaskID, userType, message);
                 Database.updateUserActivityDate(intUserID, "Viesti harjoitukseen");
                 response.sendRedirect(request.getContextPath() + "/customer.jsp");
                 break;
-                
             case "B":
-                String stringDetailID = request.getParameter("detailid");
-                int intDetailID = Integer.parseInt(stringDetailID);
+                stringDetailID = request.getParameter("detailid");
+                intDetailID = Integer.parseInt(stringDetailID);
                 Database.sendDetailMessage(intDetailID, userType, message);
                 Database.updateUserActivityDate(intUserID, "Viesti taustatietoihin");
                 response.sendRedirect(request.getContextPath() + "/customer.jsp");
+                break;
+            case "C":
+                stringTaskID = request.getParameter("taskid");
+                intTaskID = Integer.parseInt(stringTaskID);
+                Database.sendTaskMessage(intTaskID, userType, message);
+                response.sendRedirect(request.getContextPath() + "/admincustomerdetails.jsp?customerid=" + intUserID);
+                break;    
+            case "D":
+                stringDetailID = request.getParameter("detailid");
+                intDetailID = Integer.parseInt(stringDetailID);
+                Database.sendDetailMessage(intDetailID, userType, message);
+                response.sendRedirect(request.getContextPath() + "/admincustomerdetails.jsp?customerid=" + intUserID);
                 break;
             default:
                 System.out.println("ERROR IN SENDING MESSAGE");
