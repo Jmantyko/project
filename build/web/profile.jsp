@@ -391,11 +391,11 @@
                     <h3>Vaihda salasana</h3>
                     <form action="UpdateUserPassword" method="POST" accept-charset="utf-8">
                         Vanha salasana:
-                        <input type="password" class="form-control" name="oldpassword" value="" />
+                        <input type="password" class="form-control" name="oldpassword" value="" required>
                         Uusi salasana:
-                        <input type="password" class="form-control" name="newpassword" value="" />
+                        <input type="password" class="form-control" name="newpassword" value="" required>
                         Anna salasana uudelleen:
-                        <input type="password" class="form-control" name="newpasswordagain" value="" /><br>
+                        <input type="password" class="form-control" name="newpasswordagain" value="" required><br>
                         <input type="hidden" name="email" value="<%=InputOutput.clean(userEmail)%>">
                         <input type="submit" class="btn btn-warning" value="Vaihda salasana" />
                     </form>
@@ -434,11 +434,11 @@
                     <h3>Vaihda salasana</h3>
                     <form action="UpdateUserPassword" method="POST" accept-charset="utf-8">
                         Vanha salasana:
-                        <input type="password" class="form-control" name="oldpassword" value="" />
+                        <input type="password" class="form-control" name="oldpassword" value="" required>
                         Uusi salasana:
-                        <input type="password" class="form-control" name="newpassword" value="" />
+                        <input type="password" class="form-control" name="newpassword" value="" required>
                         Anna salasana uudelleen:
-                        <input type="password" class="form-control" name="newpasswordagain" value="" /><br>
+                        <input type="password" class="form-control" name="newpasswordagain" value="" required><br>
                         <input type="hidden" name="email" value="<%=InputOutput.clean(userEmail)%>">
                         <input type="submit" class="btn btn-warning" value="Vaihda salasana" />
                     </form>

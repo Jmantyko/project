@@ -424,21 +424,6 @@ $(function(){
          });
          
          </script>
-        <script>
-        $(document).ready(function(){
-            $("#addUserButton").attr('disabled', true);
-            
-            $("#password").keyup(function(){
-                if($(this).val().length !=0)
-                    $("#addUserButton").attr('disabled', false);            
-                else
-                    $("#addUserButton").attr('disabled',true);
-            })
-        });
-        </script>
-
- 
-
 <div class="container">
 <nav class="navbar navbar-default" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
@@ -1181,22 +1166,22 @@ $(function(){
                     <h3>Uuden asiakkastilin luonti</h3>
                     <form action="CreateUser" method="POST" class="topBuffer">
                     <label for="email">Anna käyttäjän sähköpostiosoite:</label>
-                    <input type="email" class="form-control" name="email" id="email" value="" placeholder="esim. esimerkki@esimerkki.fi" /><br>
+                    <input type="email" class="form-control" name="email" id="email" value="" placeholder="esim. esimerkki@esimerkki.fi" required><br>
                     <label for="password">Luo käyttäjälle salasana:</label>
-                    <input type="password" class="form-control" name="password" id="password" value="" placeholder="esim. w895aRQ3gByx" /><br>
+                    <input type="password" class="form-control" name="password" id="password" value="" placeholder="esim. w895aRQ3gByx" required><br>
                     <label for="name">Anna käyttäjän etunimi:</label>
-                    <input type="text" class="form-control" name="name" value="" placeholder="esim. Pekka" /><br>
+                    <input type="text" class="form-control" name="name" value="" placeholder="esim. Matti" required><br>
                     <label for="name">Anna käyttäjän sukunimi:</label>
-                    <input type="text" class="form-control" name="surname" value="" placeholder="esim. Meikäläinen" /><br>
+                    <input type="text" class="form-control" name="surname" value="" placeholder="esim. Meikäläinen" required><br>
                     <label for="phonenumber">Anna käyttäjän puhelinnumero:</label>
-                    <input type="text" class="form-control" name="phonenumber" value="" placeholder="esim. 04012345678" /><br>
+                    <input type="text" class="form-control" name="phonenumber" value="" placeholder="esim. 04012345678"><br>
                     <label for="address">Anna käyttäjän osoite:</label>
-                    <input type="text" class="form-control" name="address" value="" placeholder="esim. Torikatu 7" /><br>
+                    <input type="text" class="form-control" name="address" value="" placeholder="esim. Torikatu 7"><br>
                     <label for="postalcode">Anna käyttäjän postinumero:</label>
-                    <input type="text" class="form-control" name="postalcode" value="" placeholder="esim. 10101" /><br>
+                    <input type="text" class="form-control" name="postalcode" value="" placeholder="esim. 10101"><br>
                     <label for="postoffice">Anna käyttäjän postitoimipaikka:</label>
-                    <input type="text" class="form-control" name="postoffice" value="" placeholder="esim. Oulu" /><br>
-                    <input type="submit" class="btn btn-success" id="addUserButton" value="Lisää asiakastili" /> 
+                    <input type="text" class="form-control" name="postoffice" value="" placeholder="esim. Oulu"><br>
+                    <input type="submit" class="btn btn-success" id="addUserButton" value="Lisää asiakastili"> 
                     </form>
                 </div> 
             <%
