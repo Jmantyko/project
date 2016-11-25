@@ -15,71 +15,7 @@ body, html {
     height: 100%;
 }
 
-@media (width: 1024px) {
-    body, html {
-        margin-right: auto;
-        margin-left: auto;
-        width: 1024px;
-    }
-}
 
-@media (width: 1280px) {
-    body, html {
-        margin-right: auto;
-        margin-left: auto;
-        width: 1280px;
-    }
-}
-
-@media (width: 1366px) {
-    body, html {
-        margin-right: auto;
-        margin-left: auto;
-        width: 1366px;
-    }
-}
-
-@media (width: 1600px) {
-    body, html {
-        margin-right: auto;
-        margin-left: auto;
-        width: 1600px;
-    }
-}
-
-@media (width: 1920px) {
-    body, html {
-        margin-right: auto;
-        margin-left: auto;
-        width: 1920px;
-    }
-}
-
-.customer-main-container{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    padding-top: 20px;
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-bottom: 30px;
-}
-
-.customer-actions-container {
-    position: relative;
-    padding: inherit;
-    float: left;
-    width: 40%;
-    height: 100%;
-}
-
-.customer-display-container {
-    position: relative;
-    padding: inherit;
-    float: left;
-    width: 60%;
-    height: 100%;
-}
 
 .container-bottom {
     background-color: white;
@@ -91,52 +27,11 @@ body, html {
     text-align: center;
 }
 
-#tab-display-harjoitus, #tab-display-viestit, #tab-display-welcome, .chat, .TaskType {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
 
 #harjoitukset {
     padding: 10px;
 }
 
-@media (max-width: 1000px) {
-
-    .tab-content {
-        height: 100%;
-    }
-    
-    .customer-main-container {
-        position: relative;
-        display: block;
-    }    
-     
-    .customer-display-container, .customer-actions-container {
-        position: relative;
-        width: 100%;
-        top: 0;
-        left: 0;
-        display: block;
-    }
-    
-    #tab-display-harjoitus, #tab-display-viestit, #tab-display-welcome, 
-    #harjoitukset, .chat,.TaskType{
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-    
-    .container-bottom {
-        background-color: #FFF;
-        position: fixed;
-        display: block;
-    }
-}
 
 .clear {
     clear: both;
@@ -223,11 +118,6 @@ body, html {
 
 .me {
     color: #E9724C;
-}
-
-.harjoitus1-form {
-    width: 100%;
-    min-width: 400px;
 }
 
 #ex1Slider, .slider-selection {

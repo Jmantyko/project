@@ -392,8 +392,8 @@
         <div class="tab-content">
         <div class="tab-pane active text-style" id="tab1">
             <div class="container">
-                <div class="customer-main-container">
-                    <div class="customer-actions-container">
+                <div class="row customer-main-container">
+                    <div class="col-md-4 customer-actions-container">
                         <ul class="nav nav-tabs nav-justified">
                             <li class="active"><a data-toggle="tab" href="#tab-content-1">Harjoitukset</a></li>
                             <li><a data-toggle="tab" href="#tab-content-2">Viestit</a></li>
@@ -466,7 +466,8 @@
                         </div>
                     </div>
 
-                    <div class="customer-display-container">
+                    <div class="col-md-8 customer-display-container">
+                        <div class="tab-content">
                         <div class="tab-pane fade in active" id="tab-display-welcome">
                             <h2>Tervetuloa!</h2>
                             <p>tähän vähän esittelytekstiä ja Martin broadcastaukset</p>
@@ -486,8 +487,6 @@
                                 //Printing task that has taskTypeID = 1 other tasks (2, 3 etc.) need their own if-check
                                 if (taskClosed != true && taskTypeID == 1){
                             %>
-                            <div class="row">
-                            <div class="col-xs-12 col-md-8">
                             <div class="tab-pane text-style" id="tab6">
                             <div class="TaskType">
                             <h2 class="text-center"><%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%></h2>
@@ -495,7 +494,7 @@
 
                             </br>
 
-                            <table class="table harjoitus1-form">
+                            <table class="table">
                                 <thead>
                                     <tr>
                                         <th>Ajankohta <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></th>
@@ -614,8 +613,6 @@
                                 </table>
                                 </div>
                             </div>
-                            </div>
-                            </div>
                             <%
                                 }
                             %>
@@ -680,7 +677,7 @@
                         %>
                         
                     </div>
-
+                </div>
                 </div>  
 
             </div>
@@ -700,8 +697,8 @@
         %>
         <div class="tab-pane text-style" id="tab2">
             <div class="container">
-                <div class="customer-main-container">
-                <div class="customer-actions-container">
+                <div class="row customer-main-container">
+                <div class="col-sm-6 customer-actions-container">
                     <div class="well">
                     <h2>Ilmaisen kokeiluohjelman taustatiedot</h2>
                     <form action="UpdateUserDetails" method="POST">
@@ -809,7 +806,7 @@
 
                 </div>
                 
-                <div class="customer-display-container">
+                <div class="col-md-6 customer-display-container">
                     <div class="chat">
                                 <ul class="chat-ul">
                                 <h3>Keskustelu taustatiedoista</h3>
