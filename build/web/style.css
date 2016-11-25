@@ -15,7 +15,41 @@ body, html {
     height: 100%;
 }
 
+@media (width: 1024px) {
+    body, html {
+        width: 1024px;
+    }
+}
 
+@media (width: 1280px) {
+    body, html {
+        width: 1280px;
+    }
+}
+
+@media (width: 1366px) {
+    body, html {
+        width: 1366px;
+    }
+}
+
+@media (width: 1440px) {
+    body, html {
+        width: 1440px;
+    }
+}
+
+@media (width: 1600px) {
+    body, html {
+        width: 1600px;
+    }
+}
+
+@media (width: 1920px) {
+    body, html {
+        width: 1920px;
+    }
+}
 
 .container-bottom {
     background-color: white;
