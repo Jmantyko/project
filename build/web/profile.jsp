@@ -386,17 +386,21 @@
                 <input type="submit" class="btn btn-warning" value="Päivitä muutokset" />
             </form><br>
             <hr>
-            <h3>Vaihda salasana</h3>
-            <form action="UpdateUserPassword" method="POST" accept-charset="utf-8">
-                Vanha salasana:
-                <input type="password" class="form-control" name="oldpassword" value="" />
-                Uusi salasana:
-                <input type="password" class="form-control" name="newpassword" value="" />
-                Anna salasana uudelleen:
-                <input type="password" class="form-control" name="newpasswordagain" value="" /><br>
-                <input type="hidden" name="email" value="<%=InputOutput.clean(userEmail)%>">
-                <input type="submit" class="btn btn-warning" value="Vaihda salasana" />
-            </form>
+            <div class="row">
+                <div class="col-sm-4">
+                    <h3>Vaihda salasana</h3>
+                    <form action="UpdateUserPassword" method="POST" accept-charset="utf-8">
+                        Vanha salasana:
+                        <input type="password" class="form-control" name="oldpassword" value="" />
+                        Uusi salasana:
+                        <input type="password" class="form-control" name="newpassword" value="" />
+                        Anna salasana uudelleen:
+                        <input type="password" class="form-control" name="newpasswordagain" value="" /><br>
+                        <input type="hidden" name="email" value="<%=InputOutput.clean(userEmail)%>">
+                        <input type="submit" class="btn btn-warning" value="Vaihda salasana" />
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
     
@@ -406,36 +410,40 @@
 
     <div class="customer-tilitiedot">
         <div class="container">
-            <h3>Tilitiedot</h3>
-            <hr>
-            <form action="UpdateUserDetails" method="POST" accept-charset="utf-8">
-                <p>Asiakasnro: <strong><%=userID%></strong></p>
-                <p>Sähköposti: <strong><%=InputOutput.clean(userEmail)%></strong></p>
-                Etunimi:
-                <input type="text" class="form-control" name="name" value="<%=InputOutput.clean(userName)%>" />
-                Sukunimi:
-                <input type="text" class="form-control" name="surname" value="<%=InputOutput.clean(userSurname)%>" />
-                Osoite:
-                <input type="text" class="form-control" name="address" value="<%=InputOutput.clean(userAddress)%>" />
-                Postinro:
-                <input type="text" class="form-control" name="postalcode" value="<%=InputOutput.clean(userPostalcode)%>" />
-                Postitoimipaikka:
-                <input type="text" class="form-control" name="postoffice" value="<%=InputOutput.clean(userPostoffice)%>" /><br>
-                <input type="hidden" name="email" value="<%=InputOutput.clean(userEmail)%>">
-                <input type="submit" class="btn btn-warning" value="Tallenna" />
-            </form><br>
-            <hr>
-            <h3>Vaihda salasana</h3>
-            <form action="UpdateUserPassword" method="POST" accept-charset="utf-8">
-                Vanha salasana:
-                <input type="password" class="form-control" name="oldpassword" value="" />
-                Uusi salasana:
-                <input type="password" class="form-control" name="newpassword" value="" />
-                Anna salasana uudelleen:
-                <input type="password" class="form-control" name="newpasswordagain" value="" /><br>
-                <input type="hidden" name="email" value="<%=InputOutput.clean(userEmail)%>">
-                <input type="submit" class="btn btn-warning" value="Vaihda salasana" />
-            </form>
+            <div class="row">
+                <div class="col-sm-4">
+                    <h3>Tilitiedot</h3>
+                    <!--<hr>
+                    <form action="UpdateUserDetails" method="POST" accept-charset="utf-8">
+                        <p>Asiakasnro: <strong><%=userID%></strong></p>
+                        <p>Sähköposti: <strong><%=InputOutput.clean(userEmail)%></strong></p>
+                        Etunimi:
+                        <input type="text" class="form-control" name="name" value="<%=InputOutput.clean(userName)%>" />
+                        Sukunimi:
+                        <input type="text" class="form-control" name="surname" value="<%=InputOutput.clean(userSurname)%>" />
+                        Osoite:
+                        <input type="text" class="form-control" name="address" value="<%=InputOutput.clean(userAddress)%>" />
+                        Postinro:
+                        <input type="text" class="form-control" name="postalcode" value="<%=InputOutput.clean(userPostalcode)%>" />
+                        Postitoimipaikka:
+                        <input type="text" class="form-control" name="postoffice" value="<%=InputOutput.clean(userPostoffice)%>" /><br>
+                        <input type="hidden" name="email" value="<%=InputOutput.clean(userEmail)%>">
+                        <input type="submit" class="btn btn-warning" value="Tallenna" />
+                    </form><br>
+                    <hr> -->
+                    <h3>Vaihda salasana</h3>
+                    <form action="UpdateUserPassword" method="POST" accept-charset="utf-8">
+                        Vanha salasana:
+                        <input type="password" class="form-control" name="oldpassword" value="" />
+                        Uusi salasana:
+                        <input type="password" class="form-control" name="newpassword" value="" />
+                        Anna salasana uudelleen:
+                        <input type="password" class="form-control" name="newpasswordagain" value="" /><br>
+                        <input type="hidden" name="email" value="<%=InputOutput.clean(userEmail)%>">
+                        <input type="submit" class="btn btn-warning" value="Vaihda salasana" />
+                    </form>
+                </div>        
+            </div>        
         </div>
     </div>
                                 
