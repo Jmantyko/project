@@ -849,13 +849,25 @@ $(function(){
                 psykoterapeuttisesta asiakasyhteistyöstä. </p>
             
               <form>
-                  
+              
               <div class="form-group">
-                <label for="exampleInputEmail1">Nimi</label>
+                <label for="exampleInputEmail1">Etunimi</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
               </div>
               <div class="form-group">
-                <label for="exampleInputEmail1">Asuinosoite, virallinen postiosoite</label>
+                <label for="exampleInputEmail1">Sukunimi</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Asuinosoite</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Postinumero</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Postitoimipaikka</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
               </div>
               <div class="form-group">
