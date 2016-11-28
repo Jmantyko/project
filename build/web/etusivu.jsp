@@ -650,7 +650,7 @@ $(function(){
             <div class="col-md-4 col-sm-6 hero-feature">
                 <div class="thumbnail">
                     <h4>Terapeutin ja asiakkaan välinen dialogi</h4>
-                    <img src="Images/kuva6medium.png" alt="">
+                    <img src="Images/kuva7medium.png" alt="">
                     <div class="caption">
                         <p>Sovelluksen avulla asiakas vähitellen
                             oivaltaa miten hän tunnistaa todellista
