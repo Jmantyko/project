@@ -751,6 +751,7 @@ $(function(){
                                 }
                             }
                         %>
+                    
                     </div>
                     <div class="col-sm-6">
                         <div class="tab-content">
@@ -914,7 +915,11 @@ $(function(){
                             detailProblems = ((Detail) details.get(i)).getDetailProblems();
                         }
                     %>
-                    <div class="well">
+                    
+                    <br>
+                    
+                    <div class="row">
+                        <div class="well">
                         <h2>Ilmaisen kokeiluohjelman taustatiedot</h2>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Etunimi</label>
@@ -1012,6 +1017,7 @@ $(function(){
                                 <label for="exampleInputEmail1">Nimeä ja luetteloi lyhyesti ongelmia, sekä elämistäsi vaikeuttavia asioita kuten mielenterveydellisiä vaikeuksiasi omin sanoin</label>
                                 <p><%=InputOutput.clean(detailProblems)%></p>
                             </div>
+                        </div>
                     </div>
                     <!-- taustatiedot päättyy -->
                 </div>

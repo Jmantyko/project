@@ -673,7 +673,7 @@ $(function(){
                         <p>Keskiössä ovat käyttäjän tekemät 
                             monitorointiharjoitukset sekä
                             terapeutin antama palaute näiden
-                            pohjalta sekä asiakkaan ja terapeutin keskinäinen dialogi. </p>
+                            pohjalta asiakkaan ja terapeutin keskinäisen dialogin ohella. </p>
                         <p>
                             <br>
                             <a href="#tietoa" data-toggle="tab" class="btn btn-default">Lisätietoja &raquo;</a> <a href="#liity" data-toggle="tab" class="btn btn-primary">Liity tästä!<span class="glyphicon glyphicon-apple" aria-hidden="true"></span></a>
