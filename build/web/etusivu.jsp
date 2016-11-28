@@ -649,7 +649,7 @@ $(function(){
 
             <div class="col-md-4 col-sm-6 hero-feature">
                 <div class="thumbnail">
-                    <h4>Kohti positiivisempaa ajattelua</h4>
+                    <h4>Terapeutin ja asiakkaan välinen dialogi</h4>
                     <img src="Images/kuva6medium.png" alt="">
                     <div class="caption">
                         <p>Sovelluksen avulla asiakas vähitellen
@@ -822,32 +822,6 @@ $(function(){
                 
             <h2>Ilmaisen kokeiluohjelman taustatiedot</h2>
             
-            
-            <p>VASTAA SEURAAVIIN KYSYMYKSIIN ELÄMÄNTILANTEESTASI JA YLEISESTÄ HENKISESTÄ TILANTEESTASI 
-                (ilmaisen kokeiluohjelman tiedot henkilöstäsi ja tilanteestasi ovat yleisluontoisia, anna
-                kuitenkin todelliset tiedot henkilöstäsi, kuten nimi, osoite, ikätiedot):   
-                Näitä taustatietoja päivittäisestä elämäsi laadusta tarvitsen arvioidessani
-                tässä seuraavassa tekemiäsi päivittäisten toimintojen rekistereistäsi saamiani
-                tietoja arjen henkisen toimintasi luonteesta. Myös tässä kysytyt taustatiedot
-                auttavat minua tarkentamaan palautteitani ja tarpeellisia jatkokysymyksiä
-                mahdollisiin jatkokeskusteluihimme tässä yhteistyöalustassa, joiden asioiden
-                selvittämistä on kenties tarpeellista jatkaa toisella tai kolmannella 
-                monitorointitehtävällä jotka sinulla mahdollisesti lähetän.
-                Pyri vastaamaan nykyisen tilanteesi etkä toiveittesi mukaan,
-                jotta yhteistyömme perustuu tosiasioille, jos pyrit kaunistelemaan
-                tai muutoin vääristämään taustatietoja, tiedät että psykoterapiayhteistyö
-                ei perustu vääristelyyn, toisaalta meille voi olla vaikeaa huomata tiettyjä
-                tosiasioita.  Pyydän varsinkin että keskityt antamaan iästäsi ja muista
-                perustiedoista, kuten painosta ja terveydentilastasi samoin kuin muista
-                saamistasi hoitopalveluista ja hoitokeinoista tosiasiallista tilannettasi
-                vastaavat tiedot, tiedäthän että nämä tässä antamasi tiedot ovat täysin
-                luottamuksellisia eivätkä tule kenenkään kuten muiden lähihenkilöiden
-                tai muiden ammattilaisten tai minun kanssani yhteistyötä tekevien
-                asiakkaiden tietoon.  Sitä vaitiolovelvollisuutta ja yksityisyytesi
-                suojaamisen turvaaminen myös laillistetun psykoterapeutin työskentely
-                edellyttää olipa kyse istuntopainotteisesta tai internetissä toteutetusta
-                psykoterapeuttisesta asiakasyhteistyöstä. </p>
-            
               <form>
               
               <div class="form-group">
@@ -913,10 +887,6 @@ $(function(){
                 <div class="form-group">
                 <label for="exampleInputEmail1">Nimeä ja luetteloi lyhyesti ongelmia, sekä elämistäsi vaikeuttavia asioita kuten mielenterveydellisiä vaikeuksiasi omin sanoin</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Nimeä ja luetteloi lyhyesti ongelmia, sekä elämistäsi vaikeuttavia asioita kuten mielenterveydellisiä vaikeuksiasi omin sanoin</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
                 </div>
 
         
