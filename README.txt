@@ -77,6 +77,16 @@ CREATE TABLE Tasks (
 	FOREIGN KEY (UserID) REFERENCES Users (UserID)
 );
 
+CREATE TABLE Memos (
+	MemoID INT UNSIGNED NOT NULL AUTO_INCREMENT,
+	TaskID SMALLINT UNSIGNED,
+	MemoTime VARCHAR (128),
+	MemoDoing LONGTEXT,
+	MemoSuojaPercentage VARCHAR (64),
+	MemoTehtPercentage VARCHAR (64),
+	PRIMARY KEY (MemoID)
+);
+
 CREATE TABLE Messages (
 	MessageID INT UNSIGNED NOT NULL AUTO_INCREMENT,
 	TaskID SMALLINT UNSIGNED,
@@ -109,6 +119,12 @@ INSERT INTO Tasks (TaskTypeID, UserID, TaskContent, TaskIsReturned)
 		(2, 2, '*Toiseen harjoitukseen liittyvää sisälötä tietokannasta, user 2 tekijänä*', 0),
 		(1, 4, '*Harjoitukseen liittyvää sisälötä tietokannasta, user 4 tekijänä*', 1),
 		(2, 4, '*Toiseen harjoitukseen liittyvää sisälötä tietokannasta, user 4 tekijänä*', 1);
+		
+INSERT INTO Memos (TaskID, MemoTime, MemoDoing, MemoSuojaPercentage, MemoTehtPercentage)
+	VALUES	(1, '8:30', 'Aamupala', '77', '23'),
+		(1, '11:45', 'Kauppareissu', '33', '66'),
+		(1, '16:00', 'TV:n katsominen', '100', '100'),
+		(1, '23:30', 'Jotain tekemistä', '55', '25');
 		
 INSERT INTO Messages (TaskID, UserType, MessageContent)
 	VALUES	(1, 'admin', 'Tässäpä on terapeutin palaute ensimmäiseen monitorointiharjoitukseen...'),
