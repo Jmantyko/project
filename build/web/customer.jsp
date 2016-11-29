@@ -184,16 +184,6 @@
                 });
             });
         </script>
-
-        <script>
-        $(function(){
-            $('#ex1').slider({
-                formater: function(value) {
-		return 'Current value: ' + value;
-                }
-            });
-        });
-     </script>
 	 
 	 <!-- Bootstrap row adding js --> 
         <script src="addrow.js"></script>
@@ -482,18 +472,22 @@
                                 taskClosed = ((Task) tasks.get(z)).getTaskIsClosed();
                         %>
                         <div class="tab-pane fade" id="tab-display-harjoitus<%=taskID%>">
-                            <p><%=InputOutput.clean(taskContent)%></p>
                             <%
                                 //Printing task that has taskTypeID = 1 other tasks (2, 3 etc.) need their own if-check
                                 if (taskClosed != true && taskTypeID == 1){
+                                    
+                                    int exerciseID;
+                                    String exerciseTime = "";
+                                    String exerciseDoing = "";
+                                    String exerciseSuojaPercentage = "";
+                                    String exerciseTehtPercentage = "";
                             %>
                             <div class="tab-pane text-style" id="tab6">
                             <div class="TaskType">
-                            <h2 class="text-center"><%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%></h2>
-                            <h2 class="text-center">Monitorointiharjoitus <%=taskTypeID%></h2>
+                            <h3 class="text-center">Monitorointiharjoitus <%=taskTypeID%></h3>
 
                             </br>
-
+                            <form action="ProcessTask" method="POST">
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -504,104 +498,50 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr bgcolor="#FFFFA0">
-                                        <th>Aamu</th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>
+                                    <%
+                                    for(int i = 0; i < 5; i++){
+                                        
+                                        //Here we get all the small details about each task (time, doing, two percentage values)
+                                        //and print all those details
+                                        exerciseID = i; //  ((Exercise) exercises.get(i)).getExericseID();
+                                        exerciseTime = "5:50"; //  ((Exercise) exercises.get(i)).getExericseTime();
+                                        exerciseDoing = "Aamupala"; //  ((Exercise) exercises.get(i)).getExericseDoing();
+                                        exerciseSuojaPercentage = "67"; //  ((Exercise) exercises.get(i)).getExericseSuojaPercentage();
+                                        exerciseTehtPercentage = "27"; //  ((Exercise) exercises.get(i)).getExericseTehtPercentage();
+                                    %>
+                                    <script>
+                                        $(function(){
+                                            $('#ex<%=exerciseID%>').slider({
+                                                formater: function(value) {
+                                                    return 'Current value: ' + value;
+                                                }
+                                            });
+                                        });
+                                        
+                                        $(function(){
+                                            $('#exx<%=exerciseID%>').slider({
+                                                formater: function(value) {
+                                                    return 'Current value: ' + value;
+                                                }
+                                            });
+                                        });
+                                    </script>
                                     <tr>
-                                        <th scope="row"><div class="input-group clockpicker">
-                                                <input type="text" class="form-control" value="09:30">
-                                                <span class="input-group-addon">
-                                                    <span class="glyphicon glyphicon-time"></span>
-                                                </span>
-                                            </div>
-                                            <script type="text/javascript">
-                                            $('.clockpicker').clockpicker();
-                                            </script>
-                                        </th>
-                                        <td><input type="text" class="form-control"></td>
-                                        <td><input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"></td>
-                                        <td><input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"></td>
+                                        <td><input type="text" class="form-control" value="<%=InputOutput.clean(exerciseTime)%>"></td>
+                                        <td><input type="text" class="form-control" value="<%=InputOutput.clean(exerciseDoing)%>"></td>
+                                        <td><input id="ex<%=exerciseID%>" data-slider-id='exSlider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="<%=InputOutput.clean(exerciseSuojaPercentage)%>"></td>
+                                        <td><input id="exx<%=exerciseID%>" data-slider-id='exSlider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="<%=InputOutput.clean(exerciseTehtPercentage)%>"></td>
                                     </tr>
-                                </tbody>
-                                                                <tbody>
-                                    <tr bgcolor="#FFFFA0">
-                                        <th>Päivä</th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"><div class="input-group clockpicker">
-                                                <input type="text" class="form-control" value="09:30">
-                                                <span class="input-group-addon">
-                                                    <span class="glyphicon glyphicon-time"></span>
-                                                </span>
-                                            </div>
-                                            <script type="text/javascript">
-                                            $('.clockpicker').clockpicker();
-                                            </script>
-                                        </th>
-                                        <td><input type="text" class="form-control"></td>
-                                        <td><input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
-                                        <td><input id="ex2" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
-                                    </tr>
-                                </tbody>
-                                                                <tbody>
-                                    <tr bgcolor="#FFFFA0">
-                                        <th>Ilta</th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"><div class="input-group clockpicker">
-                                                <input type="text" class="form-control" value="09:30">
-                                                <span class="input-group-addon">
-                                                    <span class="glyphicon glyphicon-time"></span>
-                                                </span>
-                                            </div>
-                                            <script type="text/javascript">
-                                            $('.clockpicker').clockpicker();
-                                            </script>
-                                        </th>
-                                        <td><input type="text" class="form-control"></td>
-                                        <td><input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
-                                        <td><input id="ex2" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
-                                    </tr>
-                                </tbody>
-                                    <tbody>
-                                    <tr bgcolor="#FFFFA0">
-                                        <th>Yö</th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"><div class="input-group clockpicker">
-                                                <input type="text" class="form-control" value="09:30">
-                                                <span class="input-group-addon">
-                                                    <span class="glyphicon glyphicon-time"></span>
-                                                </span>
-                                            </div>
-                                            <script type="text/javascript">
-                                            $('.clockpicker').clockpicker();
-                                            </script>
-                                        </th>
-                                        <td><input type="text" class="form-control"></td>
-                                        <td><input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
-                                        <td><input id="ex2" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="14"/></td>
-                                    </tr>
+                                    <%
+                                    }
+                                    %>
                                 </tbody>
                             </table>
-                                <a id="add_row" class="btn btn-default pull-left">Lisää rivi</a><a id='delete_row' class="pull-right btn btn-default">Poista rivi</a>
-
+                                <input type="submit" class="btn btn-primary" value="Tallenna muutokset">
+                            </form> 
                                 </br>
                                 </br>
-
-                                <table class="table-bottom">
+                                <!--<table class="table-bottom">
                                     <tbody>
                                         </br>
                                         <tr>
@@ -610,7 +550,7 @@
                                             <th><button type="button" class="btn btn-secondary btn-lg pull-right">Lähetä <span class="glyphicon glyphicon-send" aria-hidden="true"></span></button></th>
                                         </tr>
                                     </tbody>
-                                </table>
+                                </table>-->
                                 </div>
                             </div>
                             <%
