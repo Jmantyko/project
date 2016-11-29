@@ -480,6 +480,7 @@
                                     ArrayList<Memo1> memos = new ArrayList<Memo1>();
                                     memos = Database.getTaskMemos(taskID);
                                     
+                                    int idForNewMemo = 0;
                                     int memoID;
                                     String memoTime = "";
                                     String memoDoing = "";
@@ -491,7 +492,7 @@
                             <h3 class="text-center">Monitorointiharjoitus <%=taskTypeID%></h3>
 
                             </br>
-                            <form action="ProcessTask" method="POST">
+                            <form action="UpdateMemos" method="POST">
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -512,6 +513,8 @@
                                         memoDoing = ((Memo1) memos.get(i)).getMemoDoing();
                                         memoSuojaPercentage = ((Memo1) memos.get(i)).getMemoSuojaPercentage();
                                         memoTehtPercentage = ((Memo1) memos.get(i)).getMemoTehtPercentage();
+                                        
+                                        idForNewMemo = memoID;
                                     %>
                                     <script>
                                         $(function(){
@@ -530,15 +533,42 @@
                                             });
                                         });
                                     </script>
+                                    <input name="memoid" type="hidden" value="<%=memoID%>">
                                     <tr>
-                                        <td><input type="text" class="form-control" value="<%=InputOutput.clean(memoTime)%>"></td>
-                                        <td><input type="text" class="form-control" value="<%=InputOutput.clean(memoDoing)%>"></td>
-                                        <td><input id="ex<%=memoID%>" data-slider-id='exSlider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="<%=InputOutput.clean(memoSuojaPercentage)%>"></td>
-                                        <td><input id="exx<%=memoID%>" data-slider-id='exSlider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="<%=InputOutput.clean(memoTehtPercentage)%>"></td>
+                                        <td><input name="memotime" id="id<%=memoID%>" type="text" class="form-control" value="<%=InputOutput.clean(memoTime)%>"></td>
+                                        <td><input name="memodoing" id="id<%=memoID%>" type="text" class="form-control" value="<%=InputOutput.clean(memoDoing)%>"></td>
+                                        <td><input name="memosuojapercentage" id="ex<%=memoID%>" data-slider-id='exSlider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="<%=InputOutput.clean(memoSuojaPercentage)%>"></td>
+                                        <td><input name="memotehtpercentage" id="exx<%=memoID%>" data-slider-id='exSlider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="<%=InputOutput.clean(memoTehtPercentage)%>"></td>
                                     </tr>
                                     <%
                                     }
+                                    
+                                    idForNewMemo = idForNewMemo + 1;
                                     %>
+                                    <script>
+                                        $(function(){
+                                            $('#ex<%=idForNewMemo%>').slider({
+                                                formater: function(value) {
+                                                    return 'Current value: ' + value;
+                                                }
+                                            });
+                                        });
+                                        
+                                        $(function(){
+                                            $('#exx<%=idForNewMemo%>').slider({
+                                                formater: function(value) {
+                                                    return 'Current value: ' + value;
+                                                }
+                                            });
+                                        });
+                                    </script>
+                                    <input name="memotaskid" type="hidden" value="<%=taskID%>">
+                                    <tr>
+                                        <td><input name="newmemotime" id="id<%=idForNewMemo%>" type="text" class="form-control" placeholder="Syötä aika"></td>
+                                        <td><input name="newmemodoing" id="id<%=idForNewMemo%>" type="text" class="form-control" placeholder="Syötä jokin tekeminen"></td>
+                                        <td><input name="newmemosuojapercentage" id="ex<%=idForNewMemo%>" data-slider-id='exSlider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0"></td>
+                                        <td><input name="newmemotehtpercentage" id="exx<%=idForNewMemo%>" data-slider-id='exSlider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0"></td>
+                                    </tr>
                                 </tbody>
                             </table>
                                 <input type="submit" class="btn btn-primary" value="Tallenna muutokset">
