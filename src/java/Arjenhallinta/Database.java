@@ -788,6 +788,42 @@ public class Database {
         }
     }
     
+    public static ArrayList<Memo1> getTaskMemos(int taskID) {
+        
+        ArrayList memos = new ArrayList();
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("SELECT MemoID, MemoTime, MemoDoing, MemoSuojaPercentage,"
+                    + " MemoTehtPercentage FROM Memos WHERE TaskID=?");
+            ps.setInt(1, taskID);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                memos.add(new Memo1(rs.getInt("MemoID"), rs.getString("MemoTime"),
+                        rs.getString("MemoDoing"), rs.getString("MemoSuojaPercentage"),
+                        rs.getString("MemoTehtPercentage")));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
+            
+        }
+        
+        return memos;
+    }
+    
     public static ArrayList<Message> getTaskMessages(int taskID) {
         
         ArrayList messages = new ArrayList();

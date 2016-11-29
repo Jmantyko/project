@@ -4,6 +4,7 @@
     Author     : Jaakko
 --%>
 
+<%@page import="Arjenhallinta.Memo1"%>
 <%@page import="Arjenhallinta.Message"%>
 <%@page import="Arjenhallinta.Detail"%>
 <%@page import="Arjenhallinta.Task"%>
@@ -476,11 +477,14 @@
                                 //Printing task that has taskTypeID = 1 other tasks (2, 3 etc.) need their own if-check
                                 if (taskClosed != true && taskTypeID == 1){
                                     
-                                    int exerciseID;
-                                    String exerciseTime = "";
-                                    String exerciseDoing = "";
-                                    String exerciseSuojaPercentage = "";
-                                    String exerciseTehtPercentage = "";
+                                    ArrayList<Memo1> memos = new ArrayList<Memo1>();
+                                    memos = Database.getTaskMemos(taskID);
+                                    
+                                    int memoID;
+                                    String memoTime = "";
+                                    String memoDoing = "";
+                                    String memoSuojaPercentage = "";
+                                    String memoTehtPercentage = "";
                             %>
                             <div class="tab-pane text-style" id="tab6">
                             <div class="TaskType">
@@ -499,19 +503,19 @@
                                 </thead>
                                 <tbody>
                                     <%
-                                    for(int i = 0; i < 5; i++){
+                                    for(int i = 0; i < memos.size(); i++){
                                         
                                         //Here we get all the small details about each task (time, doing, two percentage values)
                                         //and print all those details
-                                        exerciseID = i; //  ((Exercise) exercises.get(i)).getExericseID();
-                                        exerciseTime = "5:50"; //  ((Exercise) exercises.get(i)).getExericseTime();
-                                        exerciseDoing = "Aamupala"; //  ((Exercise) exercises.get(i)).getExericseDoing();
-                                        exerciseSuojaPercentage = "67"; //  ((Exercise) exercises.get(i)).getExericseSuojaPercentage();
-                                        exerciseTehtPercentage = "27"; //  ((Exercise) exercises.get(i)).getExericseTehtPercentage();
+                                        memoID = ((Memo1) memos.get(i)).getMemoID();
+                                        memoTime = ((Memo1) memos.get(i)).getMemoTime();
+                                        memoDoing = ((Memo1) memos.get(i)).getMemoDoing();
+                                        memoSuojaPercentage = ((Memo1) memos.get(i)).getMemoSuojaPercentage();
+                                        memoTehtPercentage = ((Memo1) memos.get(i)).getMemoTehtPercentage();
                                     %>
                                     <script>
                                         $(function(){
-                                            $('#ex<%=exerciseID%>').slider({
+                                            $('#ex<%=memoID%>').slider({
                                                 formater: function(value) {
                                                     return 'Current value: ' + value;
                                                 }
@@ -519,7 +523,7 @@
                                         });
                                         
                                         $(function(){
-                                            $('#exx<%=exerciseID%>').slider({
+                                            $('#exx<%=memoID%>').slider({
                                                 formater: function(value) {
                                                     return 'Current value: ' + value;
                                                 }
@@ -527,10 +531,10 @@
                                         });
                                     </script>
                                     <tr>
-                                        <td><input type="text" class="form-control" value="<%=InputOutput.clean(exerciseTime)%>"></td>
-                                        <td><input type="text" class="form-control" value="<%=InputOutput.clean(exerciseDoing)%>"></td>
-                                        <td><input id="ex<%=exerciseID%>" data-slider-id='exSlider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="<%=InputOutput.clean(exerciseSuojaPercentage)%>"></td>
-                                        <td><input id="exx<%=exerciseID%>" data-slider-id='exSlider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="<%=InputOutput.clean(exerciseTehtPercentage)%>"></td>
+                                        <td><input type="text" class="form-control" value="<%=InputOutput.clean(memoTime)%>"></td>
+                                        <td><input type="text" class="form-control" value="<%=InputOutput.clean(memoDoing)%>"></td>
+                                        <td><input id="ex<%=memoID%>" data-slider-id='exSlider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="<%=InputOutput.clean(memoSuojaPercentage)%>"></td>
+                                        <td><input id="exx<%=memoID%>" data-slider-id='exSlider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="<%=InputOutput.clean(memoTehtPercentage)%>"></td>
                                     </tr>
                                     <%
                                     }
