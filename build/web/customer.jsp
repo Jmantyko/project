@@ -563,6 +563,7 @@
                                         });
                                     </script>
                                     <input name="memotaskid" type="hidden" value="<%=taskID%>">
+                                    <input name="userid" type="hidden" value="<%=userID%>">
                                     <tr>
                                         <td><input name="newmemotime" id="id<%=idForNewMemo%>" type="text" class="form-control" placeholder="Syötä aika"></td>
                                         <td><input name="newmemodoing" id="id<%=idForNewMemo%>" type="text" class="form-control" placeholder="Syötä jokin tekeminen"></td>

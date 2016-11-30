@@ -45,31 +45,23 @@ public class UpdateMemos extends HttpServlet {
         String memoSuojaPercentage = request.getParameter("newmemosuojapercentage");
         String memoTehtPercentage = request.getParameter("newmemotehtpercentage");
         
+        String stringUserID = request.getParameter("userid");
+        int intUserID = Integer.parseInt(stringUserID);
+        
         if(memoIDs != null){
             
+            //Updating each existing row
             for(int i = 0; i < memoIDs.length; i++){
-                System.out.println("MEMO ID: " + memoIDs[i]);
-                System.out.println(memoTimes[i]);
-                System.out.println(memoDoings[i]);
-                System.out.println(memoSuojaPercentages[i]);
-                System.out.println(memoTehtPercentages[i]);
-                System.out.println("----------");
                 
-                //Here we either make new ArrayList<Memo1> and send it
-                //as a parameter to database OR we go one by one updating
-                //each row to database
+                Database.updateMemo1(memoIDs[i], memoTimes[i], memoDoings[i], memoSuojaPercentages[i], memoTehtPercentages[i]);
             }
         }
         
-        System.out.println("NEW DATA FOR TASK: " + taskID);
-        System.out.println("TIME" + memoTime);
-        System.out.println("DOING" + memoDoing);
-        System.out.println("SUOJA" + memoSuojaPercentage);
-        System.out.println("TEHT" + memoTehtPercentage);
-        
         //Here we need to update the new row to database
+        Database.addNewMemo1(memoTime, memoDoing, memoSuojaPercentage, memoTehtPercentage, taskID);
         
         //Here we finally update UserActivityEvent in Users table
+        Database.updateUserActivityDate(intUserID, "Harjoituksen täyttäminen");
         
         response.sendRedirect(request.getContextPath() + "/customer.jsp");
     }

@@ -824,6 +824,73 @@ public class Database {
         return memos;
     }
     
+    public static void updateMemo1(String memoID, String memoTime,
+                String memoDoing, String memoSuojaPercentage, String memoTehtPercentage) {
+        
+        int intMemoID = Integer.parseInt(memoID);
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("UPDATE Memos SET MemoTime=?, MemoDoing=?,"
+                    + " MemoSuojaPercentage=?, MemoTehtPercentage=? WHERE MemoID=?");
+            ps.setString(1, memoTime);
+            ps.setString(2, memoDoing);
+            ps.setString(3, memoSuojaPercentage);
+            ps.setString(4, memoTehtPercentage);
+            ps.setInt(5, intMemoID);
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
+            
+        }
+        
+    }
+    
+    public static void addNewMemo1(String memoTime, String memoDoing,
+            String memoSuojaPercentage, String memoTehtPercentage, String taskID) {
+        
+        int intTaskID = Integer.parseInt(taskID);
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("INSERT INTO Memos (TaskID, MemoTime, MemoDoing,"
+                    + " MemoSuojaPercentage, MemoTehtPercentage) VALUES (?, ?, ?, ?, ?)");
+            ps.setInt(1, intTaskID);
+            ps.setString(2, memoTime);
+            ps.setString(3, memoDoing);
+            ps.setString(4, memoSuojaPercentage);
+            ps.setString(5, memoTehtPercentage);
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
+            
+        }
+    }
+    
     public static ArrayList<Message> getTaskMessages(int taskID) {
         
         ArrayList messages = new ArrayList();
