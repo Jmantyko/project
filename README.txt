@@ -84,6 +84,8 @@ CREATE TABLE Memos (
 	MemoDoing LONGTEXT,
 	MemoSuojaPercentage VARCHAR (64),
 	MemoTehtPercentage VARCHAR (64),
+	MemoPositivePercentage VARCHAR (64),
+	MemoNegativePercentage VARCHAR (64),
 	PRIMARY KEY (MemoID)
 );
 
@@ -108,33 +110,6 @@ INSERT INTO Users (UserEmail, UserPassword, UserName, UserSurname, UserPhonenumb
 		('customer@customer.fi', '123', 'Aki', 'Asiakas', '020202', 'Torikatu 3', '12300', 'Oulu', 'customer'),
 		('erkkiesimerkki@esimerkki.fi', '123', 'Erkki', 'Esimerkki', '020544579', 'Talokatu 7', '88888', 'Helsinki', 'customer'),
 		('mattimeikalainen@meikalainen.fi', '123', 'Matti', 'Meikäläinen', '1234567890', 'Kerroskuja 5', '82828', 'Tampere', 'customer');
-		
-INSERT INTO Details (UserID, DetailAge, DetailResidencemodel, DetailLifestyle, DetailHealthServices, DetailProblems)
-	VALUES	(2, '27', 'Asun kimppakämpässä', 'Olen työtön', 'C', 'Paljon erilaisia ongelmia'),
-		(3, ' ', ' ', ' ', 'B', ' '),
-		(4, ' ', ' ', ' ', 'A', ' ');
-		
-INSERT INTO Tasks (TaskTypeID, UserID, TaskContent, TaskIsReturned)
-	VALUES	(1, 2, '*Harjoitukseen liittyvää sisälötä tietokannasta, user 2 tekijänä*', 1),
-		(2, 2, '*Toiseen harjoitukseen liittyvää sisälötä tietokannasta, user 2 tekijänä*', 0),
-		(1, 4, '*Harjoitukseen liittyvää sisälötä tietokannasta, user 4 tekijänä*', 1),
-		(2, 4, '*Toiseen harjoitukseen liittyvää sisälötä tietokannasta, user 4 tekijänä*', 1);
-		
-INSERT INTO Memos (TaskID, MemoTime, MemoDoing, MemoSuojaPercentage, MemoTehtPercentage)
-	VALUES	(1, '8:30', 'Aamupala', '77', '23'),
-		(1, '11:45', 'Kauppareissu', '33', '66'),
-		(1, '16:00', 'TV:n katsominen', '100', '100'),
-		(1, '23:30', 'Jotain tekemistä', '55', '25');
-		
-INSERT INTO Messages (TaskID, UserType, MessageContent)
-	VALUES	(1, 'admin', 'Tässäpä on terapeutin palaute ensimmäiseen monitorointiharjoitukseen...'),
-		(1, 'customer', 'Ok mitäpä jos blaablaablaa...'),
-		(1, 'admin', 'Lisää keskustelua...'),
-		(1, 'customer', 'joo-o...'),
-		(2, 'admin', 'Tuosta toisesta monitorointiharjoituksesta...'),
-		(2, 'customer', 'Ahaa...'),
-		(2, 'admin', 'Voisit myös...'),
-		(2, 'customer', 'En jaksa...');
 			
 INSERT INTO Frontpage (PageContent)
 	VALUES	('Tämä teksti on yleistä arjenhallinta.fi mainostekstiä.'),
