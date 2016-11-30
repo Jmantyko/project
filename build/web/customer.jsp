@@ -136,8 +136,17 @@
     padding: 1em;
     min-width: 280px; /* change width as per your requirement */
     }
-
-
+    
+    .table-hover {
+        border: 2px solid #F5F5F5;
+    }
+    
+    .table-hover thead {
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    }
 	
     </style>
 	
@@ -218,6 +227,7 @@
          });
          
          </script>
+         
     </head>
     <body> 
         <%
@@ -493,13 +503,24 @@
 
                             </br>
                             <form action="UpdateMemos" method="POST">
-                            <table class="table">
+                            <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Ajankohta <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></th>
-                                        <th>Tekeminen <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></th>
-                                        <th>Suojatoiminta % <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></th>
-                                        <th>Tehtävään s. toiminta % <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></th>
+                                        <th>Ajankohta <a style="cursor:help;" data-toggle="tooltip" title="Syötä tähän tekemisen ajankohta, esim. 8:30." class="tooltipLink" data-original-title="Tooltip text goes here">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                        </th>
+                                        <th>Tekeminen <a style="cursor:help;" data-toggle="tooltip" title="Kerro tässä tekeminen, esim. aamupala." class="tooltipLink" data-original-title="Tooltip text goes here">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                        </th>
+                                        <th>Suojatoiminta % <a style="cursor:help;" data-toggle="tooltip" title="Suojatoiminta kyseisenä ajankohtana." class="tooltipLink" data-original-title="Tooltip text goes here">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a></th>
+                                        <th>Tehtävään s. toiminta % <a style="cursor:help;" data-toggle="tooltip" title="Tehtävään suuntautunut toiminta kys. ajankohtana." class="tooltipLink" data-original-title="Tooltip text goes here">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody>
