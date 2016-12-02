@@ -776,7 +776,7 @@ $(function(){
                                 if(taskTypeID == 1){
                                     
                                     ArrayList<Memo1> memos = new ArrayList<Memo1>();
-                                    memos = Database.getTaskMemos(taskID);
+                                    memos = Database.getTaskMemos1(taskID);
                                     
                                     int memoID;
                                     String memoTime = "";

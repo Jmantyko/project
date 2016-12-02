@@ -6,6 +6,7 @@
 package Arjenhallinta;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Jaakko
  */
-public class UpdateMemos extends HttpServlet {
+public class UpdateMemos2 extends HttpServlet {
 
     /**
      * Handles the HTTP <code>POST</code> method.
@@ -35,15 +36,15 @@ public class UpdateMemos extends HttpServlet {
         String[] memoIDs = request.getParameterValues("memoid");
         String[] memoTimes = request.getParameterValues("memotime");
         String[] memoDoings = request.getParameterValues("memodoing");
-        String[] memoSuojaPercentages = request.getParameterValues("memosuojapercentage");
-        String[] memoTehtPercentages = request.getParameterValues("memotehtpercentage");
+        String[] memoPositivePercentages = request.getParameterValues("memopositivepercentage");
+        String[] memoNegativePercentages = request.getParameterValues("memonegativepercentage");
         
         //Here we collect all the data from one new memo row
         String taskID = request.getParameter("memotaskid");
         String memoTime = request.getParameter("newmemotime");
         String memoDoing = request.getParameter("newmemodoing");
-        String memoSuojaPercentage = request.getParameter("newmemosuojapercentage");
-        String memoTehtPercentage = request.getParameter("newmemotehtpercentage");
+        String memoPositivePercentage = request.getParameter("newmemopositivepercentage");
+        String memoNegativePercentage = request.getParameter("newmemonegativepercentage");
         
         String stringUserID = request.getParameter("userid");
         int intUserID = Integer.parseInt(stringUserID);
@@ -53,15 +54,15 @@ public class UpdateMemos extends HttpServlet {
             //Updating each existing row
             for(int i = 0; i < memoIDs.length; i++){
                 
-                Database.updateMemo1(memoIDs[i], memoTimes[i], memoDoings[i], memoSuojaPercentages[i], memoTehtPercentages[i]);
+                Database.updateMemo2(memoIDs[i], memoTimes[i], memoDoings[i], memoPositivePercentages[i], memoNegativePercentages[i]);
             }
         }
         
         //Here we need to update the new row to database
-        Database.addNewMemo1(memoTime, memoDoing, memoSuojaPercentage, memoTehtPercentage, taskID);
+        Database.addNewMemo2(memoTime, memoDoing, memoPositivePercentage, memoNegativePercentage, taskID);
         
         //Here we finally update UserActivityEvent in Users table
-        Database.updateUserActivityDate(intUserID, "Harjoitus 1. täyttäminen");
+        Database.updateUserActivityDate(intUserID, "Harjoitus 2. täyttäminen");
         
         response.sendRedirect(request.getContextPath() + "/customer.jsp");
     }
