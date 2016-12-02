@@ -76,6 +76,10 @@
         <servlet-name>UpdateMemos3</servlet-name>
         <servlet-class>Arjenhallinta.UpdateMemos3</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RegisterNewUser</servlet-name>
+        <servlet-class>Arjenhallinta.RegisterNewUser</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -123,6 +127,10 @@
     <servlet-mapping>
         <servlet-name>UpdateMemos3</servlet-name>
         <url-pattern>/UpdateMemos3</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterNewUser</servlet-name>
+        <url-pattern>/RegisterNewUser</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

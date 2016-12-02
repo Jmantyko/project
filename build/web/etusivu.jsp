@@ -858,22 +858,22 @@ $(function(){
               </div>
               <br>
               <label class="control control--radio">Käytän suhteellisen säännöllisesti päivittäistä sosiaalista elämääni tukevia terveys- ja kuntoutuspalveluita
-                <input type="radio" name="radio">
+                <input type="radio" name="healthservices" value="A">
                 <div class="control__indicator"></div>
               </label>
               <label class="control control--radio">En ole varsinaisesti missään pitempikestoisessa elämääni tukevassa kuntoutus- ja palvelumuotojen piirissä
-                <input type="radio" name="radio">
+                <input type="radio" name="healthservices" value="B">
                 <div class="control__indicator"></div>
               </label>
               <label class="control control--radio">Saamani palvelut ovat epämääräisiä ja johonkin päivittäiseen ongelman ratkaisuun, kuten lääkitykseen, rahallisten tukien saamiseen keskittyneitä, tilanteeni yleistä seurantaa
-                <input type="radio" name="radio">
+                <input type="radio" name="healthservices" value="C">
                 <div class="control__indicator"></div>
               </label>
                <br>
               
               <div class="form-group">
                 <label for="exampleInputEmail1">Nimeä ja luetteloi lyhyesti ongelmia, sekä elämistäsi vaikeuttavia asioita kuten mielenterveydellisiä vaikeuksiasi omin sanoin</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+                <input type="text" name="problems" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
               </div>
                
               <div class="form-group">
@@ -884,8 +884,6 @@ $(function(){
                 <label for="exampleInputEmail1">Salasana uudelleen</label>
                 <input type="password" class="form-control" id="exampleInputEmail1" name="passwordagain" aria-describedby="emailHelp" required>
               </div>
-
-        
               <button type="submit" class="btn btn-primary">Lähetä tiedot ja rekisteröidy</button>
             </form>
             
