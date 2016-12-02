@@ -814,75 +814,79 @@ $(function(){
                 
             <h2>Ilmaisen kokeiluohjelman taustatiedot</h2>
             
-              <form>
+              <form action="RegisterNewUser" method="POST">
               
               <div class="form-group">
                 <label for="exampleInputEmail1">Etunimi</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+                <input type="text" class="form-control" id="exampleInputEmail1" name="name" aria-describedby="emailHelp" placeholder="esim. Matti" required>
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Sukunimi</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+                <input type="text" class="form-control" id="exampleInputEmail1" name="surname" aria-describedby="emailHelp" placeholder="esim. Meikäläinen" required>
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Asuinosoite</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+                <input type="text" class="form-control" id="exampleInputEmail1" name="address" aria-describedby="emailHelp" placeholder="esim. Torikatu 3">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Postinumero</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+                <input type="text" class="form-control" id="exampleInputEmail1" name="postalcode" aria-describedby="emailHelp" placeholder="esim. 90000">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Postitoimipaikka</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+                <input type="text" class="form-control" id="exampleInputEmail1" name="postoffice" aria-describedby="emailHelp" placeholder="esim. Oulu">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Puhelin</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+              <input type="text" class="form-control" id="exampleInputEmail1" name="phonenumber" aria-describedby="emailHelp" placeholder="esim. 0441234567">
               </div>
-               <div class="form-group">
+              <div class="form-group">
                 <label for="exampleInputEmail1">Sähköpostiosoite</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+                <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="esim. erkki@esimerkki.fi" required>
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Ikä</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+                <input type="text" class="form-control" id="exampleInputEmail1" name="age" aria-describedby="emailHelp" placeholder="esim. 39">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Asuinmuoto: asun yksin / ystävän, avopuolison kanssa/ vanhempieni, ystävän taloudessa/ avioliitossa/ asuinmuotoni ja -paikkani vaihtelee jatkuvasti, ei siis ole vakituista kotina pidettävää asuinpaikkaa</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+                <input type="text" class="form-control" id="exampleInputEmail1" name="residencemodel" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Nykyinen viikoittainen tai muutoin säännöllinen elämäntapasi: työtön, eläkkeellä, sairausturva/ elän epäsäännöllisten ja tilapäisten tukien ja tulojen avulla/ opiskelen pääasiallisesti/ työssä, työkokeilussa, ammatillisessa työsuhteessa/ ei säännönmukaista elämäntapaa</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+                <input type="text" class="form-control" id="exampleInputEmail1" name="lifestyle" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
               </div>
-        
-                  <br>
-                  
-                  
-                 
+              <br>
               <label class="control control--radio">Käytän suhteellisen säännöllisesti päivittäistä sosiaalista elämääni tukevia terveys- ja kuntoutuspalveluita
-                <input type="radio" name="radio" checked="checked"/>
+                <input type="radio" name="radio">
                 <div class="control__indicator"></div>
               </label>
               <label class="control control--radio">En ole varsinaisesti missään pitempikestoisessa elämääni tukevassa kuntoutus- ja palvelumuotojen piirissä
-                <input type="radio" name="radio"/>
+                <input type="radio" name="radio">
                 <div class="control__indicator"></div>
               </label>
               <label class="control control--radio">Saamani palvelut ovat epämääräisiä ja johonkin päivittäiseen ongelman ratkaisuun, kuten lääkitykseen, rahallisten tukien saamiseen keskittyneitä, tilanteeni yleistä seurantaa
-                <input type="radio" name="radio"/>
+                <input type="radio" name="radio">
                 <div class="control__indicator"></div>
               </label>
-                  
-                   <br>
+               <br>
               
-                <div class="form-group">
+              <div class="form-group">
                 <label for="exampleInputEmail1">Nimeä ja luetteloi lyhyesti ongelmia, sekä elämistäsi vaikeuttavia asioita kuten mielenterveydellisiä vaikeuksiasi omin sanoin</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
-                </div>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Oma vastauksesi">
+              </div>
+               
+              <div class="form-group">
+                <label for="exampleInputEmail1">Luo lopuksi tilillesi salasana</label>
+                <input type="password" class="form-control" id="exampleInputEmail1" name="password" aria-describedby="emailHelp" required>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Salasana uudelleen</label>
+                <input type="password" class="form-control" id="exampleInputEmail1" name="passwordagain" aria-describedby="emailHelp" required>
+              </div>
 
         
-              <button type="submit" class="btn btn-primary">Lähetä</button>
+              <button type="submit" class="btn btn-primary">Lähetä tiedot ja rekisteröidy</button>
             </form>
             
         </div>
