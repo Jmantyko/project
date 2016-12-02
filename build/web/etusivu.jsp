@@ -521,6 +521,7 @@ $(function(){
         %>
         <ul class="nav navbar-nav">
               <li><a href="customer.jsp">Etusivu</a></li>
+              <li class=""><a href="customer.jsp#tab2">Taustatiedot</a></li>
         </ul>
         <%
             }else if ("admin".equals(userType)){
@@ -581,16 +582,7 @@ $(function(){
             <div class="form-group">
                 <a class="btn btn-info form-control" href="profile.jsp">Asetukset</a>
             </div>
-            <%
-                
-                if("customer".equals(userType)){
-            %>
-            <div class="form-group">
-                <a class="btn btn-info form-control" href="customer.jsp#tab2">Taustatiedot</a>
-            </div>
-            <%
-                }
-            %>
+
             <div class="form-group">
                 <button type="submit" class="btn btn-success btn-block">Kirjaudu ulos</button>
             </div>                

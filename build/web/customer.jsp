@@ -286,8 +286,9 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-            <li class="active"><a href="customer.jsp">Etusivu</a></li>
-            <li class="s"><a href="etusivu.jsp#martti">Martti Puttonen</a></li>
+            <li class="active"><a href="customer.jsp#tab1" data-toggle="tab">Etusivu</a></li>
+            <li><a href="#tab2" data-toggle="tab">Taustatiedot</a></li>
+            <li class=""><a href="etusivu.jsp#martti">Martti Puttonen</a></li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nettiterapia <b class="caret"></b></a>
                 <ul class="dropdown-menu">
@@ -366,16 +367,6 @@
                     <div class="form-group">
                         <a class="btn btn-info form-control" href="profile.jsp">Asetukset</a>
                     </div>
-                    <%
-                        
-                        if ("customer".equals(userType)) {
-                    %>
-                    <div class="form-group">
-                        <a class="btn btn-info form-control" data-toggle="tab" href="#tab2">Taustatiedot</a>
-                    </div>
-                    <%
-                        }
-                    %>
                     <div class="form-group">
                         <button type="submit" class="btn btn-success btn-block">Kirjaudu ulos</button>
                     </div>                

@@ -264,17 +264,18 @@
             if ("customer".equals(userType)){
         %>
     <ul class="nav navbar-nav">
-	  <li><a href="customer.jsp">Etusivu</a></li>
-            <li class="s"><a href="etusivu.jsp#martti">Martti Puttonen</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nettiterapia <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                    <li><a href="etusivu.jsp#tietoa"><h4>Tietoa <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></h4></a></li>
-                    <li><a href="etusivu.jsp#liity"><h4>Liity <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></h4></a></a></li>
-                    <li><a href="etusivu.jsp#psykoterapiapalvelut"><h4>Psykoterapiapalvelut <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></h4></a></a></li>
-                </ul>
-            </li>
-            <li class=""><a href="etusivu.jsp#yhteystiedot">Yhteystiedot</a></li>
+        <li><a href="customer.jsp">Etusivu</a></li>
+        <li class=""><a href="customer.jsp#tab2">Taustatiedot</a></li>
+        <li class="s"><a href="etusivu.jsp#martti">Martti Puttonen</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Nettiterapia <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="etusivu.jsp#tietoa"><h4>Tietoa <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span></h4></a></li>
+                <li><a href="etusivu.jsp#liity"><h4>Liity <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></h4></a></a></li>
+                <li><a href="etusivu.jsp#psykoterapiapalvelut"><h4>Psykoterapiapalvelut <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></h4></a></a></li>
+            </ul>
+        </li>
+        <li class=""><a href="etusivu.jsp#yhteystiedot">Yhteystiedot</a></li>
           
     </ul>
         <%
@@ -325,15 +326,6 @@
             <div class="form-group">
                 <a class="btn btn-info form-control" href="profile.jsp">Asetukset</a>
             </div>
-            <%
-                if ("customer".equals(userType)) {
-            %>
-            <div class="form-group">
-                <a class="btn btn-info form-control" href="customer.jsp#tab2">Taustatiedot</a>
-            </div>
-            <%
-                }
-            %>
             <div class="form-group">
                 <button type="submit" class="btn btn-success btn-block">Kirjaudu ulos</button>
             </div>                
