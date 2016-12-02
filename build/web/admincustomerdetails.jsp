@@ -4,6 +4,7 @@
     Author     : Jaakko
 --%>
 
+<%@page import="Arjenhallinta.Memo3"%>
 <%@page import="Arjenhallinta.Memo2"%>
 <%@page import="Arjenhallinta.Memo1"%>
 <%@page import="Arjenhallinta.Message"%>
@@ -861,6 +862,53 @@ $(function(){
                                 </div>
                             <%
                                 }//Printing taskTypeID = 2 memos end
+                                if(taskTypeID == 3){
+                                    ArrayList<Memo3> memos3 = new ArrayList<Memo3>();
+                                    memos3 = Database.getTaskMemos3(taskID);
+                                    
+                                    int memoID;
+                                    String memoTime = "";
+                                    String memoDoing = "";
+                                    String memoPositivePercentage = "";
+                                    String memoNegativePercentage = "";
+                                    String memoTehtPercentage = "";
+                                
+                            %>
+                                <div>
+                                    <table class="table">
+                                        <thead>
+                                            <th>Ajankohta</th>
+                                            <th>Tekeminen</th>
+                                            <th>Positiivinen suojatoiminta</th>
+                                            <th>Negatiivinen suojatoiminta</th>
+                                            <th>Tehtävään/olemiseen suuntautunut toiminta</th>
+                                        </thead>
+                                        <tbody>
+                            <%        
+                                    for(int j = 0; j < memos3.size(); j++){
+                                        
+                                        memoID = ((Memo3) memos3.get(j)).getMemoID();
+                                        memoTime = ((Memo3) memos3.get(j)).getMemoTime();
+                                        memoDoing = ((Memo3) memos3.get(j)).getMemoDoing();
+                                        memoPositivePercentage = ((Memo3) memos3.get(j)).getMemoPositivePercentage();
+                                        memoNegativePercentage = ((Memo3) memos3.get(j)).getMemoNegativePercentage();
+                                        memoTehtPercentage = ((Memo3) memos3.get(j)).getMemoTehtPercentage();
+                            %>
+                                        <tr>
+                                            <td><%=InputOutput.clean(memoTime)%></td>
+                                            <td><%=InputOutput.clean(memoDoing)%></td>
+                                            <td><%=InputOutput.clean(memoPositivePercentage)%>%</td>
+                                            <td><%=InputOutput.clean(memoNegativePercentage)%>%</td>
+                                            <td><%=InputOutput.clean(memoTehtPercentage)%>%</td>
+                                        </tr>
+                            <%
+                                    }
+                            %>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            <%
+                                }//Printing taskTypeID = 3 memos end
                             
                                 //(2) Adding "Close task" button for tasks which are not closed yet 
                                 if(taskIsClosed == false){
