@@ -4,6 +4,7 @@
     Author     : Jaakko
 --%>
 
+<%@page import="Arjenhallinta.Memo3"%>
 <%@page import="Arjenhallinta.Memo2"%>
 <%@page import="Arjenhallinta.Memo1"%>
 <%@page import="Arjenhallinta.Message"%>
@@ -709,8 +710,147 @@
                             </div>
                             <%
                                 }
+                                if (taskClosed != true && taskTypeID == 3){
+                                    
+                                    ArrayList<Memo3> memos3 = new ArrayList<Memo3>();
+                                    memos3 = Database.getTaskMemos3(taskID);
+                                    
+                                    int idForNewMemo = 0;
+                                    int memoID;
+                                    String memoTime = "";
+                                    String memoDoing = "";
+                                    String memoPositivePercentage = "";
+                                    String memoNegativePercentage = "";
+                                    String memoTehtPercentage = "";
                             %>
-                            
+                            <div class="tab-pane text-style" id="tab6">
+                            <div class="TaskType">
+                            <h3 class="text-center">Monitorointiharjoitus <%=taskTypeID%></h3>
+
+                            </br>
+                            <form action="UpdateMemos3" method="POST">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Ajankohta <a style="cursor:help;" data-toggle="tooltip" title="Syötä tähän tekemisen ajankohta, esim. 8:30." class="tooltipLink" data-original-title="Tooltip text goes here">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                        </th>
+                                        <th>Tekeminen ja/tai oleminen <a style="cursor:help;" data-toggle="tooltip" title="Kerro tässä tekeminen, esim. aamupala." class="tooltipLink" data-original-title="Tooltip text goes here">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                        </th>
+                                        <th>Positiivinen suojatoiminta % <a style="cursor:help;" data-toggle="tooltip" title="Suojatoiminta kyseisenä ajankohtana." class="tooltipLink" data-original-title="Tooltip text goes here">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a></th>
+                                        <th>Negatiivinen suojatoiminta % <a style="cursor:help;" data-toggle="tooltip" title="Tehtävään suuntautunut toiminta kys. ajankohtana." class="tooltipLink" data-original-title="Tooltip text goes here">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                        </th>
+                                        <th>Tehtävään/olemiseen suuntautunut toiminta % <a style="cursor:help;" data-toggle="tooltip" title="Tehtävään suuntautunut toiminta kys. ajankohtana." class="tooltipLink" data-original-title="Tooltip text goes here">
+                                                <span class="glyphicon glyphicon-info-sign"></span>
+                                            </a>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <%
+                                    for(int i = 0; i < memos3.size(); i++){
+                                        
+                                        //Here we get all the small details about each task (time, doing, two percentage values)
+                                        //and print all those details
+                                        memoID = ((Memo3) memos3.get(i)).getMemoID();
+                                        memoTime = ((Memo3) memos3.get(i)).getMemoTime();
+                                        memoDoing = ((Memo3) memos3.get(i)).getMemoDoing();
+                                        memoPositivePercentage = ((Memo3) memos3.get(i)).getMemoPositivePercentage();
+                                        memoNegativePercentage = ((Memo3) memos3.get(i)).getMemoNegativePercentage();
+                                        memoTehtPercentage = ((Memo3) memos3.get(i)).getMemoTehtPercentage();
+                                        
+                                        idForNewMemo = memoID;
+                                    %>
+                                    <script>
+                                        $(function(){
+                                            $('#3ex<%=memoID%>').slider({
+                                                formater: function(value) {
+                                                    return 'Current value: ' + value;
+                                                }
+                                            });
+                                        });
+                                        
+                                        $(function(){
+                                            $('#3exx<%=memoID%>').slider({
+                                                formater: function(value) {
+                                                    return 'Current value: ' + value;
+                                                }
+                                            });
+                                        });
+                                        
+                                        $(function(){
+                                            $('#3exxx<%=memoID%>').slider({
+                                                formater: function(value) {
+                                                    return 'Current value: ' + value;
+                                                }
+                                            });
+                                        });
+                                    </script>
+                                    <input name="memoid" type="hidden" value="<%=memoID%>">
+                                    <tr>
+                                        <td><input name="memotime" id="id<%=memoID%>" type="text" class="form-control" value="<%=InputOutput.clean(memoTime)%>"></td>
+                                        <td><input name="memodoing" id="id<%=memoID%>" type="text" class="form-control" value="<%=InputOutput.clean(memoDoing)%>"></td>
+                                        <td><input name="memopositivepercentage" id="3ex<%=memoID%>" data-slider-id='exSlider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="<%=InputOutput.clean(memoPositivePercentage)%>"></td>
+                                        <td><input name="memonegativepercentage" id="3exx<%=memoID%>" data-slider-id='exSlider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="<%=InputOutput.clean(memoNegativePercentage)%>"></td>
+                                        <td><input name="memotehtpercentage" id="3exxx<%=memoID%>" data-slider-id='exSlider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="<%=InputOutput.clean(memoTehtPercentage)%>"></td>
+                                    </tr>
+                                    <%
+                                    }
+                                    
+                                    idForNewMemo = idForNewMemo + 1;
+                                    %>
+                                    <script>
+                                        $(function(){
+                                            $('#3ex<%=idForNewMemo%>').slider({
+                                                formater: function(value) {
+                                                    return 'Current value: ' + value;
+                                                }
+                                            });
+                                        });
+                                        
+                                        $(function(){
+                                            $('#3exx<%=idForNewMemo%>').slider({
+                                                formater: function(value) {
+                                                    return 'Current value: ' + value;
+                                                }
+                                            });
+                                        });
+                                        
+                                        $(function(){
+                                            $('#3exxx<%=idForNewMemo%>').slider({
+                                                formater: function(value) {
+                                                    return 'Current value: ' + value;
+                                                }
+                                            });
+                                        });
+                                    </script>
+                                    <input name="memotaskid" type="hidden" value="<%=taskID%>">
+                                    <input name="userid" type="hidden" value="<%=userID%>">
+                                    <tr>
+                                        <td><input name="newmemotime" id="id<%=idForNewMemo%>" type="text" class="form-control" placeholder="Syötä aika"></td>
+                                        <td><input name="newmemodoing" id="id<%=idForNewMemo%>" type="text" class="form-control" placeholder="Syötä jokin tekeminen"></td>
+                                        <td><input name="newmemopositivepercentage" id="3ex<%=idForNewMemo%>" data-slider-id='exSlider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0"></td>
+                                        <td><input name="newmemonegativepercentage" id="3exx<%=idForNewMemo%>" data-slider-id='exSlider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0"></td>
+                                        <td><input name="newmemotehtpercentage" id="3exxx<%=idForNewMemo%>" data-slider-id='exSlider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                                <input type="submit" class="btn btn-primary" value="Tallenna muutokset">
+                            </form> 
+                                </br>
+                                </br>
+                                </div>
+                            </div>
+                            <%
+                                }
+                            %>
                         </div> <!-- printing task details ends here -->
                         
                         <div class="tab-pane fade" id="tab-display-viestit<%=taskID%>">

@@ -860,7 +860,7 @@ public class Database {
         return memos;
     }
     
-    public static ArrayList<Memo2> getTaskMemos3(int taskID) {
+    public static ArrayList<Memo3> getTaskMemos3(int taskID) {
         
         ArrayList memos = new ArrayList();
         
@@ -1085,7 +1085,7 @@ public class Database {
             ps.setString(3, memoDoing);
             ps.setString(4, memoPositivePercentage);
             ps.setString(5, memoNegativePercentage);
-            ps.setString(5, memoTehtPercentage);
+            ps.setString(6, memoTehtPercentage);
             ps.executeUpdate();
 
         } catch (Exception e) {
