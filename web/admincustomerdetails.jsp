@@ -1011,208 +1011,209 @@ $(function(){
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <div class="tab-pane fade" id="tab-contentC">
-                <div class="col-sm-6">
-                    <!-- taustatiedot alkaa -->
-                    <%
-                        //These can be moved up
-                        String customerUserEmail = "";
-                        userName = "";
-                        userSurname = "";
-                        String userPhonenumber = "";
-                        String userAddress = "";
-                        String userPostalcode = "";
-                        String userPostoffice = "";
+            <div class="tab-content">
+                <div class="tab-pane fade" id="tab-contentC">
+                    <div class="col-sm-6">
+                        <!-- taustatiedot alkaa -->
+                        <%
+                            //These can be moved up
+                            String customerUserEmail = "";
+                            userName = "";
+                            userSurname = "";
+                            String userPhonenumber = "";
+                            String userAddress = "";
+                            String userPostalcode = "";
+                            String userPostoffice = "";
 
-                        int detailID = 0;
-                        String detailAge = "";
-                        String detailResidencemodel = "";
-                        String detailLifestyle = "";
-                        String detailHealthservices = "";
-                        String detailProblems = "";
+                            int detailID = 0;
+                            String detailAge = "";
+                            String detailResidencemodel = "";
+                            String detailLifestyle = "";
+                            String detailHealthservices = "";
+                            String detailProblems = "";
 
-                        //Instead getting each user detail one at a time
-                        //we could get them as arraylist and go them
-                        //through in for loop
-                        customerUserEmail = Database.getUserEmail(userID);
-                        userName = Database.getUserName(customerUserEmail);
-                        userSurname = Database.getUserSurname(customerUserEmail);
-                        userPhonenumber = Database.getUserPhonenumber(customerUserEmail);
-                        userAddress = Database.getUserAddress(customerUserEmail);
-                        userPostalcode = Database.getUserPostalcode(customerUserEmail);
-                        userPostoffice = Database.getUserPostoffice(customerUserEmail);
+                            //Instead getting each user detail one at a time
+                            //we could get them as arraylist and go them
+                            //through in for loop
+                            customerUserEmail = Database.getUserEmail(userID);
+                            userName = Database.getUserName(customerUserEmail);
+                            userSurname = Database.getUserSurname(customerUserEmail);
+                            userPhonenumber = Database.getUserPhonenumber(customerUserEmail);
+                            userAddress = Database.getUserAddress(customerUserEmail);
+                            userPostalcode = Database.getUserPostalcode(customerUserEmail);
+                            userPostoffice = Database.getUserPostoffice(customerUserEmail);
 
-                        ArrayList<Detail> details = new ArrayList<Detail>();
-                        details = Database.getUserCareDetails(userID);
+                            ArrayList<Detail> details = new ArrayList<Detail>();
+                            details = Database.getUserCareDetails(userID);
 
-                        for(int i = 0; i<details.size(); i++){
-                            detailID = ((Detail) details.get(i)).getDetailID();
-                            detailAge = ((Detail) details.get(i)).getDetailAge();
-                            detailResidencemodel = ((Detail) details.get(i)).getDetailResidencemodel();
-                            detailLifestyle = ((Detail) details.get(i)).getDetailLifestyle();
-                            detailHealthservices = ((Detail) details.get(i)).getDetailHealthservices();
-                            detailProblems = ((Detail) details.get(i)).getDetailProblems();
-                        }
-                    %>
-                    
-                    <br>
-                    
-                    <div class="row">
-                        <div class="well">
-                        <h2>Ilmaisen kokeiluohjelman taustatiedot</h2>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Etunimi</label>
-                                <p><%=InputOutput.clean(userName)%></p>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Sukunimi</label>
-                                <p><%=InputOutput.clean(userSurname)%></p>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Asuinosoite</label>
-                                <p><%=InputOutput.clean(userAddress)%></p>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Postinumero</label>
-                                <p><%=InputOutput.clean(userPostalcode)%></p>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Postitoimipaikka</label>
-                                <p><%=InputOutput.clean(userPostoffice)%></p>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Puhelin</label>
-                                <p><%=InputOutput.clean(userPhonenumber)%></p>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Sähköpostiosoite</label>
-                                <p><%=InputOutput.clean(customerUserEmail)%></p>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Ikä</label>
-                                <p><%=InputOutput.clean(detailAge)%></p>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Asuinmuoto: asun yksin / ystävän, avopuolison kanssa/ vanhempieni, ystävän taloudessa/ avioliitossa/ asuinmuotoni ja -paikkani vaihtelee jatkuvasti, ei siis ole vakituista kotina pidettävää asuinpaikkaa</label>
-                                <p><%=InputOutput.clean(detailResidencemodel)%></p>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Nykyinen viikoittainen tai muutoin säännöllinen elämäntapasi: työtön, eläkkeellä, sairausturva/ elän epäsäännöllisten ja tilapäisten tukien ja tulojen avulla/ opiskelen pääasiallisesti/ työssä, työkokeilussa, ammatillisessa työsuhteessa/ ei säännönmukaista elämäntapaa</label>
-                                <p><%=InputOutput.clean(detailLifestyle)%></p>
-                            </div>
+                            for(int i = 0; i<details.size(); i++){
+                                detailID = ((Detail) details.get(i)).getDetailID();
+                                detailAge = ((Detail) details.get(i)).getDetailAge();
+                                detailResidencemodel = ((Detail) details.get(i)).getDetailResidencemodel();
+                                detailLifestyle = ((Detail) details.get(i)).getDetailLifestyle();
+                                detailHealthservices = ((Detail) details.get(i)).getDetailHealthservices();
+                                detailProblems = ((Detail) details.get(i)).getDetailProblems();
+                            }
+                        %>
 
-                            <br>
-                            <%
-                                if ("A".equals(detailHealthservices)) {
-                            %>
-                            <label class="control control--radio">Käytän suhteellisen säännöllisesti päivittäistä sosiaalista elämääni tukevia terveys- ja kuntoutuspalveluita
-                                <input type="radio" name="radio" checked="checked"/>
-                                <div class="control__indicator"></div>
-                            </label>
-                            <%
-                            } else {
-                            %>
-                            <label class="control control--radio">Käytän suhteellisen säännöllisesti päivittäistä sosiaalista elämääni tukevia terveys- ja kuntoutuspalveluita
-                                <input type="radio" name="radio"/>
-                                <div class="control__indicator"></div>
-                            </label>
-                            <%
-                                }
-                                if ("B".equals(detailHealthservices)) {
-                            %>
-                            <label class="control control--radio">En ole varsinaisesti missään pitempikestoisessa elämääni tukevassa kuntoutus- ja palvelumuotojen piirissä
-                                <input type="radio" name="radio" checked="checked"/>
-                                <div class="control__indicator"></div>
-                            </label>
-                            <%
-                            } else {
-                            %>
-                            <label class="control control--radio">En ole varsinaisesti missään pitempikestoisessa elämääni tukevassa kuntoutus- ja palvelumuotojen piirissä
-                                <input type="radio" name="radio"/>
-                                <div class="control__indicator"></div>
-                            </label>
-                            <%
-                                }
-                                if ("C".equals(detailHealthservices)) {
-                            %>
-                            <label class="control control--radio">Saamani palvelut ovat epämääräisiä ja johonkin päivittäiseen ongelman ratkaisuun, 
-                                kuten lääkitykseen, rahallisten tukien saamiseen keskittyneitä, tilanteeni yleistä seurantaa
-                                <input type="radio" name="radio" checked="checked"/>
-                                <div class="control__indicator"></div>
-                            </label>
-                            <%
-                            } else {
-                            %>
-                            <label class="control control--radio">Saamani palvelut ovat epämääräisiä ja johonkin päivittäiseen ongelman ratkaisuun, 
-                                kuten lääkitykseen, rahallisten tukien saamiseen keskittyneitä, tilanteeni yleistä seurantaa
-                                <input type="radio" name="radio"/>
-                                <div class="control__indicator"></div>
-                            </label>
-                            <%
-                                }
-                            %>
-                            <br>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Nimeä ja luetteloi lyhyesti ongelmia, sekä elämistäsi vaikeuttavia asioita kuten mielenterveydellisiä vaikeuksiasi omin sanoin</label>
-                                <p><%=InputOutput.clean(detailProblems)%></p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- taustatiedot päättyy -->
-                </div>
-                <div class="col-sm-6">
-                    <div class="chat">
-                        <ul class="chat-ul">
-                            <h3>Keskustelu taustatiedoista</h3>
+                        <br>
+
+                        <div class="row">
+                            <div class="well">
+                            <h2>Ilmaisen kokeiluohjelman taustatiedot</h2>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Etunimi</label>
+                                    <p><%=InputOutput.clean(userName)%></p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Sukunimi</label>
+                                    <p><%=InputOutput.clean(userSurname)%></p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Asuinosoite</label>
+                                    <p><%=InputOutput.clean(userAddress)%></p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Postinumero</label>
+                                    <p><%=InputOutput.clean(userPostalcode)%></p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Postitoimipaikka</label>
+                                    <p><%=InputOutput.clean(userPostoffice)%></p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Puhelin</label>
+                                    <p><%=InputOutput.clean(userPhonenumber)%></p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Sähköpostiosoite</label>
+                                    <p><%=InputOutput.clean(customerUserEmail)%></p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Ikä</label>
+                                    <p><%=InputOutput.clean(detailAge)%></p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Asuinmuoto: asun yksin / ystävän, avopuolison kanssa/ vanhempieni, ystävän taloudessa/ avioliitossa/ asuinmuotoni ja -paikkani vaihtelee jatkuvasti, ei siis ole vakituista kotina pidettävää asuinpaikkaa</label>
+                                    <p><%=InputOutput.clean(detailResidencemodel)%></p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Nykyinen viikoittainen tai muutoin säännöllinen elämäntapasi: työtön, eläkkeellä, sairausturva/ elän epäsäännöllisten ja tilapäisten tukien ja tulojen avulla/ opiskelen pääasiallisesti/ työssä, työkokeilussa, ammatillisessa työsuhteessa/ ei säännönmukaista elämäntapaa</label>
+                                    <p><%=InputOutput.clean(detailLifestyle)%></p>
+                                </div>
+
+                                <br>
                                 <%
-                                    messages = Database.getDetailMessages(detailID);
-
-                                    //In here we will load and print chat
-                                    for (int j = 0; j<messages.size();j++){
-
-                                        messageID = ((Message) messages.get(j)).getMessageID();
-                                        messageUserType = ((Message) messages.get(j)).getMessageUserType();
-                                        messageContent = ((Message) messages.get(j)).getMessageContent();
-                                        messageDate = ((Message) messages.get(j)).getMessageDate();
-
-                                        if("customer".equals(messageUserType)){
+                                    if ("A".equals(detailHealthservices)) {
                                 %>
-                                <li>
-                                    <div class="message-data">
-                                        <span class="message-data-name"><i class="fa fa-circle you"></i><%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%> <%=InputOutput.clean(messageDate)%></span>
-                                    </div>
-                                    <div class="message you-message">
-                                        <p><%=InputOutput.clean(messageContent)%></p>
-                                    </div>
-                                </li><br>
+                                <label class="control control--radio">Käytän suhteellisen säännöllisesti päivittäistä sosiaalista elämääni tukevia terveys- ja kuntoutuspalveluita
+                                    <input type="radio" name="radio" checked="checked"/>
+                                    <div class="control__indicator"></div>
+                                </label>
                                 <%
-                                    }else{
+                                } else {
                                 %>
-                                <li class="clearfix">
-                                    <div class="message-data">
-                                        <span class="message-data-name float-right">Martti Puttonen <%=InputOutput.clean(messageDate)%></span>
-                                    </div>
-                                    <div class="message me-message"> 
-                                        <p><%=InputOutput.clean(messageContent)%></p>
-                                    </div>
-                                </li><br>
+                                <label class="control control--radio">Käytän suhteellisen säännöllisesti päivittäistä sosiaalista elämääni tukevia terveys- ja kuntoutuspalveluita
+                                    <input type="radio" name="radio"/>
+                                    <div class="control__indicator"></div>
+                                </label>
                                 <%
                                     }
-                                }
+                                    if ("B".equals(detailHealthservices)) {
                                 %>
-                                <form action="SendMessage" method="POST">
-                                    <input type="text" name="message" class="form-control"><br>
-                                    <input type="hidden" name="detailid" value="<%=detailID%>">
-                                    <input type="hidden" name="usertype" value="admin">
-                                    <input type="hidden" name="messagetype" value="D">
-                                    <input type="hidden" name="userid" value="<%=userID%>">
-                                    <input type="submit" class="btn btn-primary" value="Lähetä">
-                                </form>    
-                        </ul>
-                    </div> <!-- end chat -->
-                    
+                                <label class="control control--radio">En ole varsinaisesti missään pitempikestoisessa elämääni tukevassa kuntoutus- ja palvelumuotojen piirissä
+                                    <input type="radio" name="radio" checked="checked"/>
+                                    <div class="control__indicator"></div>
+                                </label>
+                                <%
+                                } else {
+                                %>
+                                <label class="control control--radio">En ole varsinaisesti missään pitempikestoisessa elämääni tukevassa kuntoutus- ja palvelumuotojen piirissä
+                                    <input type="radio" name="radio"/>
+                                    <div class="control__indicator"></div>
+                                </label>
+                                <%
+                                    }
+                                    if ("C".equals(detailHealthservices)) {
+                                %>
+                                <label class="control control--radio">Saamani palvelut ovat epämääräisiä ja johonkin päivittäiseen ongelman ratkaisuun, 
+                                    kuten lääkitykseen, rahallisten tukien saamiseen keskittyneitä, tilanteeni yleistä seurantaa
+                                    <input type="radio" name="radio" checked="checked"/>
+                                    <div class="control__indicator"></div>
+                                </label>
+                                <%
+                                } else {
+                                %>
+                                <label class="control control--radio">Saamani palvelut ovat epämääräisiä ja johonkin päivittäiseen ongelman ratkaisuun, 
+                                    kuten lääkitykseen, rahallisten tukien saamiseen keskittyneitä, tilanteeni yleistä seurantaa
+                                    <input type="radio" name="radio"/>
+                                    <div class="control__indicator"></div>
+                                </label>
+                                <%
+                                    }
+                                %>
+                                <br>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Nimeä ja luetteloi lyhyesti ongelmia, sekä elämistäsi vaikeuttavia asioita kuten mielenterveydellisiä vaikeuksiasi omin sanoin</label>
+                                    <p><%=InputOutput.clean(detailProblems)%></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- taustatiedot päättyy -->
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="chat">
+                            <ul class="chat-ul">
+                                <h3>Keskustelu taustatiedoista</h3>
+                                    <%
+                                        messages = Database.getDetailMessages(detailID);
+
+                                        //In here we will load and print chat
+                                        for (int j = 0; j<messages.size();j++){
+
+                                            messageID = ((Message) messages.get(j)).getMessageID();
+                                            messageUserType = ((Message) messages.get(j)).getMessageUserType();
+                                            messageContent = ((Message) messages.get(j)).getMessageContent();
+                                            messageDate = ((Message) messages.get(j)).getMessageDate();
+
+                                            if("customer".equals(messageUserType)){
+                                    %>
+                                    <li>
+                                        <div class="message-data">
+                                            <span class="message-data-name"><i class="fa fa-circle you"></i><%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%> <%=InputOutput.clean(messageDate)%></span>
+                                        </div>
+                                        <div class="message you-message">
+                                            <p><%=InputOutput.clean(messageContent)%></p>
+                                        </div>
+                                    </li><br>
+                                    <%
+                                        }else{
+                                    %>
+                                    <li class="clearfix">
+                                        <div class="message-data">
+                                            <span class="message-data-name float-right">Martti Puttonen <%=InputOutput.clean(messageDate)%></span>
+                                        </div>
+                                        <div class="message me-message"> 
+                                            <p><%=InputOutput.clean(messageContent)%></p>
+                                        </div>
+                                    </li><br>
+                                    <%
+                                        }
+                                    }
+                                    %>
+                                    <form action="SendMessage" method="POST">
+                                        <input type="text" name="message" class="form-control"><br>
+                                        <input type="hidden" name="detailid" value="<%=detailID%>">
+                                        <input type="hidden" name="usertype" value="admin">
+                                        <input type="hidden" name="messagetype" value="D">
+                                        <input type="hidden" name="userid" value="<%=userID%>">
+                                        <input type="submit" class="btn btn-primary" value="Lähetä">
+                                    </form>    
+                            </ul>
+                        </div> <!-- end chat -->
+
+                    </div>
                 </div>
-            </div>
                 <div class="tab-pane fade" id="tab-contentD">                
                 <div class="col-sm-6">
                     <p>Harjoitukset tähän</p>
@@ -1222,6 +1223,7 @@ $(function(){
                 </div>
 
                 </div>
+            </div>
         </div>
     </div>
 </div>
