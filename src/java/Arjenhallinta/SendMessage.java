@@ -51,14 +51,14 @@ public class SendMessage extends HttpServlet {
                 intTaskID = Integer.parseInt(stringTaskID);
                 Database.sendTaskMessage(intTaskID, userType, message);
                 Database.updateUserActivityDate(intUserID, "Viesti harjoitukseen");
-                response.sendRedirect(request.getContextPath() + "/customer.jsp");
+                response.sendRedirect(request.getContextPath() + "/customer.jsp#tab-content-2");
                 break;
             case "B":
                 stringDetailID = request.getParameter("detailid");
                 intDetailID = Integer.parseInt(stringDetailID);
                 Database.sendDetailMessage(intDetailID, userType, message);
                 Database.updateUserActivityDate(intUserID, "Viesti taustatietoihin");
-                response.sendRedirect(request.getContextPath() + "/customer.jsp");
+                response.sendRedirect(request.getContextPath() + "/customer.jsp#tab2");
                 break;
             case "C":
                 stringTaskID = request.getParameter("taskid");
