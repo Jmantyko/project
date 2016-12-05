@@ -424,11 +424,7 @@
                                         
                                         if(taskClosed != true){
                                 %>
-                                <button type="button" class="btn btn-group btn-group-justified btn-primary" data-toggle="collapse" data-target="#harjoitukset<%=taskID%>">Harjoitus <%=taskTypeID%>.</button>
-                                <div id="harjoitukset<%=taskID%>" class="collapse">
-                                    <a class="btn btn-success pull-left" href="#tab-display-harjoitus<%=taskID%>" data-toggle="tab">Lisää uusi merkintä</a>
-                                    <a class="btn btn-info pull-right" href="#tab-display-harjoitus<%=taskID%>" data-toggle="tab">Yhteenveto</a>
-                                </div>
+                                <button type="button" class="btn btn-group btn-group-justified btn-primary" data-toggle="tab" href="#tab-display-harjoitus<%=taskID%>">Harjoitus <%=taskTypeID%>.</button>
                                 <%
                                         }
                                     }
