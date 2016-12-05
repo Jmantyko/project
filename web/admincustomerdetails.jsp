@@ -756,231 +756,6 @@ $(function(){
                         %>
                     
                     </div>
-                    <div class="col-sm-6">
-                        <div class="tab-content">
-                            <% 
-                            //Here we print all content of each task in three (3) steps
-                            // (1) starting with the content
-                            for (int i = 0; i < tasks.size(); i++){
-                                
-                                taskID = ((Task) tasks.get(i)).getTaskID();
-                                taskTypeID = ((Task) tasks.get(i)).getTaskTypeID();
-                                taskContent = ((Task) tasks.get(i)).getTaskContent();
-                                taskIsClosed = ((Task) tasks.get(i)).getTaskIsClosed();
-                            %>
-                            <!-- printing task starts -->
-                            <div class="tab-pane fade" id="tab-content<%=taskID%>">
-                                <div>
-                                    <p><strong>Monitorointiharjoitus: <%=taskTypeID%>, arkistointitunnus <%=taskID%>.</strong><br><br></p>
-                                </div>
-                                <!-- Here we print all memos of one task -->
-                            <%
-                                if(taskTypeID == 1){
-                                    
-                                    ArrayList<Memo1> memos = new ArrayList<Memo1>();
-                                    memos = Database.getTaskMemos1(taskID);
-                                    
-                                    int memoID;
-                                    String memoTime = "";
-                                    String memoDoing = "";
-                                    String memoSuojaPercentage = "";
-                                    String memoTehtPercentage = "";
-                                    
-                            %>
-                                <div>
-                                    <table class="table">
-                                        <thead>
-                                            <th>Ajankohta</th>
-                                            <th>Tekeminen</th>
-                                            <th>Suojatoiminta</th>
-                                            <th>Tehtävään s. suojatoiminta</th>
-                                        </thead>
-                                        <tbody>
-                            <%        
-                                    for(int j = 0; j < memos.size(); j++){
-                                        
-                                        memoID = ((Memo1) memos.get(j)).getMemoID();
-                                        memoTime = ((Memo1) memos.get(j)).getMemoTime();
-                                        memoDoing = ((Memo1) memos.get(j)).getMemoDoing();
-                                        memoSuojaPercentage = ((Memo1) memos.get(j)).getMemoSuojaPercentage();
-                                        memoTehtPercentage = ((Memo1) memos.get(j)).getMemoTehtPercentage();
-                            %>
-                                        <tr>
-                                            <td><%=InputOutput.clean(memoTime)%></td>
-                                            <td><%=InputOutput.clean(memoDoing)%></td>
-                                            <td><%=InputOutput.clean(memoSuojaPercentage)%>%</td>
-                                            <td><%=InputOutput.clean(memoTehtPercentage)%>%</td>
-                                        </tr>
-                            <%
-                                    }
-                            %>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <%
-                                }//Printing taskTypeID = 1 memos end
-                                if(taskTypeID == 2){
-                                    ArrayList<Memo2> memos = new ArrayList<Memo2>();
-                                    memos = Database.getTaskMemos2(taskID);
-                                    
-                                    int memoID;
-                                    String memoTime = "";
-                                    String memoDoing = "";
-                                    String memoPositivePercentage = "";
-                                    String memoNegativePercentage = "";
-                                
-                            %>
-                                <div>
-                                    <table class="table">
-                                        <thead>
-                                            <th>Ajankohta</th>
-                                            <th>Tekeminen</th>
-                                            <th>Positiivinen vireytyminen</th>
-                                            <th>Negatiivinen vireytyminen</th>
-                                        </thead>
-                                        <tbody>
-                            <%        
-                                    for(int j = 0; j < memos.size(); j++){
-                                        
-                                        memoID = ((Memo2) memos.get(j)).getMemoID();
-                                        memoTime = ((Memo2) memos.get(j)).getMemoTime();
-                                        memoDoing = ((Memo2) memos.get(j)).getMemoDoing();
-                                        memoPositivePercentage = ((Memo2) memos.get(j)).getMemoPositivePercentage();
-                                        memoNegativePercentage = ((Memo2) memos.get(j)).getMemoNegativePercentage();
-                            %>
-                                        <tr>
-                                            <td><%=InputOutput.clean(memoTime)%></td>
-                                            <td><%=InputOutput.clean(memoDoing)%></td>
-                                            <td><%=InputOutput.clean(memoPositivePercentage)%>%</td>
-                                            <td><%=InputOutput.clean(memoNegativePercentage)%>%</td>
-                                        </tr>
-                            <%
-                                    }
-                            %>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            <%
-                                }//Printing taskTypeID = 2 memos end
-                                if(taskTypeID == 3){
-                                    ArrayList<Memo3> memos3 = new ArrayList<Memo3>();
-                                    memos3 = Database.getTaskMemos3(taskID);
-                                    
-                                    int memoID;
-                                    String memoTime = "";
-                                    String memoDoing = "";
-                                    String memoPositivePercentage = "";
-                                    String memoNegativePercentage = "";
-                                    String memoTehtPercentage = "";
-                                
-                            %>
-                                <div>
-                                    <table class="table">
-                                        <thead>
-                                            <th>Ajankohta</th>
-                                            <th>Tekeminen</th>
-                                            <th>Positiivinen suojatoiminta</th>
-                                            <th>Negatiivinen suojatoiminta</th>
-                                            <th>Tehtävään/olemiseen suuntautunut toiminta</th>
-                                        </thead>
-                                        <tbody>
-                            <%        
-                                    for(int j = 0; j < memos3.size(); j++){
-                                        
-                                        memoID = ((Memo3) memos3.get(j)).getMemoID();
-                                        memoTime = ((Memo3) memos3.get(j)).getMemoTime();
-                                        memoDoing = ((Memo3) memos3.get(j)).getMemoDoing();
-                                        memoPositivePercentage = ((Memo3) memos3.get(j)).getMemoPositivePercentage();
-                                        memoNegativePercentage = ((Memo3) memos3.get(j)).getMemoNegativePercentage();
-                                        memoTehtPercentage = ((Memo3) memos3.get(j)).getMemoTehtPercentage();
-                            %>
-                                        <tr>
-                                            <td><%=InputOutput.clean(memoTime)%></td>
-                                            <td><%=InputOutput.clean(memoDoing)%></td>
-                                            <td><%=InputOutput.clean(memoPositivePercentage)%>%</td>
-                                            <td><%=InputOutput.clean(memoNegativePercentage)%>%</td>
-                                            <td><%=InputOutput.clean(memoTehtPercentage)%>%</td>
-                                        </tr>
-                            <%
-                                    }
-                            %>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            <%
-                                }//Printing taskTypeID = 3 memos end
-                            
-                                //(2) Adding "Close task" button for tasks which are not closed yet 
-                                if(taskIsClosed == false){
-                            %>
-                                <form action="CloseTask" method="POST">
-                                    <input type="hidden" name="taskid" value="<%=taskID%>">
-                                    <input type="hidden" name="userid" value="<%=userID%>">
-                                    <input type="submit" class="btn btn-danger" value="Sulje harjoitus">
-                                </form>
-                            <%
-                                }
-                            %>
-                                <div class="chat"> <!-- printing chat for specific task starts -->
-                                    <ul class="chat-ul">
-                                    <h4>Tehtävän viestit</h4>
-                            <%
-                                // (3) and finally we add the chat for that specific task
-                                messages = Database.getTaskMessages(taskID);
-                                
-                                for(int j = 0; j<messages.size(); j++){
-                                    
-                                    messageID = ((Message) messages.get(j)).getMessageID();
-                                    messageUserType = ((Message) messages.get(j)).getMessageUserType();
-                                    messageContent = ((Message) messages.get(j)).getMessageContent();
-                                    messageDate = ((Message) messages.get(j)).getMessageDate();
-
-                                    if("customer".equals(messageUserType)){
-                            %>
-                                <li>
-                                    <div class="message-data">
-                                        <span class="message-data-name"><i class="fa fa-circle you"></i><%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%> <%=InputOutput.clean(messageDate)%></span>
-                                    </div>
-                                    <div class="message you-message">
-                                        <p><%=InputOutput.clean(messageContent)%></p>
-                                    </div>
-                                </li><br>
-                            <%
-                                    }else{
-                            %>
-                                <li class="clearfix">
-                                    <div class="message-data">
-                                        <span class="message-data-name float-right">Martti Puttonen <%=InputOutput.clean(messageDate)%></span>
-                                    </div>
-                                    <div class="message me-message"> 
-                                        <p><%=InputOutput.clean(messageContent)%></p>
-                                    </div>
-                                </li><br>
-                            <%
-                                    }
-                                }
-
-                                if(taskIsClosed == false){
-                            %>
-                                    <form action="SendMessage" method="POST">
-                                        <input type="text" name="message" class="form-control"><br>
-                                        <input type="hidden" name="taskid" value="<%=taskID%>">
-                                        <input type="hidden" name="usertype" value="admin">
-                                        <input type="hidden" name="messagetype" value="C">
-                                        <input type="hidden" name="userid" value="<%=userID%>">
-                                        <input type="submit" class="btn btn-primary" value="Lähetä">
-                                    </form>
-                            <%
-                                }
-                            %>
-                                    </ul>
-                                </div> <!-- end chat -->
-                            </div><!-- printing complete task with chat ends -->
-                            <%
-                            }
-                            %>
-                        </div>
-                    </div>
                 </div>
                 <div class="tab-pane fade" id="tab-contentB">
                     <div>
@@ -1214,15 +989,227 @@ $(function(){
 
                     </div>
                 </div>
-                <div class="tab-pane fade" id="tab-contentD">                
-                <div class="col-sm-6">
-                    <p>Harjoitukset tähän</p>
-                </div>                
-                <div class="col-sm-6">
-                    <p>Chat tähän2</p>
-                </div>
+                <% 
+                //Here we print all content of each task in three (3) steps
+                // (1) starting with the content
+                for (int i = 0; i < tasks.size(); i++){
 
-                </div>
+                    taskID = ((Task) tasks.get(i)).getTaskID();
+                    taskTypeID = ((Task) tasks.get(i)).getTaskTypeID();
+                    taskContent = ((Task) tasks.get(i)).getTaskContent();
+                    taskIsClosed = ((Task) tasks.get(i)).getTaskIsClosed();
+                %>
+                <!-- printing task starts -->
+                <div class="tab-pane fade col-sm-6" id="tab-content<%=taskID%>">
+                    <div>
+                        <p><strong>Monitorointiharjoitus: <%=taskTypeID%>, arkistointitunnus <%=taskID%>.</strong><br><br></p>
+                    </div>
+                    <!-- Here we print all memos of one task -->
+                <%
+                    if(taskTypeID == 1){
+
+                        ArrayList<Memo1> memos = new ArrayList<Memo1>();
+                        memos = Database.getTaskMemos1(taskID);
+
+                        int memoID;
+                        String memoTime = "";
+                        String memoDoing = "";
+                        String memoSuojaPercentage = "";
+                        String memoTehtPercentage = "";
+
+                %>
+                    <div>
+                        <table class="table">
+                            <thead>
+                                <th>Ajankohta</th>
+                                <th>Tekeminen</th>
+                                <th>Suojatoiminta</th>
+                                <th>Tehtävään s. suojatoiminta</th>
+                            </thead>
+                            <tbody>
+                <%        
+                        for(int j = 0; j < memos.size(); j++){
+
+                            memoID = ((Memo1) memos.get(j)).getMemoID();
+                            memoTime = ((Memo1) memos.get(j)).getMemoTime();
+                            memoDoing = ((Memo1) memos.get(j)).getMemoDoing();
+                            memoSuojaPercentage = ((Memo1) memos.get(j)).getMemoSuojaPercentage();
+                            memoTehtPercentage = ((Memo1) memos.get(j)).getMemoTehtPercentage();
+                %>
+                            <tr>
+                                <td><%=InputOutput.clean(memoTime)%></td>
+                                <td><%=InputOutput.clean(memoDoing)%></td>
+                                <td><%=InputOutput.clean(memoSuojaPercentage)%>%</td>
+                                <td><%=InputOutput.clean(memoTehtPercentage)%>%</td>
+                            </tr>
+                <%
+                        }
+                %>
+                            </tbody>
+                        </table>
+                    </div>
+                    <%
+                    }//Printing taskTypeID = 1 memos end
+                    if(taskTypeID == 2){
+                        ArrayList<Memo2> memos = new ArrayList<Memo2>();
+                        memos = Database.getTaskMemos2(taskID);
+
+                        int memoID;
+                        String memoTime = "";
+                        String memoDoing = "";
+                        String memoPositivePercentage = "";
+                        String memoNegativePercentage = "";
+
+                %>
+                    <div>
+                        <table class="table">
+                            <thead>
+                                <th>Ajankohta</th>
+                                <th>Tekeminen</th>
+                                <th>Positiivinen vireytyminen</th>
+                                <th>Negatiivinen vireytyminen</th>
+                            </thead>
+                            <tbody>
+                <%        
+                        for(int j = 0; j < memos.size(); j++){
+
+                            memoID = ((Memo2) memos.get(j)).getMemoID();
+                            memoTime = ((Memo2) memos.get(j)).getMemoTime();
+                            memoDoing = ((Memo2) memos.get(j)).getMemoDoing();
+                            memoPositivePercentage = ((Memo2) memos.get(j)).getMemoPositivePercentage();
+                            memoNegativePercentage = ((Memo2) memos.get(j)).getMemoNegativePercentage();
+                %>
+                            <tr>
+                                <td><%=InputOutput.clean(memoTime)%></td>
+                                <td><%=InputOutput.clean(memoDoing)%></td>
+                                <td><%=InputOutput.clean(memoPositivePercentage)%>%</td>
+                                <td><%=InputOutput.clean(memoNegativePercentage)%>%</td>
+                            </tr>
+                <%
+                        }
+                %>
+                            </tbody>
+                        </table>
+                    </div>
+                <%
+                    }//Printing taskTypeID = 2 memos end
+                    if(taskTypeID == 3){
+                        ArrayList<Memo3> memos3 = new ArrayList<Memo3>();
+                        memos3 = Database.getTaskMemos3(taskID);
+
+                        int memoID;
+                        String memoTime = "";
+                        String memoDoing = "";
+                        String memoPositivePercentage = "";
+                        String memoNegativePercentage = "";
+                        String memoTehtPercentage = "";
+
+                %>
+                    <div>
+                        <table class="table">
+                            <thead>
+                                <th>Ajankohta</th>
+                                <th>Tekeminen</th>
+                                <th>Positiivinen suojatoiminta</th>
+                                <th>Negatiivinen suojatoiminta</th>
+                                <th>Tehtävään/olemiseen suuntautunut toiminta</th>
+                            </thead>
+                            <tbody>
+                <%        
+                        for(int j = 0; j < memos3.size(); j++){
+
+                            memoID = ((Memo3) memos3.get(j)).getMemoID();
+                            memoTime = ((Memo3) memos3.get(j)).getMemoTime();
+                            memoDoing = ((Memo3) memos3.get(j)).getMemoDoing();
+                            memoPositivePercentage = ((Memo3) memos3.get(j)).getMemoPositivePercentage();
+                            memoNegativePercentage = ((Memo3) memos3.get(j)).getMemoNegativePercentage();
+                            memoTehtPercentage = ((Memo3) memos3.get(j)).getMemoTehtPercentage();
+                %>
+                            <tr>
+                                <td><%=InputOutput.clean(memoTime)%></td>
+                                <td><%=InputOutput.clean(memoDoing)%></td>
+                                <td><%=InputOutput.clean(memoPositivePercentage)%>%</td>
+                                <td><%=InputOutput.clean(memoNegativePercentage)%>%</td>
+                                <td><%=InputOutput.clean(memoTehtPercentage)%>%</td>
+                            </tr>
+                <%
+                        }
+                %>
+                            </tbody>
+                        </table>
+                    </div>
+                <%
+                    }//Printing taskTypeID = 3 memos end
+
+                    //(2) Adding "Close task" button for tasks which are not closed yet 
+                    if(taskIsClosed == false){
+                %>
+                    <form action="CloseTask" method="POST">
+                        <input type="hidden" name="taskid" value="<%=taskID%>">
+                        <input type="hidden" name="userid" value="<%=userID%>">
+                        <input type="submit" class="btn btn-danger" value="Sulje harjoitus">
+                    </form>
+                <%
+                    }
+                %>
+                    <div class="chat col-sm-6"> <!-- printing chat for specific task starts -->
+                        <ul class="chat-ul">
+                        <h4>Tehtävän viestit</h4>
+                <%
+                    // (3) and finally we add the chat for that specific task
+                    messages = Database.getTaskMessages(taskID);
+
+                    for(int j = 0; j<messages.size(); j++){
+
+                        messageID = ((Message) messages.get(j)).getMessageID();
+                        messageUserType = ((Message) messages.get(j)).getMessageUserType();
+                        messageContent = ((Message) messages.get(j)).getMessageContent();
+                        messageDate = ((Message) messages.get(j)).getMessageDate();
+
+                        if("customer".equals(messageUserType)){
+                %>
+                    <li>
+                        <div class="message-data">
+                            <span class="message-data-name"><i class="fa fa-circle you"></i><%=InputOutput.clean(userName)%> <%=InputOutput.clean(userSurname)%> <%=InputOutput.clean(messageDate)%></span>
+                        </div>
+                        <div class="message you-message">
+                            <p><%=InputOutput.clean(messageContent)%></p>
+                        </div>
+                    </li><br>
+                <%
+                        }else{
+                %>
+                    <li class="clearfix">
+                        <div class="message-data">
+                            <span class="message-data-name float-right">Martti Puttonen <%=InputOutput.clean(messageDate)%></span>
+                        </div>
+                        <div class="message me-message"> 
+                            <p><%=InputOutput.clean(messageContent)%></p>
+                        </div>
+                    </li><br>
+                <%
+                        }
+                    }
+
+                    if(taskIsClosed == false){
+                %>
+                        <form action="SendMessage" method="POST">
+                            <input type="text" name="message" class="form-control"><br>
+                            <input type="hidden" name="taskid" value="<%=taskID%>">
+                            <input type="hidden" name="usertype" value="admin">
+                            <input type="hidden" name="messagetype" value="C">
+                            <input type="hidden" name="userid" value="<%=userID%>">
+                            <input type="submit" class="btn btn-primary" value="Lähetä">
+                        </form>
+                <%
+                    }
+                %>
+                        </ul>
+                    </div> <!-- end chat -->
+                </div><!-- printing complete task with chat ends -->
+                <%
+                }
+                %>
             </div>
         </div>
     </div>
