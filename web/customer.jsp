@@ -545,8 +545,8 @@
                                     </script>
                                     <input name="memoid" type="hidden" value="<%=memoID%>">
                                     <tr>
-                                        <td><input name="memotime" id="id<%=memoID%>" type="text" class="form-control" value="<%=InputOutput.clean(memoTime)%>"></td>
-                                        <td><input name="memodoing" id="id<%=memoID%>" type="text" class="form-control" value="<%=InputOutput.clean(memoDoing)%>"></td>
+                                        <td><input name="memotime" id="id<%=memoID%>" type="text" class="form-control" value="<%=InputOutput.clean(memoTime)%>" placeholder="Syötä aika"></td>
+                                        <td><input name="memodoing" id="id<%=memoID%>" type="text" class="form-control" value="<%=InputOutput.clean(memoDoing)%>" placeholder="Syötä jokin tekeminen"></td>
                                         <td><input name="memosuojapercentage" id="ex<%=memoID%>" data-slider-id='exSlider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="<%=InputOutput.clean(memoSuojaPercentage)%>"></td>
                                         <td><input name="memotehtpercentage" id="exx<%=memoID%>" data-slider-id='exSlider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="<%=InputOutput.clean(memoTehtPercentage)%>"></td>
                                     </tr>
@@ -661,8 +661,8 @@
                                     </script>
                                     <input name="memoid" type="hidden" value="<%=memoID%>">
                                     <tr>
-                                        <td><input name="memotime" id="id<%=memoID%>" type="text" class="form-control" value="<%=InputOutput.clean(memoTime)%>"></td>
-                                        <td><input name="memodoing" id="id<%=memoID%>" type="text" class="form-control" value="<%=InputOutput.clean(memoDoing)%>"></td>
+                                        <td><input name="memotime" id="id<%=memoID%>" type="text" class="form-control" value="<%=InputOutput.clean(memoTime)%>" placeholder="Syötä aika"></td>
+                                        <td><input name="memodoing" id="id<%=memoID%>" type="text" class="form-control" value="<%=InputOutput.clean(memoDoing)%>" placeholder="Syötä jokin tekeminen"></td>
                                         <td><input name="memopositivepercentage" id="2ex<%=memoID%>" data-slider-id='exSlider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="<%=InputOutput.clean(memoPositivePercentage)%>"></td>
                                         <td><input name="memonegativepercentage" id="2exx<%=memoID%>" data-slider-id='exSlider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="<%=InputOutput.clean(memoNegativePercentage)%>"></td>
                                     </tr>
@@ -791,8 +791,8 @@
                                     </script>
                                     <input name="memoid" type="hidden" value="<%=memoID%>">
                                     <tr>
-                                        <td><input name="memotime" id="id<%=memoID%>" type="text" class="form-control" value="<%=InputOutput.clean(memoTime)%>"></td>
-                                        <td><input name="memodoing" id="id<%=memoID%>" type="text" class="form-control" value="<%=InputOutput.clean(memoDoing)%>"></td>
+                                        <td><input name="memotime" id="id<%=memoID%>" type="text" class="form-control" value="<%=InputOutput.clean(memoTime)%>" placeholder="Syötä aika"></td>
+                                        <td><input name="memodoing" id="id<%=memoID%>" type="text" class="form-control" value="<%=InputOutput.clean(memoDoing)%>" placeholder="Syötä jokin tekeminen"></td>
                                         <td><input name="memopositivepercentage" id="3ex<%=memoID%>" data-slider-id='exSlider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="<%=InputOutput.clean(memoPositivePercentage)%>"></td>
                                         <td><input name="memonegativepercentage" id="3exx<%=memoID%>" data-slider-id='exSlider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="<%=InputOutput.clean(memoNegativePercentage)%>"></td>
                                         <td><input name="memotehtpercentage" id="3exxx<%=memoID%>" data-slider-id='exSlider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="<%=InputOutput.clean(memoTehtPercentage)%>"></td>
