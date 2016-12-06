@@ -62,6 +62,10 @@ public class UpdateMemos extends HttpServlet {
             Database.addNewMemo1(memoTime, memoDoing, memoSuojaPercentage, memoTehtPercentage, taskID);
         }
         
+        //Here we set TaskIsReturned true so that task is correctly shown in admin view
+        int intTaskID = Integer.parseInt(taskID);
+        Database.setTaskReturned(intTaskID);
+        
         //Here we finally update UserActivityEvent in Users table
         Database.updateUserActivityDate(intUserID, "Harjoitus 1. täyttäminen");
         

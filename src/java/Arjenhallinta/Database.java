@@ -820,6 +820,32 @@ public class Database {
         return latestTask;
     }
     
+    public static void setTaskReturned(int taskID) {
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("UPDATE Tasks SET TaskIsReturned=TRUE WHERE TaskID=?");
+            ps.setInt(1, taskID);
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
+            
+        }
+        
+    }
+    
     public static ArrayList<Memo1> getTaskMemos1(int taskID) {
         
         ArrayList memos = new ArrayList();
