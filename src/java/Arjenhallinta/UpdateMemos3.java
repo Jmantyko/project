@@ -60,7 +60,9 @@ public class UpdateMemos3 extends HttpServlet {
         }
         
         //Here we need to update the new row to database
-        Database.addNewMemo3(memoTime, memoDoing, memoPositivePercentage, memoNegativePercentage, memoTehtPercentage,taskID);
+        if(!"".equals(memoDoing)){
+            Database.addNewMemo3(memoTime, memoDoing, memoPositivePercentage, memoNegativePercentage, memoTehtPercentage,taskID);
+        }
         
         //Here we finally update UserActivityEvent in Users table
         Database.updateUserActivityDate(intUserID, "Harjoitus 3. täyttäminen");

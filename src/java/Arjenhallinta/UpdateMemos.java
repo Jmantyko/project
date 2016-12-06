@@ -58,7 +58,9 @@ public class UpdateMemos extends HttpServlet {
         }
         
         //Here we need to update the new row to database
-        Database.addNewMemo1(memoTime, memoDoing, memoSuojaPercentage, memoTehtPercentage, taskID);
+        if(!"".equals(memoDoing)){
+            Database.addNewMemo1(memoTime, memoDoing, memoSuojaPercentage, memoTehtPercentage, taskID);
+        }
         
         //Here we finally update UserActivityEvent in Users table
         Database.updateUserActivityDate(intUserID, "Harjoitus 1. täyttäminen");
