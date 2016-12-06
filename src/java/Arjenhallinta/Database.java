@@ -788,6 +788,38 @@ public class Database {
         }
     }
     
+    public static int getLatestTask() {
+        
+        int latestTask = 0;
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("SELECT MAX(TaskID) FROM Tasks");
+            rs = ps.executeQuery();
+            
+            if(rs.next()){
+                latestTask = rs.getInt(1);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
+            
+        }
+        
+        return latestTask;
+    }
+    
     public static ArrayList<Memo1> getTaskMemos1(int taskID) {
         
         ArrayList memos = new ArrayList();
@@ -1086,6 +1118,34 @@ public class Database {
             ps.setString(4, memoPositivePercentage);
             ps.setString(5, memoNegativePercentage);
             ps.setString(6, memoTehtPercentage);
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+        } finally {
+            try { if (rs != null) rs.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (ps != null) ps.close(); } catch (Exception e) { /* ignoring */ }
+            try { if (conn != null) conn.close(); } catch (Exception e) { /* ignoring */ }
+            
+        }
+    }
+    
+    public static void addEmptyMemos(int taskID) {
+        
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try {
+            Class.forName(dbDriver);
+
+            conn = DriverManager.getConnection(dbAddress, dbUsername, dbPassword);
+            ps = conn.prepareStatement("INSERT INTO Memos (TaskID) VALUES (?), (?), (?), (?);");
+            ps.setInt(1, taskID);
+            ps.setInt(2, taskID);
+            ps.setInt(3, taskID);
+            ps.setInt(4, taskID);
             ps.executeUpdate();
 
         } catch (Exception e) {

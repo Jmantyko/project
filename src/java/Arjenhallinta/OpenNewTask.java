@@ -46,6 +46,12 @@ public class OpenNewTask extends HttpServlet {
                 
                 if(activeTaskExist == false){
                     Database.openNewTask(taskTypeID, intuserID);
+                    //Getting max id from tasks which represents latest task
+                    int latestTask = Database.getLatestTask();
+                    System.out.println("LATEST TASK ID IS " + latestTask);
+                    //Adding empty memos with taskid which was collected previously
+                    Database.addEmptyMemos(latestTask);
+                    
                     System.out.println("TASK WAS NOT ACTIVE, NEW TASK OPENED");
                 }else{
                     System.out.println("TASK WAS ACTIVE, NO NEW TASK OPENED");
