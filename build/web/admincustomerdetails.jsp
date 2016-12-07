@@ -409,8 +409,7 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-	
-    <!-- Bootstrap Slider Javascript -->
+
     
         <script>
         $(function(){
@@ -425,138 +424,6 @@
             });
         });
         </script>
-
-    <script>
-$(function(){
-   $('#ex1').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	  <script>
-$(function(){
-   $('#ex2').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	  <script>
-$(function(){
-   $('#ex3').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	  <script>
-$(function(){
-   $('#ex4').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	 <script>
-$(function(){
-   $('#ex5').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	 <script>
-$(function(){
-   $('#ex6').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	  <script>
-$(function(){
-   $('#ex7').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	  <script>
-$(function(){
-   $('#ex8').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	 <script>
-$(function(){
-   $('#ex9').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	 <script>
-$(function(){
-   $('#ex10').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	 <!-- Bootstrap row adding js --> 
-     <script src="addrow.js"></script>
-	 
-	 <script>   $(document).ready(function(){
-      var i=1;
-     $("#add_row").click(function(){
-      $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input name='name"+i+"' type='text' placeholder='Name' class='form-control input-md'  /> </td><td><input  name='mail"+i+"' type='text' placeholder='Mail'  class='form-control input-md'></td><td><input  name='mobile"+i+"' type='text' placeholder='Mobile'  class='form-control input-md'></td>");
-
-      $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
-      i++; 
-  });
-     $("#delete_row").click(function(){
-    	 if(i>1){
-		 $("#addr"+(i-1)).html('');
-		 i--;
-		 }
-	 });
-
-});
-	 
-	 </script>
          
          <script>
          
