@@ -500,7 +500,7 @@
         <div class="row">
             <div class="col-lg-12">
                  <div class="container">
-                    <h2>Tab 1</h2>
+                    <h2>Arjenhallinta</h2>
                     <p><%=InputOutput.clean(contentMainos)%></p>
                   </div>
             </div>
@@ -574,13 +574,13 @@
         
     <div class="tab-pane text-style" id="martti">
         
-        <div class="margintop"></div>
 
                 <div class="container">
                     
                     <div class="col-sm-6">
-                    <h2>Tab martti</h2>
+                    <h2>Martti Puttonen</h2>
 
+        <div class="margintop"></div>
                     <div class="gallery">
                         <div class="container">
                                 <div class="row">
@@ -677,14 +677,14 @@
 
     <div class="tab-pane text-style" id="tietoa">
         <div class="container">
-            <h2>Tab tietoa</h2>
+            <h2>Tietoa</h2>
             <p><%=InputOutput.clean(contentTietoa)%></p>
         </div>
     </div>
 
     <div class="tab-pane text-style" id="liity">
         <div class="container">
-            <h2>Tab Liity</h2>
+            <h2>Liity</h2>
 
             <p><%=InputOutput.clean(contentLiity)%></p>
             <button type="button" class="btn btn-default btn-lg btn-block" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeDdLYM9hpigr-oP5WjN0wOEYcGAotWX0VSXhNFY3SA0JQSVg/viewform')">Asennemittari</button>
@@ -789,14 +789,14 @@
     <div class="tab-pane text-style" id="psykoterapiapalvelut">
 
         <div class="container">
-            <h2>Tab psykoterapiapalvelut</h2>
+            <h2>Psykoterapiapalvelut</h2>
             <p><%=InputOutput.clean(contentPsykoterapiapalvelut)%></p>
         </div>
     </div>
 
     <div class="tab-pane text-style" id="yhteystiedot">
         <div class="container">
-            <h2>Tab yhteystiedot</h2>
+            <h2>Yhteystiedot</h2>
             <p><%=InputOutput.clean(contentYhteystiedot)%></p>
         </div>
     </div>
