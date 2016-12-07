@@ -160,9 +160,24 @@ body, html {
 
 .navbar-default .navbar-nav > .open > a, 
 .navbar-default .navbar-nav > .open > a:focus, 
-.navbar-default .navbar-nav > .open > a:hover{
+.navbar-default .navbar-nav > .open > a:hover {
     color: white;
     background-color: #76A5FF;
+}
+.navbar-default .navbar-nav > .open > .dropdown-menu > li > a:focus, 
+.navbar-default .navbar-nav > .open > .dropdown-menu > li > a:hover {
+    color: white;
+    background-color: #76A5FF;
+}
+
+.navbar-default .navbar-nav > .open > .dropdown-menu > li > a {
+    background-color: #0073A3;
+    color: white;
+    text-shadow:
+    -0.2px -0.2px 0 #000,  
+     0.2px -0.2px 0 #000,
+    -0.2px 0.2px 0 #000,
+     0.2px 0.2px 0 #000;
 }
 
 .nav-pills > li.active > a, .nav-pills > li.active > a:focus {

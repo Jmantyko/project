@@ -26,7 +26,6 @@
   
     <title>Arjenhallinta</title>
 	
-    <link rel="stylesheet" href="style.css" type="text/css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	
@@ -39,10 +38,8 @@
     <!-- Bootstrap slider CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.3.2/css/bootstrap-slider.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.3.2/css/bootstrap-slider.min.css">
-	
-    <!-- Bootstrap Clockpicker-->
-    <link rel="stylesheet" type="text/css" href="dist/jquery-clockpicker.css">
     
+    <link rel="stylesheet" href="style.css" type="text/css">
     
     <!-- Custom CSS -->
     <style>
@@ -447,7 +444,7 @@
                                         
                                         if(taskClosed != true){
                                 %>
-                                <button type="button" class="btn btn-group btn-group-justified btn-info" data-toggle="tab" href="#tab-display-viestit<%=taskID%>">Harjoitus <%=taskTypeID%>. viestit</button>
+                                <button type="button" class="btn btn-group btn-group-justified btn-primary" data-toggle="tab" href="#tab-display-viestit<%=taskID%>">Harjoitus <%=taskTypeID%>. viestit</button>
                             <%
                                         }
                                     }

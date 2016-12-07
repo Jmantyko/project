@@ -109,7 +109,6 @@
 
 
         .navbar-default .navbar-nav > li > a {
-        background-color: #0073A3;
         color: white;
         background-color: #0073A3;
         letter-spacing: 2px;

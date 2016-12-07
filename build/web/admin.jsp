@@ -88,10 +88,6 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.3.2/css/bootstrap-slider.min.css">
 
-    <!-- Bootstrap Clockpicker-->
-
-    <link rel="stylesheet" type="text/css" href="dist/jquery-clockpicker.css">
-
         
     <!-- Custom CSS -->
     <style>
@@ -269,7 +265,6 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 	
-    <!-- Bootstrap Slider Javascript -->
     
         <script>
         $(function(){
@@ -284,116 +279,6 @@
             });
         });
         </script>
-
-    <script>
-$(function(){
-   $('#ex1').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	  <script>
-$(function(){
-   $('#ex2').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	  <script>
-$(function(){
-   $('#ex3').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	  <script>
-$(function(){
-   $('#ex4').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	 <script>
-$(function(){
-   $('#ex5').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	 <script>
-$(function(){
-   $('#ex6').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	  <script>
-$(function(){
-   $('#ex7').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	  <script>
-$(function(){
-   $('#ex8').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	 <script>
-$(function(){
-   $('#ex9').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	 <script>
-$(function(){
-   $('#ex10').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
 	 
 	 <!-- Bootstrap row adding js --> 
      <script src="addrow.js"></script>
