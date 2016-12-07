@@ -456,8 +456,8 @@
                     <div class="col-md-8">
                         <div class="tab-content">
                         <div class="tab-pane fade in active" id="tab-display-welcome">
-                            <h2>Tervetuloa!</h2>
-                            <p>tähän vähän esittelytekstiä ja Martin broadcastaukset</p>
+                            <h2>Tervetuloa Arjenhallinta -sovellukseen!</h2>
+                            <p>Pääset täyttämään Harjoituksiasi ja lukemaan Terapeuttisi lähettämää palautetta sivun vasemman reunan ikkunasta.</p>
                         </div>
                         <%
                             //Here we print all content of each task
