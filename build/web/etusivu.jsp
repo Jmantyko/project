@@ -227,216 +227,105 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
-	<!-- Bootstrap Slider Javascript -->
 
-	      <script>
-$(function(){
-   $('#ex1').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	  <script>
-$(function(){
-   $('#ex2').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	  <script>
-$(function(){
-   $('#ex3').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	  <script>
-$(function(){
-   $('#ex4').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	 <script>
-$(function(){
-   $('#ex5').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	 <script>
-$(function(){
-   $('#ex6').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	  <script>
-$(function(){
-   $('#ex7').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	  <script>
-$(function(){
-   $('#ex8').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	 <script>
-$(function(){
-   $('#ex9').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
-	 
-	 <script>
-$(function(){
-   $('#ex10').slider({
-	formater: function(value) {
-		return 'Current value: ' + value;
-	}
-});
-
- });
-     </script>
 	 
 	 <!-- Bootstrap row adding js --> 
      <script src="addrow.js"></script>
 	 
-	 <script>   
-            $(document).ready(function(){
-            var i=1;
-            $("#add_row").click(function(){
-                $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input name='name"+i+"' type='text' placeholder='Name' class='form-control input-md'  /> </td><td><input  name='mail"+i+"' type='text' placeholder='Mail'  class='form-control input-md'></td><td><input  name='mobile"+i+"' type='text' placeholder='Mobile'  class='form-control input-md'></td>");
-                $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
-                i++; 
-            });
-     $("#delete_row").click(function(){
-    	 if(i>1){
-		 $("#addr"+(i-1)).html('');
-		 i--;
-		 }
-	 });
+    <script>   
+        $(document).ready(function(){
+        var i=1;
+        $("#add_row").click(function(){
+            $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input name='name"+i+"' type='text' placeholder='Name' class='form-control input-md'  /> </td><td><input  name='mail"+i+"' type='text' placeholder='Mail'  class='form-control input-md'></td><td><input  name='mobile"+i+"' type='text' placeholder='Mobile'  class='form-control input-md'></td>");
+            $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
+            i++; 
+        });
+        $("#delete_row").click(function(){
+            if(i>1){
+             $("#addr"+(i-1)).html('');
+             i--;
+             }
+        });
 
-});
+    });
 	 
-	 </script>
-         
-         <script>
-         
-         $('.stop-propagation').on('click', function (e) {
-          e.stopPropagation();
-         });
-         
-         </script>
-         
-         <script>
-         
-         $(document).ready(function(){
-    $('.link-gallery').click(function(){
-		var galleryId = $(this).attr('data-target');
-		var currentLinkIndex = $(this).index('a[data-target="'+ galleryId +'"]');
+    </script>
 
-		createGallery(galleryId, currentLinkIndex);
-		createPagination(galleryId, currentLinkIndex);
+    <script>
+         
+        $('.stop-propagation').on('click', function (e) {
+         e.stopPropagation();
+        });
 
-		$(galleryId).on('hidden.bs.modal', function (){
-			destroyGallry(galleryId);
-			destroyPagination(galleryId);
-		});
+    </script>
+         
+    <script>
+         
+    $(document).ready(function(){
+        $('.link-gallery').click(function(){
+            var galleryId = $(this).attr('data-target');
+            var currentLinkIndex = $(this).index('a[data-target="'+ galleryId +'"]');
 
-		$(galleryId +' .carousel').on('slid.bs.carousel', function (){
-			var currentSlide = $(galleryId +' .carousel .item.active');
-			var currentSlideIndex = currentSlide.index(galleryId +' .carousel .item');
+            createGallery(galleryId, currentLinkIndex);
+            createPagination(galleryId, currentLinkIndex);
 
-			setTitle(galleryId, currentSlideIndex);
-			setPagination(++currentSlideIndex, true);
-		})
+            $(galleryId).on('hidden.bs.modal', function (){
+                    destroyGallry(galleryId);
+                    destroyPagination(galleryId);
+            });
+
+            $(galleryId +' .carousel').on('slid.bs.carousel', function (){
+                    var currentSlide = $(galleryId +' .carousel .item.active');
+                    var currentSlideIndex = currentSlide.index(galleryId +' .carousel .item');
+
+                    setTitle(galleryId, currentSlideIndex);
+                    setPagination(++currentSlideIndex, true);
+            })
 	});
 
 	function createGallery(galleryId, currentSlideIndex){
-		var galleryBox = $(galleryId + ' .carousel-inner');
+            var galleryBox = $(galleryId + ' .carousel-inner');
 
-		$('a[data-target="'+ galleryId +'"]').each(function(){
-			var img = $(this).html();
-			var galleryItem = $('<div class="item">'+ img +'</div>');
+            $('a[data-target="'+ galleryId +'"]').each(function(){
+                    var img = $(this).html();
+                    var galleryItem = $('<div class="item">'+ img +'</div>');
 
-			galleryItem.appendTo(galleryBox);
-		});
+                    galleryItem.appendTo(galleryBox);
+            });
 
-		galleryBox.children('.item').eq(currentSlideIndex).addClass('active');
-		setTitle(galleryId, currentSlideIndex);
+            galleryBox.children('.item').eq(currentSlideIndex).addClass('active');
+            setTitle(galleryId, currentSlideIndex);
 	}
 
 	function destroyGallry(galleryId){
-		$(galleryId + ' .carousel-inner').html("");
+            $(galleryId + ' .carousel-inner').html("");
 	}
 
 	function createPagination(galleryId, currentSlideIndex){
-		var pagination = $(galleryId + ' .pagination');
-		var carouselId = $(galleryId).find('.carousel').attr('id');
-		var prevLink = $('<li><a href="#'+ carouselId +'" data-slide="prev">«</a></li>');
-		var nextLink = $('<li><a href="#'+ carouselId +'" data-slide="next">»</a></li>');
+            var pagination = $(galleryId + ' .pagination');
+            var carouselId = $(galleryId).find('.carousel').attr('id');
+            var prevLink = $('<li><a href="#'+ carouselId +'" data-slide="prev">«</a></li>');
+            var nextLink = $('<li><a href="#'+ carouselId +'" data-slide="next">»</a></li>');
 
-		prevLink.appendTo(pagination);
-		nextLink.appendTo(pagination);
+            prevLink.appendTo(pagination);
+            nextLink.appendTo(pagination);
 
-		$('a[data-target="'+ galleryId +'"]').each(function(){
-			var linkIndex = $(this).index('a[data-target="'+ galleryId +'"]');
-			var paginationLink = $('<li><a data-target="#carouselGallery" data-slide-to="'+ linkIndex +'">'+ (linkIndex+1) +'</a></li>');
+            $('a[data-target="'+ galleryId +'"]').each(function(){
+                    var linkIndex = $(this).index('a[data-target="'+ galleryId +'"]');
+                    var paginationLink = $('<li><a data-target="#carouselGallery" data-slide-to="'+ linkIndex +'">'+ (linkIndex+1) +'</a></li>');
 
-			paginationLink.insertBefore('.pagination li:last-child');
-		});
+                    paginationLink.insertBefore('.pagination li:last-child');
+            });
 
-		setPagination(++currentSlideIndex);
+            setPagination(++currentSlideIndex);
 	}
 
 	function setPagination(currentSlideIndex, reset = false){
-		if (reset){
-			$('.pagination li').removeClass('active');
-		}
+            if (reset){
+                    $('.pagination li').removeClass('active');
+            }
 
-		$('.pagination li').eq(currentSlideIndex).addClass('active');
+            $('.pagination li').eq(currentSlideIndex).addClass('active');
 	}
 
 	function destroyPagination(galleryId){
@@ -448,23 +337,23 @@ $(function(){
 
 		$('.modal-title').text(imgAlt);
 	}
-});
+    });
          
-         </script>
-        <script>
-            $(function(){
-                var hash = window.location.hash;
-                hash && $('ul.nav a[href="' + hash + '"]').tab('show');
+    </script>
 
-                $('.nav-tabs a').click(function (e) {
-                    $(this).tab('show');
-                    var scrollmem = $('body').scrollTop();
-                    window.location.hash = this.hash;
-                    $('html,body').scrollTop(scrollmem);
-                });
-            });
-        </script>
-	
+   <script>
+       $(function(){
+           var hash = window.location.hash;
+           hash && $('ul.nav a[href="' + hash + '"]').tab('show');
+
+           $('.nav-tabs a').click(function (e) {
+               $(this).tab('show');
+               var scrollmem = $('body').scrollTop();
+               window.location.hash = this.hash;
+               $('html,body').scrollTop(scrollmem);
+           });
+       });
+   </script>
         
 </head>
     <body>
@@ -798,10 +687,9 @@ $(function(){
             <h2>Tab Liity</h2>
 
             <p><%=InputOutput.clean(contentLiity)%></p>
-            <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeDdLYM9hpigr-oP5WjN0wOEYcGAotWX0VSXhNFY3SA0JQSVg/viewform')">Linkki nettiterapian ja istuntopainotteisen terapian asennemittariin </button>
-            <a class="btn btn-default btn-lg btn-block" href="#tab7" data-toggle="tab">Linkki ilmaisen harjoitusohjelman taustatietojen täyttöön </a>
-
-            <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.open('https://docs.google.com/forms/d/1UqlGeUD4sdHlPWMlt_w6wJteREAttMO5I5chXV93S3c/edit')"> Linkki maksullisen harjoitusohjelman taustatietojen täyttöön </button>
+            <button type="button" class="btn btn-default btn-lg btn-block" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeDdLYM9hpigr-oP5WjN0wOEYcGAotWX0VSXhNFY3SA0JQSVg/viewform')">Asennemittari</button>
+            <a class="btn btn-primary btn-lg btn-block" href="#tab7" data-toggle="tab">Ilmainen harjoitusohjelma</a>
+            <button type="button" class="btn btn-default btn-lg btn-block" onclick="window.open('https://docs.google.com/forms/d/1UqlGeUD4sdHlPWMlt_w6wJteREAttMO5I5chXV93S3c/edit')">Maksullinen harjoitusohjelma</button>
         </div>
     </div>
             
