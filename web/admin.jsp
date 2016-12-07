@@ -455,10 +455,9 @@
             </form>
         </td>
         <td>
-            <form action="admincustomerdetails.jsp" method="GET">
-                <input type="hidden" name="customerid" value="<%=customerID%>">
-                <button type="submit" class="btn btn-primary btn-block"><%=customerActivityDate%> | <%=customerActivityEvent%></button>
-            </form>
+            <div value="<%=customerID%>">
+                <%=customerActivityDate%> | <%=customerActivityEvent%>
+            </div>
         </td>
         
       </tr>
