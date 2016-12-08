@@ -170,6 +170,10 @@ body, html {
     background-color: #76A5FF;
 }
 
+.min-height {
+    min-height: 400px;
+}
+
 
 .nav-pills > li.active > a, .nav-pills > li.active > a:focus {
     color: white;

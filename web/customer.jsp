@@ -385,7 +385,7 @@
         </div>
         <!-- tab content -->
         <div class="tab-content">
-        <div class="tab-pane active text-style" id="tab1">
+        <div class="tab-pane active text-style min-height" id="tab1">
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
