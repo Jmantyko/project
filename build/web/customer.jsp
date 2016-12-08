@@ -428,7 +428,9 @@
                                 <button type="button" class="btn btn-group btn-group-justified btn-primary" data-toggle="tab" href="#tab-display-harjoitus<%=taskID%>">Harjoitus <%=taskTypeID%>.</button>
                                 <%
                                         }
+
                                     }
+
                                 %>
                             </div>
                             <div id="tab-content-2" class="tab-pane fade">
@@ -439,13 +441,7 @@
                                     //to get whole conversation to show below
                                     ArrayList<Message> messages = new ArrayList<Message>();
                                     messages = Database.getTaskMessages(taskID);
-                                    
-                                    if (messages.size() == 0){
-                                    %>
-                                    <br><p>Sinulle ei ole viestejä</p>
-                                    <%
-                                        }
-                                    
+
                                     for (int k = 0; k < tasks.size(); k++) {
 
                                         taskID = ((Task) tasks.get(k)).getTaskID();
@@ -453,12 +449,12 @@
                                         taskClosed = ((Task) tasks.get(k)).getTaskIsClosed();
                                         
                                         if(taskClosed != true){
-                                %>
-                                <button type="button" class="btn btn-group btn-group-justified btn-primary" data-toggle="tab" href="#tab-display-viestit<%=taskID%>">Harjoitus <%=taskTypeID%>. viestit</button>
-                            <%
+                                        %>
+                                        <button type="button" class="btn btn-group btn-group-justified btn-primary" data-toggle="tab" href="#tab-display-viestit<%=taskID%>">Harjoitus <%=taskTypeID%>. viestit</button>
+                                        <%
                                         }
                                     }
-                            %>
+                                %>
                             </div>
                         </div>
                     </div>
@@ -497,7 +493,26 @@
                             <div class="TaskType">
                             <h3 class="text-center">Monitorointiharjoitus <%=taskTypeID%></h3>
 
-                            </br>
+                            <div class="panel-group">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" href="#ohje1">Ohje</a>
+                                    </h4>
+                                </div>
+                                <div id="ohje1" class="panel-collapse collapse">
+                                    <div>
+                                        Palauta mieleesi vapaavalintaisen lähimenneisyyden päivän tapahtumia. 
+                                        Kirjoita ylös tapahtuman ajankohta, (esim. numeroin 8:00) tai sanallisesti. 
+                                        Arvioi kyseiseen tehtävään käytettyä keskittymisen tasoa kohdassa Tehtävään suuntautunut toiminta 
+                                        ja Suojatoiminnan (esim. torjuminen, kieltäminen, siirtäminen) vahvuutta kyseisessä toiminnassa. 
+                                        <br><br>
+                                        Ei haittaa, vaikka et täyttäisi harjoitusta täydellisesti, sillä myös vajaasi jäänyt vastaus on arvokas.  
+                                        <br><br>
+                                        Tallentaessasi harjoituksen Terapeuttisi antaa palautetta vastauksestasi 1-3 päivän kuluessa. Kiitokset etukäteen vastauksestasi!</div>
+                                </div>
+                           </div>
+                            
+                            
                             <form action="UpdateMemos" method="POST">
                             <table class="table table-hover">
                                 <thead>
@@ -614,6 +629,21 @@
                             <h3 class="text-center">Monitorointiharjoitus <%=taskTypeID%></h3>
 
                             </br>
+                            
+                            <div class="panel-group">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                      <a data-toggle="collapse" href="#ohje2">Ohje</a>
+                                    </h4>
+                                </div>
+                                <div id="ohje2" class="panel-collapse collapse">
+                                    <div>
+                                        Ohje harjoitukseen 2
+                                    </div>
+                           </div>
+                            
+                            </br>
+                            
                             <form action="UpdateMemos2" method="POST">
                             <table class="table table-hover">
                                 <thead>
@@ -729,8 +759,18 @@
                             <div class="tab-pane text-style" id="tab6">
                             <div class="TaskType">
                             <h3 class="text-center">Monitorointiharjoitus <%=taskTypeID%></h3>
-
-                            </br>
+                            
+                            <div class="panel-group">
+                               <div class="panel-heading">
+                                 <h4 class="panel-title">
+                                   <a data-toggle="collapse" href="#ohje3">Ohje</a>
+                                 </h4>
+                               </div>
+                               <div id="ohje3" class="panel-collapse collapse">
+                                   <div>Ohjeet harjoitus 3</div>
+                               </div>
+                           </div>
+                            
                             <form action="UpdateMemos3" method="POST">
                             <table class="table table-hover">
                                 <thead>
