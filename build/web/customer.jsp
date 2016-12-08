@@ -398,7 +398,7 @@
                             
                                     if(tasks.size() == 0){
                                 %>
-                                <br><p>Sinulle ei ole vielä lähetetty monitorointiharjoituksia.</p>
+                                <br><p>Terapeuttisi ei vielä ole avannut sinulle harjoituksia.</p>
                                 <%
                                     }
 
