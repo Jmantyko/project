@@ -440,6 +440,12 @@
                                     ArrayList<Message> messages = new ArrayList<Message>();
                                     messages = Database.getTaskMessages(taskID);
                                     
+                                    if (messages.size() == 0){
+                                    %>
+                                    <br><p>Sinulle ei ole viestejä</p>
+                                    <%
+                                        }
+                                    
                                     for (int k = 0; k < tasks.size(); k++) {
 
                                         taskID = ((Task) tasks.get(k)).getTaskID();
