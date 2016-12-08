@@ -239,10 +239,12 @@
 
             if (session.getAttribute("email") == null) {
 
+                System.out.println("CUSTOMER SESSION email NULL: " + session.getAttribute("email"));
                 response.sendRedirect("etusivu.jsp");
 
             } else {
                 email = (String) session.getAttribute("email");
+                System.out.println("CUSTOMER SESSION email NOT NULL: " + session.getAttribute("email"));
 
                 String userType = Database.userType(email);
                 
@@ -254,9 +256,11 @@
                         for (Cookie cookie : cookies) {
                             if (cookie.getName().equals("email")) {
                                 userEmail = cookie.getValue();
+                                System.out.println("CUSTOMER COOKIE email: " + userEmail);
                             }
                             if (cookie.getName().equals("JSESSIONID")) {
                                 sessionID = cookie.getValue();
+                                System.out.println("CUSTOMER COOKIE jsessionid: " + sessionID);
                             }
                         }
                     }
