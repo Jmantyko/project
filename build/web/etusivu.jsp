@@ -512,11 +512,11 @@
 
             <div class="col-md-4 col-sm-6 hero-feature">
                 <div class="thumbnail">
-                    <h4>Halpaa ja tehokasta internet-yhteistyötä</h4>
+                    <h4>Edullista ja tehokasta internet-yhteistyötä</h4>
                     <img src="Images/kuva5medium.png" alt="">
                     <div class="caption">
                         <p>Arjenhallinta-sovelluksella voidaan toteuttaa
-                            halpaa ja tehokasta internet-yhteistyötä jolla
+                            edullista ja tehokasta internet-yhteistyötä jolla
                             saadaan toimivia keinoja asiakkaan ongelmallisen
                             käyttäytymisen, kuten ajattelun ja reagoinnin
                             haitallisiin toimintatapoihin sekä tunteiden
