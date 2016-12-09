@@ -640,8 +640,8 @@
                                     <div>
                                         Ohje harjoitukseen 2
                                     </div>
-                           </div>
-                            
+                                </div>
+                            </div>
                             </br>
                             
                             <form action="UpdateMemos2" method="POST">
