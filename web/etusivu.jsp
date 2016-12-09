@@ -791,8 +791,22 @@
 
     <div class="tab-pane text-style min-height" id="yhteystiedot">
         <div class="container">
-            <h2>Yhteystiedot</h2>
-            <p><%=InputOutput.clean(contentYhteystiedot)%></p>
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2>Yhteystiedot</h2><br>
+                    <%=InputOutput.clean(contentYhteystiedot)%><br><br>
+                    <p>
+                        Martti Puttonen<br>
+                        psykologian tohtori<br>
+                        psykoterapeutti<br>
+                        kognitiivinen käyttäytymisterapia<br>
+                        VET, laillistettu<br>
+                        <a href="tel:050 533 5698">050 533 5698</a> tai <a href="tel:044 7103 414">044 7103 414</a><br>
+                        Sähköposti: maputto@saunalahti.fi<br>
+                        Vastaanotto: Satakunnankatu 13 as 25, Pori (tai kotikäynnit)
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
         
