@@ -501,6 +501,7 @@
                                 </div>
                                 <div id="ohje1" class="panel-collapse collapse">
                                     <div>
+                                        <p>
                                         Palauta mieleesi vapaavalintaisen lähimenneisyyden päivän tapahtumia. 
                                         Kirjoita ylös tapahtuman ajankohta, (esim. numeroin 8:00) tai sanallisesti. 
                                         Arvioi kyseiseen tehtävään käytettyä keskittymisen tasoa kohdassa Tehtävään suuntautunut toiminta 
@@ -508,7 +509,9 @@
                                         <br><br>
                                         Ei haittaa, vaikka et täyttäisi harjoitusta täydellisesti, sillä myös vajaasi jäänyt vastaus on arvokas.  
                                         <br><br>
-                                        Tallentaessasi harjoituksen Terapeuttisi antaa palautetta vastauksestasi 1-3 päivän kuluessa. Kiitokset etukäteen vastauksestasi!</div>
+                                        Tallentaessasi harjoituksen Terapeuttisi antaa palautetta vastauksestasi 1-3 päivän kuluessa. Kiitokset etukäteen vastauksestasi!
+                                        </p>
+                                    </div>
                                 </div>
                            </div>
                             
@@ -627,9 +630,6 @@
                             <div class="tab-pane text-style" id="tab6">
                             <div class="TaskType">
                             <h3 class="text-center">Monitorointiharjoitus <%=taskTypeID%></h3>
-
-                            </br>
-                            
                             <div class="panel-group">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
@@ -638,12 +638,20 @@
                                 </div>
                                 <div id="ohje2" class="panel-collapse collapse">
                                     <div>
-                                        Ohje harjoitukseen 2
+                                        <p>
+                                        Merkitse harjoitukseen edellisen tai kuluvan päivän tapahtumia 
+                                        ja niissä ilmenevien tunnekokemusten laatua ja määrää. 
+                                        Pyri kattavaan vastaukseen, mutta muista ettei vastauksen 
+                                        tarvi olla täydellinen. Keskity erityisesti tekemisen kohteeseen 
+                                        joka voi olla täysin arkinen toiminta, pelkkä oleminen tai jokin 
+                                        erityinen tapahtuma.
+                                        <br><br>
+                                        Tallentaessasi harjoituksen Terapeuttisi antaa palautetta 
+                                        vastauksestasi 1-3 päivän kuluessa. Kiitokset etukäteen vastauksestasi!
+                                        </p>
                                     </div>
                                 </div>
                             </div>
-                            </br>
-                            
                             <form action="UpdateMemos2" method="POST">
                             <table class="table table-hover">
                                 <thead>
@@ -767,7 +775,19 @@
                                  </h4>
                                </div>
                                <div id="ohje3" class="panel-collapse collapse">
-                                   <div>Ohjeet harjoitus 3</div>
+                                   <div>
+                                       <p>
+                                        Merkitse harjoitukseen tavallista tunteikkaimmat tapahtumat 
+                                        edellisiltä tai kuluvalta päivältä. 
+                                        Arvioi tapahtuman tai tekemisen suojatoiminnan 
+                                        laatua sekä tekemiseen suuntautunutta toimintaa tai ongelmanratkaisua. 
+                                        Tavoitteena on tunnistaa arjessa esiintyvät voimakkaat tunteet sekä 
+                                        jäsentää niitä osana suojatoimintaa tai tekemistä.
+                                        <br><br>
+                                        Tallentaessasi harjoituksen Terapeuttisi antaa palautetta vastauksestasi 
+                                        1-3 päivän kuluessa. Kiitokset etukäteen vastauksestasi!
+                                       </p>
+                                   </div>
                                </div>
                            </div>
                             
