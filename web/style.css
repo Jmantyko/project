@@ -170,6 +170,15 @@ body, html {
     background-color: #76A5FF;
 }
 
+.min-height {
+    min-height: 400px;
+}
+
+.collapsing {
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+}
 
 .nav-pills > li.active > a, .nav-pills > li.active > a:focus {
     color: white;

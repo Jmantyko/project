@@ -572,7 +572,7 @@
     </div>
         
         
-    <div class="tab-pane text-style" id="martti">
+    <div class="tab-pane text-style min-height" id="martti">
         
 
                 <div class="container">
@@ -675,14 +675,14 @@
      
         
 
-    <div class="tab-pane text-style" id="tietoa">
+    <div class="tab-pane text-style min-height" id="tietoa">
         <div class="container">
             <h2>Tietoa</h2>
             <p><%=InputOutput.clean(contentTietoa)%></p>
         </div>
     </div>
 
-    <div class="tab-pane text-style" id="liity">
+    <div class="tab-pane text-style min-height" id="liity">
         <div class="container">
             <h2>Liity</h2>
 
@@ -693,7 +693,7 @@
         </div>
     </div>
             
-    <div class="tab-pane text-style" id="tab7">
+    <div class="tab-pane text-style min-height" id="tab7">
         
         <div class="container">
             <div class="col-sm-9">
@@ -781,12 +781,7 @@
     </div>
 
 
-        <div class="tab-pane text-style" id="tab8">
-     
-
-    </div>
-
-    <div class="tab-pane text-style" id="psykoterapiapalvelut">
+    <div class="tab-pane text-style min-height" id="psykoterapiapalvelut">
 
         <div class="container">
             <h2>Psykoterapiapalvelut</h2>
@@ -794,7 +789,7 @@
         </div>
     </div>
 
-    <div class="tab-pane text-style" id="yhteystiedot">
+    <div class="tab-pane text-style min-height" id="yhteystiedot">
         <div class="container">
             <h2>Yhteystiedot</h2>
             <p><%=InputOutput.clean(contentYhteystiedot)%></p>
