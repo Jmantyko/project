@@ -688,8 +688,8 @@
 
             <p><%=InputOutput.clean(contentLiity)%></p>
             <button type="button" class="btn btn-default btn-lg btn-block" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSeDdLYM9hpigr-oP5WjN0wOEYcGAotWX0VSXhNFY3SA0JQSVg/viewform')">Asennemittari</button>
-            <a class="btn btn-primary btn-lg btn-block" href="#tab7" data-toggle="tab">Ilmainen harjoitusohjelma</a>
-            <button type="button" class="btn btn-default btn-lg btn-block" onclick="window.open('https://docs.google.com/forms/d/1UqlGeUD4sdHlPWMlt_w6wJteREAttMO5I5chXV93S3c/edit')">Maksullinen harjoitusohjelma</button>
+            <a class="btn btn-primary btn-lg btn-block" href="#tab7" data-toggle="tab">Ilmainen harjoitusohjelma (Beta)</a>
+            <button type="button" class="btn btn-default btn-lg btn-block" onclick="window.open('https://docs.google.com/forms/d/1UqlGeUD4sdHlPWMlt_w6wJteREAttMO5I5chXV93S3c/edit')">Maksullinen harjoitusohjelma (tulossa)</button>
         </div>
     </div>
             
