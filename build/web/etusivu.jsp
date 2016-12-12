@@ -801,9 +801,9 @@
                         psykoterapeutti<br>
                         kognitiivinen käyttäytymisterapia<br>
                         VET, laillistettu<br>
-                        <a href="tel:050 533 5698">050 533 5698</a> tai <a href="tel:044 7103 414">044 7103 414</a><br>
-                        Sähköposti: maputto@saunalahti.fi<br>
-                        Vastaanotto: Satakunnankatu 13 as 25, Pori (tai kotikäynnit)
+                        <a href="tel:050 533 5698">050 533 5698</a><br>
+                        Sähköposti: martti.puttonen@gmail.com<br>
+                        Vastaanotto: Karankatu 25 G, Hyvinkää (tai kotikäynnit)
                     </p>
                 </div>
             </div>
