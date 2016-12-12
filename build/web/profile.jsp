@@ -21,7 +21,6 @@
   
     <title>Arjenhallinta</title>
 	
-        <link rel="stylesheet" href="style.css" type="text/css">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	
@@ -38,9 +37,8 @@
 	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.3.2/css/bootstrap-slider.min.css">
 	
-	<!-- Bootstrap Clockpicker-->
 	
-	<link rel="stylesheet" type="text/css" href="dist/jquery-clockpicker.css">
+        <link rel="stylesheet" href="style.css" type="text/css">
 
         
     <!-- Custom CSS -->
@@ -159,7 +157,6 @@
 	<!-- Clockpicker Javascript -->
 	
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-	<script type="text/javascript" src="dist/bootstrap-clockpicker.min.js"></script>
         
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -169,27 +166,6 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 	 
-	 <!-- Bootstrap row adding js --> 
-     <script src="addrow.js"></script>
-	 
-	 <script>   $(document).ready(function(){
-      var i=1;
-     $("#add_row").click(function(){
-      $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input name='name"+i+"' type='text' placeholder='Name' class='form-control input-md'  /> </td><td><input  name='mail"+i+"' type='text' placeholder='Mail'  class='form-control input-md'></td><td><input  name='mobile"+i+"' type='text' placeholder='Mobile'  class='form-control input-md'></td>");
-
-      $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
-      i++; 
-  });
-     $("#delete_row").click(function(){
-    	 if(i>1){
-		 $("#addr"+(i-1)).html('');
-		 i--;
-		 }
-	 });
-
-});
-	 
-	 </script>
          
          <script>
          
@@ -405,24 +381,6 @@
             <div class="row">
                 <div class="col-sm-4">
                     <h3>Tilitiedot</h3>
-                    <!--<hr>
-                    <form action="UpdateUserDetails" method="POST" accept-charset="utf-8">
-                        <p>Asiakasnro: <strong><%=userID%></strong></p>
-                        <p>Sähköposti: <strong><%=InputOutput.clean(userEmail)%></strong></p>
-                        Etunimi:
-                        <input type="text" class="form-control" name="name" value="<%=InputOutput.clean(userName)%>" />
-                        Sukunimi:
-                        <input type="text" class="form-control" name="surname" value="<%=InputOutput.clean(userSurname)%>" />
-                        Osoite:
-                        <input type="text" class="form-control" name="address" value="<%=InputOutput.clean(userAddress)%>" />
-                        Postinro:
-                        <input type="text" class="form-control" name="postalcode" value="<%=InputOutput.clean(userPostalcode)%>" />
-                        Postitoimipaikka:
-                        <input type="text" class="form-control" name="postoffice" value="<%=InputOutput.clean(userPostoffice)%>" /><br>
-                        <input type="hidden" name="email" value="<%=InputOutput.clean(userEmail)%>">
-                        <input type="submit" class="btn btn-warning" value="Tallenna" />
-                    </form><br>
-                    <hr> -->
                     <h3>Vaihda salasana</h3>
                     <form action="UpdateUserPassword" method="POST" accept-charset="utf-8">
                         Vanha salasana:
@@ -454,10 +412,6 @@
 
 <script type="text/javascript" src="addrow.js"></script>
 
-        
-        
-        
-        
         
     </body>
 </html>
