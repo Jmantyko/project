@@ -660,14 +660,14 @@
                                                 <span class="glyphicon glyphicon-info-sign"></span>
                                             </a>
                                         </th>
-                                        <th>Tekeminen ja/tai oleminen <a style="cursor:help;" data-toggle="tooltip" title="Kerro tässä tekeminen, esim. aamupala." class="tooltipLink" data-original-title="Tooltip text goes here">
+                                        <th>Tekeminen ja/tai oleminen <a style="cursor:help;" data-toggle="tooltip" title="Kerro tässä tekeminen/oleminen, esim. aamupala." class="tooltipLink" data-original-title="Tooltip text goes here">
                                                 <span class="glyphicon glyphicon-info-sign"></span>
                                             </a>
                                         </th>
-                                        <th>Positiivinen vireytyminen % <a style="cursor:help;" data-toggle="tooltip" title="Suojatoiminta kyseisenä ajankohtana." class="tooltipLink" data-original-title="Tooltip text goes here">
+                                        <th>Positiivinen vireytyminen % <a style="cursor:help;" data-toggle="tooltip" title="Positiivinen vireytyminen kyseisenä ajankohtana." class="tooltipLink" data-original-title="Tooltip text goes here">
                                                 <span class="glyphicon glyphicon-info-sign"></span>
                                             </a></th>
-                                        <th>Negatiivinen vireytyminen % <a style="cursor:help;" data-toggle="tooltip" title="Tehtävään suuntautunut toiminta kys. ajankohtana." class="tooltipLink" data-original-title="Tooltip text goes here">
+                                        <th>Negatiivinen vireytyminen % <a style="cursor:help;" data-toggle="tooltip" title="Negatiivinen vireytyminen kys. ajankohtana." class="tooltipLink" data-original-title="Tooltip text goes here">
                                                 <span class="glyphicon glyphicon-info-sign"></span>
                                             </a>
                                         </th>
@@ -799,18 +799,18 @@
                                                 <span class="glyphicon glyphicon-info-sign"></span>
                                             </a>
                                         </th>
-                                        <th>Tekeminen ja/tai oleminen <a style="cursor:help;" data-toggle="tooltip" title="Kerro tässä tekeminen, esim. aamupala." class="tooltipLink" data-original-title="Tooltip text goes here">
+                                        <th>Tekeminen ja/tai oleminen <a style="cursor:help;" data-toggle="tooltip" title="Kerro tässä tekeminen/oleminen, esim. aamupala." class="tooltipLink" data-original-title="Tooltip text goes here">
                                                 <span class="glyphicon glyphicon-info-sign"></span>
                                             </a>
                                         </th>
-                                        <th>Positiivinen suojatoiminta % <a style="cursor:help;" data-toggle="tooltip" title="Suojatoiminta kyseisenä ajankohtana." class="tooltipLink" data-original-title="Tooltip text goes here">
+                                        <th>Positiivinen suojatoiminta % <a style="cursor:help;" data-toggle="tooltip" title="Positiivinen suojatoiminta kyseisenä ajankohtana." class="tooltipLink" data-original-title="Tooltip text goes here">
                                                 <span class="glyphicon glyphicon-info-sign"></span>
                                             </a></th>
-                                        <th>Negatiivinen suojatoiminta % <a style="cursor:help;" data-toggle="tooltip" title="Tehtävään suuntautunut toiminta kys. ajankohtana." class="tooltipLink" data-original-title="Tooltip text goes here">
+                                        <th>Negatiivinen suojatoiminta % <a style="cursor:help;" data-toggle="tooltip" title="Negatiivinen suojatoiminta kys. ajankohtana." class="tooltipLink" data-original-title="Tooltip text goes here">
                                                 <span class="glyphicon glyphicon-info-sign"></span>
                                             </a>
                                         </th>
-                                        <th>Tehtävään/olemiseen suuntautunut toiminta % <a style="cursor:help;" data-toggle="tooltip" title="Tehtävään suuntautunut toiminta kys. ajankohtana." class="tooltipLink" data-original-title="Tooltip text goes here">
+                                        <th>Tehtävään/olemiseen suuntautunut toiminta % <a style="cursor:help;" data-toggle="tooltip" title="Tehtävään/olemiseen suuntautunut toiminta kys. ajankohtana." class="tooltipLink" data-original-title="Tooltip text goes here">
                                                 <span class="glyphicon glyphicon-info-sign"></span>
                                             </a>
                                         </th>
