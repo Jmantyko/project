@@ -502,14 +502,11 @@
                                 <div id="ohje1" class="panel-collapse collapse">
                                     <div>
                                         <p>
-                                        Palauta mieleesi vapaavalintaisen lähimenneisyyden päivän tapahtumia. 
-                                        Kirjoita ylös tapahtuman ajankohta, (esim. numeroin 8:00) tai sanallisesti. 
-                                        Arvioi kyseiseen tehtävään käytettyä keskittymisen tasoa kohdassa Tehtävään suuntautunut toiminta 
-                                        ja Suojatoiminnan (esim. torjuminen, kieltäminen, siirtäminen) vahvuutta kyseisessä toiminnassa. 
-                                        <br><br>
-                                        Ei haittaa, vaikka et täyttäisi harjoitusta täydellisesti, sillä myös vajaasi jäänyt vastaus on arvokas.  
-                                        <br><br>
-                                        Tallentaessasi harjoituksen Terapeuttisi antaa palautetta vastauksestasi 1-3 päivän kuluessa. Kiitokset etukäteen vastauksestasi!
+                                            <b>Ajankohta</b> on aikaväli noin 10 minuutista 2 tuntiin<br><br>
+                                            <b>Tekeminen</b> tarkoittaa jotakin toimintatilanteesi vaihetta, esim. aamupala, lehden luku, television katselu, työ tai opiskelutehtävän tekeminen, siistiminen, ruoan valmistus, ruokailu, jne. käytä omia sanoja<br><br>
+                                            <b>Suojatoiminta</b>: Suojatoimintasi on vähäistä keskittymistäsi kyseisessä tilanteessa, kuten tehtävän torjumista mielessäsi, käsillä olevien haasteiden tukahduttamista kuten keskittymistä oheistoimintaan, keinotekoista mielihyvän tavoittelua, jne. <br><br>
+                                            <b>Ongelmanratkaisutoimintasi</b> on tilanteessa sopivaa keskittymisen tasoa, sopivaa voimiesi jakamista, tilanteessasi toteuttamasi toiminnan tai olemisen tavan arvioivaa tunnistamista, tietoisuutta, miten hyvin tai vahvasti etenet tämän kyseisen toiminnan toteuttamisessa, jne. <br>
+
                                         </p>
                                     </div>
                                 </div>
@@ -639,15 +636,10 @@
                                 <div id="ohje2" class="panel-collapse collapse">
                                     <div>
                                         <p>
-                                        Merkitse harjoitukseen edellisen tai kuluvan päivän tapahtumia 
-                                        ja niissä ilmenevien tunnekokemusten laatua ja määrää. 
-                                        Pyri kattavaan vastaukseen, mutta muista ettei vastauksen 
-                                        tarvi olla täydellinen. Keskity erityisesti tekemisen kohteeseen 
-                                        joka voi olla täysin arkinen toiminta, pelkkä oleminen tai jokin 
-                                        erityinen tapahtuma.
-                                        <br><br>
-                                        Tallentaessasi harjoituksen Terapeuttisi antaa palautetta 
-                                        vastauksestasi 1-3 päivän kuluessa. Kiitokset etukäteen vastauksestasi!
+                                            <b>Aikaväli</b> on 10 minuutista 2 tuntiin tai enemmän<br><br>
+                                            <b>Tekemisesi</b> ja tai olemisesi luonne on jotenkin nimetty, esim. aamupala, aamutoimet, työmatka, siistiminen, soittaminen äidille, työvoimatoimistossa käynti<br><br>
+                                            <b>Positiivinen vireytyminen</b> tarkoittaa hallintakokemuksesi positiivista astetta; esim. koet myönteisiä tuntemuksia, saat hallintakokemusta, että teet sitä mitä sinun mielestäsi tulikin tilanteessa tehdä<br><br>
+                                            <b>Negatiivinen vireytyminen</b> tarkoittaa astetta, missä määrin keskittymisesi hajoaa epäoleellisuuksiin, sinulle tulee tarpeetonta tunnekuormaa joka vie keskittymistäsi, siirrytkin tekemään jotakin mielihyvätoimintaa, esim. katselet televisiota, surffaat, siirryt tauolle, kaljan juontiin, panikoimaan, murehtimaan, vaivut epätoivoon, masentaviin ajatuksiin<br>
                                         </p>
                                     </div>
                                 </div>
@@ -776,17 +768,12 @@
                                </div>
                                <div id="ohje3" class="panel-collapse collapse">
                                    <div>
-                                       <p>
-                                        Merkitse harjoitukseen tavallista tunteikkaimmat tapahtumat 
-                                        edellisiltä tai kuluvalta päivältä. 
-                                        Arvioi tapahtuman tai tekemisen suojatoiminnan 
-                                        laatua sekä tekemiseen suuntautunutta toimintaa tai ongelmanratkaisua. 
-                                        Tavoitteena on tunnistaa arjessa esiintyvät voimakkaat tunteet sekä 
-                                        jäsentää niitä osana suojatoimintaa tai tekemistä.
-                                        <br><br>
-                                        Tallentaessasi harjoituksen Terapeuttisi antaa palautetta vastauksestasi 
-                                        1-3 päivän kuluessa. Kiitokset etukäteen vastauksestasi!
-                                       </p>
+                                        <p>
+                                            <b>Aikaväli</b> on 10 minuutista 2 tuntiin tai enemmän<br><br>
+                                            <b>Tekemisesi</b> ja tai olemisesi luonne on jotenkin nimetty, esim. aamupala, aamutoimet, työmatka, siistiminen, soittaminen äidille, työvoimatoimistossa käynti<br><br>
+                                            <b>Positiivinen vireytyminen</b> tarkoittaa hallintakokemuksesi positiivista astetta; esim. koet myönteisiä tuntemuksia, saat hallintakokemusta, että teet sitä mitä sinun mielestäsi tulikin tilanteessa tehdä<br><br>
+                                            <b>Negatiivinen vireytyminen</b> tarkoittaa astetta, missä määrin keskittymisesi hajoaa epäoleellisuuksiin, sinulle tulee tarpeetonta tunnekuormaa joka vie keskittymistäsi, siirrytkin tekemään jotakin mielihyvätoimintaa, esim. katselet televisiota, surffaat, siirryt tauolle, kaljan juontiin, panikoimaan, murehtimaan, vaivut epätoivoon, masentaviin ajatuksiin<br><br>
+                                        </p>
                                    </div>
                                </div>
                            </div>
