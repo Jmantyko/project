@@ -162,7 +162,13 @@
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.3.2/bootstrap-slider.js"></script>
 	<script type="text/javascript" https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.3.2/bootstrap-slider.min.js</script>
-
+	
+	<!-- Clockpicker Javascript -->
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+	<script type="text/javascript" src="dist/bootstrap-clockpicker.min.js"></script>
+        
+        
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -186,6 +192,31 @@
                     $('html,body').scrollTop(scrollmem);
                 });
             });
+        </script>
+	 
+	 <!-- Bootstrap row adding js --> 
+        <script src="addrow.js"></script>
+	 
+        <script>   
+        $(document).ready(function(){
+            
+            var i=1;
+
+            $("#add_row").click(function(){
+                $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input name='name"+i+"' type='text' placeholder='Name' class='form-control input-md'  /> </td><td><input  name='mail"+i+"' type='text' placeholder='Mail'  class='form-control input-md'></td><td><input  name='mobile"+i+"' type='text' placeholder='Mobile'  class='form-control input-md'></td>");
+
+                $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
+                i++; 
+                });
+
+            $("#delete_row").click(function(){
+                if(i>1){
+                $("#addr"+(i-1)).html('');
+                i--;
+                }
+             });
+
+        });
         </script>
          
          <script>
