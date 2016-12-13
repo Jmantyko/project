@@ -502,11 +502,10 @@
                                 <div id="ohje1" class="panel-collapse collapse">
                                     <div>
                                         <p>
-                                            <b>Ajankohta</b> on aikaväli noin 10 minuutista 2 tuntiin<br><br>
-                                            <b>Tekeminen</b> tarkoittaa jotakin toimintatilanteesi vaihetta, esim. aamupala, lehden luku, television katselu, työ tai opiskelutehtävän tekeminen, siistiminen, ruoan valmistus, ruokailu, jne. käytä omia sanoja<br><br>
-                                            <b>Suojatoiminta</b>: Suojatoimintasi on vähäistä keskittymistäsi kyseisessä tilanteessa, kuten tehtävän torjumista mielessäsi, käsillä olevien haasteiden tukahduttamista kuten keskittymistä oheistoimintaan, keinotekoista mielihyvän tavoittelua, jne. <br><br>
-                                            <b>Ongelmanratkaisutoimintasi</b> on tilanteessa sopivaa keskittymisen tasoa, sopivaa voimiesi jakamista, tilanteessasi toteuttamasi toiminnan tai olemisen tavan arvioivaa tunnistamista, tietoisuutta, miten hyvin tai vahvasti etenet tämän kyseisen toiminnan toteuttamisessa, jne. <br>
-
+                                            Palauta mieleesi vapaavalintaisen lähimenneisyyden päivän tapahtumia. Kirjoita ylös tapahtuman ajankohta, (esim. numeroin 8:00) tai sanallisesti. Arvioi kyseiseen tehtävään käytettyä keskittymisen tasoa kohdassa Tehtävään suuntautunut toiminta ja Suojatoiminnan (esim. torjuminen, kieltäminen, siirtäminen) vahvuutta kyseisessä toiminnassa. 
+                                            Ei haittaa, vaikka et täyttäisi harjoitusta täydellisesti, sillä myös vajaasi jäänyt vastaus on arvokas.  
+                                            <br><br>
+                                            Tallentaessasi harjoituksen Terapeuttisi antaa palautetta vastauksestasi 1-3 päivän kuluessa. Kiitokset etukäteen vastauksestasi!
                                         </p>
                                     </div>
                                 </div>
@@ -517,18 +516,18 @@
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Ajankohta <a style="cursor:help;" data-toggle="tooltip" title="Syötä tähän tekemisen ajankohta, esim. 8:30." class="tooltipLink" data-original-title="Tooltip text goes here">
+                                        <th>Ajankohta <a style="cursor:help;" data-toggle="tooltip" title="Ajankohta on aikaväli noin 10 minuutista 2 tuntiin" class="tooltipLink" data-original-title="Tooltip text goes here">
                                                 <span class="glyphicon glyphicon-info-sign"></span>
                                             </a>
                                         </th>
-                                        <th>Tekeminen <a style="cursor:help;" data-toggle="tooltip" title="Kerro tässä tekeminen, esim. aamupala." class="tooltipLink" data-original-title="Tooltip text goes here">
+                                        <th>Tekeminen <a style="cursor:help;" data-toggle="tooltip" title="Tekeminen tarkoittaa jotakin toimintatilanteesi vaihetta, esim. aamupala, lehden luku, television katselu, työ tai opiskelutehtävän tekeminen, siistiminen, ruoan valmistus, ruokailu, jne. käytä omia sanoja" class="tooltipLink" data-original-title="Tooltip text goes here">
                                                 <span class="glyphicon glyphicon-info-sign"></span>
                                             </a>
                                         </th>
-                                        <th>Suojatoiminta % <a style="cursor:help;" data-toggle="tooltip" title="Suojatoiminta kyseisenä ajankohtana." class="tooltipLink" data-original-title="Tooltip text goes here">
+                                        <th>Suojatoiminta % <a style="cursor:help;" data-toggle="tooltip" title="Suojatoimintasi on vähäistä keskittymistäsi kyseisessä tilanteessa, kuten tehtävän torjumista mielessäsi, käsillä olevien haasteiden tukahduttamista kuten keskittymistä oheistoimintaan, keinotekoista mielihyvän tavoittelua, jne." class="tooltipLink" data-original-title="Tooltip text goes here">
                                                 <span class="glyphicon glyphicon-info-sign"></span>
                                             </a></th>
-                                        <th>Tehtävään s. toiminta % <a style="cursor:help;" data-toggle="tooltip" title="Tehtävään suuntautunut toiminta kys. ajankohtana." class="tooltipLink" data-original-title="Tooltip text goes here">
+                                        <th>Tehtävään s. toiminta % <a style="cursor:help;" data-toggle="tooltip" title="Tehtävään suuntautunut toiminta. Ongelmanratkaisutoimintasi on tilanteessa sopivaa keskittymisen tasoa, sopivaa voimiesi jakamista, tilanteessasi toteuttamasi toiminnan tai olemisen tavan arvioivaa tunnistamista, tietoisuutta, miten hyvin tai vahvasti etenet tämän kyseisen toiminnan toteuttamisessa, jne." class="tooltipLink" data-original-title="Tooltip text goes here">
                                                 <span class="glyphicon glyphicon-info-sign"></span>
                                             </a>
                                         </th>
@@ -636,10 +635,9 @@
                                 <div id="ohje2" class="panel-collapse collapse">
                                     <div>
                                         <p>
-                                            <b>Aikaväli</b> on 10 minuutista 2 tuntiin tai enemmän<br><br>
-                                            <b>Tekemisesi</b> ja tai olemisesi luonne on jotenkin nimetty, esim. aamupala, aamutoimet, työmatka, siistiminen, soittaminen äidille, työvoimatoimistossa käynti<br><br>
-                                            <b>Positiivinen vireytyminen</b> tarkoittaa hallintakokemuksesi positiivista astetta; esim. koet myönteisiä tuntemuksia, saat hallintakokemusta, että teet sitä mitä sinun mielestäsi tulikin tilanteessa tehdä<br><br>
-                                            <b>Negatiivinen vireytyminen</b> tarkoittaa astetta, missä määrin keskittymisesi hajoaa epäoleellisuuksiin, sinulle tulee tarpeetonta tunnekuormaa joka vie keskittymistäsi, siirrytkin tekemään jotakin mielihyvätoimintaa, esim. katselet televisiota, surffaat, siirryt tauolle, kaljan juontiin, panikoimaan, murehtimaan, vaivut epätoivoon, masentaviin ajatuksiin<br>
+                                            Merkitse harjoitukseen edellisen tai kuluvan päivän tapahtumia ja niissä ilmenevien tunnekokemusten laatua ja määrää. yri kattavaan vastaukseen, mutta muista ettei vastauksen tarvi olla täydellinen. Keskity erityisesti tekemisen kohteeseen joka voi olla täysin arkinen toiminta, pelkkä oleminen tai jokin erityinen tapahtuma.
+                                            <br><br>
+                                            Tallentaessasi harjoituksen Terapeuttisi antaa palautetta vastauksestasi 1-3 päivän kuluessa. Kiitokset etukäteen vastauksestasi!
                                         </p>
                                     </div>
                                 </div>
@@ -648,18 +646,18 @@
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Ajankohta <a style="cursor:help;" data-toggle="tooltip" title="Syötä tähän tekemisen ajankohta, esim. 8:30." class="tooltipLink" data-original-title="Tooltip text goes here">
+                                        <th>Ajankohta <a style="cursor:help;" data-toggle="tooltip" title="Aikaväli on 10 minuutista 2 tuntiin tai enemmän" class="tooltipLink" data-original-title="Tooltip text goes here">
                                                 <span class="glyphicon glyphicon-info-sign"></span>
                                             </a>
                                         </th>
-                                        <th>Tekeminen ja/tai oleminen <a style="cursor:help;" data-toggle="tooltip" title="Kerro tässä tekeminen/oleminen, esim. aamupala." class="tooltipLink" data-original-title="Tooltip text goes here">
+                                        <th>Tekeminen tai oleminen <a style="cursor:help;" data-toggle="tooltip" title="Tekemisesi ja tai olemisesi luonne on jotenkin nimetty, esim. aamupala, aamutoimet, työmatka, siistiminen, soittaminen äidille, työvoimatoimistossa käynti" class="tooltipLink" data-original-title="Tooltip text goes here">
                                                 <span class="glyphicon glyphicon-info-sign"></span>
                                             </a>
                                         </th>
-                                        <th>Positiivinen vireytyminen % <a style="cursor:help;" data-toggle="tooltip" title="Positiivinen vireytyminen kyseisenä ajankohtana." class="tooltipLink" data-original-title="Tooltip text goes here">
+                                        <th>Positiivinen <br> vireytyminen % <a style="cursor:help;" data-toggle="tooltip" title="Positiivinen vireytyminen tarkoittaa hallintakokemuksesi positiivista astetta; esim. koet myönteisiä tuntemuksia, saat hallintakokemusta, että teet sitä mitä sinun mielestäsi tulikin tilanteessa tehdä" class="tooltipLink" data-original-title="Tooltip text goes here">
                                                 <span class="glyphicon glyphicon-info-sign"></span>
                                             </a></th>
-                                        <th>Negatiivinen vireytyminen % <a style="cursor:help;" data-toggle="tooltip" title="Negatiivinen vireytyminen kys. ajankohtana." class="tooltipLink" data-original-title="Tooltip text goes here">
+                                        <th>Negatiivinen <br> vireytyminen % <a style="cursor:help;" data-toggle="tooltip" title="Negatiivinen vireytyminen tarkoittaa astetta, missä määrin keskittymisesi hajoaa epäoleellisuuksiin, sinulle tulee tarpeetonta tunnekuormaa joka vie keskittymistäsi, siirrytkin tekemään jotakin mielihyvätoimintaa, esim. katselet televisiota, surffaat, siirryt tauolle, kaljan juontiin, panikoimaan, murehtimaan, vaivut epätoivoon, masentaviin ajatuksiin" class="tooltipLink" data-original-title="Tooltip text goes here">
                                                 <span class="glyphicon glyphicon-info-sign"></span>
                                             </a>
                                         </th>
@@ -769,10 +767,9 @@
                                <div id="ohje3" class="panel-collapse collapse">
                                    <div>
                                         <p>
-                                            <b>Aikaväli</b> on 10 minuutista 2 tuntiin tai enemmän<br><br>
-                                            <b>Tekemisesi</b> ja tai olemisesi luonne on jotenkin nimetty, esim. aamupala, aamutoimet, työmatka, siistiminen, soittaminen äidille, työvoimatoimistossa käynti<br><br>
-                                            <b>Positiivinen vireytyminen</b> tarkoittaa hallintakokemuksesi positiivista astetta; esim. koet myönteisiä tuntemuksia, saat hallintakokemusta, että teet sitä mitä sinun mielestäsi tulikin tilanteessa tehdä<br><br>
-                                            <b>Negatiivinen vireytyminen</b> tarkoittaa astetta, missä määrin keskittymisesi hajoaa epäoleellisuuksiin, sinulle tulee tarpeetonta tunnekuormaa joka vie keskittymistäsi, siirrytkin tekemään jotakin mielihyvätoimintaa, esim. katselet televisiota, surffaat, siirryt tauolle, kaljan juontiin, panikoimaan, murehtimaan, vaivut epätoivoon, masentaviin ajatuksiin<br><br>
+                                        Merkitse harjoitukseen tavallista tunteikkaimmat tapahtumat edellisiltä tai kuluvalta päivältä. Arvioi tapahtuman tai tekemisen suojatoiminnan laatua sekä tekemiseen suuntautunutta toimintaa tai ongelmanratkaisua. Tavoitteena on tunnistaa arjessa esiintyvät voimakkaat tunteet sekä jäsentää niitä osana suojatoimintaa tai tekemistä.
+                                        <br><br>
+                                        Tallentaessasi harjoituksen Terapeuttisi antaa palautetta vastauksestasi 1-3 päivän kuluessa. Kiitokset etukäteen vastauksestasi!
                                         </p>
                                    </div>
                                </div>
@@ -782,22 +779,22 @@
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Ajankohta <a style="cursor:help;" data-toggle="tooltip" title="Syötä tähän tekemisen ajankohta, esim. 8:30." class="tooltipLink" data-original-title="Tooltip text goes here">
+                                        <th>Ajankohta <a style="cursor:help;" data-toggle="tooltip" title="Aikaväli on 10 minuutista 2 tuntiin tai enemmän" class="tooltipLink" data-original-title="Tooltip text goes here">
                                                 <span class="glyphicon glyphicon-info-sign"></span>
                                             </a>
                                         </th>
-                                        <th>Tekeminen ja/tai oleminen <a style="cursor:help;" data-toggle="tooltip" title="Kerro tässä tekeminen/oleminen, esim. aamupala." class="tooltipLink" data-original-title="Tooltip text goes here">
+                                        <th>Tekeminen tai oleminen <a style="cursor:help;" data-toggle="tooltip" title="Tekemisesi ja tai olemisesi luonne on jotenkin nimetty, esim. aamupala, aamutoimet, työmatka, siistiminen, soittaminen äidille, työvoimatoimistossa käynti" class="tooltipLink" data-original-title="Tooltip text goes here">
                                                 <span class="glyphicon glyphicon-info-sign"></span>
                                             </a>
                                         </th>
-                                        <th>Positiivinen suojatoiminta % <a style="cursor:help;" data-toggle="tooltip" title="Positiivinen suojatoiminta kyseisenä ajankohtana." class="tooltipLink" data-original-title="Tooltip text goes here">
+                                        <th>Positiivinen suojatoiminta % <a style="cursor:help;" data-toggle="tooltip" title="Positiivinen vireytyminen tarkoittaa hallintakokemuksesi positiivista astetta; esim. koet myönteisiä tuntemuksia, saat hallintakokemusta, että teet sitä mitä sinun mielestäsi tulikin tilanteessa tehdä" class="tooltipLink" data-original-title="Tooltip text goes here">
                                                 <span class="glyphicon glyphicon-info-sign"></span>
                                             </a></th>
-                                        <th>Negatiivinen suojatoiminta % <a style="cursor:help;" data-toggle="tooltip" title="Negatiivinen suojatoiminta kys. ajankohtana." class="tooltipLink" data-original-title="Tooltip text goes here">
+                                        <th>Negatiivinen suojatoiminta % <a style="cursor:help;" data-toggle="tooltip" title="Negatiivinen vireytyminen tarkoittaa astetta, missä määrin keskittymisesi hajoaa epäoleellisuuksiin, sinulle tulee tarpeetonta tunnekuormaa joka vie keskittymistäsi, siirrytkin tekemään jotakin mielihyvätoimintaa, esim. katselet televisiota, surffaat, siirryt tauolle, kaljan juontiin, panikoimaan, murehtimaan, vaivut epätoivoon, masentaviin ajatuksiin" class="tooltipLink" data-original-title="Tooltip text goes here">
                                                 <span class="glyphicon glyphicon-info-sign"></span>
                                             </a>
                                         </th>
-                                        <th>Tehtävään/olemiseen suuntautunut toiminta % <a style="cursor:help;" data-toggle="tooltip" title="Tehtävään/olemiseen suuntautunut toiminta kys. ajankohtana." class="tooltipLink" data-original-title="Tooltip text goes here">
+                                        <th>Tehtävään s. toiminta % <a style="cursor:help;" data-toggle="tooltip" title="Tehtävään suuntautunut toiminta. Ongelmanratkaisutoimintasi on tilanteessa sopivaa keskittymisen tasoa, sopivaa voimiesi jakamista, tilanteessasi toteuttamasi toiminnan tai olemisen tavan arvioivaa tunnistamista, tietoisuutta, miten hyvin tai vahvasti etenet tämän kyseisen toiminnan toteuttamisessa, jne." class="tooltipLink" data-original-title="Tooltip text goes here">
                                                 <span class="glyphicon glyphicon-info-sign"></span>
                                             </a>
                                         </th>
