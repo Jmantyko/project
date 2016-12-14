@@ -197,6 +197,25 @@
 
         }
 
+                .modal {
+          text-align: center;
+          padding: 0!important;
+        }
+
+        .modal:before {
+          content: '';
+          display: inline-block;
+          height: 100%;
+          vertical-align: middle;
+          margin-right: -4px; /* Adjusts for spacing */
+        }
+
+        .modal-dialog {
+          display: inline-block;
+          text-align: left;
+          vertical-align: middle;
+        }
+
         </style>
 
 
@@ -352,6 +371,44 @@
                $('html,body').scrollTop(scrollmem);
            });
        });
+   </script>
+   
+   <script>
+                        
+                      function centerModal() {
+                        $(this).css('display', 'block');
+                        var $dialog = $(this).find(".modal-dialog");
+                        var offset = ($(window).height() - $dialog.height()) / 2;
+                        // Center modal vertically in window
+                        $dialog.css("margin-top", offset);
+                    }
+
+                    $('.modal').on('show.bs.modal', centerModal);
+                    $(window).on("resize", function () {
+                        $('.modal:visible').each(centerModal);
+                    });
+
+                       
+                        
+   </script>
+   
+   <script>
+                        
+                      function centerModal() {
+                        $(this).css('display', 'block');
+                        var $dialog = $(this).find(".modal-dialog1");
+                        var offset = ($(window).height() - $dialog.height()) / 2;
+                        // Center modal vertically in window
+                        $dialog.css("margin-top", offset);
+                    }
+
+                    $('.modal1').on('show.bs.modal', centerModal);
+                    $(window).on("resize", function () {
+                        $('.modal:visible').each(centerModal);
+                    });
+
+                       
+                        
    </script>
         
 </head>
@@ -530,7 +587,22 @@
             <div class="col-md-4 col-sm-6 hero-feature">
                 <div class="thumbnail">
                     <h4>Terapeutin ja asiakkaan välinen dialogi</h4>
-                    <img src="Images/monitorointiviestit.PNG" alt="">
+                    
+                    <a href="#imagemodal" class="pop">
+                        <img src="Images/monitorointiviestit.PNG" data-toggle="modal" data-target="#myModal">
+                    </a>
+
+                    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <img src="Images/monitorointivastaus.PNG" class="img-responsive">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <img src="" alt="">
                     <div class="caption">
                         <p>Sovelluksen avulla asiakas vähitellen
                             oivaltaa miten hän tunnistaa todellista
@@ -548,7 +620,23 @@
             <div class="col-md-4 col-sm-6 hero-feature">
                 <div class="thumbnail">
                     <h4>Monitorointiharjoitukset</h4>
-                    <img src="Images/monitorointiesimerkki.PNG" alt="">
+                    
+                     <a href="#imagemodal1" class="pop">
+                        <img src="Images/monitorointiesimerkki.PNG" data-toggle="modal" data-target="#myModal1">
+                    </a>
+
+                    <div id="myModal1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <img src="Images/monitorointiesimerkkisuuri.PNG" class="img-responsive">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
                     <div class="caption">
                         <p>Keskiössä ovat käyttäjän tekemät 
                             monitorointiharjoitukset sekä
