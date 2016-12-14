@@ -222,7 +222,7 @@
         
         /* Indicators list style */
         .article-slide .carousel-indicators {
-            bottom: 0;
+            bottom: -100px;
             left: 0;
             margin-left: 5px;
             width: 100%;
@@ -252,6 +252,10 @@
         .article-slide .carousel-indicators .active img {
             border: 2px solid #428BCA;
             opacity: 0.7;
+        }
+        
+        .tietoa-bottom {
+            margin: 100px;
         }
 
         </style>
@@ -811,7 +815,9 @@
     <div class="tab-pane text-style min-height" id="tietoa">
         <div class="container">
             <h2>Tietoa</h2>
-            
+            <br>
+            <p><%=InputOutput.clean(contentTietoa)%></p>
+            <br>
             <div class="carousel slide article-slide" id="article-photo-carousel">
 
             <!-- Wrapper for slides -->
@@ -834,10 +840,9 @@
               </li>
             </ol>
           </div>
+            
+          <div class="tietoa-bottom"></div>
 
-            
-            
-            <p><%=InputOutput.clean(contentTietoa)%></p>
         </div>
     </div>
 
