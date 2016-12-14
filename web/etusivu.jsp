@@ -530,7 +530,7 @@
             <div class="col-md-4 col-sm-6 hero-feature">
                 <div class="thumbnail">
                     <h4>Terapeutin ja asiakkaan välinen dialogi</h4>
-                    <img src="Images/kuva7medium.png" alt="">
+                    <img src="Images/monitorointiviestit.PNG" alt="">
                     <div class="caption">
                         <p>Sovelluksen avulla asiakas vähitellen
                             oivaltaa miten hän tunnistaa todellista
@@ -548,7 +548,7 @@
             <div class="col-md-4 col-sm-6 hero-feature">
                 <div class="thumbnail">
                     <h4>Monitorointiharjoitukset</h4>
-                    <img src="Images/monitorointi.png" alt="">
+                    <img src="Images/monitorointiesimerkki.PNG" alt="">
                     <div class="caption">
                         <p>Keskiössä ovat käyttäjän tekemät 
                             monitorointiharjoitukset sekä
