@@ -106,10 +106,7 @@ CREATE TABLE Frontpage (
 );
 
 INSERT INTO Users (UserEmail, UserPassword, UserName, UserSurname, UserPhonenumber, UserAddress, UserPostalcode, UserPostoffice, UserType)
-	VALUES 	('admin@admin.fi', '123', 'Teppo', 'Terapeutti', '0501234567', 'Kauppakatu 5', '10101', 'Oulu', 'admin'),
-		('customer@customer.fi', '123', 'Aki', 'Asiakas', '020202', 'Torikatu 3', '12300', 'Oulu', 'customer'),
-		('erkkiesimerkki@esimerkki.fi', '123', 'Erkki', 'Esimerkki', '020544579', 'Talokatu 7', '88888', 'Helsinki', 'customer'),
-		('mattimeikalainen@meikalainen.fi', '123', 'Matti', 'Meik‰l‰inen', '1234567890', 'Kerroskuja 5', '82828', 'Tampere', 'customer');
+	VALUES 	('martti.puttonen@gmail.com', 'abc12345', 'Martti', 'Puttonen', '0505335698', 'Karankatu 25 G', ' ', 'Hyvink‰‰', 'admin');
 			
 INSERT INTO Frontpage (PageContent)
 	VALUES	('T‰m‰ teksti on yleist‰ arjenhallinta.fi mainosteksti‰.'),
