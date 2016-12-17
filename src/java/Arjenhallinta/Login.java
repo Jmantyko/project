@@ -15,7 +15,11 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Jaakko
+ * servlet provides part of the logic that is required
+ * to authenticate each user. If email and password combination
+ * is correct, we create new cookie which contains user's email.
+ * When user tries to access certain page, check is done to verify
+ * sessionid has correct email address attached to it.
  */
 public class Login extends HttpServlet {
 
