@@ -7,7 +7,8 @@ package Arjenhallinta;
 
 /**
  *
- * @author Jaakko
+ * Class used to print all the frontpage content
+ * in etusivu.jsp
  */
 public class Content {
 
