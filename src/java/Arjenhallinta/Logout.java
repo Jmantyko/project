@@ -15,7 +15,8 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Jaakko
+ * servlet includes logic that invalidates session
+ * (logs user out)
  */
 public class Logout extends HttpServlet {
 
