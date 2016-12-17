@@ -13,7 +13,9 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Jaakko
+ * class provides methods that can be used to access mysql database.
+ * Please provide correct database address, username and password
+ * so that application can really access to the database
  */
 public class Database {
     
