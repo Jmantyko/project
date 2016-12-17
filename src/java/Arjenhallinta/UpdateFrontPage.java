@@ -15,7 +15,12 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Jaakko
+ * Servlet used to update content in the frontpage. 
+ * All new content is first saved to strings, then by
+ * using Content class, each piece of content is made to be
+ * an object. Finally all objects are packed into ArrayList
+ * which is sent to method provided by Database-class to update
+ * new content
  */
 @WebServlet(name = "UpdateFrontPage", urlPatterns = {"/UpdateFrontPage"})
 public class UpdateFrontPage extends HttpServlet {
