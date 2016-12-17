@@ -13,7 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Jaakko
+ * Servlet creates new user by using the information
+ * that was provided in admin.jsp. If user with same
+ * email doesn't exist, new customer account will be created
  */
 public class CreateUser extends HttpServlet {
 
