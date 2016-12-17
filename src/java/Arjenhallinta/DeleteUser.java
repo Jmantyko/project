@@ -13,7 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Jaakko
+ * Servlet removes the user by using the
+ * requested parameter and accessing deleteUser-method
+ * which Database class provides.
  */
 public class DeleteUser extends HttpServlet {
 
@@ -33,7 +35,7 @@ public class DeleteUser extends HttpServlet {
         String stringCustomerID = request.getParameter("customerid");
         int intCustomerID = Integer.parseInt(stringCustomerID);
         
-        Database.deleteUser(intCustomerID); //and good riddance!
+        Database.deleteUser(intCustomerID);
         
         response.sendRedirect(request.getContextPath() + "/admin.jsp#tab11");
     }
