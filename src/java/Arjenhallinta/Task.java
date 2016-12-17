@@ -7,7 +7,8 @@ package Arjenhallinta;
 
 /**
  *
- * @author Jaakko
+ * objects of this class carry the information of one specific task. Used in
+ * customer.jsp and in admincustomerdetails.jsp
  */
 public class Task {
     
