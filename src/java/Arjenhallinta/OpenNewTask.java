@@ -13,7 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Jaakko
+ * Servlet used to open new task to specific customer. New exercise
+ * is opened only if there isn't same exercise opened.
  */
 public class OpenNewTask extends HttpServlet {
 
