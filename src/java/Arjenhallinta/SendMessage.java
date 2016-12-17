@@ -13,7 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Jaakko
+ * Servlet handles sending message, in the other words saves
+ * the new message to database using specific methods provided
+ * by Database class
  */
 public class SendMessage extends HttpServlet {
 
