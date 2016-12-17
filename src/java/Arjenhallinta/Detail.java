@@ -7,7 +7,8 @@ package Arjenhallinta;
 
 /**
  *
- * @author Jaakko
+ * class used to print all the extra details about
+ * each customer (age, residencemodel etc.)
  */
 public class Detail {
     
