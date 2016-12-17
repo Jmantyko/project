@@ -6,7 +6,6 @@
 package Arjenhallinta;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Jaakko
+ * Servlet used to save possible changes made in exercise 2.
+ * Updating existing memos is done first and if the final memo
+ * has some content it will also be saved into database using
+ * methods provided by Database-class
  */
 public class UpdateMemos2 extends HttpServlet {
 

@@ -13,7 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Jaakko
+ * Servlet used to save possible changes made in exercise 3.
+ * Updating existing memos is done first and if the final memo
+ * has some content it will also be saved into database using
+ * methods provided by Database-class
  */
 public class UpdateMemos3 extends HttpServlet {
 
