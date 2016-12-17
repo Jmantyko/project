@@ -13,7 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Jaakko
+ * Servlet used to register new customer. If similar email doesn't exist
+ * in database and both passwords were correct, new customer is added to
+ * database using methods provided by Database-class
  */
 public class RegisterNewUser extends HttpServlet {
 
