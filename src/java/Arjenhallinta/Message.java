@@ -7,7 +7,9 @@ package Arjenhallinta;
 
 /**
  *
- * @author Jaakko
+ * objects of this class are used to carry all messages related
+ * to certain exercise: used in customer.jsp and in admincustomerdetails.jsp
+ * to print conversations
  */
 public class Message {
     
