@@ -7,7 +7,8 @@ package Arjenhallinta;
 
 /**
  *
- * @author Jaakko
+ * class used to print all exercise 2 memos in customer.jsp and
+ * in admincustomerdetails.jsp
  */
 public class Memo2 {
     private int id;
