@@ -7,7 +7,8 @@ package Arjenhallinta;
 
 /**
  *
- * @author Jaakko
+ * class used to print all exercise 3 memos in customer.jsp and
+ * in admincustomerdetails.jsp
  */
 public class Memo3 {
     
