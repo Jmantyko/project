@@ -7,7 +7,10 @@ package Arjenhallinta;
 
 /**
  *
- * @author Jaakko
+ * class provides two methods, clean() is used to remove < > marks
+ * in order to avoid XSS vulnerability, while hasNoWhitespaces()
+ * can be used to check if string has any whitespaces (for example
+ * when changing password)
  */
 public class InputOutput {
     
@@ -17,20 +20,8 @@ public class InputOutput {
             inputOutputString = inputOutputString.replace('<', ' ');
             inputOutputString = inputOutputString.replace('>', ' ');
         }else{
-            System.out.println("InputOutput.clean : STRING THAT WAS NULL WAS SET TO EMPTY");
             inputOutputString = "";
         }
-        
-        /*//Old implementation
-        try {
-            inputOutputString = inputOutputString.replace('<', ' ');
-            inputOutputString = inputOutputString.replace('>', ' ');
-            
-        } catch (Exception e) {
-            System.out.println("ERROR IN: InputOutputCleaner");
-            
-        }
-        */
         
         return inputOutputString;
     }
@@ -40,7 +31,6 @@ public class InputOutput {
         boolean hasNoWhitespace = true;
         
         if(stringToCheck.contains(" ")){
-            System.out.println("STRING HAS WHITESPACE");
             hasNoWhitespace = false;
         }
         
