@@ -7,7 +7,8 @@ package Arjenhallinta;
 
 /**
  *
- * @author Jaakko
+ * class used to print all the customers found in database.
+ * Used in admin.jsp
  */
 public class Customer {
     
