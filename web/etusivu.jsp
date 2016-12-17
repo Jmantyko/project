@@ -1,7 +1,6 @@
 <%-- 
     Document   : etusivu
     Created on : 25-Oct-2016, 13:10:52
-    Author     : Jaakko
 --%>
 
 <%@page import="java.util.ArrayList"%>

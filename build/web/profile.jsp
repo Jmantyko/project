@@ -1,7 +1,6 @@
 <%-- 
     Document   : profile
     Created on : 06-Nov-2016, 22:35:19
-    Author     : Jaakko
 --%>
 
 <%@page import="java.util.ArrayList"%>

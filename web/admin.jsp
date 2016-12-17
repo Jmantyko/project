@@ -1,7 +1,6 @@
 <%-- 
     Document   : admin
     Created on : 05-Nov-2016, 15:53:14
-    Author     : Jaakko
 --%>
 
 <%@page import="Arjenhallinta.Customer"%>
