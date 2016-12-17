@@ -13,7 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Jaakko
+ * Servlet used to update user password.
+ * Old password needs to be correct as well as both new
+ * passwords needs to be same before change is saved
+ * into database. Please note that this logic needs to
+ * be partially redesigned when passwords are encrypted in database
  */
 public class UpdateUserPassword extends HttpServlet {
 
@@ -30,8 +34,6 @@ public class UpdateUserPassword extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        //This logic needs to be redesigned when passwords are
-        //encrypted in database
         String oldPassword = request.getParameter("oldpassword");
         String newPassword = request.getParameter("newpassword");
         String newPasswordagain = request.getParameter("newpasswordagain");
