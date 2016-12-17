@@ -13,7 +13,12 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Jaakko
+ * Servlet used to update all user details.
+ * Basic details such as address or phonenumber are
+ * updated first using updateUserDetails() method
+ * provided by Database-class, after which background details
+ * are updated using updateUserCureDetails() method which
+ * is also provided by Database-class
  */
 public class UpdateUserDetails extends HttpServlet {
 
