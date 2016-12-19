@@ -50,6 +50,10 @@
       
         }
         
+        body.modal-open {
+        overflow: visible;
+        }
+        
         .jumbotron {
         font-color:  #76A5FF;
         background:  #76A5FF;
